@@ -1,0 +1,8 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:earthbender/earth_block",
+  "texture_location": "minecraft:textures/block/nether_quartz_ore.png",
+  "render_type": "cutout",
+  "hidden": true
+}

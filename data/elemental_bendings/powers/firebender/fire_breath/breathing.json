@@ -99,7 +99,7 @@
               "resource": "elemental_bendings:bending/cooldown",
               "modifier": {
                 "operation": "set_total",
-                "value": 10
+                "value": 5
               }
             }
           ]

@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "#elemental_bendings:earthbender/bendable/stone",
+    "#elemental_bendings:earthbender/bendable/coal_ore",
+    "#elemental_bendings:earthbender/bendable/iron_ore",
+    "#elemental_bendings:earthbender/bendable/copper_ore",
+    "#elemental_bendings:earthbender/bendable/gold_ore",
+    "#elemental_bendings:earthbender/bendable/redstone_ore",
+    "#elemental_bendings:earthbender/bendable/emerald_ore",
+    "#elemental_bendings:earthbender/bendable/lapis_ore",
+    "#elemental_bendings:earthbender/bendable/diamond_ore"
+  ]
+}

@@ -5,14 +5,6 @@
     "actions": [
       {
         "type": "apoli:modify_resource",
-        "resource": "elemental_bendings:firebender/fire_jump/jumped",
-        "modifier": {
-          "operation": "set_total",
-          "value": 0
-        }
-      },
-      {
-        "type": "apoli:modify_resource",
         "resource": "elemental_bendings:firebender/fire_jet/heartbeat",
         "modifier": {
           "operation": "set_total",
@@ -25,6 +17,18 @@
         "modifier": {
           "operation": "set_total",
           "value": 0
+        }
+      },
+      {
+        "type": "apoli:delay",
+        "ticks": 2,
+        "action": {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:firebender/fire_jump/jumped",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0
+          }
         }
       }
     ]

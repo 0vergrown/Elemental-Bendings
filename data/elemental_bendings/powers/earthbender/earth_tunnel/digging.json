@@ -38,10 +38,33 @@
             "distance": 6,
             "block": true,
             "entity": false,
+            "shape_type": "collider",
             "fluid_handling": "none",
             "block_condition": {
-              "type": "apoli:in_tag",
-              "tag": "elemental_bendings:earthbender/bendable"
+              "type": "apoli:or",
+              "conditions": [
+                {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/tunnelable"
+                },
+                {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:block",
+                      "block": "minecraft:snow"
+                    },
+                    {
+                      "type": "apoli:offset",
+                      "condition": {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/tunnelable"
+                      },
+                      "y": -1
+                    }
+                  ]
+                }
+              ]
             },
             "block_action": {
               "type": "apoli:area_of_effect",
@@ -49,7 +72,7 @@
               "shape": "sphere",
               "block_condition": {
                 "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable"
+                "tag": "elemental_bendings:earthbender/tunnelable"
               },
               "block_action": {
                 "type": "apoli:break_block",
@@ -113,7 +136,7 @@
             "resource": "elemental_bendings:bending/cooldown",
             "modifier": {
               "operation": "set_total",
-              "value": 30
+              "value": 15
             }
           }
         ]

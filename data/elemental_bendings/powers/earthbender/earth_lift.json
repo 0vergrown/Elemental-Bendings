@@ -19,604 +19,2105 @@
       "compare_to": 0
     },
     "if_action": {
-      "type": "apoli:raycast",
-      "distance": 6,
-      "block": true,
-      "entity": false,
-      "fluid_handling": "none",
-      "hit_action": {
-        "type": "apoli:if_else_list",
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:raycast",
+        "distance": 6,
+        "block": true,
+        "entity": false,
+        "shape_type": "collider",
+        "fluid_handling": "none",
+        "block_condition": {
+          "type": "apoli:or",
+          "conditions": [
+            {
+              "type": "apoli:in_tag",
+              "tag": "elemental_bendings:earthbender/bendable"
+            },
+            {
+              "type": "apoli:and",
+              "conditions": [
+                {
+                  "type": "apoli:block",
+                  "block": "minecraft:snow"
+                },
+                {
+                  "type": "apoli:offset",
+                  "condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable"
+                  },
+                  "y": -1
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "if_action": {
+        "type": "apoli:raycast",
+        "distance": 6,
+        "block": true,
+        "entity": false,
+        "shape_type": "collider",
+        "fluid_handling": "none",
+        "hit_action": {
+          "type": "apoli:if_else_list",
+          "actions": [
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/grass"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/grass"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "grass",
+                  "color": "#6B4E33"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/dirt"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/dirt"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "dirt",
+                  "color": "#6B4E33"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/stone"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/stone"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "stone",
+                  "color": "#7D7D7D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/cobblestone"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/cobblestone"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "cobblestone",
+                  "color": "#777777"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/mossy_cobblestone"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/mossy_cobblestone"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "mossy_cobblestone",
+                  "color": "#6A7A5A"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/deepslate"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/deepslate"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "deepslate",
+                  "color": "#4E4E52"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/cobbled_deepslate"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/cobbled_deepslate"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "cobbled_deepslate",
+                  "color": "#4A4A4E"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/granite"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/granite"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "granite",
+                  "color": "#956755"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/diorite"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/diorite"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "diorite",
+                  "color": "#BDBDBD"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/andesite"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/andesite"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "andesite",
+                  "color": "#888889"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/tuff"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/tuff"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "tuff",
+                  "color": "#6C6D66"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/calcite"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/calcite"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "calcite",
+                  "color": "#DFE0DC"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/dripstone"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/dripstone"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "dripstone",
+                  "color": "#86705F"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/sand"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/sand"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "sand",
+                  "color": "#DBCFA3"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/red_sand"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/red_sand"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "red_sand",
+                  "color": "#BE6621"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/gravel"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/gravel"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "gravel",
+                  "color": "#837F7E"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/sandstone"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/sandstone"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "sandstone",
+                  "color": "#D8CB9B"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/red_sandstone"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/red_sandstone"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "red_sandstone",
+                  "color": "#B5621F"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/clay"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/clay"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "clay",
+                  "color": "#A0A6B3"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/mud"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/mud"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "mud",
+                  "color": "#3C3A3D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/packed_mud"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/packed_mud"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "packed_mud",
+                  "color": "#8E6B50"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/moss"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/moss"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "moss",
+                  "color": "#596D2D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/terracotta"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/terracotta"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "terracotta",
+                  "color": "#985E43"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/netherrack"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/netherrack"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "netherrack",
+                  "color": "#6F3533"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/soul_soil"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/soul_soil"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "soul_soil",
+                  "color": "#4B3A2F"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/basalt"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/basalt"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "basalt",
+                  "color": "#49484D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/blackstone"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/blackstone"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "blackstone",
+                  "color": "#2C2629"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/end_stone"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/end_stone"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "end_stone",
+                  "color": "#DBDE9E"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/coal_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/coal_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "coal_ore",
+                  "color": "#7D7D7D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/deepslate_coal_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/deepslate_coal_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "deepslate_coal_ore",
+                  "color": "#4E4E52"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/iron_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/iron_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "iron_ore",
+                  "color": "#7D7D7D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/deepslate_iron_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/deepslate_iron_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "deepslate_iron_ore",
+                  "color": "#4E4E52"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/copper_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/copper_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "copper_ore",
+                  "color": "#7D7D7D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/deepslate_copper_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/deepslate_copper_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "deepslate_copper_ore",
+                  "color": "#4E4E52"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/gold_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/gold_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "gold_ore",
+                  "color": "#7D7D7D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/deepslate_gold_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/deepslate_gold_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "deepslate_gold_ore",
+                  "color": "#4E4E52"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/redstone_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/redstone_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "redstone_ore",
+                  "color": "#7D7D7D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/deepslate_redstone_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/deepslate_redstone_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "deepslate_redstone_ore",
+                  "color": "#4E4E52"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/emerald_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/emerald_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "emerald_ore",
+                  "color": "#7D7D7D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/deepslate_emerald_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/deepslate_emerald_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "deepslate_emerald_ore",
+                  "color": "#4E4E52"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/lapis_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/lapis_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "lapis_ore",
+                  "color": "#7D7D7D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/deepslate_lapis_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/deepslate_lapis_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "deepslate_lapis_ore",
+                  "color": "#4E4E52"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/diamond_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/diamond_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "diamond_ore",
+                  "color": "#7D7D7D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/deepslate_diamond_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/deepslate_diamond_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "deepslate_diamond_ore",
+                  "color": "#4E4E52"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/nether_gold_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/nether_gold_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "nether_gold_ore",
+                  "color": "#6F3533"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/bendable/nether_quartz_ore"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable/nether_quartz_ore"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "nether_quartz_ore",
+                  "color": "#6F3533"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "else_action": {
+        "type": "apoli:and",
         "actions": [
           {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/grass"
-              }
+            "type": "apoli:text",
+            "text": {
+              "translate": "text.elemental_bendings.no_earth"
             },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "grass",
-                "color": "#6B4E33"
-              }
-            }
+            "bar": "actionbar",
+            "fadein": 2,
+            "duration": 30,
+            "fadeout": 8
           },
           {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/dirt"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "dirt",
-                "color": "#6B4E33"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/stone"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "stone",
-                "color": "#7D7D7D"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/cobblestone"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "cobblestone",
-                "color": "#777777"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/mossy_cobblestone"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "mossy_cobblestone",
-                "color": "#6A7A5A"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/deepslate"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "deepslate",
-                "color": "#4E4E52"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/cobbled_deepslate"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "cobbled_deepslate",
-                "color": "#4A4A4E"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/granite"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "granite",
-                "color": "#956755"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/diorite"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "diorite",
-                "color": "#BDBDBD"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/andesite"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "andesite",
-                "color": "#888889"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/tuff"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "tuff",
-                "color": "#6C6D66"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/calcite"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "calcite",
-                "color": "#DFE0DC"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/dripstone"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "dripstone",
-                "color": "#86705F"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/sand"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "sand",
-                "color": "#DBCFA3"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/red_sand"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "red_sand",
-                "color": "#BE6621"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/gravel"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "gravel",
-                "color": "#837F7E"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/sandstone"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "sandstone",
-                "color": "#D8CB9B"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/red_sandstone"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "red_sandstone",
-                "color": "#B5621F"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/clay"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "clay",
-                "color": "#A0A6B3"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/mud"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "mud",
-                "color": "#3C3A3D"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/packed_mud"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "packed_mud",
-                "color": "#8E6B50"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/moss"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "moss",
-                "color": "#596D2D"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/terracotta"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "terracotta",
-                "color": "#985E43"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/netherrack"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "netherrack",
-                "color": "#6F3533"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/soul_soil"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "soul_soil",
-                "color": "#4B3A2F"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/basalt"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "basalt",
-                "color": "#49484D"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/blackstone"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "blackstone",
-                "color": "#2C2629"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "apoli:raycast",
-              "distance": 6,
-              "block": true,
-              "entity": false,
-              "fluid_handling": "none",
-              "block_condition": {
-                "type": "apoli:in_tag",
-                "tag": "elemental_bendings:earthbender/bendable/end_stone"
-              }
-            },
-            "action": {
-              "type": "apoli:run_function",
-              "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-              "arguments": {
-                "variant": "end_stone",
-                "color": "#DBDE9E"
-              }
-            }
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.gravel.hit",
+            "volume": 0.6,
+            "pitch": 0.6
           }
         ]
       }
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
     }
   },
   "condition": {

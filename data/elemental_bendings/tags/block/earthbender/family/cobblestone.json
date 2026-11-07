@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#elemental_bendings:earthbender/bendable/cobblestone",
+    "#elemental_bendings:earthbender/bendable/gravel"
+  ]
+}

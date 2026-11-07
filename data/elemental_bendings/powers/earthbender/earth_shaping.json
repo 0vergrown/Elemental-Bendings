@@ -31,7 +31,7 @@
           "resource": "elemental_bendings:earthbender/earth_shaping/fuel",
           "modifier": {
             "operation": "set_total",
-            "value": 160
+            "value": 240
           }
         },
         {
@@ -47,7 +47,7 @@
           "resource": "elemental_bendings:bending/cooldown",
           "modifier": {
             "operation": "set_total",
-            "value": 10
+            "value": 5
           }
         },
         {
@@ -57,6 +57,12 @@
           "pitch": 0.6
         }
       ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
     }
   },
   "condition": {

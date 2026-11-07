@@ -23,7 +23,7 @@
           "resource": "elemental_bendings:waterbender/water_whip/strike_cooldown",
           "modifier": {
             "operation": "set_total",
-            "value": 25
+            "value": 16
           }
         },
         {

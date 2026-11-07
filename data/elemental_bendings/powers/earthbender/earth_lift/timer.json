@@ -1,6 +1,6 @@
 {
   "type": "apoli:cooldown",
-  "cooldown": 160,
+  "cooldown": 240,
   "persistent": false,
   "min_action": {
     "type": "apoli:if_else",
@@ -52,7 +52,7 @@
           "resource": "elemental_bendings:bending/cooldown",
           "modifier": {
             "operation": "set_total",
-            "value": 10
+            "value": 5
           }
         }
       ]

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#elemental_bendings:earthbender/bendable/netherrack",
+    "#elemental_bendings:earthbender/bendable/nether_gold_ore",
+    "#elemental_bendings:earthbender/bendable/nether_quartz_ore"
+  ]
+}

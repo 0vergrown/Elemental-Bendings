@@ -6,7 +6,7 @@
   "y": -42,
   "width": 16,
   "height": 16,
-  "u": "16 * (if(elemental_bendings:earthbender/earth_shaping/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/earth_shaping/fuel / 160) * 4)), if(elemental_bendings:earthbender/earth_tunnel/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/earth_tunnel/fuel / 160) * 4)), if(elemental_bendings:earthbender/earth_column/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/earth_column/fuel / 40) * 4)), if(elemental_bendings:earthbender/earth_lift/lifting > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/earth_lift/timer / 160) * 4)), 0)))))",
+  "u": "16 * (if(elemental_bendings:earthbender/earth_shaping/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/earth_shaping/fuel / 240) * 4)), if(elemental_bendings:earthbender/earth_tunnel/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/earth_tunnel/fuel / 240) * 4)), if(elemental_bendings:earthbender/earth_column/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/earth_column/fuel / 70) * 4)), if(elemental_bendings:earthbender/earth_lift/lifting > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/earth_lift/timer / 240) * 4)), 0)))))",
   "v": 0,
   "texture_width": 80,
   "texture_height": 16,

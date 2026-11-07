@@ -29,14 +29,21 @@
     "elemental_bendings:firebender/fire_breath/breathing",
     "elemental_bendings:firebender/fire_breath",
     "elemental_bendings:firebender/fire_jump/jumped",
+    "elemental_bendings:firebender/fire_jump/boost",
     "elemental_bendings:firebender/fire_jet/heartbeat",
     "elemental_bendings:firebender/fire_jet/fuel",
+    "elemental_bendings:firebender/fire_jet/climbing",
     "elemental_bendings:firebender/fire_jump/landing",
     "elemental_bendings:firebender/fire_jet/hover",
+    "elemental_bendings:firebender/fire_jump/cushion",
+    "elemental_bendings:firebender/fire_jet/brake",
+    "elemental_bendings:firebender/fire_jet/climb",
+    "elemental_bendings:firebender/fire_jet/sink",
     "elemental_bendings:firebender/fire_jump/pose",
     "elemental_bendings:firebender/fire_jet/pose",
     "elemental_bendings:firebender/fire_jet/jetting",
     "elemental_bendings:firebender/fire_jump",
+    "elemental_bendings:firebender/fire_jet",
     "elemental_bendings:firebender/emblem"
   ]
 }

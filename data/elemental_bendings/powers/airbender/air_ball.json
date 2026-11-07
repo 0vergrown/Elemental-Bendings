@@ -26,12 +26,17 @@
           "compare_to": 0
         },
         {
-          "type": "apoli:riding",
-          "inverted": true
-        },
-        {
-          "type": "apoli:fall_flying",
-          "inverted": true
+          "type": "apoli:and",
+          "conditions": [
+            {
+              "type": "apoli:riding",
+              "inverted": true
+            },
+            {
+              "type": "apoli:fall_flying",
+              "inverted": true
+            }
+          ]
         }
       ]
     },
@@ -43,7 +48,7 @@
           "resource": "elemental_bendings:airbender/air_ball/fuel",
           "modifier": {
             "operation": "set_total",
-            "value": 350
+            "value": 450
           }
         },
         {
@@ -59,7 +64,7 @@
           "resource": "elemental_bendings:bending/cooldown",
           "modifier": {
             "operation": "set_total",
-            "value": 380
+            "value": 480
           }
         },
         {
@@ -97,7 +102,7 @@
         {
           "type": "apoli:summon_minion",
           "summon_id": "elemental_bendings:airbender/air_ball",
-          "max_life_ticks": 380,
+          "max_life_ticks": 480,
           "invulnerable": true,
           "follow_owner": false,
           "powers": [
@@ -126,6 +131,12 @@
           }
         }
       ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
     }
   },
   "description": {

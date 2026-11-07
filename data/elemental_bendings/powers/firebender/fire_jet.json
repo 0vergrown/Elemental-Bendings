@@ -1,0 +1,143 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_2",
+    {
+      "key": "key.elemental_bendings.stance_3",
+      "hold": 3
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:in_rain"
+          },
+          {
+            "type": "apoli:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:in_block",
+            "block_condition": {
+              "type": "apoli:block",
+              "block": "minecraft:bubble_column"
+            }
+          }
+        ]
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:block.fire.extinguish",
+                "volume": 0.6,
+                "pitch": 1.5
+              },
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:entity.item.break",
+                "volume": 0.5,
+                "pitch": 1.2
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:smoke",
+                "count": 10,
+                "model_part": "hands",
+                "spread": 0.15,
+                "speed": 0.03
+              }
+            ]
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 3
+            }
+          }
+        ]
+      },
+      "else_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 4
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:firebender/fire_jet/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 140
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:firebender/fire_jet/heartbeat",
+            "modifier": {
+              "operation": "set_total",
+              "value": 6
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.firework_rocket.blast",
+            "volume": 1.0,
+            "pitch": 0.8
+          }
+        ]
+      }
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:on_block",
+        "inverted": true
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:firebender/fire_jet/heartbeat",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    ]
+  },
+  "hidden": true
+}

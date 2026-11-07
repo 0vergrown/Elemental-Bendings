@@ -1,0 +1,34 @@
+{
+  "type": "apoli:modify_velocity",
+  "axes": [
+    "y"
+  ],
+  "modifier": {
+    "operation": "min_base",
+    "value": -0.3
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:firebender/fire_jet/heartbeat",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:fall_flying",
+            "inverted": true
+          }
+        ]
+      },
+      {
+        "type": "apoli:sneaking"
+      }
+    ]
+  },
+  "hidden": true
+}

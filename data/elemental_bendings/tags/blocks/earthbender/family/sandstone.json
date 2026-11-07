@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#elemental_bendings:earthbender/bendable/sand",
+    "#elemental_bendings:earthbender/bendable/sandstone"
+  ]
+}

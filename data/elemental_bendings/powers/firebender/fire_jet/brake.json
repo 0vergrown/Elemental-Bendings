@@ -1,0 +1,45 @@
+{
+  "type": "apoli:modify_velocity",
+  "axes": [
+    "y"
+  ],
+  "modifier": {
+    "operation": "min_base",
+    "value": 0
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:firebender/fire_jet/heartbeat",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:firebender/fire_jump/boost",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      },
+      {
+        "type": "apoli:fall_flying",
+        "inverted": true
+      },
+      {
+        "type": "apoli:sneaking",
+        "inverted": true
+      },
+      {
+        "type": "apoli:on_block",
+        "inverted": true
+      }
+    ]
+  },
+  "hidden": true
+}

@@ -21,14 +21,19 @@
           "compare_to": 0
         },
         {
-          "type": "apoli:on_block",
-          "inverted": true
-        },
-        {
-          "type": "apoli:resource",
-          "resource": "elemental_bendings:airbender/air_jump/jumps",
-          "comparison": "<",
-          "compare_to": 4
+          "type": "apoli:and",
+          "conditions": [
+            {
+              "type": "apoli:on_block",
+              "inverted": true
+            },
+            {
+              "type": "apoli:resource",
+              "resource": "elemental_bendings:airbender/air_jump/jumps",
+              "comparison": "<",
+              "compare_to": 4
+            }
+          ]
         }
       ]
     },
@@ -53,7 +58,7 @@
             "resource": "elemental_bendings:bending/cooldown",
             "modifier": {
               "operation": "set_total",
-              "value": 5
+              "value": 3
             }
           },
           {
@@ -230,7 +235,7 @@
             "resource": "elemental_bendings:bending/cooldown",
             "modifier": {
               "operation": "set_total",
-              "value": 5
+              "value": 3
             }
           },
           {
@@ -572,6 +577,12 @@
           }
         ]
       }
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
     }
   },
   "description": {

@@ -28,7 +28,7 @@
           "resource": "elemental_bendings:waterbender/water_shield/fuel",
           "modifier": {
             "operation": "set_total",
-            "value": 160
+            "value": 240
           }
         },
         {
@@ -44,7 +44,7 @@
           "resource": "elemental_bendings:bending/cooldown",
           "modifier": {
             "operation": "set_total",
-            "value": 8
+            "value": 5
           }
         },
         {
@@ -70,6 +70,12 @@
           }
         }
       ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
     }
   },
   "condition": {

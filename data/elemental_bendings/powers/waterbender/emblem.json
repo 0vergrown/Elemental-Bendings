@@ -6,7 +6,7 @@
   "y": -42,
   "width": 16,
   "height": 16,
-  "u": "16 * (if(elemental_bendings:waterbender/water_whip/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/water_whip/fuel / 360) * 4)), if(elemental_bendings:waterbender/water_shield/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/water_shield/fuel / 160) * 4)), if(elemental_bendings:waterbender/healing_water/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/healing_water/fuel / 160) * 4)), if(elemental_bendings:waterbender/water_glide/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/water_glide/fuel / 300) * 4)), if(elemental_bendings:waterbender/held_water > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/held_water/timer / 160) * 4)), 0))))))",
+  "u": "16 * (if(elemental_bendings:waterbender/water_whip/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/water_whip/fuel / 480) * 4)), if(elemental_bendings:waterbender/water_shield/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/water_shield/fuel / 240) * 4)), if(elemental_bendings:waterbender/healing_water/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/healing_water/fuel / 240) * 4)), if(elemental_bendings:waterbender/water_glide/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/water_glide/fuel / 400) * 4)), if(elemental_bendings:waterbender/held_water > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/held_water/timer / 300) * 4)), 0))))))",
   "v": 0,
   "texture_width": 80,
   "texture_height": 16,

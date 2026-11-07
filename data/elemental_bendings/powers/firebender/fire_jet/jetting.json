@@ -99,7 +99,7 @@
               "resource": "elemental_bendings:bending/cooldown",
               "modifier": {
                 "operation": "set_total",
-                "value": 20
+                "value": 10
               }
             }
           ]
@@ -269,11 +269,24 @@
                       "key": "key.jump"
                     },
                     "if_action": {
-                      "type": "apoli:add_velocity",
-                      "x": 0,
-                      "y": 0.16,
-                      "z": 0,
-                      "space": "world"
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:add_velocity",
+                          "x": 0,
+                          "y": 0.3,
+                          "z": 0,
+                          "space": "world"
+                        },
+                        {
+                          "type": "apoli:modify_resource",
+                          "resource": "elemental_bendings:firebender/fire_jet/climbing",
+                          "modifier": {
+                            "operation": "set_total",
+                            "value": 4
+                          }
+                        }
+                      ]
                     }
                   },
                   {
@@ -285,7 +298,7 @@
                     "if_action": {
                       "type": "apoli:add_velocity",
                       "x": 0,
-                      "y": -0.16,
+                      "y": -0.2,
                       "z": 0,
                       "space": "world"
                     }
@@ -335,7 +348,7 @@
             "resource": "elemental_bendings:bending/cooldown",
             "modifier": {
               "operation": "set_total",
-              "value": 20
+              "value": 10
             }
           }
         ]

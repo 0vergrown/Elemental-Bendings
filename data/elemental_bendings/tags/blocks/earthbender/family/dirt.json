@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#elemental_bendings:earthbender/bendable/grass",
+    "#elemental_bendings:earthbender/bendable/dirt"
+  ]
+}

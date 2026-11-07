@@ -33,6 +33,7 @@
     "elemental_bendings:earthbender/earth_lift/throw",
     "elemental_bendings:earthbender/earth_lift/drop",
     "elemental_bendings:earthbender/earth_pillar/pose",
+    "elemental_bendings:earthbender/earth_pillar/raise",
     "elemental_bendings:earthbender/earth_pillar",
     "elemental_bendings:earthbender/earth_shaping/heartbeat",
     "elemental_bendings:earthbender/earth_shaping/fuel",

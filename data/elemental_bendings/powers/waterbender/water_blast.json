@@ -23,7 +23,7 @@
           "resource": "elemental_bendings:bending/cooldown",
           "modifier": {
             "operation": "set_total",
-            "value": 15
+            "value": 8
           }
         },
         {
@@ -248,6 +248,12 @@
           }
         }
       ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
     }
   },
   "condition": {

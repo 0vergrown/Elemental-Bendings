@@ -58,7 +58,16 @@
                   "action": {
                     "type": "apoli:if_else",
                     "condition": {
-                      "type": "apoli:replacable"
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:replacable"
+                        },
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/flowers"
+                        }
+                      ]
                     },
                     "if_action": {
                       "type": "apoli:if_else_list",
@@ -67,17 +76,8 @@
                           "condition": {
                             "type": "apoli:offset",
                             "condition": {
-                              "type": "apoli:or",
-                              "conditions": [
-                                {
-                                  "type": "apoli:in_tag",
-                                  "tag": "elemental_bendings:earthbender/bendable/grass"
-                                },
-                                {
-                                  "type": "apoli:in_tag",
-                                  "tag": "elemental_bendings:earthbender/bendable/dirt"
-                                }
-                              ]
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/dirt"
                             },
                             "y": -1
                           },
@@ -92,7 +92,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/stone"
+                              "tag": "elemental_bendings:earthbender/family/stone"
                             },
                             "y": -1
                           },
@@ -106,17 +106,8 @@
                           "condition": {
                             "type": "apoli:offset",
                             "condition": {
-                              "type": "apoli:or",
-                              "conditions": [
-                                {
-                                  "type": "apoli:in_tag",
-                                  "tag": "elemental_bendings:earthbender/bendable/cobblestone"
-                                },
-                                {
-                                  "type": "apoli:in_tag",
-                                  "tag": "elemental_bendings:earthbender/bendable/gravel"
-                                }
-                              ]
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/cobblestone"
                             },
                             "y": -1
                           },
@@ -131,7 +122,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/mossy_cobblestone"
+                              "tag": "elemental_bendings:earthbender/family/mossy_cobblestone"
                             },
                             "y": -1
                           },
@@ -146,7 +137,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/deepslate"
+                              "tag": "elemental_bendings:earthbender/family/deepslate"
                             },
                             "y": -1
                           },
@@ -161,7 +152,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/cobbled_deepslate"
+                              "tag": "elemental_bendings:earthbender/family/cobbled_deepslate"
                             },
                             "y": -1
                           },
@@ -176,7 +167,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/granite"
+                              "tag": "elemental_bendings:earthbender/family/granite"
                             },
                             "y": -1
                           },
@@ -191,7 +182,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/diorite"
+                              "tag": "elemental_bendings:earthbender/family/diorite"
                             },
                             "y": -1
                           },
@@ -206,7 +197,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/andesite"
+                              "tag": "elemental_bendings:earthbender/family/andesite"
                             },
                             "y": -1
                           },
@@ -221,7 +212,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/tuff"
+                              "tag": "elemental_bendings:earthbender/family/tuff"
                             },
                             "y": -1
                           },
@@ -236,7 +227,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/calcite"
+                              "tag": "elemental_bendings:earthbender/family/calcite"
                             },
                             "y": -1
                           },
@@ -251,7 +242,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/dripstone"
+                              "tag": "elemental_bendings:earthbender/family/dripstone_block"
                             },
                             "y": -1
                           },
@@ -265,17 +256,8 @@
                           "condition": {
                             "type": "apoli:offset",
                             "condition": {
-                              "type": "apoli:or",
-                              "conditions": [
-                                {
-                                  "type": "apoli:in_tag",
-                                  "tag": "elemental_bendings:earthbender/bendable/sand"
-                                },
-                                {
-                                  "type": "apoli:in_tag",
-                                  "tag": "elemental_bendings:earthbender/bendable/sandstone"
-                                }
-                              ]
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/sandstone"
                             },
                             "y": -1
                           },
@@ -289,17 +271,8 @@
                           "condition": {
                             "type": "apoli:offset",
                             "condition": {
-                              "type": "apoli:or",
-                              "conditions": [
-                                {
-                                  "type": "apoli:in_tag",
-                                  "tag": "elemental_bendings:earthbender/bendable/red_sand"
-                                },
-                                {
-                                  "type": "apoli:in_tag",
-                                  "tag": "elemental_bendings:earthbender/bendable/red_sandstone"
-                                }
-                              ]
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/red_sandstone"
                             },
                             "y": -1
                           },
@@ -314,7 +287,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/clay"
+                              "tag": "elemental_bendings:earthbender/family/clay"
                             },
                             "y": -1
                           },
@@ -329,7 +302,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/mud"
+                              "tag": "elemental_bendings:earthbender/family/mud"
                             },
                             "y": -1
                           },
@@ -344,7 +317,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/packed_mud"
+                              "tag": "elemental_bendings:earthbender/family/packed_mud"
                             },
                             "y": -1
                           },
@@ -359,7 +332,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/moss"
+                              "tag": "elemental_bendings:earthbender/family/moss_block"
                             },
                             "y": -1
                           },
@@ -374,7 +347,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/terracotta"
+                              "tag": "elemental_bendings:earthbender/family/terracotta"
                             },
                             "y": -1
                           },
@@ -389,7 +362,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/netherrack"
+                              "tag": "elemental_bendings:earthbender/family/netherrack"
                             },
                             "y": -1
                           },
@@ -404,7 +377,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/soul_soil"
+                              "tag": "elemental_bendings:earthbender/family/soul_soil"
                             },
                             "y": -1
                           },
@@ -419,7 +392,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/basalt"
+                              "tag": "elemental_bendings:earthbender/family/basalt"
                             },
                             "y": -1
                           },
@@ -434,7 +407,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/blackstone"
+                              "tag": "elemental_bendings:earthbender/family/blackstone"
                             },
                             "y": -1
                           },
@@ -449,7 +422,7 @@
                             "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
-                              "tag": "elemental_bendings:earthbender/bendable/end_stone"
+                              "tag": "elemental_bendings:earthbender/family/end_stone"
                             },
                             "y": -1
                           },
@@ -506,7 +479,7 @@
               "resource": "elemental_bendings:bending/cooldown",
               "modifier": {
                 "operation": "set_total",
-                "value": 30
+                "value": 15
               }
             }
           ]
@@ -541,7 +514,7 @@
             "resource": "elemental_bendings:bending/cooldown",
             "modifier": {
               "operation": "set_total",
-              "value": 30
+              "value": 15
             }
           }
         ]

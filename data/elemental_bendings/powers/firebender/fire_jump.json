@@ -12,19 +12,10 @@
   "success_action": {
     "type": "apoli:if_else",
     "condition": {
-      "type": "apoli:and",
-      "conditions": [
-        {
-          "type": "apoli:resource",
-          "resource": "elemental_bendings:bending/cooldown",
-          "comparison": "==",
-          "compare_to": 0
-        },
-        {
-          "type": "apoli:on_block",
-          "inverted": true
-        }
-      ]
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
     },
     "if_action": {
       "type": "apoli:if_else",
@@ -82,194 +73,175 @@
             "resource": "elemental_bendings:bending/cooldown",
             "modifier": {
               "operation": "set_total",
-              "value": 5
+              "value": 3
             }
           }
         ]
       },
       "else_action": {
-        "type": "apoli:if_else",
-        "condition": {
-          "type": "apoli:resource",
-          "resource": "elemental_bendings:firebender/fire_jump/jumped",
-          "comparison": ">",
-          "compare_to": 0
-        },
-        "if_action": {
-          "type": "apoli:and",
-          "actions": [
-            {
-              "type": "apoli:modify_resource",
-              "resource": "elemental_bendings:bending/cooldown",
-              "modifier": {
-                "operation": "set_total",
-                "value": 20
-              }
-            },
-            {
-              "type": "apoli:modify_resource",
-              "resource": "elemental_bendings:firebender/fire_jet/fuel",
-              "modifier": {
-                "operation": "set_total",
-                "value": 80
-              }
-            },
-            {
-              "type": "apoli:modify_resource",
-              "resource": "elemental_bendings:firebender/fire_jet/heartbeat",
-              "modifier": {
-                "operation": "set_total",
-                "value": 6
-              }
-            },
-            {
-              "type": "apoli:play_sound",
-              "sound": "minecraft:entity.firework_rocket.blast",
-              "volume": 1.0,
-              "pitch": 0.8
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:firebender/fire_jump/jumped",
+            "modifier": {
+              "operation": "set_total",
+              "value": 1
             }
-          ]
-        },
-        "else_action": {
-          "type": "apoli:and",
-          "actions": [
-            {
-              "type": "apoli:modify_resource",
-              "resource": "elemental_bendings:bending/cooldown",
-              "modifier": {
-                "operation": "set_total",
-                "value": 5
-              }
-            },
-            {
-              "type": "apoli:modify_resource",
-              "resource": "elemental_bendings:firebender/fire_jump/jumped",
-              "modifier": {
-                "operation": "set_total",
-                "value": 1
-              }
-            },
-            {
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:firebender/fire_jump/boost",
+            "modifier": {
+              "operation": "set_total",
+              "value": 4
+            }
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
               "type": "apoli:add_velocity",
               "x": 0,
-              "y": 1.2,
+              "y": 1.15,
               "z": 0,
               "space": "world"
-            },
-            {
-              "type": "apoli:delay",
-              "ticks": 1,
-              "action": {
-                "type": "apoli:and",
-                "actions": [
-                  {
-                    "type": "apoli:modify_resource",
-                    "resource": "elemental_bendings:bending/pose",
-                    "modifier": {
-                      "operation": "set_total",
-                      "value": 7
-                    }
-                  },
-                  {
-                    "type": "apoli:modify_resource",
-                    "resource": "elemental_bendings:bending/pose_timer",
-                    "modifier": {
-                      "operation": "set_total",
-                      "value": 10
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "type": "apoli:play_sound",
-              "sound": "minecraft:entity.firework_rocket.launch",
-              "volume": 1.0,
-              "pitch": 0.9
-            },
-            {
-              "type": "apoli:play_sound",
-              "sound": "minecraft:entity.player.attack.crit",
-              "volume": 0.7,
-              "pitch": 0.9
-            },
-            {
-              "type": "apoli:spawn_particles",
-              "particle": {
-                "type": "apoli:custom",
-                "texture": "elemental_bendings:textures/particle/firebender/flame.png",
-                "lifetime": 14,
-                "lifetime_variation": 4,
-                "size": 0.55,
-                "size_variation": 0.2,
-                "end_size": 0.1,
-                "color": "#FFFFFF",
-                "end_color": "#FF3A0A70",
-                "friction": 0.93,
-                "emissive": true,
-                "blend": "additive",
-                "frames": 6,
-                "frame_time": 2,
-                "physics": false,
-                "roll": "rUni(0, 360)",
-                "easing": "ease_in_quad"
-              },
-              "count": 24,
-              "offset_y": 0.1,
-              "spread": {
-                "x": 0.5,
-                "y": 0.1,
-                "z": 0.5
-              },
-              "speed": 0.05
-            },
-            {
-              "type": "apoli:spawn_particles",
-              "particle": "minecraft:smoke",
-              "count": 8,
-              "offset_y": 0.1,
-              "spread": {
-                "x": 0.4,
-                "y": 0.1,
-                "z": 0.4
-              },
-              "speed": 0.02
-            },
-            {
-              "type": "apoli:raycast",
-              "direction": {
-                "x": 0,
-                "y": -1,
-                "z": 0
-              },
-              "space": "world",
-              "distance": 5,
-              "block": true,
-              "entity": true,
-              "radius": 0.8,
-              "pierce_entities": true,
-              "bientity_action": {
-                "type": "apoli:and",
-                "actions": [
-                  {
-                    "type": "apoli:damage",
-                    "amount": "1 * (1 + 0.25 * (mod(day_time, 24000) < 12000))",
-                    "damage_type": "elemental_bendings:firebending"
-                  },
-                  {
-                    "type": "apoli:target_action",
-                    "action": {
-                      "type": "apoli:set_on_fire",
-                      "duration": 3
-                    }
-                  }
-                ]
-              }
             }
-          ]
-        }
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 7
+                  }
+                },
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose_timer",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 10
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.firework_rocket.launch",
+            "volume": 1.0,
+            "pitch": 0.9
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.player.attack.crit",
+            "volume": 0.7,
+            "pitch": 0.9
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/firebender/flame.png",
+              "lifetime": 14,
+              "lifetime_variation": 4,
+              "size": 0.55,
+              "size_variation": 0.2,
+              "end_size": 0.1,
+              "color": "#FFFFFF",
+              "end_color": "#FF3A0A70",
+              "friction": 0.93,
+              "emissive": true,
+              "blend": "additive",
+              "frames": 6,
+              "frame_time": 2,
+              "physics": false,
+              "roll": "rUni(0, 360)",
+              "easing": "ease_in_quad"
+            },
+            "count": 24,
+            "offset_y": 0.1,
+            "spread": {
+              "x": 0.5,
+              "y": 0.1,
+              "z": 0.5
+            },
+            "speed": 0.05
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": "minecraft:smoke",
+            "count": 8,
+            "offset_y": 0.1,
+            "spread": {
+              "x": 0.4,
+              "y": 0.1,
+              "z": 0.4
+            },
+            "speed": 0.02
+          },
+          {
+            "type": "apoli:raycast",
+            "direction": {
+              "x": 0,
+              "y": -1,
+              "z": 0
+            },
+            "space": "world",
+            "distance": 5,
+            "block": true,
+            "entity": true,
+            "radius": 0.8,
+            "pierce_entities": true,
+            "bientity_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:damage",
+                  "amount": "1 * (1 + 0.25 * (mod(day_time, 24000) < 12000))",
+                  "damage_type": "elemental_bendings:firebending"
+                },
+                {
+                  "type": "apoli:target_action",
+                  "action": {
+                    "type": "apoli:set_on_fire",
+                    "duration": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
     }
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:on_block",
+        "inverted": true
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:firebender/fire_jump/jumped",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    ]
   },
   "description": {
     "translate": "power.elemental_bendings.firebender/fire_jump.description",

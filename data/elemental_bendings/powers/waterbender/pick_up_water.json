@@ -8,10 +8,7 @@
   "key_sequence": [
     "key.elemental_bendings.stance_2",
     "key.elemental_bendings.stance_3",
-    {
-      "key": "key.elemental_bendings.stance_1",
-      "hold": 3
-    }
+    "key.elemental_bendings.stance_1"
   ],
   "timeout": 12,
   "success_action": {
@@ -42,7 +39,7 @@
             "resource": "elemental_bendings:waterbender/healing_water/fuel",
             "modifier": {
               "operation": "set_total",
-              "value": 160
+              "value": 240
             }
           },
           {
@@ -58,7 +55,7 @@
             "resource": "elemental_bendings:bending/cooldown",
             "modifier": {
               "operation": "set_total",
-              "value": 6
+              "value": 4
             }
           },
           {
@@ -167,7 +164,7 @@
               "resource": "elemental_bendings:waterbender/held_water/timer",
               "modifier": {
                 "operation": "set_total",
-                "value": 160
+                "value": 300
               }
             },
             {
@@ -175,7 +172,7 @@
               "resource": "elemental_bendings:bending/cooldown",
               "modifier": {
                 "operation": "set_total",
-                "value": 6
+                "value": 4
               }
             },
             {
@@ -335,7 +332,7 @@
                     "resource": "elemental_bendings:waterbender/held_water/timer",
                     "modifier": {
                       "operation": "set_total",
-                      "value": 160
+                      "value": 300
                     }
                   },
                   {
@@ -343,7 +340,7 @@
                     "resource": "elemental_bendings:bending/cooldown",
                     "modifier": {
                       "operation": "set_total",
-                      "value": 6
+                      "value": 4
                     }
                   },
                   {
@@ -459,7 +456,7 @@
                       "resource": "elemental_bendings:waterbender/held_water/timer",
                       "modifier": {
                         "operation": "set_total",
-                        "value": 160
+                        "value": 300
                       }
                     },
                     {
@@ -467,7 +464,7 @@
                       "resource": "elemental_bendings:bending/cooldown",
                       "modifier": {
                         "operation": "set_total",
-                        "value": 6
+                        "value": 4
                       }
                     },
                     {
@@ -552,6 +549,12 @@
           }
         }
       }
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
     }
   },
   "condition": {

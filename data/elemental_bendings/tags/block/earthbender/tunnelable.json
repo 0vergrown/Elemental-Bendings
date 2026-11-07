@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "#elemental_bendings:earthbender/bendable/grass",
+    "#elemental_bendings:earthbender/bendable/dirt",
+    "#elemental_bendings:earthbender/bendable/stone",
+    "#elemental_bendings:earthbender/bendable/cobblestone",
+    "#elemental_bendings:earthbender/bendable/mossy_cobblestone",
+    "#elemental_bendings:earthbender/bendable/deepslate",
+    "#elemental_bendings:earthbender/bendable/cobbled_deepslate",
+    "#elemental_bendings:earthbender/bendable/granite",
+    "#elemental_bendings:earthbender/bendable/diorite",
+    "#elemental_bendings:earthbender/bendable/andesite",
+    "#elemental_bendings:earthbender/bendable/tuff",
+    "#elemental_bendings:earthbender/bendable/calcite",
+    "#elemental_bendings:earthbender/bendable/dripstone",
+    "#elemental_bendings:earthbender/bendable/sand",
+    "#elemental_bendings:earthbender/bendable/red_sand",
+    "#elemental_bendings:earthbender/bendable/gravel",
+    "#elemental_bendings:earthbender/bendable/sandstone",
+    "#elemental_bendings:earthbender/bendable/red_sandstone",
+    "#elemental_bendings:earthbender/bendable/clay",
+    "#elemental_bendings:earthbender/bendable/mud",
+    "#elemental_bendings:earthbender/bendable/packed_mud",
+    "#elemental_bendings:earthbender/bendable/moss",
+    "#elemental_bendings:earthbender/bendable/terracotta",
+    "#elemental_bendings:earthbender/bendable/netherrack",
+    "#elemental_bendings:earthbender/bendable/soul_soil",
+    "#elemental_bendings:earthbender/bendable/basalt",
+    "#elemental_bendings:earthbender/bendable/blackstone",
+    "#elemental_bendings:earthbender/bendable/end_stone"
+  ]
+}

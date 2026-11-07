@@ -1,0 +1,22 @@
+{
+  "type": "apoli:modify_falling",
+  "take_fall_damage": false,
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:firebender/fire_jump/jumped",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:firebender/fire_jet/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "hidden": true
+}

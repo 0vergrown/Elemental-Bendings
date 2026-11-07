@@ -28,6 +28,24 @@
     "#elemental_bendings:earthbender/bendable/soul_soil",
     "#elemental_bendings:earthbender/bendable/basalt",
     "#elemental_bendings:earthbender/bendable/blackstone",
-    "#elemental_bendings:earthbender/bendable/end_stone"
+    "#elemental_bendings:earthbender/bendable/end_stone",
+    "#elemental_bendings:earthbender/bendable/coal_ore",
+    "#elemental_bendings:earthbender/bendable/deepslate_coal_ore",
+    "#elemental_bendings:earthbender/bendable/iron_ore",
+    "#elemental_bendings:earthbender/bendable/deepslate_iron_ore",
+    "#elemental_bendings:earthbender/bendable/copper_ore",
+    "#elemental_bendings:earthbender/bendable/deepslate_copper_ore",
+    "#elemental_bendings:earthbender/bendable/gold_ore",
+    "#elemental_bendings:earthbender/bendable/deepslate_gold_ore",
+    "#elemental_bendings:earthbender/bendable/redstone_ore",
+    "#elemental_bendings:earthbender/bendable/deepslate_redstone_ore",
+    "#elemental_bendings:earthbender/bendable/emerald_ore",
+    "#elemental_bendings:earthbender/bendable/deepslate_emerald_ore",
+    "#elemental_bendings:earthbender/bendable/lapis_ore",
+    "#elemental_bendings:earthbender/bendable/deepslate_lapis_ore",
+    "#elemental_bendings:earthbender/bendable/diamond_ore",
+    "#elemental_bendings:earthbender/bendable/deepslate_diamond_ore",
+    "#elemental_bendings:earthbender/bendable/nether_gold_ore",
+    "#elemental_bendings:earthbender/bendable/nether_quartz_ore"
   ]
 }

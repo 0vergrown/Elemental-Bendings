@@ -6,7 +6,7 @@
   "y": -42,
   "width": 16,
   "height": 16,
-  "u": "16 * (if(elemental_bendings:firebender/fire_breath/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:firebender/fire_breath/fuel / 97) * 4)), if(elemental_bendings:firebender/fire_jet/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:firebender/fire_jet/fuel / 80) * 4)), 0)))",
+  "u": "16 * (if(elemental_bendings:firebender/fire_breath/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:firebender/fire_breath/fuel / 140) * 4)), if(elemental_bendings:firebender/fire_jet/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:firebender/fire_jet/fuel / 140) * 4)), 0)))",
   "v": 0,
   "texture_width": 80,
   "texture_height": 16,

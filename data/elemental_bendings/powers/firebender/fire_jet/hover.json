@@ -1,7 +1,6 @@
 {
   "type": "apoli:modify_falling",
   "velocity": 0,
-  "take_fall_damage": false,
   "condition": {
     "type": "apoli:and",
     "conditions": [

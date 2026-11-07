@@ -1,7 +1,7 @@
 {
   "type": "apoli:resource",
   "min": 0,
-  "max": 350,
+  "max": 450,
   "start_value": 0,
   "persistent": false,
   "min_action": {
@@ -126,7 +126,7 @@
           "resource": "elemental_bendings:bending/cooldown",
           "modifier": {
             "operation": "set_total",
-            "value": 10
+            "value": 6
           }
         }
       ]

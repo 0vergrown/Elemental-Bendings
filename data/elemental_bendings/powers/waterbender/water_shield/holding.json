@@ -38,7 +38,7 @@
             "resource": "elemental_bendings:waterbender/held_water/timer",
             "modifier": {
               "operation": "set_total",
-              "value": 160
+              "value": 300
             }
           },
           {
@@ -148,7 +148,7 @@
             "resource": "elemental_bendings:bending/cooldown",
             "modifier": {
               "operation": "set_total",
-              "value": 5
+              "value": 4
             }
           }
         ]

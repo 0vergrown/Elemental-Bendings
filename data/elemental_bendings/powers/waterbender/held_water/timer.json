@@ -1,6 +1,6 @@
 {
   "type": "apoli:cooldown",
-  "cooldown": 400,
+  "cooldown": 600,
   "persistent": false,
   "min_action": {
     "type": "apoli:if_else",
