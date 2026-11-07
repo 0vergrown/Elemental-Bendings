@@ -2,8 +2,6 @@
 
 A data pack with its resource pack built in. It adds a second Origins layer, **Bending**, so every player picks an origin and a bending style on top of it: an Enderian who waterbends, a Merling who firebends, and so on. All four styles are built only from Apoli powers. There is no Java in the pack.
 
-It is a rebuild of the BendingStyles mod's bending moves. The combos, timings and damage follow the mod, with a few fixes and additions that make the bending feel closer to the show. All art, models, animations and poses are original to this pack.
-
 ## Requirements
 
 - Apoli 1.127.0 or newer and Origins 1.51.0 or newer
@@ -21,9 +19,7 @@ The pack registers its own keybinds under **Controls > Elemental Bendings**, so 
 | Bending Stance 2 | Z       |
 | Bending Stance 3 | X       |
 
-The mod used R, G and V, but Origins already binds G to the primary active power and V to the origin swap key. The tables below use the default letters. The power descriptions in the Origins screen always show the keys you have bound.
-
-Every combo is a sequence of stance keys with at most about half a second between presses. Pressing a stance key on its own takes that stance, and each style has its own three stances taken from the martial art it is based on:
+The tables below use the default letters. The power descriptions in the Origins screen always show the keys you have bound. Every combo is a sequence of stance keys with at most about half a second between presses. Pressing a stance key on its own takes that stance, and each style has its own three stances taken from the martial art it is based on:
 
 | Style        | Martial art      | Stance 1            | Stance 2                  | Stance 3                      |
 |--------------|------------------|---------------------|---------------------------|-------------------------------|
@@ -89,33 +85,10 @@ You can only pick up water you can reach: water, ice, snow or rain within five b
 
 Earthbenders bend natural earth and stone: dirt, sand, gravel, clay, mud, stone, deepslate, terracotta, and the stones of the Nether and the End. Blocks you tear out and earth you raise settle back into place after thirty seconds, so bending never leaves permanent holes or free blocks. Tunnels are the exception: they stay open, but only natural earth gives way and nothing drops. Kicks, waves and columns need solid footing.
 
-## Changes from BendingStyles
+## Extra Info
 
-- **Earth Kick no longer misses.** The mod launched the block along your full view, so kicking a block on the ground sent it into the ground. It now flies level and curves into the nearest target in front of you.
-- **Earth Lift follows your aim.** The mod held the block along your view, which buried it while you looked down. It now hangs just below your crosshair and tracks your view smoothly, and it stays above the ground when you look down, so you line it up and throw it where you look.
-- **Water needs a source.** Buckets run dry after three uses and potions are consumed.
-- **Earth is temporary.** Ripped-out and raised blocks return after thirty seconds instead of permanently copying or deleting terrain.
-- **Fire Wall starts in front of you** instead of under your own feet.
-- **Air Ball is a ball you sit on and ride**, instead of turning off your gravity. It rolls in the direction it travels and vanishes the moment you let go or hop off.
-- Day and night strengthen fire and water, airbenders always land softly after an Air Jump, and wind and water put out fires.
-
-Fire Breath keeps the mod's cap of about five seconds. To make it last as long as the key is held, raise `max` in `powers/firebender/fire_breath/fuel.json` and the `97` in `powers/firebender/fire_breath.json`.
-
-## Not ported
-
-The mod's items, mobs and structures are not part of this pack: scrolls, earth discs, the earthbender hammer and armor, the water club, water bender boots, the spirit water flask, the gargoyle and the other creatures, teacher villagers and banners. Where a move depended on one of those items, it now works like this:
-
-- Spirit Water Flask: hold any potion bottle in your main hand for Healing Water.
-- Water Bender Boots: every waterbender can glide.
-- Earth Bender Leggings: sneak while doing Earth Kick to launch yourself.
-- Water Club: the fast whip is gone. Every whip strike uses the normal timing.
-
-Air Slice opens the wooden doors, trapdoors and fence gates it hits, but it does not press buttons.
+- Fire Breath has a cap of about five seconds. To make it last as long as the key is held, raise `max` in `powers/firebender/fire_breath/fuel.json` and the `97` in `powers/firebender/fire_breath.json`.
 
 ## Layout
 
 Powers live in a folder per origin, named after the power: `powers/firebender/fire_breath.json`. Anything only one power uses sits in a folder named after that power, such as `powers/firebender/fire_breath/fuel.json`. Shared powers are in `powers/bending/`. Textures, models and animations follow the same folders under `assets/elemental_bendings/`.
-
-## Assets and license
-
-All textures, models, animations, poses and the pack icon were made for this pack. Thrown and raised earth uses Minecraft's own block textures.
