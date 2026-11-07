@@ -1,0 +1,123 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1",
+    {
+      "key": "key.elemental_bendings.stance_2",
+      "hold": 5
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/water_whip/fuel",
+          "modifier": {
+            "operation": "set_total",
+            "value": 360
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/water_whip/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 6
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 5
+          }
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:entity.player.splash",
+          "volume": 0.8,
+          "pitch": 1.0
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/waterbender/droplet.png",
+            "lifetime": 14,
+            "lifetime_variation": 6,
+            "size": 0.16,
+            "size_variation": 0.08,
+            "end_size": 0.05,
+            "color": "#E8F6FFDD",
+            "end_color": "#6FB7FF66",
+            "gravity": 0.04,
+            "friction": 0.95,
+            "frames": 4,
+            "frame_time": 3,
+            "roll": "rUni(0, 360)"
+          },
+          "count": 12,
+          "offset_y": 1.2,
+          "spread": {
+            "x": 0.6,
+            "y": 0.4,
+            "z": 0.6
+          },
+          "speed": 0.05
+        }
+      ]
+    }
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 1
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/water_whip/heartbeat",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/water_shield/heartbeat",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    ]
+  },
+  "description": {
+    "translate": "power.elemental_bendings.waterbender/water_whip.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      }
+    ]
+  }
+}

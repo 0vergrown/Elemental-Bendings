@@ -1,0 +1,21 @@
+{
+  "type": "apoli:modify_falling",
+  "velocity": 0,
+  "take_fall_damage": false,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:firebender/fire_jet/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:fall_flying",
+        "inverted": true
+      }
+    ]
+  },
+  "hidden": true
+}

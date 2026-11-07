@@ -1,0 +1,877 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_3",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_1"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:and",
+      "conditions": [
+        {
+          "type": "apoli:resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "apoli:on_block"
+        }
+      ]
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 15
+          }
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 1,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 19
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose_timer",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 12
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "apoli:apply_effect",
+          "effect": {
+            "effect": "minecraft:slowness",
+            "duration": 10,
+            "amplifier": 5,
+            "show_particles": false,
+            "show_icon": false
+          }
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.rooted_dirt.break",
+          "volume": 1.0,
+          "pitch": 0.5
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:entity.ravager.step",
+          "volume": 1.0,
+          "pitch": 0.7
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 3,
+          "action": {
+            "type": "apoli:if_else_list",
+            "actions": [
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/grass"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "grass",
+                    "color": "#6B4E33"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/dirt"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "dirt",
+                    "color": "#6B4E33"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/stone"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "stone",
+                    "color": "#7D7D7D"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/cobblestone"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "cobblestone",
+                    "color": "#777777"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/mossy_cobblestone"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "mossy_cobblestone",
+                    "color": "#6A7A5A"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/deepslate"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "deepslate",
+                    "color": "#4E4E52"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/cobbled_deepslate"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "cobbled_deepslate",
+                    "color": "#4A4A4E"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/granite"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "granite",
+                    "color": "#956755"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/diorite"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "diorite",
+                    "color": "#BDBDBD"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/andesite"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "andesite",
+                    "color": "#888889"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/tuff"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "tuff",
+                    "color": "#6C6D66"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/calcite"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "calcite",
+                    "color": "#DFE0DC"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/dripstone"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "dripstone",
+                    "color": "#86705F"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/sand"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "sand",
+                    "color": "#DBCFA3"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/red_sand"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "red_sand",
+                    "color": "#BE6621"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/gravel"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "gravel",
+                    "color": "#837F7E"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/sandstone"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "sandstone",
+                    "color": "#D8CB9B"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/red_sandstone"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "red_sandstone",
+                    "color": "#B5621F"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/clay"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "clay",
+                    "color": "#A0A6B3"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/mud"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "mud",
+                    "color": "#3C3A3D"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/packed_mud"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "packed_mud",
+                    "color": "#8E6B50"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/moss"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "moss",
+                    "color": "#596D2D"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/terracotta"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "terracotta",
+                    "color": "#985E43"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/netherrack"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "netherrack",
+                    "color": "#6F3533"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/soul_soil"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "soul_soil",
+                    "color": "#4B3A2F"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/basalt"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "basalt",
+                    "color": "#49484D"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/blackstone"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "blackstone",
+                    "color": "#2C2629"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 2.6,
+                  "block": true,
+                  "entity": false,
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/bendable/end_stone"
+                  },
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world"
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_wave/send_wave",
+                  "arguments": {
+                    "variant": "end_stone",
+                    "color": "#DBDE9E"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+    "comparison": "==",
+    "compare_to": 0
+  },
+  "description": {
+    "translate": "power.elemental_bendings.earthbender/earth_wave.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      }
+    ]
+  }
+}

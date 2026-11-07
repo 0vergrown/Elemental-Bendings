@@ -1,0 +1,8 @@
+{
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/non_bender/icon.png"
+  },
+  "impact": "none",
+  "order": 0,
+  "powers": []
+}

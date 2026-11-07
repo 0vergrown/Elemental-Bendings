@@ -1,0 +1,38 @@
+{
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 40,
+  "start_value": 0,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:earthbender/earth_column/heartbeat",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:earthbender/earth_column/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 30
+          }
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

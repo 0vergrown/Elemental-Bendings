@@ -1,0 +1,594 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3",
+    {
+      "key": "key.elemental_bendings.stance_1",
+      "hold": 3
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+          "type": "apoli:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          }
+        }
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/healing_water/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 160
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/healing_water/heartbeat",
+            "modifier": {
+              "operation": "set_total",
+              "value": 6
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 6
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.generic.splash",
+            "volume": 0.7,
+            "pitch": 1.2
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.amethyst_block.chime",
+            "volume": 1.0,
+            "pitch": 1.0
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/waterbender/glimmer.png",
+              "lifetime": 16,
+              "lifetime_variation": 6,
+              "size": 0.07,
+              "size_variation": 0.03,
+              "end_size": 0.0,
+              "color": "#B9FFF0",
+              "end_color": "#4DE0FF00",
+              "gravity": -0.01,
+              "friction": 0.94,
+              "emissive": true,
+              "blend": "additive",
+              "physics": false
+            },
+            "count": 12,
+            "model_part": "hands",
+            "spread": 0.25,
+            "speed": 0.05
+          }
+        ]
+      },
+      "else_action": {
+        "type": "apoli:if_else",
+        "condition": {
+          "type": "apoli:or",
+          "conditions": [
+            {
+              "type": "apoli:fluid_height",
+              "fluid": "minecraft:water",
+              "comparison": ">",
+              "compare_to": 0
+            },
+            {
+              "type": "apoli:in_rain"
+            },
+            {
+              "type": "apoli:block_in_radius",
+              "radius": 5,
+              "shape": "sphere",
+              "block_condition": {
+                "type": "apoli:or",
+                "conditions": [
+                  {
+                    "type": "apoli:fluid",
+                    "fluid_condition": {
+                      "type": "apoli:in_tag",
+                      "tag": "minecraft:water"
+                    }
+                  },
+                  {
+                    "type": "apoli:in_tag",
+                    "tag": "minecraft:ice"
+                  },
+                  {
+                    "type": "apoli:block",
+                    "block": "minecraft:snow_block"
+                  },
+                  {
+                    "type": "apoli:block",
+                    "block": "minecraft:powder_snow"
+                  },
+                  {
+                    "type": "apoli:block",
+                    "block": "minecraft:snow"
+                  },
+                  {
+                    "type": "apoli:block",
+                    "block": "minecraft:water_cauldron"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "if_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:waterbender/held_water",
+              "modifier": {
+                "operation": "set_total",
+                "value": 1
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:waterbender/held_water/timer",
+              "modifier": {
+                "operation": "set_total",
+                "value": 160
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:bending/cooldown",
+              "modifier": {
+                "operation": "set_total",
+                "value": 6
+              }
+            },
+            {
+              "type": "apoli:delay",
+              "ticks": 1,
+              "action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:bending/pose",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 8
+                    }
+                  },
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:bending/pose_timer",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 16
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:entity.generic.splash",
+              "volume": 0.7,
+              "pitch": 1.2
+            },
+            {
+              "type": "apoli:spawn_particles",
+              "particle": {
+                "type": "apoli:custom",
+                "texture": "elemental_bendings:textures/particle/waterbender/droplet.png",
+                "lifetime": 14,
+                "lifetime_variation": 6,
+                "size": 0.16,
+                "size_variation": 0.08,
+                "end_size": 0.05,
+                "color": "#E8F6FFDD",
+                "end_color": "#6FB7FF66",
+                "gravity": 0.04,
+                "friction": 0.95,
+                "frames": 4,
+                "frame_time": 3,
+                "roll": "rUni(0, 360)"
+              },
+              "count": 16,
+              "model_part": "hands",
+              "spread": 0.25,
+              "speed": 0.08
+            }
+          ]
+        },
+        "else_action": {
+          "type": "apoli:if_else",
+          "condition": {
+            "type": "apoli:inventory",
+            "item_condition": {
+              "type": "apoli:ingredient",
+              "ingredient": {
+                "item": "minecraft:water_bucket"
+              }
+            }
+          },
+          "if_action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:waterbender/water_source/bucket_use",
+                    "modifier": {
+                      "operation": "add_value",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:resource",
+                      "resource": "elemental_bendings:waterbender/water_source/bucket_use",
+                      "comparison": ">=",
+                      "compare_to": 3
+                    },
+                    "if_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:inventory_action",
+                          "operation": "replace",
+                          "item_condition": {
+                            "type": "apoli:ingredient",
+                            "ingredient": {
+                              "item": "minecraft:water_bucket"
+                            }
+                          },
+                          "limit": 1,
+                          "stack": {
+                            "item": "minecraft:bucket"
+                          }
+                        },
+                        {
+                          "type": "apoli:modify_resource",
+                          "resource": "elemental_bendings:waterbender/water_source/bucket_use",
+                          "modifier": {
+                            "operation": "set_total",
+                            "value": 0
+                          }
+                        },
+                        {
+                          "type": "apoli:play_sound",
+                          "sound": "minecraft:item.bucket.empty",
+                          "volume": 0.8,
+                          "pitch": 1.0
+                        },
+                        {
+                          "type": "apoli:text",
+                          "text": {
+                            "translate": "text.elemental_bendings.bucket_empty"
+                          },
+                          "bar": "actionbar",
+                          "fadein": 2,
+                          "duration": 30,
+                          "fadeout": 8
+                        }
+                      ]
+                    },
+                    "else_action": {
+                      "type": "apoli:play_sound",
+                      "sound": "minecraft:item.bucket.empty",
+                      "volume": 0.4,
+                      "pitch": 1.5
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:waterbender/held_water",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:waterbender/held_water/timer",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 160
+                    }
+                  },
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:bending/cooldown",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 6
+                    }
+                  },
+                  {
+                    "type": "apoli:delay",
+                    "ticks": 1,
+                    "action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:modify_resource",
+                          "resource": "elemental_bendings:bending/pose",
+                          "modifier": {
+                            "operation": "set_total",
+                            "value": 8
+                          }
+                        },
+                        {
+                          "type": "apoli:modify_resource",
+                          "resource": "elemental_bendings:bending/pose_timer",
+                          "modifier": {
+                            "operation": "set_total",
+                            "value": 16
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:entity.generic.splash",
+                    "volume": 0.7,
+                    "pitch": 1.2
+                  },
+                  {
+                    "type": "apoli:spawn_particles",
+                    "particle": {
+                      "type": "apoli:custom",
+                      "texture": "elemental_bendings:textures/particle/waterbender/droplet.png",
+                      "lifetime": 14,
+                      "lifetime_variation": 6,
+                      "size": 0.16,
+                      "size_variation": 0.08,
+                      "end_size": 0.05,
+                      "color": "#E8F6FFDD",
+                      "end_color": "#6FB7FF66",
+                      "gravity": 0.04,
+                      "friction": 0.95,
+                      "frames": 4,
+                      "frame_time": 3,
+                      "roll": "rUni(0, 360)"
+                    },
+                    "count": 16,
+                    "model_part": "hands",
+                    "spread": 0.25,
+                    "speed": 0.08
+                  }
+                ]
+              }
+            ]
+          },
+          "else_action": {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:inventory",
+              "item_condition": {
+                "type": "apoli:ingredient",
+                "ingredient": {
+                  "item": "minecraft:potion"
+                }
+              }
+            },
+            "if_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:inventory_action",
+                      "operation": "replace",
+                      "item_condition": {
+                        "type": "apoli:ingredient",
+                        "ingredient": {
+                          "item": "minecraft:potion"
+                        }
+                      },
+                      "limit": 1,
+                      "stack": {
+                        "item": "minecraft:glass_bottle"
+                      }
+                    },
+                    {
+                      "type": "apoli:play_sound",
+                      "sound": "minecraft:item.bottle.empty",
+                      "volume": 0.7,
+                      "pitch": 1.0
+                    }
+                  ]
+                },
+                {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:waterbender/held_water",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 1
+                      }
+                    },
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:waterbender/held_water/timer",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 160
+                      }
+                    },
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:bending/cooldown",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 6
+                      }
+                    },
+                    {
+                      "type": "apoli:delay",
+                      "ticks": 1,
+                      "action": {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:modify_resource",
+                            "resource": "elemental_bendings:bending/pose",
+                            "modifier": {
+                              "operation": "set_total",
+                              "value": 8
+                            }
+                          },
+                          {
+                            "type": "apoli:modify_resource",
+                            "resource": "elemental_bendings:bending/pose_timer",
+                            "modifier": {
+                              "operation": "set_total",
+                              "value": 16
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "apoli:play_sound",
+                      "sound": "minecraft:entity.generic.splash",
+                      "volume": 0.7,
+                      "pitch": 1.2
+                    },
+                    {
+                      "type": "apoli:spawn_particles",
+                      "particle": {
+                        "type": "apoli:custom",
+                        "texture": "elemental_bendings:textures/particle/waterbender/droplet.png",
+                        "lifetime": 14,
+                        "lifetime_variation": 6,
+                        "size": 0.16,
+                        "size_variation": 0.08,
+                        "end_size": 0.05,
+                        "color": "#E8F6FFDD",
+                        "end_color": "#6FB7FF66",
+                        "gravity": 0.04,
+                        "friction": 0.95,
+                        "frames": 4,
+                        "frame_time": 3,
+                        "roll": "rUni(0, 360)"
+                      },
+                      "count": 16,
+                      "model_part": "hands",
+                      "spread": 0.25,
+                      "speed": 0.08
+                    }
+                  ]
+                }
+              ]
+            },
+            "else_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:text",
+                  "text": {
+                    "translate": "text.elemental_bendings.no_water"
+                  },
+                  "bar": "actionbar",
+                  "fadein": 2,
+                  "duration": 30,
+                  "fadeout": 8
+                },
+                {
+                  "type": "apoli:play_sound",
+                  "sound": "minecraft:block.fire.extinguish",
+                  "volume": 0.3,
+                  "pitch": 1.8
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/healing_water/heartbeat",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/water_glide/heartbeat",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    ]
+  },
+  "description": {
+    "translate": "power.elemental_bendings.waterbender/pick_up_water.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      }
+    ]
+  }
+}

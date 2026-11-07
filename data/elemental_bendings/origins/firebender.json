@@ -1,0 +1,42 @@
+{
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/icon.png"
+  },
+  "impact": "medium",
+  "order": 3,
+  "powers": [
+    "elemental_bendings:bending/cooldown",
+    "elemental_bendings:bending/pose",
+    "elemental_bendings:bending/pose_timer",
+    "elemental_bendings:bending/stance_1",
+    "elemental_bendings:bending/stance_2",
+    "elemental_bendings:bending/stance_3",
+    "elemental_bendings:bending/both_arms",
+    "elemental_bendings:firebender/stance/bow_stance_punch",
+    "elemental_bendings:firebender/stance/horse_stance_double_punch",
+    "elemental_bendings:firebender/stance/front_heel_kick",
+    "elemental_bendings:firebender/inner_fire",
+    "elemental_bendings:firebender/fire_punch/pose",
+    "elemental_bendings:firebender/fire_punch",
+    "elemental_bendings:firebender/fire_wall/pose",
+    "elemental_bendings:firebender/fire_wall",
+    "elemental_bendings:firebender/fire_circle/pose",
+    "elemental_bendings:firebender/fire_circle",
+    "elemental_bendings:firebender/fire_breath/heartbeat",
+    "elemental_bendings:firebender/fire_breath/fuel",
+    "elemental_bendings:firebender/fire_breath/pose",
+    "elemental_bendings:firebender/fire_breath/rooted",
+    "elemental_bendings:firebender/fire_breath/breathing",
+    "elemental_bendings:firebender/fire_breath",
+    "elemental_bendings:firebender/fire_jump/jumped",
+    "elemental_bendings:firebender/fire_jet/heartbeat",
+    "elemental_bendings:firebender/fire_jet/fuel",
+    "elemental_bendings:firebender/fire_jump/landing",
+    "elemental_bendings:firebender/fire_jet/hover",
+    "elemental_bendings:firebender/fire_jump/pose",
+    "elemental_bendings:firebender/fire_jet/pose",
+    "elemental_bendings:firebender/fire_jet/jetting",
+    "elemental_bendings:firebender/fire_jump",
+    "elemental_bendings:firebender/emblem"
+  ]
+}

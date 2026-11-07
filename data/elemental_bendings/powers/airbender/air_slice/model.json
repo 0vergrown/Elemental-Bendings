@@ -1,0 +1,12 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:airbender/air_slice",
+  "texture_location": "elemental_bendings:textures/entity/airbender/air_slice.png",
+  "render_type": "translucent",
+  "animations": {
+    "animation": "elemental_bendings:airbender/air_slice",
+    "name": "animation.air_slice.spin"
+  },
+  "hidden": true
+}

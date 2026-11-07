@@ -1,0 +1,39 @@
+{
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/icon.png"
+  },
+  "impact": "medium",
+  "order": 4,
+  "powers": [
+    "elemental_bendings:bending/cooldown",
+    "elemental_bendings:bending/pose",
+    "elemental_bendings:bending/pose_timer",
+    "elemental_bendings:bending/stance_1",
+    "elemental_bendings:bending/stance_2",
+    "elemental_bendings:bending/stance_3",
+    "elemental_bendings:bending/both_arms",
+    "elemental_bendings:airbender/stance/dragon_palm",
+    "elemental_bendings:airbender/stance/single_palm_change",
+    "elemental_bendings:airbender/stance/lion_holds_the_ball",
+    "elemental_bendings:airbender/air_nomad",
+    "elemental_bendings:airbender/air_slice/pose",
+    "elemental_bendings:airbender/air_slice",
+    "elemental_bendings:airbender/air_kick/pose",
+    "elemental_bendings:airbender/air_kick",
+    "elemental_bendings:airbender/air_ball/ball",
+    "elemental_bendings:airbender/air_ball/heartbeat",
+    "elemental_bendings:airbender/air_ball/fuel",
+    "elemental_bendings:airbender/air_ball/cushion",
+    "elemental_bendings:airbender/air_ball/pose",
+    "elemental_bendings:airbender/air_ball/rolling",
+    "elemental_bendings:airbender/air_ball",
+    "elemental_bendings:airbender/air_jump/jumps",
+    "elemental_bendings:airbender/air_jump/cushion",
+    "elemental_bendings:airbender/air_jump/landing",
+    "elemental_bendings:airbender/air_jump/soft_landing",
+    "elemental_bendings:airbender/air_jump/pose",
+    "elemental_bendings:airbender/air_jump/glide/pose",
+    "elemental_bendings:airbender/air_jump",
+    "elemental_bendings:airbender/emblem"
+  ]
+}

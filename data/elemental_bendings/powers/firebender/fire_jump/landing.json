@@ -1,0 +1,33 @@
+{
+  "type": "apoli:action_on_land",
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:firebender/fire_jump/jumped",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:firebender/fire_jet/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:firebender/fire_jet/fuel",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

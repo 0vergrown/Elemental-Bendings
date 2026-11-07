@@ -1,0 +1,62 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 160,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:action_on_entity_set",
+              "set": "elemental_bendings:earthbender/earth_lift/held",
+              "bientity_action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:add_velocity",
+                    "x": 0,
+                    "y": -1.6,
+                    "z": 0,
+                    "space": "world",
+                    "set": true
+                  },
+                  {
+                    "type": "apoli:remove_from_entity_set",
+                    "set": "elemental_bendings:earthbender/earth_lift/held"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+              "modifier": {
+                "operation": "set_total",
+                "value": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 10
+          }
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

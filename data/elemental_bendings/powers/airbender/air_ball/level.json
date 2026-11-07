@@ -1,0 +1,20 @@
+{
+  "type": "apoli:modify_model_parts",
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "main",
+      "type": "pitch",
+      "override_animation": true,
+      "value": 0,
+      "perspectives": [
+        "first_person",
+        "third_person"
+      ]
+    }
+  ],
+  "hidden": true
+}

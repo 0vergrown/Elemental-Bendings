@@ -1,0 +1,26 @@
+{
+  "type": "apoli:modify_model_parts",
+  "condition": {
+    "type": "apoli:random_chance",
+    "chance": "hypot(velocity_x, velocity_z) > 0.03"
+  },
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "main",
+      "type": "yaw",
+      "override_animation": true,
+      "value": "rad(deg(atan2(velocity_z, velocity_x)) - 90 - yaw)",
+      "duration": 3.0,
+      "fade_out_duration": 10.0,
+      "perspectives": [
+        "first_person",
+        "third_person"
+      ]
+    }
+  ],
+  "hidden": true
+}

@@ -1,0 +1,770 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_3"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:and",
+      "conditions": [
+        {
+          "type": "apoli:resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "apoli:on_block"
+        }
+      ]
+    },
+    "if_action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:sneaking"
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 5
+            }
+          },
+          {
+            "type": "apoli:add_velocity",
+            "x": 0,
+            "y": 0,
+            "z": 2.0,
+            "space": "local"
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 15
+                  }
+                },
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose_timer",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 10
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.rooted_dirt.break",
+            "volume": 1.0,
+            "pitch": 0.7
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.player.attack.crit",
+            "volume": 0.8,
+            "pitch": 0.7
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+              "lifetime": 22,
+              "lifetime_variation": 8,
+              "size": 0.45,
+              "size_variation": 0.25,
+              "end_size": 0.9,
+              "color": "#B59A7ACC",
+              "end_color": "#8C775F00",
+              "gravity": -0.003,
+              "friction": 0.9,
+              "frames": 4,
+              "frame_time": 5,
+              "physics": false,
+              "roll": "rUni(0, 360)"
+            },
+            "count": 10,
+            "offset_y": 0.0,
+            "spread": {
+              "x": 0.6,
+              "y": 0.1,
+              "z": 0.6
+            },
+            "speed": 0.05
+          }
+        ]
+      },
+      "else_action": {
+        "type": "apoli:raycast",
+        "distance": 6,
+        "block": true,
+        "entity": false,
+        "fluid_handling": "none",
+        "hit_action": {
+          "type": "apoli:if_else_list",
+          "actions": [
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/grass"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "grass",
+                  "damage": 5,
+                  "color": "#6B4E33"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/dirt"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "dirt",
+                  "damage": 5,
+                  "color": "#6B4E33"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/stone"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "stone",
+                  "damage": 15,
+                  "color": "#7D7D7D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/cobblestone"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "cobblestone",
+                  "damage": 20,
+                  "color": "#777777"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/mossy_cobblestone"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "mossy_cobblestone",
+                  "damage": 20,
+                  "color": "#6A7A5A"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/deepslate"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "deepslate",
+                  "damage": 30,
+                  "color": "#4E4E52"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/cobbled_deepslate"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "cobbled_deepslate",
+                  "damage": 35,
+                  "color": "#4A4A4E"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/granite"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "granite",
+                  "damage": 15,
+                  "color": "#956755"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/diorite"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "diorite",
+                  "damage": 15,
+                  "color": "#BDBDBD"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/andesite"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "andesite",
+                  "damage": 15,
+                  "color": "#888889"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/tuff"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "tuff",
+                  "damage": 15,
+                  "color": "#6C6D66"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/calcite"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "calcite",
+                  "damage": 8,
+                  "color": "#DFE0DC"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/dripstone"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "dripstone",
+                  "damage": 15,
+                  "color": "#86705F"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/sand"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "sand",
+                  "damage": 5,
+                  "color": "#DBCFA3"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/red_sand"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "red_sand",
+                  "damage": 5,
+                  "color": "#BE6621"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/gravel"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "gravel",
+                  "damage": 6,
+                  "color": "#837F7E"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/sandstone"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "sandstone",
+                  "damage": 8,
+                  "color": "#D8CB9B"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/red_sandstone"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "red_sandstone",
+                  "damage": 8,
+                  "color": "#B5621F"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/clay"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "clay",
+                  "damage": 6,
+                  "color": "#A0A6B3"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/mud"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "mud",
+                  "damage": 5,
+                  "color": "#3C3A3D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/packed_mud"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "packed_mud",
+                  "damage": 10,
+                  "color": "#8E6B50"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/moss"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "moss",
+                  "damage": 1,
+                  "color": "#596D2D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/terracotta"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "terracotta",
+                  "damage": 12,
+                  "color": "#985E43"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/netherrack"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "netherrack",
+                  "damage": 4,
+                  "color": "#6F3533"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/soul_soil"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "soul_soil",
+                  "damage": 5,
+                  "color": "#4B3A2F"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/basalt"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "basalt",
+                  "damage": 12,
+                  "color": "#49484D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/blackstone"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "blackstone",
+                  "damage": 15,
+                  "color": "#2C2629"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable/end_stone"
+                }
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_kick/kick_block",
+                "arguments": {
+                  "variant": "end_stone",
+                  "damage": 30,
+                  "color": "#DBDE9E"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+    "comparison": "==",
+    "compare_to": 0
+  },
+  "description": {
+    "translate": "power.elemental_bendings.earthbender/earth_kick.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      }
+    ]
+  }
+}

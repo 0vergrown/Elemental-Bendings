@@ -1,0 +1,57 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 400,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:waterbender/held_water",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/held_water",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0
+          }
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:entity.generic.splash",
+          "volume": 0.5,
+          "pitch": 1.3
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/waterbender/droplet.png",
+            "lifetime": 14,
+            "lifetime_variation": 6,
+            "size": 0.16,
+            "size_variation": 0.08,
+            "end_size": 0.05,
+            "color": "#E8F6FFDD",
+            "end_color": "#6FB7FF66",
+            "gravity": 0.04,
+            "friction": 0.95,
+            "frames": 4,
+            "frame_time": 3,
+            "roll": "rUni(0, 360)"
+          },
+          "count": 14,
+          "model_part": "hands",
+          "spread": 0.2,
+          "speed": 0.05
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

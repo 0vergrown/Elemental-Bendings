@@ -1,0 +1,98 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:action_on_entity_set",
+        "set": "elemental_bendings:earthbender/earth_lift/held",
+        "bientity_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:add_velocity",
+              "x": 0,
+              "y": 0,
+              "z": 1.6,
+              "space": "local",
+              "set": true
+            },
+            {
+              "type": "apoli:remove_from_entity_set",
+              "set": "elemental_bendings:earthbender/earth_lift/held"
+            }
+          ]
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/earth_lift/timer",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:bending/cooldown",
+        "modifier": {
+          "operation": "set_total",
+          "value": 20
+        }
+      },
+      {
+        "type": "apoli:delay",
+        "ticks": 1,
+        "action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:bending/pose",
+              "modifier": {
+                "operation": "set_total",
+                "value": 17
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:bending/pose_timer",
+              "modifier": {
+                "operation": "set_total",
+                "value": 10
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "apoli:play_sound",
+        "sound": "minecraft:entity.player.attack.strong",
+        "volume": 1.0,
+        "pitch": 0.7
+      }
+    ]
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

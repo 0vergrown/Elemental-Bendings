@@ -1,0 +1,13 @@
+{
+  "type": "apoli:invulnerability",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/air_ball/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "damage_condition": {
+    "type": "apoli:from_falling"
+  },
+  "hidden": true
+}

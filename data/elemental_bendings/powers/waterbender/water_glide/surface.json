@@ -1,0 +1,11 @@
+{
+  "type": "apoli:walk_on_fluid",
+  "fluid": "minecraft:water",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/water_glide/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

@@ -1,0 +1,72 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_2"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_2"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:action_on_entity_set",
+            "set": "elemental_bendings:earthbender/earth_lift/held",
+            "bientity_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:add_velocity",
+                  "x": 0,
+                  "y": -1.6,
+                  "z": 0,
+                  "space": "world",
+                  "set": true
+                },
+                {
+                  "type": "apoli:remove_from_entity_set",
+                  "set": "elemental_bendings:earthbender/earth_lift/held"
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          }
+        ]
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/earth_lift/timer",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:bending/cooldown",
+        "modifier": {
+          "operation": "set_total",
+          "value": 10
+        }
+      }
+    ]
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

@@ -1,0 +1,112 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1",
+    {
+      "key": "key.elemental_bendings.stance_3",
+      "hold": 5
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/water_shield/fuel",
+          "modifier": {
+            "operation": "set_total",
+            "value": 160
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/water_shield/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 6
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 8
+          }
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:entity.generic.splash",
+          "volume": 0.8,
+          "pitch": 0.8
+        },
+        {
+          "type": "apoli:block_action_at",
+          "block_action": {
+            "type": "apoli:area_of_effect",
+            "radius": 2,
+            "shape": "sphere",
+            "block_condition": {
+              "type": "apoli:in_tag",
+              "tag": "minecraft:fire"
+            },
+            "block_action": {
+              "type": "apoli:set_block",
+              "block": "minecraft:air"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 1
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/water_whip/heartbeat",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/water_shield/heartbeat",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    ]
+  },
+  "description": {
+    "translate": "power.elemental_bendings.waterbender/water_shield.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      }
+    ]
+  }
+}

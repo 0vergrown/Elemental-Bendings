@@ -1,0 +1,8 @@
+{
+  "type": "apoli:resource",
+  "min": -30,
+  "max": 30,
+  "start_value": 0,
+  "persistent": false,
+  "hidden": true
+}

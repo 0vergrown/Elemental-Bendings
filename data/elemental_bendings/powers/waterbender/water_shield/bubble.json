@@ -1,0 +1,18 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:waterbender/bubble_shield",
+  "texture_location": "elemental_bendings:textures/entity/waterbender/bubble_shield.png",
+  "render_type": "translucent",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/water_shield/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "animations": {
+    "animation": "elemental_bendings:waterbender/bubble_shield",
+    "name": "animation.bubble_shield.idle"
+  },
+  "hidden": true
+}

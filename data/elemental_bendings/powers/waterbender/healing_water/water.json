@@ -1,0 +1,43 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/waterbender/water.png",
+    "lifetime": 7,
+    "lifetime_variation": 2,
+    "size": 0.11,
+    "size_variation": 0.03,
+    "end_size": 0.06,
+    "color": "#9CEFE0B4",
+    "end_color": "#3CC8E030",
+    "friction": 0.8,
+    "frames": 7,
+    "emissive": true,
+    "blend": "additive",
+    "physics": false,
+    "roll": "rUni(0, 360)",
+    "roll_speed": "rUni(-8, 8)",
+    "alpha_bleed": true
+  },
+  "count": 3,
+  "frequency": 1,
+  "model_part": "body",
+  "space": "local_horizontal_normalized",
+  "offset_x": 0.0,
+  "offset_y": -0.12,
+  "offset_z": 0.68,
+  "spread": {
+    "x": 0.08,
+    "y": 0.08,
+    "z": 0.08
+  },
+  "speed": 0.008,
+  "visible_in_first_person": true,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/healing_water/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

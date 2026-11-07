@@ -1,0 +1,145 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_3",
+    "key.elemental_bendings.stance_1",
+    {
+      "key": "key.elemental_bendings.stance_2",
+      "hold": 4
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:and",
+      "conditions": [
+        {
+          "type": "apoli:resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "apoli:riding",
+          "inverted": true
+        },
+        {
+          "type": "apoli:fall_flying",
+          "inverted": true
+        }
+      ]
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:airbender/air_ball/fuel",
+          "modifier": {
+            "operation": "set_total",
+            "value": 350
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:airbender/air_ball/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 10
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 380
+          }
+        },
+        {
+          "type": "apoli:if_else",
+          "condition": {
+            "type": "apoli:minecraft_version",
+            "version": "1.21",
+            "comparison": ">="
+          },
+          "if_action": {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.breeze.wind_burst",
+            "volume": 0.9,
+            "pitch": 1.1
+          },
+          "else_action": {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.phantom.flap",
+            "volume": 0.9,
+            "pitch": 1.1
+          }
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": "minecraft:cloud",
+          "count": 16,
+          "offset_y": 0.6,
+          "spread": {
+            "x": 0.8,
+            "y": 0.5,
+            "z": 0.8
+          },
+          "speed": 0.05
+        },
+        {
+          "type": "apoli:summon_minion",
+          "summon_id": "elemental_bendings:airbender/air_ball",
+          "max_life_ticks": 380,
+          "invulnerable": true,
+          "follow_owner": false,
+          "powers": [
+            "elemental_bendings:airbender/air_ball/sphere",
+            "elemental_bendings:airbender/air_ball/swirl",
+            "elemental_bendings:airbender/air_ball/heading",
+            "elemental_bendings:airbender/air_ball/level",
+            "elemental_bendings:airbender/air_ball/water_walk",
+            "elemental_bendings:airbender/air_ball/step",
+            "elemental_bendings:airbender/air_ball/trail",
+            "elemental_bendings:airbender/air_ball/dust"
+          ],
+          "bientity_action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:mount",
+                "y": -0.175,
+                "force": true
+              },
+              {
+                "type": "apoli:add_to_entity_set",
+                "set": "elemental_bendings:airbender/air_ball/ball"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "description": {
+    "translate": "power.elemental_bendings.airbender/air_ball.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      }
+    ]
+  }
+}

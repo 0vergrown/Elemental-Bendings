@@ -1,0 +1,12 @@
+{
+  "type": "apoli:show_both_arms",
+  "off_hand": true,
+  "main_hand": true,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:bending/pose_timer",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

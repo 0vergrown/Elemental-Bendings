@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "description": "Elemental Bendings: a bending layer for Origins with combo-driven water, earth, fire and air bending.",
+    "pack_format": 15,
+    "supported_formats": {
+      "min_inclusive": 15,
+      "max_inclusive": 48
+    }
+  }
+}

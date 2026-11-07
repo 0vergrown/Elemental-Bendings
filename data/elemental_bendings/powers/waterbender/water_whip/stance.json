@@ -1,0 +1,15 @@
+{
+  "type": "apoli:attribute",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/water_whip/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "modifier": {
+    "attribute": "minecraft:generic.movement_speed",
+    "operation": "multiply_total",
+    "value": -0.4
+  },
+  "hidden": true
+}

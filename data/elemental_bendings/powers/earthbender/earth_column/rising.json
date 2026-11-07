@@ -1,0 +1,552 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": {
+    "key": "key.elemental_bendings.stance_3",
+    "continuous": true
+  },
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/earth_column/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/earth_column/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 6
+        }
+      },
+      {
+        "type": "apoli:if_else",
+        "condition": {
+          "type": "apoli:block_collision",
+          "offset_y": 1.0,
+          "inverted": true
+        },
+        "if_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/earth_column/fuel",
+              "modifier": {
+                "operation": "add_value",
+                "value": -2
+              }
+            },
+            {
+              "type": "apoli:add_velocity",
+              "x": 0,
+              "y": 0.55,
+              "z": 0,
+              "space": "world",
+              "set": true
+            },
+            {
+              "type": "apoli:delay",
+              "ticks": 1,
+              "action": {
+                "type": "apoli:block_action_at",
+                "block_action": {
+                  "type": "apoli:offset",
+                  "action": {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:replacable"
+                    },
+                    "if_action": {
+                      "type": "apoli:if_else_list",
+                      "actions": [
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:or",
+                              "conditions": [
+                                {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/bendable/grass"
+                                },
+                                {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/bendable/dirt"
+                                }
+                              ]
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:dirt",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/stone"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:stone",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:or",
+                              "conditions": [
+                                {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/bendable/cobblestone"
+                                },
+                                {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/bendable/gravel"
+                                }
+                              ]
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:cobblestone",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/mossy_cobblestone"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:mossy_cobblestone",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/deepslate"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:deepslate",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/cobbled_deepslate"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:cobbled_deepslate",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/granite"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:granite",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/diorite"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:diorite",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/andesite"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:andesite",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/tuff"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:tuff",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/calcite"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:calcite",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/dripstone"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:dripstone_block",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:or",
+                              "conditions": [
+                                {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/bendable/sand"
+                                },
+                                {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/bendable/sandstone"
+                                }
+                              ]
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:sandstone",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:or",
+                              "conditions": [
+                                {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/bendable/red_sand"
+                                },
+                                {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/bendable/red_sandstone"
+                                }
+                              ]
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:red_sandstone",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/clay"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:clay",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/mud"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:mud",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/packed_mud"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:packed_mud",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/moss"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:moss_block",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/terracotta"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:terracotta",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/netherrack"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:netherrack",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/soul_soil"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:soul_soil",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/basalt"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:basalt",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/blackstone"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:blackstone",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/bendable/end_stone"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:end_stone",
+                            "duration": 600
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "y": -1
+                }
+              }
+            },
+            {
+              "type": "apoli:set_fall_distance",
+              "fall_distance": 0
+            },
+            {
+              "type": "apoli:random_chance",
+              "chance": 0.5,
+              "action": {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:block.rooted_dirt.place",
+                "volume": 0.8,
+                "pitch": 0.6
+              }
+            }
+          ]
+        },
+        "else_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/earth_column/heartbeat",
+              "modifier": {
+                "operation": "set_total",
+                "value": 0
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/earth_column/fuel",
+              "modifier": {
+                "operation": "set_total",
+                "value": 0
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:bending/cooldown",
+              "modifier": {
+                "operation": "set_total",
+                "value": 30
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "entity_action_released": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/earth_column/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/earth_column/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 30
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

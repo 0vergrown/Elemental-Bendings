@@ -1,0 +1,5 @@
+{
+  "type": "apoli:walk_on_fluid",
+  "fluid": "minecraft:water",
+  "hidden": true
+}

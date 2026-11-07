@@ -1,0 +1,64 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": "key.elemental_bendings.stance_3",
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:bending/cooldown",
+    "comparison": "==",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:play_sound",
+        "sound": "minecraft:entity.player.attack.nodamage",
+        "volume": 0.6,
+        "pitch": 1.1
+      },
+      {
+        "type": "apoli:if_else",
+        "condition": {
+          "type": "apoli:or",
+          "conditions": [
+            {
+              "type": "apoli:resource",
+              "resource": "elemental_bendings:bending/pose_timer",
+              "comparison": "==",
+              "compare_to": 0
+            },
+            {
+              "type": "apoli:resource",
+              "resource": "elemental_bendings:bending/pose",
+              "comparison": "<=",
+              "compare_to": 3
+            }
+          ]
+        },
+        "if_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:bending/pose",
+              "modifier": {
+                "operation": "set_total",
+                "value": 3
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:bending/pose_timer",
+              "modifier": {
+                "operation": "set_total",
+                "value": 12
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

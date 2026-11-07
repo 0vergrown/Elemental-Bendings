@@ -1,0 +1,122 @@
+{
+  "type": "apoli:modify_model_parts",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/healing_water/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "right_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -1.309,
+          "easing": "ease_out_quad"
+        },
+        {
+          "time": 20,
+          "value": -1.3963,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 40,
+          "value": -1.309,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "yaw",
+      "override_animation": true,
+      "value": -0.2793,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -1.309,
+          "easing": "ease_out_quad"
+        },
+        {
+          "time": 20,
+          "value": -1.3963,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 40,
+          "value": -1.309,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "yaw",
+      "override_animation": true,
+      "value": 0.2793,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "reach",
+      "perspectives": [
+        "first_person"
+      ],
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "target": [
+        -3,
+        -2,
+        -13
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "reach",
+      "perspectives": [
+        "first_person"
+      ],
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "target": [
+        3,
+        -2,
+        -13
+      ]
+    }
+  ],
+  "hidden": true
+}

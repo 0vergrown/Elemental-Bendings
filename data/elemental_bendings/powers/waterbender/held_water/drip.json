@@ -1,0 +1,57 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/waterbender/droplet.png",
+    "lifetime": 14,
+    "lifetime_variation": 6,
+    "size": 0.16,
+    "size_variation": 0.08,
+    "end_size": 0.05,
+    "color": "#E8F6FFDD",
+    "end_color": "#6FB7FF66",
+    "gravity": 0.04,
+    "friction": 0.95,
+    "frames": 4,
+    "frame_time": 3,
+    "roll": "rUni(0, 360)"
+  },
+  "count": 1,
+  "frequency": 4,
+  "model_part": "body",
+  "space": "local_horizontal_normalized",
+  "offset_x": 0.0,
+  "offset_y": -0.12,
+  "offset_z": 0.68,
+  "spread": {
+    "x": 0.12,
+    "y": 0.05,
+    "z": 0.12
+  },
+  "speed": 0.0,
+  "visible_in_first_person": true,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 1
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/water_whip/heartbeat",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/water_shield/heartbeat",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    ]
+  },
+  "hidden": true
+}

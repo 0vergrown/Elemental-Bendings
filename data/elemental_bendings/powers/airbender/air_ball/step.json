@@ -1,0 +1,8 @@
+{
+  "type": "apoli:scale",
+  "scale_types": [
+    "apoli:step_height"
+  ],
+  "scale": 2.0,
+  "hidden": true
+}

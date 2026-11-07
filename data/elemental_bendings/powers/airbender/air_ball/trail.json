@@ -1,0 +1,30 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+    "lifetime": 12,
+    "lifetime_variation": 4,
+    "size": 0.4,
+    "size_variation": 0.2,
+    "end_size": 0.7,
+    "color": "#FFFFFFB0",
+    "end_color": "#E6F4FF00",
+    "friction": 0.88,
+    "frames": 6,
+    "frame_time": 2,
+    "physics": false,
+    "roll": "rUni(0, 360)",
+    "roll_speed": "rUni(-20, 20)"
+  },
+  "count": 1,
+  "frequency": 2,
+  "offset_y": 0.44,
+  "spread": {
+    "x": 0.32,
+    "y": 0.3,
+    "z": 0.32
+  },
+  "speed": 0.01,
+  "hidden": true
+}

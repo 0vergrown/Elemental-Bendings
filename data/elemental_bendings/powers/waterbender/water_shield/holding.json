@@ -1,0 +1,159 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": {
+    "key": "key.elemental_bendings.stance_3",
+    "continuous": true
+  },
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/water_shield/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:waterbender/water_shield/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 6
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/water_shield/fuel",
+            "modifier": {
+              "operation": "add_value",
+              "value": -2
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/held_water/timer",
+            "modifier": {
+              "operation": "set_total",
+              "value": 160
+            }
+          },
+          {
+            "type": "apoli:extinguish"
+          },
+          {
+            "type": "apoli:random_chance",
+            "chance": 0.3,
+            "action": {
+              "type": "apoli:block_action_at",
+              "block_action": {
+                "type": "apoli:area_of_effect",
+                "radius": 2,
+                "shape": "sphere",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "minecraft:fire"
+                },
+                "block_action": {
+                  "type": "apoli:set_block",
+                  "block": "minecraft:air"
+                }
+              }
+            }
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": "minecraft:falling_water",
+            "count": 4,
+            "offset_y": 1.0,
+            "spread": {
+              "x": 1.0,
+              "y": 1.2,
+              "z": 1.0
+            },
+            "speed": 0.0
+          },
+          {
+            "type": "apoli:random_chance",
+            "chance": 0.08,
+            "action": {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:block.water.ambient",
+              "volume": 0.4,
+              "pitch": 1.4
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "entity_action_released": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:waterbender/water_shield/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/water_shield/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 8
+                  }
+                },
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose_timer",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 10
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.dolphin.splash",
+            "volume": 0.8,
+            "pitch": 1.0
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 5
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

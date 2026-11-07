@@ -1,0 +1,29 @@
+{
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 80,
+  "start_value": 0,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:firebender/fire_jet/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:bending/cooldown",
+        "modifier": {
+          "operation": "set_total",
+          "value": 20
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

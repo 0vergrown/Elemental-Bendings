@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "order": 10,
+  "enabled": true,
+  "hidden": false,
+  "missing_name": "layer.elemental_bendings.bending.missing.name",
+  "missing_description": "layer.elemental_bendings.bending.missing.description",
+  "random": {
+    "allow": false
+  },
+  "origins": [
+    "elemental_bendings:non_bender",
+    "elemental_bendings:waterbender",
+    "elemental_bendings:earthbender",
+    "elemental_bendings:firebender",
+    "elemental_bendings:airbender"
+  ]
+}

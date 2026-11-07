@@ -1,0 +1,124 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": {
+    "key": "key.elemental_bendings.stance_3",
+    "continuous": true
+  },
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/earth_tunnel/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/earth_tunnel/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 6
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/earth_tunnel/fuel",
+            "modifier": {
+              "operation": "add_value",
+              "value": -2
+            }
+          },
+          {
+            "type": "apoli:raycast",
+            "distance": 6,
+            "block": true,
+            "entity": false,
+            "fluid_handling": "none",
+            "block_condition": {
+              "type": "apoli:in_tag",
+              "tag": "elemental_bendings:earthbender/bendable"
+            },
+            "block_action": {
+              "type": "apoli:area_of_effect",
+              "radius": 1,
+              "shape": "sphere",
+              "block_condition": {
+                "type": "apoli:in_tag",
+                "tag": "elemental_bendings:earthbender/bendable"
+              },
+              "block_action": {
+                "type": "apoli:break_block",
+                "drop_loot": false
+              }
+            }
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+              "lifetime": 22,
+              "lifetime_variation": 8,
+              "size": 0.45,
+              "size_variation": 0.25,
+              "end_size": 0.9,
+              "color": "#B59A7ACC",
+              "end_color": "#8C775F00",
+              "gravity": -0.003,
+              "friction": 0.9,
+              "frames": 4,
+              "frame_time": 5,
+              "physics": false,
+              "roll": "rUni(0, 360)"
+            },
+            "count": 2,
+            "model_part": "hands",
+            "offset_y": 0.0,
+            "spread": 0.3,
+            "speed": 0.02
+          }
+        ]
+      }
+    ]
+  },
+  "entity_action_released": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/earth_tunnel/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/earth_tunnel/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 30
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

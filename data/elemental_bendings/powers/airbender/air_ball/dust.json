@@ -1,0 +1,14 @@
+{
+  "type": "apoli:particle",
+  "particle": "minecraft:cloud",
+  "count": 1,
+  "frequency": 4,
+  "offset_y": 0.05,
+  "spread": {
+    "x": 0.3,
+    "y": 0.02,
+    "z": 0.3
+  },
+  "speed": 0.02,
+  "hidden": true
+}

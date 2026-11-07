@@ -1,0 +1,247 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_3"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 1
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/held_water",
+            "modifier": {
+              "operation": "set_total",
+              "value": 2
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/held_water/timer",
+            "modifier": {
+              "operation": "set_total",
+              "value": 160
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 10
+            }
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 10
+                  }
+                },
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose_timer",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 8
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.glass.break",
+            "volume": 0.6,
+            "pitch": 1.4
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.amethyst_block.resonate",
+            "volume": 0.6,
+            "pitch": 1.5
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/waterbender/frost.png",
+              "lifetime": 18,
+              "lifetime_variation": 8,
+              "size": 0.12,
+              "size_variation": 0.06,
+              "end_size": 0.02,
+              "color": "#FFFFFF",
+              "end_color": "#9FE6FF55",
+              "gravity": 0.01,
+              "friction": 0.95,
+              "roll": "rUni(0, 360)",
+              "roll_speed": "rUni(-8, 8)"
+            },
+            "count": 12,
+            "model_part": "hands",
+            "spread": 0.25,
+            "speed": 0.04
+          }
+        ]
+      },
+      "else_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/held_water",
+            "modifier": {
+              "operation": "set_total",
+              "value": 1
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/held_water/timer",
+            "modifier": {
+              "operation": "set_total",
+              "value": 160
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 10
+            }
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 10
+                  }
+                },
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose_timer",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 8
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.generic.splash",
+            "volume": 0.5,
+            "pitch": 1.4
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/waterbender/droplet.png",
+              "lifetime": 14,
+              "lifetime_variation": 6,
+              "size": 0.16,
+              "size_variation": 0.08,
+              "end_size": 0.05,
+              "color": "#E8F6FFDD",
+              "end_color": "#6FB7FF66",
+              "gravity": 0.04,
+              "friction": 0.95,
+              "frames": 4,
+              "frame_time": 3,
+              "roll": "rUni(0, 360)"
+            },
+            "count": 12,
+            "model_part": "hands",
+            "spread": 0.25,
+            "speed": 0.05
+          }
+        ]
+      }
+    }
+  },
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:waterbender/held_water",
+            "comparison": "==",
+            "compare_to": 1
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:waterbender/water_whip/heartbeat",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:waterbender/water_shield/heartbeat",
+            "comparison": "==",
+            "compare_to": 0
+          }
+        ]
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 2
+      }
+    ]
+  },
+  "description": {
+    "translate": "power.elemental_bendings.waterbender/freeze.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      }
+    ]
+  }
+}
