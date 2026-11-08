@@ -1,0 +1,43 @@
+{
+  "parent": "elemental_bendings:waterbender/bloodbending/levitation",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.blood_puppetry.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.blood_puppetry.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      },
+      {
+        "keybind": "key.apoli.skill_tree"
+      }
+    ]
+  },
+  "powers": [
+    "elemental_bendings:waterbender/bloodbending/blood_puppetry/puppet",
+    "elemental_bendings:waterbender/bloodbending/blood_puppetry/heartbeat",
+    "elemental_bendings:waterbender/bloodbending/blood_puppetry/fuel",
+    "elemental_bendings:waterbender/bloodbending/blood_puppetry/strike_cooldown",
+    "elemental_bendings:waterbender/bloodbending/blood_puppetry/pose",
+    "elemental_bendings:waterbender/bloodbending/blood_puppetry/strike_pose",
+    "elemental_bendings:waterbender/bloodbending/blood_puppetry/hurl_pose",
+    "elemental_bendings:waterbender/bloodbending/blood_puppetry/rooted",
+    "elemental_bendings:waterbender/bloodbending/blood_puppetry/control",
+    "elemental_bendings:waterbender/bloodbending/blood_puppetry",
+    "elemental_bendings:waterbender/bloodbending/blood_puppetry/strike",
+    "elemental_bendings:waterbender/bloodbending/blood_puppetry/hurl"
+  ],
+  "icon": {
+    "item": "minecraft:lead"
+  },
+  "frame": "task",
+  "cost": 3,
+  "order": 0
+}

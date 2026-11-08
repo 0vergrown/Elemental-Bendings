@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:iron_golem",
+    "minecraft:snow_golem",
+    "minecraft:blaze",
+    {
+      "id": "minecraft:breeze",
+      "required": false
+    },
+    "minecraft:slime",
+    "minecraft:magma_cube",
+    "minecraft:vex",
+    "minecraft:allay",
+    "minecraft:armor_stand",
+    "minecraft:shulker",
+    {
+      "id": "minecraft:creaking",
+      "required": false
+    },
+    {
+      "id": "apoli:minion",
+      "required": false
+    },
+    {
+      "id": "apoli:clone",
+      "required": false
+    }
+  ]
+}

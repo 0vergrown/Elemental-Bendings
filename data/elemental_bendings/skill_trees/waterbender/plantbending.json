@@ -1,0 +1,55 @@
+{
+  "parent": "elemental_bendings:waterbender",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.plantbending.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.plantbending.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      },
+      {
+        "keybind": "key.apoli.skill_tree"
+      }
+    ]
+  },
+  "powers": [
+    "elemental_bendings:waterbender/plantbending/plantbending",
+    "elemental_bendings:waterbender/plantbending/stance/rooting_the_tree",
+    "elemental_bendings:waterbender/plantbending/stance/pulling_the_vine",
+    "elemental_bendings:waterbender/plantbending/stance/driving_the_root",
+    "elemental_bendings:waterbender/plantbending/wither/pose",
+    "elemental_bendings:waterbender/plantbending/wither/draw_pose",
+    "elemental_bendings:waterbender/plantbending/wither/sap",
+    "elemental_bendings:waterbender/plantbending/wither/mud",
+    "elemental_bendings:waterbender/plantbending/wither/drip",
+    "elemental_bendings:waterbender/plantbending/wither/weight",
+    "elemental_bendings:waterbender/plantbending/wither/mud_weight",
+    "elemental_bendings:waterbender/plantbending/wither",
+    "elemental_bendings:waterbender/plantbending/leaf_storm/pose",
+    "elemental_bendings:waterbender/plantbending/leaf_storm",
+    "elemental_bendings:waterbender/plantbending/condense/pose",
+    "elemental_bendings:waterbender/plantbending/condense",
+    "elemental_bendings:waterbender/plantbending/mud_shot/pose",
+    "elemental_bendings:waterbender/plantbending/mud_shot",
+    "elemental_bendings:waterbender/plantbending/mud_splatter/pose",
+    "elemental_bendings:waterbender/plantbending/mud_splatter",
+    "elemental_bendings:waterbender/plantbending/emblem"
+  ],
+  "icon": {
+    "item": "minecraft:oak_sapling"
+  },
+  "frame": "goal",
+  "cost": 2,
+  "order": 1,
+  "excludes": [
+    "elemental_bendings:waterbender/bloodbending"
+  ]
+}

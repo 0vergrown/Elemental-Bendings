@@ -1,0 +1,70 @@
+{
+  "type": "apoli:modify_model_parts",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/plantbending/plant_golem/active",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "head",
+      "type": "hidden",
+      "value": 1,
+      "perspectives": [
+        "first_person",
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "body",
+      "type": "hidden",
+      "value": 1,
+      "perspectives": [
+        "first_person",
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "hidden",
+      "value": 1,
+      "perspectives": [
+        "first_person",
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "hidden",
+      "value": 1,
+      "perspectives": [
+        "first_person",
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_leg",
+      "type": "hidden",
+      "value": 1,
+      "perspectives": [
+        "first_person",
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_leg",
+      "type": "hidden",
+      "value": 1,
+      "perspectives": [
+        "first_person",
+        "third_person"
+      ]
+    }
+  ],
+  "hidden": true
+}

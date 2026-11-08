@@ -1,0 +1,7 @@
+{
+  "type": "apoli:damage_over_time",
+  "damage": 1,
+  "interval": 20,
+  "damage_type": "elemental_bendings:plantbending",
+  "hidden": true
+}

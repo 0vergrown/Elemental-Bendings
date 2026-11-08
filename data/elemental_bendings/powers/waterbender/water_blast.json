@@ -196,7 +196,7 @@
             "actions": [
               {
                 "type": "apoli:damage",
-                "amount": "3 * (1 + 0.25 * (mod(day_time, 24000) >= 13000) + 0.25 * (mod(day_time, 24000) >= 13000) * (moon_phase == 0))",
+                "amount": "3 * (1 + 0.25 * (mod(day_time, 24000) >= 13000) + 0.75 * (mod(day_time, 24000) >= 13000) * (moon_phase == 0))",
                 "damage_type": "elemental_bendings:waterbending"
               },
               {

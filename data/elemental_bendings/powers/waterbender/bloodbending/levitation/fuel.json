@@ -1,0 +1,85 @@
+{
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 180,
+  "start_value": 0,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:waterbender/bloodbending/levitation/heartbeat",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/bloodbending/levitation/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0
+          }
+        },
+        {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:action_on_entity_set",
+              "set": "elemental_bendings:waterbender/bloodbending/levitation/lifted",
+              "bientity_action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:revoke_all_powers",
+                      "source": "elemental_bendings:bloodbent"
+                    }
+                  },
+                  {
+                    "type": "apoli:remove_from_entity_set",
+                    "set": "elemental_bendings:waterbender/bloodbending/levitation/lifted"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:waterbender/held_water",
+              "modifier": {
+                "operation": "set_total",
+                "value": 0
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:waterbender/held_water/timer",
+              "modifier": {
+                "operation": "set_total",
+                "value": 0
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:bending/cooldown",
+              "modifier": {
+                "operation": "set_total",
+                "value": 8
+              }
+            },
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:entity.warden.heartbeat",
+              "volume": 0.6,
+              "pitch": 0.6
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

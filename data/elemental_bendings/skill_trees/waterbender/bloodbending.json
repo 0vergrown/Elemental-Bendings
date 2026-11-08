@@ -1,0 +1,55 @@
+{
+  "parent": "elemental_bendings:waterbender",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      },
+      {
+        "keybind": "key.apoli.skill_tree"
+      }
+    ]
+  },
+  "powers": [
+    "elemental_bendings:waterbender/bloodbending/bloodbending",
+    "elemental_bendings:waterbender/bloodbending/stance/eagle_claw",
+    "elemental_bendings:waterbender/bloodbending/stance/dividing_the_muscle",
+    "elemental_bendings:waterbender/bloodbending/stance/misplacing_the_bone",
+    "elemental_bendings:waterbender/bloodbending/draw_blood/pose",
+    "elemental_bendings:waterbender/bloodbending/draw_blood/draw_pose",
+    "elemental_bendings:waterbender/bloodbending/draw_blood/blood",
+    "elemental_bendings:waterbender/bloodbending/draw_blood/clot",
+    "elemental_bendings:waterbender/bloodbending/draw_blood/drip",
+    "elemental_bendings:waterbender/bloodbending/draw_blood/weight",
+    "elemental_bendings:waterbender/bloodbending/draw_blood/clot_weight",
+    "elemental_bendings:waterbender/bloodbending/draw_blood",
+    "elemental_bendings:waterbender/bloodbending/blood_blast/pose",
+    "elemental_bendings:waterbender/bloodbending/blood_blast",
+    "elemental_bendings:waterbender/bloodbending/clot/pose",
+    "elemental_bendings:waterbender/bloodbending/clot",
+    "elemental_bendings:waterbender/bloodbending/clot_spear/pose",
+    "elemental_bendings:waterbender/bloodbending/clot_spear",
+    "elemental_bendings:waterbender/bloodbending/clot_shards/pose",
+    "elemental_bendings:waterbender/bloodbending/clot_shards",
+    "elemental_bendings:waterbender/bloodbending/emblem"
+  ],
+  "icon": {
+    "item": "minecraft:redstone"
+  },
+  "frame": "goal",
+  "cost": 2,
+  "order": 0,
+  "excludes": [
+    "elemental_bendings:waterbender/plantbending"
+  ]
+}

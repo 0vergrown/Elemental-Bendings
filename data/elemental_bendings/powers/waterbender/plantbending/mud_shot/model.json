@@ -1,0 +1,9 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:waterbender/plantbending/mud_ball",
+  "texture_location": "elemental_bendings:textures/entity/waterbender/plantbending/mud_ball.png",
+  "render_type": "cutout",
+  "scale": 1.0,
+  "hidden": true
+}

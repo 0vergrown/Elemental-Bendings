@@ -1,0 +1,14 @@
+{
+  "type": "apoli:scale",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/plantbending/plant_golem/active",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "scale_types": [
+    "apoli:base"
+  ],
+  "scale": 1.35,
+  "hidden": true
+}

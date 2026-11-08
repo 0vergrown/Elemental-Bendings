@@ -1,0 +1,10 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:waterbender/plantbending/vine_wrap",
+  "texture_location": "elemental_bendings:textures/entity/waterbender/plantbending/vine.png",
+  "render_type": "cutout",
+  "render_as_overlay": true,
+  "bind_body_parts": false,
+  "hidden": true
+}

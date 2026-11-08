@@ -1,0 +1,6 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 8,
+  "persistent": false,
+  "hidden": true
+}

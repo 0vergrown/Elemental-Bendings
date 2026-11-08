@@ -1,0 +1,41 @@
+{
+  "type": "apoli:overlay",
+  "texture": "elemental_bendings:textures/gui/waterbender/bloodbending/emblem.png",
+  "anchor": "bottom_center",
+  "x": 0,
+  "y": -42,
+  "width": 16,
+  "height": 16,
+  "u": "16 * (if(elemental_bendings:waterbender/bloodbending/blood_whip/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/bloodbending/blood_whip/fuel / 480) * 4)), if(elemental_bendings:waterbender/bloodbending/levitation/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/bloodbending/levitation/fuel / 180) * 4)), if(elemental_bendings:waterbender/bloodbending/blood_puppetry/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/bloodbending/blood_puppetry/fuel / 200) * 4)), if(elemental_bendings:waterbender/held_water > 0, 1 + min(3, floor((1 - elemental_bendings:waterbender/held_water/timer / 300) * 4)), 0)))))",
+  "v": 0,
+  "texture_width": 80,
+  "texture_height": 16,
+  "region_width": 16,
+  "region_height": 16,
+  "strength": "if(elemental_bendings:bending/cooldown > 0, 0.55, 1)",
+  "draw_phase": "above_hud",
+  "visible_in_third_person": true,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:random_chance",
+            "chance": "(mod(day_time, 24000) >= 13000)"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

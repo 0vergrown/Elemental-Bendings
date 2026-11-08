@@ -1,0 +1,363 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/held_water",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/held_water/timer",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 12
+          }
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 1,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 37
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose_timer",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 14
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.mud.step",
+          "volume": 1.0,
+          "pitch": 0.5
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 6,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:entity.player.attack.strong",
+                "volume": 0.9,
+                "pitch": 0.6
+              },
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:block.mud.place",
+                "volume": 1.0,
+                "pitch": 0.6
+              },
+              {
+                "type": "apoli:fire_projectile",
+                "texture_location": "elemental_bendings:textures/entity/waterbender/plantbending/mud_ball.png",
+                "speed": 1.5,
+                "divergence": 0,
+                "lifetime": 60,
+                "offset_y": -0.25,
+                "offset_z": 1.0,
+                "space": "local",
+                "projectile_action": {
+                  "type": "apoli:grant_power",
+                  "power": "elemental_bendings:waterbender/plantbending/mud_shot/model",
+                  "source": "elemental_bendings:projectile"
+                },
+                "owner_bientity_condition": {
+                  "type": "apoli:equal",
+                  "inverted": true
+                },
+                "tick_bientity_action": {
+                  "type": "apoli:target_action",
+                  "action": {
+                    "type": "apoli:random_chance",
+                    "chance": 0.5,
+                    "action": {
+                      "type": "apoli:spawn_particles",
+                      "particle": {
+                        "type": "apoli:custom",
+                        "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                        "lifetime": 16,
+                        "lifetime_variation": 6,
+                        "size": 0.35,
+                        "size_variation": 0.15,
+                        "end_size": 0.6,
+                        "color": "#6B4A30C0",
+                        "end_color": "#4A321E00",
+                        "gravity": 0.01,
+                        "friction": 0.9,
+                        "frames": 4,
+                        "frame_time": 4,
+                        "physics": false,
+                        "roll": "rUni(0, 360)"
+                      },
+                      "count": 1,
+                      "offset_y": 0.0,
+                      "spread": 0.1,
+                      "speed": 0.0
+                    }
+                  }
+                },
+                "owner_target_bientity_action_on_hit": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:damage",
+                      "amount": "12 * (1 + 0.25 * (mod(day_time, 24000) >= 13000) + 0.75 * (mod(day_time, 24000) >= 13000) * (moon_phase == 0))",
+                      "damage_type": "elemental_bendings:plantbending"
+                    },
+                    {
+                      "type": "apoli:add_velocity",
+                      "x": 0,
+                      "y": 0.3,
+                      "z": 0.8,
+                      "space": "local"
+                    },
+                    {
+                      "type": "apoli:target_action",
+                      "action": {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:apply_effect",
+                            "effect": {
+                              "effect": "minecraft:slowness",
+                              "duration": 60,
+                              "amplifier": 1,
+                              "show_particles": true,
+                              "show_icon": false
+                            }
+                          },
+                          {
+                            "type": "apoli:apply_effect",
+                            "effect": {
+                              "effect": "minecraft:blindness",
+                              "duration": 25,
+                              "amplifier": 0,
+                              "show_particles": false,
+                              "show_icon": false
+                            }
+                          },
+                          {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                  "lifetime": 16,
+                                  "lifetime_variation": 6,
+                                  "size": 0.35,
+                                  "size_variation": 0.15,
+                                  "end_size": 0.6,
+                                  "color": "#6B4A30C0",
+                                  "end_color": "#4A321E00",
+                                  "gravity": 0.01,
+                                  "friction": 0.9,
+                                  "frames": 4,
+                                  "frame_time": 4,
+                                  "physics": false,
+                                  "roll": "rUni(0, 360)"
+                                },
+                                "count": 8,
+                                "offset_y": 0.0,
+                                "spread": 0.3,
+                                "speed": 0.05
+                              },
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                                  "lifetime": 24,
+                                  "lifetime_variation": 10,
+                                  "size": 0.09,
+                                  "size_variation": 0.06,
+                                  "end_size": 0.07,
+                                  "color": "#5E4028",
+                                  "gravity": 0.06,
+                                  "friction": 0.98,
+                                  "roll": "rUni(0, 360)",
+                                  "roll_speed": "rUni(-25, 25)"
+                                },
+                                "count": 10,
+                                "offset_y": 0.0,
+                                "spread": 0.3,
+                                "speed": 0.12
+                              },
+                              {
+                                "type": "apoli:play_sound",
+                                "sound": "minecraft:block.mud.break",
+                                "volume": 1.0,
+                                "pitch": 0.7
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "block_action_on_hit": {
+                  "type": "apoli:spawn_particles",
+                  "particle": {
+                    "type": "apoli:custom",
+                    "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                    "lifetime": 16,
+                    "lifetime_variation": 6,
+                    "size": 0.35,
+                    "size_variation": 0.15,
+                    "end_size": 0.6,
+                    "color": "#6B4A30C0",
+                    "end_color": "#4A321E00",
+                    "gravity": 0.01,
+                    "friction": 0.9,
+                    "frames": 4,
+                    "frame_time": 4,
+                    "physics": false,
+                    "roll": "rUni(0, 360)"
+                  },
+                  "count": 8,
+                  "spread": {
+                    "x": 0.4,
+                    "y": 0.3,
+                    "z": 0.4
+                  },
+                  "speed": 0.05
+                },
+                "bientity_action_on_miss": {
+                  "type": "apoli:target_action",
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                          "lifetime": 16,
+                          "lifetime_variation": 6,
+                          "size": 0.35,
+                          "size_variation": 0.15,
+                          "end_size": 0.6,
+                          "color": "#6B4A30C0",
+                          "end_color": "#4A321E00",
+                          "gravity": 0.01,
+                          "friction": 0.9,
+                          "frames": 4,
+                          "frame_time": 4,
+                          "physics": false,
+                          "roll": "rUni(0, 360)"
+                        },
+                        "count": 8,
+                        "offset_y": 0.0,
+                        "spread": 0.3,
+                        "speed": 0.05
+                      },
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                          "lifetime": 24,
+                          "lifetime_variation": 10,
+                          "size": 0.09,
+                          "size_variation": 0.06,
+                          "end_size": 0.07,
+                          "color": "#5E4028",
+                          "gravity": 0.06,
+                          "friction": 0.98,
+                          "roll": "rUni(0, 360)",
+                          "roll_speed": "rUni(-25, 25)"
+                        },
+                        "count": 10,
+                        "offset_y": 0.0,
+                        "spread": 0.3,
+                        "speed": 0.12
+                      },
+                      {
+                        "type": "apoli:play_sound",
+                        "sound": "minecraft:block.mud.break",
+                        "volume": 1.0,
+                        "pitch": 0.7
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/held_water",
+    "comparison": "==",
+    "compare_to": 6
+  },
+  "description": {
+    "translate": "power.elemental_bendings.waterbender/plantbending/mud_shot.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      }
+    ]
+  }
+}

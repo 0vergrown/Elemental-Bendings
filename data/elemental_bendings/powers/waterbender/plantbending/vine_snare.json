@@ -1,0 +1,236 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1",
+    {
+      "key": "key.elemental_bendings.stance_3",
+      "hold": 5
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:raycast",
+          "distance": 12,
+          "block": false,
+          "entity": true,
+          "cone_angle": 32,
+          "pierce_entities": true,
+          "bientity_condition": {
+            "type": "apoli:and",
+            "conditions": [
+              {
+                "type": "apoli:target_condition",
+                "condition": {
+                  "type": "apoli:living"
+                }
+              },
+              {
+                "type": "apoli:equal",
+                "inverted": true
+              }
+            ]
+          },
+          "bientity_action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:add_to_entity_set",
+                "set": "elemental_bendings:waterbender/plantbending/vine_snare/snared"
+              },
+              {
+                "type": "apoli:target_action",
+                "action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:grant_power",
+                      "power": "elemental_bendings:waterbender/plantbending/ensnared/vines",
+                      "source": "elemental_bendings:ensnared"
+                    },
+                    {
+                      "type": "apoli:grant_power",
+                      "power": "elemental_bendings:waterbender/plantbending/ensnared/rooted",
+                      "source": "elemental_bendings:ensnared"
+                    },
+                    {
+                      "type": "apoli:grant_power",
+                      "power": "elemental_bendings:waterbender/plantbending/ensnared/grounded",
+                      "source": "elemental_bendings:ensnared"
+                    },
+                    {
+                      "type": "apoli:grant_power",
+                      "power": "elemental_bendings:waterbender/plantbending/ensnared/thorns",
+                      "source": "elemental_bendings:ensnared"
+                    },
+                    {
+                      "type": "apoli:grant_power",
+                      "power": "elemental_bendings:waterbender/plantbending/ensnared/leash",
+                      "source": "elemental_bendings:ensnared"
+                    },
+                    {
+                      "type": "apoli:grant_power",
+                      "power": "elemental_bendings:waterbender/plantbending/ensnared/rustle",
+                      "source": "elemental_bendings:ensnared"
+                    },
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:waterbender/plantbending/ensnared/leash",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 14
+                      }
+                    },
+                    {
+                      "type": "apoli:spawn_particles",
+                      "particle": {
+                        "type": "apoli:custom",
+                        "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                        "lifetime": 26,
+                        "lifetime_variation": 10,
+                        "size": 0.12,
+                        "size_variation": 0.05,
+                        "end_size": 0.1,
+                        "color": "#FFFFFF",
+                        "end_color": "#FFFFFF60",
+                        "gravity": 0.015,
+                        "friction": 0.93,
+                        "frames": 4,
+                        "frame_time": 3,
+                        "roll": "rUni(0, 360)",
+                        "roll_speed": "rUni(-12, 12)"
+                      },
+                      "count": 10,
+                      "offset_y": 0.4,
+                      "spread": {
+                        "x": 0.4,
+                        "y": 0.4,
+                        "z": 0.4
+                      },
+                      "speed": 0.06
+                    },
+                    {
+                      "type": "apoli:play_sound",
+                      "sound": "minecraft:block.big_dripleaf.tilt_down",
+                      "volume": 0.8,
+                      "pitch": 0.7
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/plantbending/vine_snare/fuel",
+          "modifier": {
+            "operation": "set_total",
+            "value": 200
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/plantbending/vine_snare/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 6
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 5
+          }
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.rooted_dirt.break",
+          "volume": 1.0,
+          "pitch": 0.6
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.big_dripleaf.place",
+          "volume": 0.9,
+          "pitch": 0.6
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+            "lifetime": 26,
+            "lifetime_variation": 10,
+            "size": 0.12,
+            "size_variation": 0.05,
+            "end_size": 0.1,
+            "color": "#FFFFFF",
+            "end_color": "#FFFFFF60",
+            "gravity": 0.015,
+            "friction": 0.93,
+            "frames": 4,
+            "frame_time": 3,
+            "roll": "rUni(0, 360)",
+            "roll_speed": "rUni(-12, 12)"
+          },
+          "count": 10,
+          "offset_y": 0.2,
+          "spread": {
+            "x": 1.0,
+            "y": 0.2,
+            "z": 1.0
+          },
+          "speed": 0.05
+        }
+      ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 5
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/plantbending/vine_whip/heartbeat",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/plantbending/vine_snare/heartbeat",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      }
+    ]
+  }
+}

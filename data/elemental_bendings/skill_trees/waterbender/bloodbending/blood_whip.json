@@ -1,0 +1,42 @@
+{
+  "parent": "elemental_bendings:waterbender/bloodbending",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.blood_whip.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.blood_whip.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      },
+      {
+        "keybind": "key.apoli.skill_tree"
+      }
+    ]
+  },
+  "powers": [
+    "elemental_bendings:waterbender/bloodbending/blood_whip/heartbeat",
+    "elemental_bendings:waterbender/bloodbending/blood_whip/fuel",
+    "elemental_bendings:waterbender/bloodbending/blood_whip/strike_cooldown",
+    "elemental_bendings:waterbender/bloodbending/blood_whip/strike_timer",
+    "elemental_bendings:waterbender/bloodbending/blood_whip/pose",
+    "elemental_bendings:waterbender/bloodbending/blood_whip/strike_pose",
+    "elemental_bendings:waterbender/bloodbending/blood_whip/coil",
+    "elemental_bendings:waterbender/bloodbending/blood_whip/stance",
+    "elemental_bendings:waterbender/bloodbending/blood_whip/coiling",
+    "elemental_bendings:waterbender/bloodbending/blood_whip",
+    "elemental_bendings:waterbender/bloodbending/blood_whip/lash"
+  ],
+  "icon": {
+    "item": "minecraft:string"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

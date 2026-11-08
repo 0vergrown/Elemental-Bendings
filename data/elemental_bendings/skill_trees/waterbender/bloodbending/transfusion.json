@@ -1,0 +1,34 @@
+{
+  "parent": "elemental_bendings:waterbender/bloodbending",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.transfusion.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.transfusion.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      },
+      {
+        "keybind": "key.apoli.skill_tree"
+      }
+    ]
+  },
+  "powers": [
+    "elemental_bendings:waterbender/bloodbending/transfusion/pose",
+    "elemental_bendings:waterbender/bloodbending/transfusion/drink_pose",
+    "elemental_bendings:waterbender/bloodbending/transfusion"
+  ],
+  "icon": {
+    "item": "minecraft:glistering_melon_slice"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 1
+}

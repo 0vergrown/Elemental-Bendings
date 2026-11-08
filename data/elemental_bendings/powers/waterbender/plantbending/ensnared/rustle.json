@@ -1,0 +1,30 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+    "lifetime": 12,
+    "lifetime_variation": 4,
+    "size": 0.1,
+    "size_variation": 0.04,
+    "end_size": 0.05,
+    "color": "#FFFFFF",
+    "end_color": "#FFFFFF00",
+    "friction": 0.9,
+    "frames": 4,
+    "frame_time": 2,
+    "physics": false,
+    "roll": "rUni(0, 360)",
+    "roll_speed": "rUni(-20, 20)"
+  },
+  "count": 1,
+  "frequency": 6,
+  "offset_y": 0.3,
+  "spread": {
+    "x": 0.4,
+    "y": 0.3,
+    "z": 0.4
+  },
+  "speed": 0.01,
+  "hidden": true
+}

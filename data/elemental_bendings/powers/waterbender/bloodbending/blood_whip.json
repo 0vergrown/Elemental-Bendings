@@ -1,0 +1,117 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1",
+    {
+      "key": "key.elemental_bendings.stance_2",
+      "hold": 5
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/bloodbending/blood_whip/fuel",
+          "modifier": {
+            "operation": "set_total",
+            "value": 480
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/bloodbending/blood_whip/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 6
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 4
+          }
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:entity.slime.squish",
+          "volume": 0.8,
+          "pitch": 0.6
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/waterbender/bloodbending/blood_drop.png",
+            "lifetime": 14,
+            "lifetime_variation": 6,
+            "size": 0.14,
+            "size_variation": 0.07,
+            "end_size": 0.05,
+            "color": "#FFFFFFEE",
+            "end_color": "#C0505088",
+            "gravity": 0.05,
+            "friction": 0.95,
+            "frames": 4,
+            "frame_time": 3,
+            "roll": "rUni(0, 360)"
+          },
+          "count": 12,
+          "offset_y": 1.2,
+          "spread": {
+            "x": 0.6,
+            "y": 0.4,
+            "z": 0.6
+          },
+          "speed": 0.05
+        }
+      ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 3
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/bloodbending/blood_whip/heartbeat",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/bloodbending/levitation/heartbeat",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      }
+    ]
+  }
+}

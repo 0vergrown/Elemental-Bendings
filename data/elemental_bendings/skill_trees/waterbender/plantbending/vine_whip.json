@@ -1,0 +1,42 @@
+{
+  "parent": "elemental_bendings:waterbender/plantbending",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.plantbending.vine_whip.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.plantbending.vine_whip.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      },
+      {
+        "keybind": "key.apoli.skill_tree"
+      }
+    ]
+  },
+  "powers": [
+    "elemental_bendings:waterbender/plantbending/vine_whip/heartbeat",
+    "elemental_bendings:waterbender/plantbending/vine_whip/fuel",
+    "elemental_bendings:waterbender/plantbending/vine_whip/strike_cooldown",
+    "elemental_bendings:waterbender/plantbending/vine_whip/strike_timer",
+    "elemental_bendings:waterbender/plantbending/vine_whip/pose",
+    "elemental_bendings:waterbender/plantbending/vine_whip/strike_pose",
+    "elemental_bendings:waterbender/plantbending/vine_whip/coil",
+    "elemental_bendings:waterbender/plantbending/vine_whip/stance",
+    "elemental_bendings:waterbender/plantbending/vine_whip/coiling",
+    "elemental_bendings:waterbender/plantbending/vine_whip",
+    "elemental_bendings:waterbender/plantbending/vine_whip/lash"
+  ],
+  "icon": {
+    "item": "minecraft:vine"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

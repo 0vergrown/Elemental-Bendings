@@ -1,0 +1,49 @@
+{
+  "parent": "elemental_bendings:waterbender/plantbending/vine_whip",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.plantbending.plant_golem.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.plantbending.plant_golem.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      },
+      {
+        "keybind": "key.apoli.skill_tree"
+      }
+    ]
+  },
+  "powers": [
+    "elemental_bendings:waterbender/plantbending/plant_golem/active",
+    "elemental_bendings:waterbender/plantbending/plant_golem/timer",
+    "elemental_bendings:waterbender/plantbending/plant_golem/slam_cooldown",
+    "elemental_bendings:waterbender/plantbending/plant_golem/shell",
+    "elemental_bendings:waterbender/plantbending/plant_golem/encased",
+    "elemental_bendings:waterbender/plantbending/plant_golem/size",
+    "elemental_bendings:waterbender/plantbending/plant_golem/armor",
+    "elemental_bendings:waterbender/plantbending/plant_golem/toughness",
+    "elemental_bendings:waterbender/plantbending/plant_golem/footing",
+    "elemental_bendings:waterbender/plantbending/plant_golem/strength",
+    "elemental_bendings:waterbender/plantbending/plant_golem/heft",
+    "elemental_bendings:waterbender/plantbending/plant_golem/lumbering",
+    "elemental_bendings:waterbender/plantbending/plant_golem/heavy",
+    "elemental_bendings:waterbender/plantbending/plant_golem/sturdy",
+    "elemental_bendings:waterbender/plantbending/plant_golem/shedding",
+    "elemental_bendings:waterbender/plantbending/plant_golem/slam_pose",
+    "elemental_bendings:waterbender/plantbending/plant_golem",
+    "elemental_bendings:waterbender/plantbending/plant_golem/slam"
+  ],
+  "icon": {
+    "item": "minecraft:moss_block"
+  },
+  "frame": "challenge",
+  "cost": 4,
+  "order": 0
+}

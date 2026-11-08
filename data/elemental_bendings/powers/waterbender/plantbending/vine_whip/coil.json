@@ -1,0 +1,31 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:waterbender/plantbending/vine_whip",
+  "texture_location": "elemental_bendings:textures/entity/waterbender/plantbending/vine.png",
+  "render_type": "cutout",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/plantbending/vine_whip/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "animations": [
+    {
+      "animation": "elemental_bendings:waterbender/water_whip",
+      "name": "animation.water_whip.strike",
+      "condition": {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/plantbending/vine_whip/strike_timer",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      "loop": "hold_on_last_frame"
+    },
+    {
+      "animation": "elemental_bendings:waterbender/water_whip",
+      "name": "animation.water_whip.idle"
+    }
+  ],
+  "hidden": true
+}

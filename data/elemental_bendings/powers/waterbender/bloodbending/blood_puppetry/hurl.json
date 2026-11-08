@@ -1,0 +1,114 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_2"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_2"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:action_on_entity_set",
+        "set": "elemental_bendings:waterbender/bloodbending/blood_puppetry/puppet",
+        "bientity_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:target_action",
+              "action": {
+                "type": "apoli:release_grab"
+              }
+            },
+            {
+              "type": "apoli:target_action",
+              "action": {
+                "type": "apoli:revoke_all_powers",
+                "source": "elemental_bendings:bloodbent"
+              }
+            },
+            {
+              "type": "apoli:add_velocity",
+              "x": 0,
+              "y": 0.35,
+              "z": 1.8,
+              "reference": "rotation",
+              "set": true
+            },
+            {
+              "type": "apoli:remove_from_entity_set",
+              "set": "elemental_bendings:waterbender/bloodbending/blood_puppetry/puppet"
+            }
+          ]
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/fuel",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:release_grab"
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:bending/cooldown",
+        "modifier": {
+          "operation": "set_total",
+          "value": 10
+        }
+      },
+      {
+        "type": "apoli:delay",
+        "ticks": 1,
+        "action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:bending/pose",
+              "modifier": {
+                "operation": "set_total",
+                "value": 33
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:bending/pose_timer",
+              "modifier": {
+                "operation": "set_total",
+                "value": 10
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "apoli:play_sound",
+        "sound": "minecraft:entity.player.attack.knockback",
+        "volume": 1.0,
+        "pitch": 0.7
+      }
+    ]
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

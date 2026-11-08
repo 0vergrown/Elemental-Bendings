@@ -1,0 +1,38 @@
+{
+  "parent": "elemental_bendings:waterbender/plantbending",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.plantbending.vine_snare.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.plantbending.vine_snare.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      },
+      {
+        "keybind": "key.apoli.skill_tree"
+      }
+    ]
+  },
+  "powers": [
+    "elemental_bendings:waterbender/plantbending/vine_snare/snared",
+    "elemental_bendings:waterbender/plantbending/vine_snare/heartbeat",
+    "elemental_bendings:waterbender/plantbending/vine_snare/fuel",
+    "elemental_bendings:waterbender/plantbending/vine_snare/pose",
+    "elemental_bendings:waterbender/plantbending/vine_snare/rooted",
+    "elemental_bendings:waterbender/plantbending/vine_snare/binding",
+    "elemental_bendings:waterbender/plantbending/vine_snare"
+  ],
+  "icon": {
+    "item": "minecraft:cobweb"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 1
+}

@@ -37,6 +37,679 @@
         }
       },
       {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/earth_pillar/face",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:raycast",
+            "distance": 12,
+            "block": true,
+            "entity": false,
+            "shape_type": "collider",
+            "fluid_handling": "none",
+            "hit_action": {
+              "type": "apoli:if_else_list",
+              "actions": [
+                {
+                  "condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": "abs(hit_y - round(hit_y)) < 0.001 && pitch > 0"
+                      },
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": "pitch > 0 && abs(hit_x - round(hit_x)) >= 0.001 && abs(hit_z - round(hit_z)) >= 0.001"
+                      }
+                    ]
+                  },
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 1
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/x",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_x)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/y",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "ceil(hit_y - 0.01)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/z",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_z)"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:random_chance",
+                    "chance": "abs(hit_y - round(hit_y)) < 0.001 && pitch < 0"
+                  },
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 2
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/x",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_x)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/y",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "round(hit_y)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/z",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_z)"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:and",
+                    "conditions": [
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": "abs(hit_x - round(hit_x)) < 0.001 && sin(rad(yaw)) > 0"
+                      },
+                      {
+                        "type": "apoli:raycast",
+                        "distance": 12,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "y": 1
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ],
+                                "inverted": true
+                              },
+                              "x": 1,
+                              "y": -1
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 1
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/x",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_x - 0.5)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/y",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_y) + 1"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/z",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_z)"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:and",
+                    "conditions": [
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": "abs(hit_x - round(hit_x)) < 0.001 && sin(rad(yaw)) < 0"
+                      },
+                      {
+                        "type": "apoli:raycast",
+                        "distance": 12,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "y": 1
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ],
+                                "inverted": true
+                              },
+                              "x": -1,
+                              "y": -1
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 1
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/x",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_x - -0.5)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/y",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_y) + 1"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/z",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_z)"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:and",
+                    "conditions": [
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": "abs(hit_z - round(hit_z)) < 0.001 && cos(rad(yaw)) < 0"
+                      },
+                      {
+                        "type": "apoli:raycast",
+                        "distance": 12,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "y": 1
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ],
+                                "inverted": true
+                              },
+                              "y": -1,
+                              "z": 1
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 1
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/x",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_x)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/y",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_y) + 1"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/z",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_z - 0.5)"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:and",
+                    "conditions": [
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": "abs(hit_z - round(hit_z)) < 0.001 && cos(rad(yaw)) > 0"
+                      },
+                      {
+                        "type": "apoli:raycast",
+                        "distance": 12,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "y": 1
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ],
+                                "inverted": true
+                              },
+                              "y": -1,
+                              "z": -1
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 1
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/x",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_x)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/y",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_y) + 1"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/z",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_z - -0.5)"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:random_chance",
+                    "chance": "abs(hit_x - round(hit_x)) < 0.001 && sin(rad(yaw)) > 0"
+                  },
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 3
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/x",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "round(hit_x)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/y",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_y)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/z",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_z)"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:random_chance",
+                    "chance": "abs(hit_x - round(hit_x)) < 0.001 && sin(rad(yaw)) < 0"
+                  },
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 4
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/x",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "round(hit_x)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/y",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_y)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/z",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_z)"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:random_chance",
+                    "chance": "abs(hit_z - round(hit_z)) < 0.001 && cos(rad(yaw)) < 0"
+                  },
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 5
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/x",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_x)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/y",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_y)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/z",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "round(hit_z)"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:random_chance",
+                    "chance": "abs(hit_z - round(hit_z)) < 0.001 && cos(rad(yaw)) > 0"
+                  },
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 6
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/x",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_x)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/y",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "floor(hit_y)"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/earth_pillar/z",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "round(hit_z)"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
         "type": "apoli:raycast",
         "distance": 12,
         "block": true,
@@ -52,17 +725,8 @@
           "actions": [
             {
               "condition": {
-                "type": "apoli:or",
-                "conditions": [
-                  {
-                    "type": "apoli:random_chance",
-                    "chance": "abs(hit_y - round(hit_y)) < 0.001 && pitch > 0"
-                  },
-                  {
-                    "type": "apoli:random_chance",
-                    "chance": "pitch > 0 && abs(hit_x - round(hit_x)) >= 0.001 && abs(hit_z - round(hit_z)) >= 0.001"
-                  }
-                ]
+                "type": "apoli:random_chance",
+                "chance": "elemental_bendings:earthbender/earth_pillar/face == 1"
               },
               "action": {
                 "type": "apoli:and",
@@ -169,7 +833,7 @@
             {
               "condition": {
                 "type": "apoli:random_chance",
-                "chance": "abs(hit_y - round(hit_y)) < 0.001 && pitch < 0"
+                "chance": "elemental_bendings:earthbender/earth_pillar/face == 2"
               },
               "action": {
                 "type": "apoli:and",
@@ -252,7 +916,7 @@
             {
               "condition": {
                 "type": "apoli:random_chance",
-                "chance": "abs(hit_x - round(hit_x)) < 0.001 && sin(rad(yaw)) > 0"
+                "chance": "elemental_bendings:earthbender/earth_pillar/face == 3"
               },
               "action": {
                 "type": "apoli:and",
@@ -335,7 +999,7 @@
             {
               "condition": {
                 "type": "apoli:random_chance",
-                "chance": "abs(hit_x - round(hit_x)) < 0.001 && sin(rad(yaw)) < 0"
+                "chance": "elemental_bendings:earthbender/earth_pillar/face == 4"
               },
               "action": {
                 "type": "apoli:and",
@@ -418,7 +1082,7 @@
             {
               "condition": {
                 "type": "apoli:random_chance",
-                "chance": "abs(hit_z - round(hit_z)) < 0.001 && cos(rad(yaw)) < 0"
+                "chance": "elemental_bendings:earthbender/earth_pillar/face == 5"
               },
               "action": {
                 "type": "apoli:and",
@@ -501,7 +1165,7 @@
             {
               "condition": {
                 "type": "apoli:random_chance",
-                "chance": "abs(hit_z - round(hit_z)) < 0.001 && cos(rad(yaw)) > 0"
+                "chance": "elemental_bendings:earthbender/earth_pillar/face == 6"
               },
               "action": {
                 "type": "apoli:and",
@@ -582,171 +1246,1228 @@
               }
             }
           ]
+        }
+      },
+      {
+        "type": "apoli:if_else",
+        "condition": {
+          "type": "apoli:resource",
+          "resource": "elemental_bendings:earthbender/earth_pillar/face",
+          "comparison": ">",
+          "compare_to": 0
         },
-        "hit_action": {
-          "type": "apoli:if_else_list",
-          "actions": [
-            {
+        "if_action": {
+          "type": "apoli:area_of_effect",
+          "radius": 16,
+          "include_actor": true,
+          "bientity_action": {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:target_condition",
               "condition": {
-                "type": "apoli:or",
+                "type": "apoli:and",
                 "conditions": [
                   {
-                    "type": "apoli:random_chance",
-                    "chance": "abs(hit_y - round(hit_y)) < 0.001 && pitch > 0"
+                    "type": "apoli:living"
                   },
                   {
                     "type": "apoli:random_chance",
-                    "chance": "pitch > 0 && abs(hit_x - round(hit_x)) >= 0.001 && abs(hit_z - round(hit_z)) >= 0.001"
+                    "chance": "abs(x - actor_resource(elemental_bendings:earthbender/earth_pillar/x) - 0.5) < 3.5 && abs(z - actor_resource(elemental_bendings:earthbender/earth_pillar/z) - 0.5) < 3.5 && abs(y - actor_resource(elemental_bendings:earthbender/earth_pillar/y)) < 5"
+                  },
+                  {
+                    "type": "apoli:block_collision"
                   }
                 ]
-              },
-              "action": {
-                "type": "apoli:raycast",
-                "distance": 12,
-                "block": true,
-                "entity": false,
-                "shape_type": "collider",
-                "fluid_handling": "none",
-                "chain": {
-                  "chain_direction": "custom",
-                  "direction": {
-                    "x": 0,
-                    "y": 1,
-                    "z": 0
+              }
+            },
+            "if_action": {
+              "type": "apoli:if_else_list",
+              "actions": [
+                {
+                  "condition": {
+                    "type": "apoli:actor_condition",
+                    "condition": {
+                      "type": "apoli:resource",
+                      "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                      "comparison": "==",
+                      "compare_to": 1
+                    }
                   },
-                  "space": "world",
-                  "distance": 3.5,
-                  "block": false,
-                  "entity": true,
-                  "radius": 0.5,
-                  "pierce_entities": true,
-                  "bientity_action": {
-                    "type": "apoli:add_velocity",
-                    "x": 0,
-                    "y": 1.1,
-                    "z": 0,
-                    "space": "world"
+                  "action": {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:equal",
+                      "inverted": true
+                    },
+                    "if_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:teleport",
+                            "relative": true,
+                            "x": 0,
+                            "y": "max(0, actor_resource(elemental_bendings:earthbender/earth_pillar/y) + 3 - y)",
+                            "z": 0,
+                            "landing_condition": {
+                              "type": "apoli:block_collision",
+                              "inverted": true
+                            },
+                            "success_action": {
+                              "type": "apoli:add_velocity",
+                              "x": 0,
+                              "y": 1.1,
+                              "z": 0,
+                              "space": "world",
+                              "set": true
+                            },
+                            "fail_action": {
+                              "type": "apoli:block_action_at",
+                              "block_action": {
+                                "type": "apoli:and",
+                                "actions": [
+                                  {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "[block]"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:air",
+                                      "duration": 600
+                                    }
+                                  },
+                                  {
+                                    "type": "apoli:offset",
+                                    "action": {
+                                      "type": "apoli:if_else",
+                                      "condition": {
+                                        "type": "apoli:block",
+                                        "block": "[block]"
+                                      },
+                                      "if_action": {
+                                        "type": "apoli:ghost_block",
+                                        "block": "minecraft:air",
+                                        "duration": 600
+                                      }
+                                    },
+                                    "y": 1
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "apoli:damage",
+                          "amount": 4,
+                          "damage_type": "elemental_bendings:earthbending"
+                        },
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                                  "lifetime": 24,
+                                  "lifetime_variation": 10,
+                                  "size": 0.09,
+                                  "size_variation": 0.06,
+                                  "end_size": 0.07,
+                                  "color": "#7A6A58",
+                                  "gravity": 0.06,
+                                  "friction": 0.98,
+                                  "roll": "rUni(0, 360)",
+                                  "roll_speed": "rUni(-25, 25)"
+                                },
+                                "count": 10,
+                                "offset_y": 0.0,
+                                "spread": 0.35,
+                                "speed": 0.12
+                              },
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                  "lifetime": 22,
+                                  "lifetime_variation": 8,
+                                  "size": 0.45,
+                                  "size_variation": 0.25,
+                                  "end_size": 0.9,
+                                  "color": "#B59A7ACC",
+                                  "end_color": "#8C775F00",
+                                  "gravity": -0.003,
+                                  "friction": 0.9,
+                                  "frames": 4,
+                                  "frame_time": 5,
+                                  "physics": false,
+                                  "roll": "rUni(0, 360)"
+                                },
+                                "count": 3,
+                                "offset_y": 0.0,
+                                "spread": 0.3,
+                                "speed": 0.02
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "else_action": {
+                      "type": "apoli:target_action",
+                      "action": {
+                        "type": "apoli:teleport",
+                        "relative": true,
+                        "x": 0,
+                        "y": "max(0, actor_resource(elemental_bendings:earthbender/earth_pillar/y) + 3 - y)",
+                        "z": 0,
+                        "landing_condition": {
+                          "type": "apoli:block_collision",
+                          "inverted": true
+                        },
+                        "success_action": {
+                          "type": "apoli:add_velocity",
+                          "x": 0,
+                          "y": 0.55,
+                          "z": 0,
+                          "space": "world",
+                          "set": true
+                        },
+                        "fail_action": {
+                          "type": "apoli:block_action_at",
+                          "block_action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:if_else",
+                                "condition": {
+                                  "type": "apoli:block",
+                                  "block": "[block]"
+                                },
+                                "if_action": {
+                                  "type": "apoli:ghost_block",
+                                  "block": "minecraft:air",
+                                  "duration": 600
+                                }
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "action": {
+                                  "type": "apoli:if_else",
+                                  "condition": {
+                                    "type": "apoli:block",
+                                    "block": "[block]"
+                                  },
+                                  "if_action": {
+                                    "type": "apoli:ghost_block",
+                                    "block": "minecraft:air",
+                                    "duration": 600
+                                  }
+                                },
+                                "y": 1
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:actor_condition",
+                    "condition": {
+                      "type": "apoli:resource",
+                      "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                      "comparison": "==",
+                      "compare_to": 2
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:equal",
+                      "inverted": true
+                    },
+                    "if_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:teleport",
+                            "relative": true,
+                            "x": 0,
+                            "y": -2,
+                            "z": 0,
+                            "landing_condition": {
+                              "type": "apoli:block_collision",
+                              "inverted": true
+                            },
+                            "success_action": {
+                              "type": "apoli:add_velocity",
+                              "x": 0,
+                              "y": -0.6,
+                              "z": 0,
+                              "space": "world",
+                              "set": true
+                            },
+                            "fail_action": {
+                              "type": "apoli:block_action_at",
+                              "block_action": {
+                                "type": "apoli:and",
+                                "actions": [
+                                  {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "[block]"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:air",
+                                      "duration": 600
+                                    }
+                                  },
+                                  {
+                                    "type": "apoli:offset",
+                                    "action": {
+                                      "type": "apoli:if_else",
+                                      "condition": {
+                                        "type": "apoli:block",
+                                        "block": "[block]"
+                                      },
+                                      "if_action": {
+                                        "type": "apoli:ghost_block",
+                                        "block": "minecraft:air",
+                                        "duration": 600
+                                      }
+                                    },
+                                    "y": 1
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "apoli:damage",
+                          "amount": 4,
+                          "damage_type": "elemental_bendings:earthbending"
+                        },
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                                  "lifetime": 24,
+                                  "lifetime_variation": 10,
+                                  "size": 0.09,
+                                  "size_variation": 0.06,
+                                  "end_size": 0.07,
+                                  "color": "#7A6A58",
+                                  "gravity": 0.06,
+                                  "friction": 0.98,
+                                  "roll": "rUni(0, 360)",
+                                  "roll_speed": "rUni(-25, 25)"
+                                },
+                                "count": 10,
+                                "offset_y": 0.0,
+                                "spread": 0.35,
+                                "speed": 0.12
+                              },
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                  "lifetime": 22,
+                                  "lifetime_variation": 8,
+                                  "size": 0.45,
+                                  "size_variation": 0.25,
+                                  "end_size": 0.9,
+                                  "color": "#B59A7ACC",
+                                  "end_color": "#8C775F00",
+                                  "gravity": -0.003,
+                                  "friction": 0.9,
+                                  "frames": 4,
+                                  "frame_time": 5,
+                                  "physics": false,
+                                  "roll": "rUni(0, 360)"
+                                },
+                                "count": 3,
+                                "offset_y": 0.0,
+                                "spread": 0.3,
+                                "speed": 0.02
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "else_action": {
+                      "type": "apoli:target_action",
+                      "action": {
+                        "type": "apoli:teleport",
+                        "relative": true,
+                        "x": 0,
+                        "y": -2,
+                        "z": 0,
+                        "landing_condition": {
+                          "type": "apoli:block_collision",
+                          "inverted": true
+                        },
+                        "success_action": {
+                          "type": "apoli:add_velocity",
+                          "x": 0,
+                          "y": -0.6,
+                          "z": 0,
+                          "space": "world",
+                          "set": true
+                        },
+                        "fail_action": {
+                          "type": "apoli:block_action_at",
+                          "block_action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:if_else",
+                                "condition": {
+                                  "type": "apoli:block",
+                                  "block": "[block]"
+                                },
+                                "if_action": {
+                                  "type": "apoli:ghost_block",
+                                  "block": "minecraft:air",
+                                  "duration": 600
+                                }
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "action": {
+                                  "type": "apoli:if_else",
+                                  "condition": {
+                                    "type": "apoli:block",
+                                    "block": "[block]"
+                                  },
+                                  "if_action": {
+                                    "type": "apoli:ghost_block",
+                                    "block": "minecraft:air",
+                                    "duration": 600
+                                  }
+                                },
+                                "y": 1
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:actor_condition",
+                    "condition": {
+                      "type": "apoli:resource",
+                      "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                      "comparison": "==",
+                      "compare_to": 3
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:equal",
+                      "inverted": true
+                    },
+                    "if_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:teleport",
+                            "relative": true,
+                            "x": 2,
+                            "y": 0,
+                            "z": 0,
+                            "landing_condition": {
+                              "type": "apoli:block_collision",
+                              "inverted": true
+                            },
+                            "success_action": {
+                              "type": "apoli:add_velocity",
+                              "x": 1.3,
+                              "y": 0.4,
+                              "z": 0.0,
+                              "space": "world",
+                              "set": true
+                            },
+                            "fail_action": {
+                              "type": "apoli:block_action_at",
+                              "block_action": {
+                                "type": "apoli:and",
+                                "actions": [
+                                  {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "[block]"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:air",
+                                      "duration": 600
+                                    }
+                                  },
+                                  {
+                                    "type": "apoli:offset",
+                                    "action": {
+                                      "type": "apoli:if_else",
+                                      "condition": {
+                                        "type": "apoli:block",
+                                        "block": "[block]"
+                                      },
+                                      "if_action": {
+                                        "type": "apoli:ghost_block",
+                                        "block": "minecraft:air",
+                                        "duration": 600
+                                      }
+                                    },
+                                    "y": 1
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "apoli:damage",
+                          "amount": 4,
+                          "damage_type": "elemental_bendings:earthbending"
+                        },
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                                  "lifetime": 24,
+                                  "lifetime_variation": 10,
+                                  "size": 0.09,
+                                  "size_variation": 0.06,
+                                  "end_size": 0.07,
+                                  "color": "#7A6A58",
+                                  "gravity": 0.06,
+                                  "friction": 0.98,
+                                  "roll": "rUni(0, 360)",
+                                  "roll_speed": "rUni(-25, 25)"
+                                },
+                                "count": 10,
+                                "offset_y": 0.0,
+                                "spread": 0.35,
+                                "speed": 0.12
+                              },
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                  "lifetime": 22,
+                                  "lifetime_variation": 8,
+                                  "size": 0.45,
+                                  "size_variation": 0.25,
+                                  "end_size": 0.9,
+                                  "color": "#B59A7ACC",
+                                  "end_color": "#8C775F00",
+                                  "gravity": -0.003,
+                                  "friction": 0.9,
+                                  "frames": 4,
+                                  "frame_time": 5,
+                                  "physics": false,
+                                  "roll": "rUni(0, 360)"
+                                },
+                                "count": 3,
+                                "offset_y": 0.0,
+                                "spread": 0.3,
+                                "speed": 0.02
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "else_action": {
+                      "type": "apoli:target_action",
+                      "action": {
+                        "type": "apoli:teleport",
+                        "relative": true,
+                        "x": 2,
+                        "y": 0,
+                        "z": 0,
+                        "landing_condition": {
+                          "type": "apoli:block_collision",
+                          "inverted": true
+                        },
+                        "success_action": {
+                          "type": "apoli:add_velocity",
+                          "x": 0.6,
+                          "y": 0.3,
+                          "z": 0.0,
+                          "space": "world",
+                          "set": true
+                        },
+                        "fail_action": {
+                          "type": "apoli:block_action_at",
+                          "block_action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:if_else",
+                                "condition": {
+                                  "type": "apoli:block",
+                                  "block": "[block]"
+                                },
+                                "if_action": {
+                                  "type": "apoli:ghost_block",
+                                  "block": "minecraft:air",
+                                  "duration": 600
+                                }
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "action": {
+                                  "type": "apoli:if_else",
+                                  "condition": {
+                                    "type": "apoli:block",
+                                    "block": "[block]"
+                                  },
+                                  "if_action": {
+                                    "type": "apoli:ghost_block",
+                                    "block": "minecraft:air",
+                                    "duration": 600
+                                  }
+                                },
+                                "y": 1
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:actor_condition",
+                    "condition": {
+                      "type": "apoli:resource",
+                      "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                      "comparison": "==",
+                      "compare_to": 4
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:equal",
+                      "inverted": true
+                    },
+                    "if_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:teleport",
+                            "relative": true,
+                            "x": -2,
+                            "y": 0,
+                            "z": 0,
+                            "landing_condition": {
+                              "type": "apoli:block_collision",
+                              "inverted": true
+                            },
+                            "success_action": {
+                              "type": "apoli:add_velocity",
+                              "x": -1.3,
+                              "y": 0.4,
+                              "z": 0.0,
+                              "space": "world",
+                              "set": true
+                            },
+                            "fail_action": {
+                              "type": "apoli:block_action_at",
+                              "block_action": {
+                                "type": "apoli:and",
+                                "actions": [
+                                  {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "[block]"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:air",
+                                      "duration": 600
+                                    }
+                                  },
+                                  {
+                                    "type": "apoli:offset",
+                                    "action": {
+                                      "type": "apoli:if_else",
+                                      "condition": {
+                                        "type": "apoli:block",
+                                        "block": "[block]"
+                                      },
+                                      "if_action": {
+                                        "type": "apoli:ghost_block",
+                                        "block": "minecraft:air",
+                                        "duration": 600
+                                      }
+                                    },
+                                    "y": 1
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "apoli:damage",
+                          "amount": 4,
+                          "damage_type": "elemental_bendings:earthbending"
+                        },
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                                  "lifetime": 24,
+                                  "lifetime_variation": 10,
+                                  "size": 0.09,
+                                  "size_variation": 0.06,
+                                  "end_size": 0.07,
+                                  "color": "#7A6A58",
+                                  "gravity": 0.06,
+                                  "friction": 0.98,
+                                  "roll": "rUni(0, 360)",
+                                  "roll_speed": "rUni(-25, 25)"
+                                },
+                                "count": 10,
+                                "offset_y": 0.0,
+                                "spread": 0.35,
+                                "speed": 0.12
+                              },
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                  "lifetime": 22,
+                                  "lifetime_variation": 8,
+                                  "size": 0.45,
+                                  "size_variation": 0.25,
+                                  "end_size": 0.9,
+                                  "color": "#B59A7ACC",
+                                  "end_color": "#8C775F00",
+                                  "gravity": -0.003,
+                                  "friction": 0.9,
+                                  "frames": 4,
+                                  "frame_time": 5,
+                                  "physics": false,
+                                  "roll": "rUni(0, 360)"
+                                },
+                                "count": 3,
+                                "offset_y": 0.0,
+                                "spread": 0.3,
+                                "speed": 0.02
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "else_action": {
+                      "type": "apoli:target_action",
+                      "action": {
+                        "type": "apoli:teleport",
+                        "relative": true,
+                        "x": -2,
+                        "y": 0,
+                        "z": 0,
+                        "landing_condition": {
+                          "type": "apoli:block_collision",
+                          "inverted": true
+                        },
+                        "success_action": {
+                          "type": "apoli:add_velocity",
+                          "x": -0.6,
+                          "y": 0.3,
+                          "z": 0.0,
+                          "space": "world",
+                          "set": true
+                        },
+                        "fail_action": {
+                          "type": "apoli:block_action_at",
+                          "block_action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:if_else",
+                                "condition": {
+                                  "type": "apoli:block",
+                                  "block": "[block]"
+                                },
+                                "if_action": {
+                                  "type": "apoli:ghost_block",
+                                  "block": "minecraft:air",
+                                  "duration": 600
+                                }
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "action": {
+                                  "type": "apoli:if_else",
+                                  "condition": {
+                                    "type": "apoli:block",
+                                    "block": "[block]"
+                                  },
+                                  "if_action": {
+                                    "type": "apoli:ghost_block",
+                                    "block": "minecraft:air",
+                                    "duration": 600
+                                  }
+                                },
+                                "y": 1
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:actor_condition",
+                    "condition": {
+                      "type": "apoli:resource",
+                      "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                      "comparison": "==",
+                      "compare_to": 5
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:equal",
+                      "inverted": true
+                    },
+                    "if_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:teleport",
+                            "relative": true,
+                            "x": 0,
+                            "y": 0,
+                            "z": 2,
+                            "landing_condition": {
+                              "type": "apoli:block_collision",
+                              "inverted": true
+                            },
+                            "success_action": {
+                              "type": "apoli:add_velocity",
+                              "x": 0.0,
+                              "y": 0.4,
+                              "z": 1.3,
+                              "space": "world",
+                              "set": true
+                            },
+                            "fail_action": {
+                              "type": "apoli:block_action_at",
+                              "block_action": {
+                                "type": "apoli:and",
+                                "actions": [
+                                  {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "[block]"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:air",
+                                      "duration": 600
+                                    }
+                                  },
+                                  {
+                                    "type": "apoli:offset",
+                                    "action": {
+                                      "type": "apoli:if_else",
+                                      "condition": {
+                                        "type": "apoli:block",
+                                        "block": "[block]"
+                                      },
+                                      "if_action": {
+                                        "type": "apoli:ghost_block",
+                                        "block": "minecraft:air",
+                                        "duration": 600
+                                      }
+                                    },
+                                    "y": 1
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "apoli:damage",
+                          "amount": 4,
+                          "damage_type": "elemental_bendings:earthbending"
+                        },
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                                  "lifetime": 24,
+                                  "lifetime_variation": 10,
+                                  "size": 0.09,
+                                  "size_variation": 0.06,
+                                  "end_size": 0.07,
+                                  "color": "#7A6A58",
+                                  "gravity": 0.06,
+                                  "friction": 0.98,
+                                  "roll": "rUni(0, 360)",
+                                  "roll_speed": "rUni(-25, 25)"
+                                },
+                                "count": 10,
+                                "offset_y": 0.0,
+                                "spread": 0.35,
+                                "speed": 0.12
+                              },
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                  "lifetime": 22,
+                                  "lifetime_variation": 8,
+                                  "size": 0.45,
+                                  "size_variation": 0.25,
+                                  "end_size": 0.9,
+                                  "color": "#B59A7ACC",
+                                  "end_color": "#8C775F00",
+                                  "gravity": -0.003,
+                                  "friction": 0.9,
+                                  "frames": 4,
+                                  "frame_time": 5,
+                                  "physics": false,
+                                  "roll": "rUni(0, 360)"
+                                },
+                                "count": 3,
+                                "offset_y": 0.0,
+                                "spread": 0.3,
+                                "speed": 0.02
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "else_action": {
+                      "type": "apoli:target_action",
+                      "action": {
+                        "type": "apoli:teleport",
+                        "relative": true,
+                        "x": 0,
+                        "y": 0,
+                        "z": 2,
+                        "landing_condition": {
+                          "type": "apoli:block_collision",
+                          "inverted": true
+                        },
+                        "success_action": {
+                          "type": "apoli:add_velocity",
+                          "x": 0.0,
+                          "y": 0.3,
+                          "z": 0.6,
+                          "space": "world",
+                          "set": true
+                        },
+                        "fail_action": {
+                          "type": "apoli:block_action_at",
+                          "block_action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:if_else",
+                                "condition": {
+                                  "type": "apoli:block",
+                                  "block": "[block]"
+                                },
+                                "if_action": {
+                                  "type": "apoli:ghost_block",
+                                  "block": "minecraft:air",
+                                  "duration": 600
+                                }
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "action": {
+                                  "type": "apoli:if_else",
+                                  "condition": {
+                                    "type": "apoli:block",
+                                    "block": "[block]"
+                                  },
+                                  "if_action": {
+                                    "type": "apoli:ghost_block",
+                                    "block": "minecraft:air",
+                                    "duration": 600
+                                  }
+                                },
+                                "y": 1
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:actor_condition",
+                    "condition": {
+                      "type": "apoli:resource",
+                      "resource": "elemental_bendings:earthbender/earth_pillar/face",
+                      "comparison": "==",
+                      "compare_to": 6
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:equal",
+                      "inverted": true
+                    },
+                    "if_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:teleport",
+                            "relative": true,
+                            "x": 0,
+                            "y": 0,
+                            "z": -2,
+                            "landing_condition": {
+                              "type": "apoli:block_collision",
+                              "inverted": true
+                            },
+                            "success_action": {
+                              "type": "apoli:add_velocity",
+                              "x": 0.0,
+                              "y": 0.4,
+                              "z": -1.3,
+                              "space": "world",
+                              "set": true
+                            },
+                            "fail_action": {
+                              "type": "apoli:block_action_at",
+                              "block_action": {
+                                "type": "apoli:and",
+                                "actions": [
+                                  {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "[block]"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:air",
+                                      "duration": 600
+                                    }
+                                  },
+                                  {
+                                    "type": "apoli:offset",
+                                    "action": {
+                                      "type": "apoli:if_else",
+                                      "condition": {
+                                        "type": "apoli:block",
+                                        "block": "[block]"
+                                      },
+                                      "if_action": {
+                                        "type": "apoli:ghost_block",
+                                        "block": "minecraft:air",
+                                        "duration": 600
+                                      }
+                                    },
+                                    "y": 1
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "apoli:damage",
+                          "amount": 4,
+                          "damage_type": "elemental_bendings:earthbending"
+                        },
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                                  "lifetime": 24,
+                                  "lifetime_variation": 10,
+                                  "size": 0.09,
+                                  "size_variation": 0.06,
+                                  "end_size": 0.07,
+                                  "color": "#7A6A58",
+                                  "gravity": 0.06,
+                                  "friction": 0.98,
+                                  "roll": "rUni(0, 360)",
+                                  "roll_speed": "rUni(-25, 25)"
+                                },
+                                "count": 10,
+                                "offset_y": 0.0,
+                                "spread": 0.35,
+                                "speed": 0.12
+                              },
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                  "lifetime": 22,
+                                  "lifetime_variation": 8,
+                                  "size": 0.45,
+                                  "size_variation": 0.25,
+                                  "end_size": 0.9,
+                                  "color": "#B59A7ACC",
+                                  "end_color": "#8C775F00",
+                                  "gravity": -0.003,
+                                  "friction": 0.9,
+                                  "frames": 4,
+                                  "frame_time": 5,
+                                  "physics": false,
+                                  "roll": "rUni(0, 360)"
+                                },
+                                "count": 3,
+                                "offset_y": 0.0,
+                                "spread": 0.3,
+                                "speed": 0.02
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "else_action": {
+                      "type": "apoli:target_action",
+                      "action": {
+                        "type": "apoli:teleport",
+                        "relative": true,
+                        "x": 0,
+                        "y": 0,
+                        "z": -2,
+                        "landing_condition": {
+                          "type": "apoli:block_collision",
+                          "inverted": true
+                        },
+                        "success_action": {
+                          "type": "apoli:add_velocity",
+                          "x": 0.0,
+                          "y": 0.3,
+                          "z": -0.6,
+                          "space": "world",
+                          "set": true
+                        },
+                        "fail_action": {
+                          "type": "apoli:block_action_at",
+                          "block_action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:if_else",
+                                "condition": {
+                                  "type": "apoli:block",
+                                  "block": "[block]"
+                                },
+                                "if_action": {
+                                  "type": "apoli:ghost_block",
+                                  "block": "minecraft:air",
+                                  "duration": 600
+                                }
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "action": {
+                                  "type": "apoli:if_else",
+                                  "condition": {
+                                    "type": "apoli:block",
+                                    "block": "[block]"
+                                  },
+                                  "if_action": {
+                                    "type": "apoli:ghost_block",
+                                    "block": "minecraft:air",
+                                    "duration": 600
+                                  }
+                                },
+                                "y": 1
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
                   }
                 }
-              }
-            },
-            {
-              "condition": {
-                "type": "apoli:random_chance",
-                "chance": "abs(hit_x - round(hit_x)) < 0.001 && sin(rad(yaw)) > 0"
-              },
-              "action": {
-                "type": "apoli:raycast",
-                "distance": 12,
-                "block": true,
-                "entity": false,
-                "shape_type": "collider",
-                "fluid_handling": "none",
-                "chain": {
-                  "chain_direction": "reflect",
-                  "distance": 3,
-                  "block": false,
-                  "entity": true,
-                  "radius": 0.6,
-                  "pierce_entities": true,
-                  "bientity_action": {
-                    "type": "apoli:add_velocity",
-                    "x": 0,
-                    "y": 0.2,
-                    "z": -1.5,
-                    "reference": "position"
-                  }
-                }
-              }
-            },
-            {
-              "condition": {
-                "type": "apoli:random_chance",
-                "chance": "abs(hit_x - round(hit_x)) < 0.001 && sin(rad(yaw)) < 0"
-              },
-              "action": {
-                "type": "apoli:raycast",
-                "distance": 12,
-                "block": true,
-                "entity": false,
-                "shape_type": "collider",
-                "fluid_handling": "none",
-                "chain": {
-                  "chain_direction": "reflect",
-                  "distance": 3,
-                  "block": false,
-                  "entity": true,
-                  "radius": 0.6,
-                  "pierce_entities": true,
-                  "bientity_action": {
-                    "type": "apoli:add_velocity",
-                    "x": 0,
-                    "y": 0.2,
-                    "z": -1.5,
-                    "reference": "position"
-                  }
-                }
-              }
-            },
-            {
-              "condition": {
-                "type": "apoli:random_chance",
-                "chance": "abs(hit_z - round(hit_z)) < 0.001 && cos(rad(yaw)) < 0"
-              },
-              "action": {
-                "type": "apoli:raycast",
-                "distance": 12,
-                "block": true,
-                "entity": false,
-                "shape_type": "collider",
-                "fluid_handling": "none",
-                "chain": {
-                  "chain_direction": "reflect",
-                  "distance": 3,
-                  "block": false,
-                  "entity": true,
-                  "radius": 0.6,
-                  "pierce_entities": true,
-                  "bientity_action": {
-                    "type": "apoli:add_velocity",
-                    "x": 0,
-                    "y": 0.2,
-                    "z": -1.5,
-                    "reference": "position"
-                  }
-                }
-              }
-            },
-            {
-              "condition": {
-                "type": "apoli:random_chance",
-                "chance": "abs(hit_z - round(hit_z)) < 0.001 && cos(rad(yaw)) > 0"
-              },
-              "action": {
-                "type": "apoli:raycast",
-                "distance": 12,
-                "block": true,
-                "entity": false,
-                "shape_type": "collider",
-                "fluid_handling": "none",
-                "chain": {
-                  "chain_direction": "reflect",
-                  "distance": 3,
-                  "block": false,
-                  "entity": true,
-                  "radius": 0.6,
-                  "pierce_entities": true,
-                  "bientity_action": {
-                    "type": "apoli:add_velocity",
-                    "x": 0,
-                    "y": 0.2,
-                    "z": -1.5,
-                    "reference": "position"
-                  }
-                }
-              }
+              ]
             }
-          ]
+          }
         }
       }
     ]

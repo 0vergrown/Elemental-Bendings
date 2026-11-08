@@ -1,0 +1,38 @@
+{
+  "parent": "elemental_bendings:waterbender/bloodbending",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.levitation.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.levitation.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      },
+      {
+        "keybind": "key.apoli.skill_tree"
+      }
+    ]
+  },
+  "powers": [
+    "elemental_bendings:waterbender/bloodbending/levitation/lifted",
+    "elemental_bendings:waterbender/bloodbending/levitation/heartbeat",
+    "elemental_bendings:waterbender/bloodbending/levitation/fuel",
+    "elemental_bendings:waterbender/bloodbending/levitation/pose",
+    "elemental_bendings:waterbender/bloodbending/levitation/rooted",
+    "elemental_bendings:waterbender/bloodbending/levitation/lifting",
+    "elemental_bendings:waterbender/bloodbending/levitation"
+  ],
+  "icon": {
+    "item": "minecraft:phantom_membrane"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 2
+}

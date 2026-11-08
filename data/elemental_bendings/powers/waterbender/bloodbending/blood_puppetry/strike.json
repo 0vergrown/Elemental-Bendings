@@ -1,0 +1,159 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/strike_cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/strike_cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 20
+          }
+        },
+        {
+          "type": "apoli:action_on_entity_set",
+          "set": "elemental_bendings:waterbender/bloodbending/blood_puppetry/puppet",
+          "bientity_action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:target_action",
+                "action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:waterbender/bloodbending/bloodbent/strike",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 8
+                      }
+                    },
+                    {
+                      "type": "apoli:area_of_effect",
+                      "radius": 2.6,
+                      "shape": "sphere",
+                      "bientity_condition": {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:target_condition",
+                            "condition": {
+                              "type": "apoli:living"
+                            }
+                          },
+                          {
+                            "type": "apoli:invert",
+                            "condition": {
+                              "type": "apoli:grabbed"
+                            },
+                            "inverted": true
+                          }
+                        ]
+                      },
+                      "bientity_action": {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:punch",
+                            "ignore_cooldown": true
+                          },
+                          {
+                            "type": "apoli:damage",
+                            "amount": "3 * (1 + 0.25 * (mod(day_time, 24000) >= 13000) + 0.75 * (mod(day_time, 24000) >= 13000) * (moon_phase == 0))",
+                            "damage_type": "elemental_bendings:bloodbending"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "apoli:target_action",
+                "action": {
+                  "type": "apoli:spawn_particles",
+                  "particle": {
+                    "type": "apoli:custom",
+                    "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                    "lifetime": 18,
+                    "lifetime_variation": 6,
+                    "size": 0.3,
+                    "size_variation": 0.15,
+                    "end_size": 0.55,
+                    "color": "#B0182A70",
+                    "end_color": "#5A081400",
+                    "gravity": -0.004,
+                    "friction": 0.9,
+                    "frames": 4,
+                    "frame_time": 5,
+                    "physics": false,
+                    "roll": "rUni(0, 360)"
+                  },
+                  "count": 6,
+                  "offset_y": 1.0,
+                  "spread": 0.5,
+                  "speed": 0.05
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 1,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 32
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose_timer",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 8
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:entity.player.attack.strong",
+          "volume": 0.9,
+          "pitch": 0.7
+        }
+      ]
+    }
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

@@ -1,0 +1,36 @@
+{
+  "type": "apoli:particle",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/plantbending/plant_golem/active",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+    "lifetime": 26,
+    "lifetime_variation": 10,
+    "size": 0.12,
+    "size_variation": 0.05,
+    "end_size": 0.1,
+    "color": "#FFFFFF",
+    "end_color": "#FFFFFF60",
+    "gravity": 0.015,
+    "friction": 0.93,
+    "frames": 4,
+    "frame_time": 3,
+    "roll": "rUni(0, 360)",
+    "roll_speed": "rUni(-12, 12)"
+  },
+  "count": 1,
+  "frequency": 5,
+  "offset_y": 2.2,
+  "spread": {
+    "x": 0.9,
+    "y": 0.8,
+    "z": 0.9
+  },
+  "speed": 0.01,
+  "hidden": true
+}

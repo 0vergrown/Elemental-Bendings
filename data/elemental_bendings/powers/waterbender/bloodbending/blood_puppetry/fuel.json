@@ -1,0 +1,72 @@
+{
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 200,
+  "start_value": 0,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/heartbeat",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0
+          }
+        },
+        {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:release_grab"
+            },
+            {
+              "type": "apoli:action_on_entity_set",
+              "set": "elemental_bendings:waterbender/bloodbending/blood_puppetry/puppet",
+              "bientity_action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:revoke_all_powers",
+                      "source": "elemental_bendings:bloodbent"
+                    }
+                  },
+                  {
+                    "type": "apoli:remove_from_entity_set",
+                    "set": "elemental_bendings:waterbender/bloodbending/blood_puppetry/puppet"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:bending/cooldown",
+              "modifier": {
+                "operation": "set_total",
+                "value": 10
+              }
+            },
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:block.bone_block.break",
+              "volume": 0.6,
+              "pitch": 1.2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

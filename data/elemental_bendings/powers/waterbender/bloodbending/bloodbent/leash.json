@@ -1,0 +1,39 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 10,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:revoke_all_powers",
+        "source": "elemental_bendings:bloodbent"
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+          "lifetime": 18,
+          "lifetime_variation": 6,
+          "size": 0.3,
+          "size_variation": 0.15,
+          "end_size": 0.55,
+          "color": "#B0182A70",
+          "end_color": "#5A081400",
+          "gravity": -0.004,
+          "friction": 0.9,
+          "frames": 4,
+          "frame_time": 5,
+          "physics": false,
+          "roll": "rUni(0, 360)"
+        },
+        "count": 6,
+        "offset_y": 1.0,
+        "spread": 0.4,
+        "speed": 0.02
+      }
+    ]
+  },
+  "hidden": true
+}

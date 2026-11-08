@@ -1,0 +1,684 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:waterbender/plantbending/plant_golem/slam_cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/plantbending/plant_golem/slam_cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 30
+          }
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 1,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 42
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose_timer",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 14
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:entity.player.attack.sweep",
+          "volume": 1.0,
+          "pitch": 0.5
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 8,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:entity.ravager.attack",
+                "volume": 1.0,
+                "pitch": 0.6
+              },
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:block.rooted_dirt.break",
+                "volume": 1.0,
+                "pitch": 0.5
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 10,
+                  "size": 0.12,
+                  "size_variation": 0.05,
+                  "end_size": 0.1,
+                  "color": "#FFFFFF",
+                  "end_color": "#FFFFFF60",
+                  "gravity": 0.015,
+                  "friction": 0.93,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-12, 12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 0.2,
+                "velocity_x": 0.4,
+                "velocity_y": 0.0,
+                "velocity_z": 0.0
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 10,
+                  "size": 0.12,
+                  "size_variation": 0.05,
+                  "end_size": 0.1,
+                  "color": "#FFFFFF",
+                  "end_color": "#FFFFFF60",
+                  "gravity": 0.015,
+                  "friction": 0.93,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-12, 12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 0.2,
+                "velocity_x": 0.346,
+                "velocity_y": 0.0,
+                "velocity_z": 0.2
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 10,
+                  "size": 0.12,
+                  "size_variation": 0.05,
+                  "end_size": 0.1,
+                  "color": "#FFFFFF",
+                  "end_color": "#FFFFFF60",
+                  "gravity": 0.015,
+                  "friction": 0.93,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-12, 12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 0.2,
+                "velocity_x": 0.2,
+                "velocity_y": 0.0,
+                "velocity_z": 0.346
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 10,
+                  "size": 0.12,
+                  "size_variation": 0.05,
+                  "end_size": 0.1,
+                  "color": "#FFFFFF",
+                  "end_color": "#FFFFFF60",
+                  "gravity": 0.015,
+                  "friction": 0.93,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-12, 12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 0.2,
+                "velocity_x": 0.0,
+                "velocity_y": 0.0,
+                "velocity_z": 0.4
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 10,
+                  "size": 0.12,
+                  "size_variation": 0.05,
+                  "end_size": 0.1,
+                  "color": "#FFFFFF",
+                  "end_color": "#FFFFFF60",
+                  "gravity": 0.015,
+                  "friction": 0.93,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-12, 12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 0.2,
+                "velocity_x": -0.2,
+                "velocity_y": 0.0,
+                "velocity_z": 0.346
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 10,
+                  "size": 0.12,
+                  "size_variation": 0.05,
+                  "end_size": 0.1,
+                  "color": "#FFFFFF",
+                  "end_color": "#FFFFFF60",
+                  "gravity": 0.015,
+                  "friction": 0.93,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-12, 12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 0.2,
+                "velocity_x": -0.346,
+                "velocity_y": 0.0,
+                "velocity_z": 0.2
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 10,
+                  "size": 0.12,
+                  "size_variation": 0.05,
+                  "end_size": 0.1,
+                  "color": "#FFFFFF",
+                  "end_color": "#FFFFFF60",
+                  "gravity": 0.015,
+                  "friction": 0.93,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-12, 12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 0.2,
+                "velocity_x": -0.4,
+                "velocity_y": 0.0,
+                "velocity_z": 0.0
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 10,
+                  "size": 0.12,
+                  "size_variation": 0.05,
+                  "end_size": 0.1,
+                  "color": "#FFFFFF",
+                  "end_color": "#FFFFFF60",
+                  "gravity": 0.015,
+                  "friction": 0.93,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-12, 12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 0.2,
+                "velocity_x": -0.346,
+                "velocity_y": 0.0,
+                "velocity_z": -0.2
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 10,
+                  "size": 0.12,
+                  "size_variation": 0.05,
+                  "end_size": 0.1,
+                  "color": "#FFFFFF",
+                  "end_color": "#FFFFFF60",
+                  "gravity": 0.015,
+                  "friction": 0.93,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-12, 12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 0.2,
+                "velocity_x": -0.2,
+                "velocity_y": 0.0,
+                "velocity_z": -0.346
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 10,
+                  "size": 0.12,
+                  "size_variation": 0.05,
+                  "end_size": 0.1,
+                  "color": "#FFFFFF",
+                  "end_color": "#FFFFFF60",
+                  "gravity": 0.015,
+                  "friction": 0.93,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-12, 12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 0.2,
+                "velocity_x": -0.0,
+                "velocity_y": 0.0,
+                "velocity_z": -0.4
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 10,
+                  "size": 0.12,
+                  "size_variation": 0.05,
+                  "end_size": 0.1,
+                  "color": "#FFFFFF",
+                  "end_color": "#FFFFFF60",
+                  "gravity": 0.015,
+                  "friction": 0.93,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-12, 12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 0.2,
+                "velocity_x": 0.2,
+                "velocity_y": 0.0,
+                "velocity_z": -0.346
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 10,
+                  "size": 0.12,
+                  "size_variation": 0.05,
+                  "end_size": 0.1,
+                  "color": "#FFFFFF",
+                  "end_color": "#FFFFFF60",
+                  "gravity": 0.015,
+                  "friction": 0.93,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-12, 12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 0.2,
+                "velocity_x": 0.346,
+                "velocity_y": 0.0,
+                "velocity_z": -0.2
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                  "lifetime": 22,
+                  "lifetime_variation": 8,
+                  "size": 0.45,
+                  "size_variation": 0.25,
+                  "end_size": 0.9,
+                  "color": "#B59A7ACC",
+                  "end_color": "#8C775F00",
+                  "gravity": -0.003,
+                  "friction": 0.9,
+                  "frames": 4,
+                  "frame_time": 5,
+                  "physics": false,
+                  "roll": "rUni(0, 360)"
+                },
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.1,
+                "velocity_x": 0.25,
+                "velocity_y": 0.0,
+                "velocity_z": 0.0
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                  "lifetime": 22,
+                  "lifetime_variation": 8,
+                  "size": 0.45,
+                  "size_variation": 0.25,
+                  "end_size": 0.9,
+                  "color": "#B59A7ACC",
+                  "end_color": "#8C775F00",
+                  "gravity": -0.003,
+                  "friction": 0.9,
+                  "frames": 4,
+                  "frame_time": 5,
+                  "physics": false,
+                  "roll": "rUni(0, 360)"
+                },
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.1,
+                "velocity_x": 0.202,
+                "velocity_y": 0.0,
+                "velocity_z": 0.147
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                  "lifetime": 22,
+                  "lifetime_variation": 8,
+                  "size": 0.45,
+                  "size_variation": 0.25,
+                  "end_size": 0.9,
+                  "color": "#B59A7ACC",
+                  "end_color": "#8C775F00",
+                  "gravity": -0.003,
+                  "friction": 0.9,
+                  "frames": 4,
+                  "frame_time": 5,
+                  "physics": false,
+                  "roll": "rUni(0, 360)"
+                },
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.1,
+                "velocity_x": 0.077,
+                "velocity_y": 0.0,
+                "velocity_z": 0.238
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                  "lifetime": 22,
+                  "lifetime_variation": 8,
+                  "size": 0.45,
+                  "size_variation": 0.25,
+                  "end_size": 0.9,
+                  "color": "#B59A7ACC",
+                  "end_color": "#8C775F00",
+                  "gravity": -0.003,
+                  "friction": 0.9,
+                  "frames": 4,
+                  "frame_time": 5,
+                  "physics": false,
+                  "roll": "rUni(0, 360)"
+                },
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.1,
+                "velocity_x": -0.077,
+                "velocity_y": 0.0,
+                "velocity_z": 0.238
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                  "lifetime": 22,
+                  "lifetime_variation": 8,
+                  "size": 0.45,
+                  "size_variation": 0.25,
+                  "end_size": 0.9,
+                  "color": "#B59A7ACC",
+                  "end_color": "#8C775F00",
+                  "gravity": -0.003,
+                  "friction": 0.9,
+                  "frames": 4,
+                  "frame_time": 5,
+                  "physics": false,
+                  "roll": "rUni(0, 360)"
+                },
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.1,
+                "velocity_x": -0.202,
+                "velocity_y": 0.0,
+                "velocity_z": 0.147
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                  "lifetime": 22,
+                  "lifetime_variation": 8,
+                  "size": 0.45,
+                  "size_variation": 0.25,
+                  "end_size": 0.9,
+                  "color": "#B59A7ACC",
+                  "end_color": "#8C775F00",
+                  "gravity": -0.003,
+                  "friction": 0.9,
+                  "frames": 4,
+                  "frame_time": 5,
+                  "physics": false,
+                  "roll": "rUni(0, 360)"
+                },
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.1,
+                "velocity_x": -0.25,
+                "velocity_y": 0.0,
+                "velocity_z": 0.0
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                  "lifetime": 22,
+                  "lifetime_variation": 8,
+                  "size": 0.45,
+                  "size_variation": 0.25,
+                  "end_size": 0.9,
+                  "color": "#B59A7ACC",
+                  "end_color": "#8C775F00",
+                  "gravity": -0.003,
+                  "friction": 0.9,
+                  "frames": 4,
+                  "frame_time": 5,
+                  "physics": false,
+                  "roll": "rUni(0, 360)"
+                },
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.1,
+                "velocity_x": -0.202,
+                "velocity_y": 0.0,
+                "velocity_z": -0.147
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                  "lifetime": 22,
+                  "lifetime_variation": 8,
+                  "size": 0.45,
+                  "size_variation": 0.25,
+                  "end_size": 0.9,
+                  "color": "#B59A7ACC",
+                  "end_color": "#8C775F00",
+                  "gravity": -0.003,
+                  "friction": 0.9,
+                  "frames": 4,
+                  "frame_time": 5,
+                  "physics": false,
+                  "roll": "rUni(0, 360)"
+                },
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.1,
+                "velocity_x": -0.077,
+                "velocity_y": 0.0,
+                "velocity_z": -0.238
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                  "lifetime": 22,
+                  "lifetime_variation": 8,
+                  "size": 0.45,
+                  "size_variation": 0.25,
+                  "end_size": 0.9,
+                  "color": "#B59A7ACC",
+                  "end_color": "#8C775F00",
+                  "gravity": -0.003,
+                  "friction": 0.9,
+                  "frames": 4,
+                  "frame_time": 5,
+                  "physics": false,
+                  "roll": "rUni(0, 360)"
+                },
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.1,
+                "velocity_x": 0.077,
+                "velocity_y": 0.0,
+                "velocity_z": -0.238
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                  "lifetime": 22,
+                  "lifetime_variation": 8,
+                  "size": 0.45,
+                  "size_variation": 0.25,
+                  "end_size": 0.9,
+                  "color": "#B59A7ACC",
+                  "end_color": "#8C775F00",
+                  "gravity": -0.003,
+                  "friction": 0.9,
+                  "frames": 4,
+                  "frame_time": 5,
+                  "physics": false,
+                  "roll": "rUni(0, 360)"
+                },
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.1,
+                "velocity_x": 0.202,
+                "velocity_y": 0.0,
+                "velocity_z": -0.147
+              },
+              {
+                "type": "apoli:area_of_effect",
+                "radius": 4.5,
+                "shape": "sphere",
+                "bientity_action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:damage",
+                      "amount": "9 * (1 + 0.25 * (mod(day_time, 24000) >= 13000) + 0.75 * (mod(day_time, 24000) >= 13000) * (moon_phase == 0))",
+                      "damage_type": "elemental_bendings:plantbending"
+                    },
+                    {
+                      "type": "apoli:add_velocity",
+                      "x": 0,
+                      "y": 0.6,
+                      "z": 1.1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/plantbending/plant_golem/active",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

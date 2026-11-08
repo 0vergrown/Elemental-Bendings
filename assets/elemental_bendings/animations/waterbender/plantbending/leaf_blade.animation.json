@@ -1,0 +1,30 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.leaf_blade.spin": {
+      "loop": true,
+      "animation_length": 0.3,
+      "bones": {
+        "blade": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.15": [
+              0,
+              180,
+              0
+            ],
+            "0.3": [
+              0,
+              360,
+              0
+            ]
+          }
+        }
+      }
+    }
+  }
+}

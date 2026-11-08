@@ -1,0 +1,12 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:waterbender/plantbending/leaf_blade",
+  "texture_location": "elemental_bendings:textures/entity/waterbender/plantbending/leaf_blade.png",
+  "render_type": "cutout",
+  "animations": {
+    "animation": "elemental_bendings:waterbender/plantbending/leaf_blade",
+    "name": "animation.leaf_blade.spin"
+  },
+  "hidden": true
+}

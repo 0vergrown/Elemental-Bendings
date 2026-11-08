@@ -1,0 +1,383 @@
+{
+  "type": "apoli:modify_model_parts",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:bending/pose",
+            "comparison": "==",
+            "compare_to": 2
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:bending/pose_timer",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      },
+      {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+          },
+          {
+            "type": "apoli:or",
+            "conditions": [
+              {
+                "type": "apoli:random_chance",
+                "chance": "(mod(day_time, 24000) >= 13000)"
+              },
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "right_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.8727,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": -1.6755,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 7,
+          "value": -1.4661,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "yaw",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.2443,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": -0.3142,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 7,
+          "value": 0.5236,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": -0.1745,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 7,
+          "value": -0.4887,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.8727,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": -1.6755,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 7,
+          "value": -1.4661,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "yaw",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.2443,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": 0.3142,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 7,
+          "value": -0.5236,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": 0.1745,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 7,
+          "value": 0.4887,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "upper",
+      "type": "pitch",
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": 0.1745,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 7,
+          "value": 0.0698,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_leg",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": 0.4189,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_leg",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": -0.4189,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "whole",
+      "type": "pivot_y",
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": 1.8,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "reach",
+      "perspectives": [
+        "first_person"
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "keyframes": [
+        {
+          "time": 0,
+          "target": [
+            -6,
+            2,
+            -9
+          ],
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "target": [
+            -2,
+            -3,
+            -18
+          ],
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 7,
+          "target": [
+            -9,
+            -2,
+            -14
+          ],
+          "easing": "ease_out_expo"
+        }
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "reach",
+      "perspectives": [
+        "first_person"
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "keyframes": [
+        {
+          "time": 0,
+          "target": [
+            6,
+            2,
+            -9
+          ],
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "target": [
+            2,
+            -3,
+            -18
+          ],
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 7,
+          "target": [
+            9,
+            -2,
+            -14
+          ],
+          "easing": "ease_out_expo"
+        }
+      ]
+    }
+  ],
+  "hidden": true
+}

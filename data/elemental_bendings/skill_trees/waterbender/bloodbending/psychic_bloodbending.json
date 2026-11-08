@@ -1,0 +1,32 @@
+{
+  "parent": "elemental_bendings:waterbender/bloodbending/blood_puppetry",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.psychic_bloodbending.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.psychic_bloodbending.description",
+    "with": [
+      {
+        "keybind": "key.elemental_bendings.stance_1"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_2"
+      },
+      {
+        "keybind": "key.elemental_bendings.stance_3"
+      },
+      {
+        "keybind": "key.apoli.skill_tree"
+      }
+    ]
+  },
+  "powers": [
+    "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+  ],
+  "icon": {
+    "item": "minecraft:ender_eye"
+  },
+  "frame": "challenge",
+  "cost": 4,
+  "order": 0
+}
