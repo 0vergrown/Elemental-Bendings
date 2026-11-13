@@ -1,0 +1,21 @@
+{
+  "type": "apoli:attribute",
+  "modifiers": [
+    {
+      "attribute": "minecraft:generic.max_health",
+      "operation": "add_value",
+      "value": -14
+    },
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "add_value",
+      "value": 1
+    },
+    {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total",
+      "value": -0.15
+    }
+  ],
+  "hidden": true
+}

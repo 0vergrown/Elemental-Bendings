@@ -1,0 +1,13 @@
+{
+  "type": "apoli:action_when_damage_taken",
+  "cooldown": 1,
+  "entity_action": {
+    "type": "apoli:modify_resource",
+    "resource": "elemental_bendings:airbender/spiritual_airbending/body/hurt",
+    "modifier": {
+      "operation": "set_total",
+      "value": 1
+    }
+  },
+  "hidden": true
+}

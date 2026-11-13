@@ -1,0 +1,27 @@
+{
+  "type": "apoli:action_on_kill",
+  "target_condition": {
+    "type": "apoli:living"
+  },
+  "self_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:firebender/mastery/progress",
+        "modifier": {
+          "operation": "add_value",
+          "value": 1
+        }
+      },
+      {
+        "type": "apoli:play_sound",
+        "sound": "minecraft:block.amethyst_block.chime",
+        "volume": 0.35,
+        "pitch": 1.6
+      }
+    ]
+  },
+  "cooldown": 1,
+  "hidden": true
+}

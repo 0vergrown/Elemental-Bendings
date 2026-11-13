@@ -1,0 +1,11 @@
+{
+  "type": "apoli:modify_falling",
+  "take_fall_damage": false,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/spiritual_airbending/flight/cushion",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

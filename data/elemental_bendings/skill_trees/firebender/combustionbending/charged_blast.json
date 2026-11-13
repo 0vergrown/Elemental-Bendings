@@ -1,0 +1,57 @@
+{
+  "parent": "elemental_bendings:firebender/combustionbending/blast_jump",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.charged_blast.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.charged_blast.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/combustionbending/charged_blast/charged_blast",
+    "elemental_bendings:firebender/combustionbending/charged_blast/charge",
+    "elemental_bendings:firebender/combustionbending/charged_blast/armed",
+    "elemental_bendings:firebender/combustionbending/charged_blast/rooted",
+    "elemental_bendings:firebender/combustionbending/charged_blast/heartbeat",
+    "elemental_bendings:firebender/combustionbending/charged_blast/charging",
+    "elemental_bendings:firebender/combustionbending/charged_blast/interrupted",
+    "elemental_bendings:firebender/combustionbending/stance/opening_the_third_eye",
+    "elemental_bendings:firebender/combustionbending/stance/stomp_of_the_destroyer",
+    "elemental_bendings:firebender/combustionbending/stance/lord_of_the_dance",
+    "elemental_bendings:firebender/combustionbending/emblem"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/combustionbending/charged_blast.png"
+  },
+  "frame": "challenge",
+  "cost": 3,
+  "order": 0,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/explosive_repulsion"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/delayed_detonation"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/cluster_detonation"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/combustion_barrage"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/blast_jump"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/smoke_screen"
+      }
+    ]
+  }
+}

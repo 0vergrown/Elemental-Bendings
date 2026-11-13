@@ -1,0 +1,26 @@
+{
+  "parent": "elemental_bendings:waterbender",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.icebending.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.icebending.description"
+  },
+  "powers": [
+    "elemental_bendings:waterbender/icebending/icebending",
+    "elemental_bendings:waterbender/icebending/held_ice/crushed",
+    "elemental_bendings:waterbender/icebending/held_ice/frost",
+    "elemental_bendings:waterbender/icebending/draw_ice/pose",
+    "elemental_bendings:waterbender/icebending/draw_ice"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/waterbender/icebending/icebending.png"
+  },
+  "frame": "goal",
+  "cost": 2,
+  "order": 2,
+  "excludes": [
+    "elemental_bendings:waterbender/bloodbending",
+    "elemental_bendings:waterbender/plantbending"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "parent": "elemental_bendings:airbender/spiritual_airbending",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.spirit_leap.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.spirit_leap.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/spiritual_airbending/spirit_leap"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/spiritual_airbending/spirit_leap.png"
+  },
+  "frame": "task",
+  "cost": 1,
+  "order": 1
+}

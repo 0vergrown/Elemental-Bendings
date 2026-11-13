@@ -1,0 +1,10 @@
+{
+  "type": "apoli:replace_sound_emission",
+  "sounds": {
+    "minecraft:entity.generic.death": "minecraft:empty",
+    "minecraft:entity.generic.hurt": "minecraft:empty",
+    "minecraft:entity.hostile.death": "minecraft:empty",
+    "minecraft:entity.hostile.hurt": "minecraft:empty"
+  },
+  "hidden": true
+}

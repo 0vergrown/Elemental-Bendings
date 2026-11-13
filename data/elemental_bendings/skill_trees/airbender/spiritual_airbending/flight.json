@@ -1,0 +1,54 @@
+{
+  "parent": "elemental_bendings:airbender/spiritual_airbending/spirit_leap",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.flight.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.flight.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/spiritual_airbending/flight/forward",
+    "elemental_bendings:airbender/spiritual_airbending/flight/left",
+    "elemental_bendings:airbender/spiritual_airbending/flight/right",
+    "elemental_bendings:airbender/spiritual_airbending/flight/up",
+    "elemental_bendings:airbender/spiritual_airbending/flight/down",
+    "elemental_bendings:airbender/spiritual_airbending/flight/cushion",
+    "elemental_bendings:airbender/spiritual_airbending/flight/landing",
+    "elemental_bendings:airbender/spiritual_airbending/flight/soft_landing",
+    "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+    "elemental_bendings:airbender/spiritual_airbending/flight/fuel",
+    "elemental_bendings:airbender/spiritual_airbending/flight/climb_forward_up",
+    "elemental_bendings:airbender/spiritual_airbending/flight/climb_forward_level",
+    "elemental_bendings:airbender/spiritual_airbending/flight/climb_forward_down",
+    "elemental_bendings:airbender/spiritual_airbending/flight/climb_still_up",
+    "elemental_bendings:airbender/spiritual_airbending/flight/climb_still_level",
+    "elemental_bendings:airbender/spiritual_airbending/flight/climb_still_down",
+    "elemental_bendings:airbender/spiritual_airbending/flight/climb_back_up",
+    "elemental_bendings:airbender/spiritual_airbending/flight/climb_back_level",
+    "elemental_bendings:airbender/spiritual_airbending/flight/climb_back_down",
+    "elemental_bendings:airbender/spiritual_airbending/flight/drag",
+    "elemental_bendings:airbender/spiritual_airbending/flight/glide",
+    "elemental_bendings:airbender/spiritual_airbending/flight/rush",
+    "elemental_bendings:airbender/spiritual_airbending/flight/lift",
+    "elemental_bendings:airbender/spiritual_airbending/flight/air_rights",
+    "elemental_bendings:airbender/spiritual_airbending/flight/pose_hover",
+    "elemental_bendings:airbender/spiritual_airbending/flight/pose_lean",
+    "elemental_bendings:airbender/spiritual_airbending/flight/pose_rush",
+    "elemental_bendings:airbender/spiritual_airbending/flight/pose_bank_left",
+    "elemental_bendings:airbender/spiritual_airbending/flight/pose_bank_right",
+    "elemental_bendings:airbender/spiritual_airbending/flight/pose_rise",
+    "elemental_bendings:airbender/spiritual_airbending/flight/pose_sink",
+    "elemental_bendings:airbender/spiritual_airbending/flight/takeoff/pose",
+    "elemental_bendings:airbender/spiritual_airbending/flight/trail",
+    "elemental_bendings:airbender/spiritual_airbending/flight/points",
+    "elemental_bendings:airbender/spiritual_airbending/flight/speed_lines",
+    "elemental_bendings:airbender/spiritual_airbending/flight/flying",
+    "elemental_bendings:airbender/spiritual_airbending/flight"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/spiritual_airbending/flight.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

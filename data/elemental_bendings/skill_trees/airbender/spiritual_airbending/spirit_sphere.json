@@ -1,0 +1,18 @@
+{
+  "parent": "elemental_bendings:airbender/spiritual_airbending/spirit_gust",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.spirit_sphere.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.spirit_sphere.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/spiritual_airbending/spirit_sphere"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/spiritual_airbending/spirit_sphere.png"
+  },
+  "frame": "task",
+  "cost": 1,
+  "order": 0
+}

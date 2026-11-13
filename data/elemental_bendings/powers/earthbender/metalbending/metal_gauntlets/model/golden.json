@@ -1,0 +1,30 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:earthbender/metalbending/gauntlets",
+  "texture_location": "elemental_bendings:textures/entity/earthbender/metalbending/gauntlets_gold.png",
+  "render_type": "cutout",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/metal_gauntlets/active",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:equipped_item",
+        "equipment_slot": "head",
+        "item_condition": {
+          "type": "apoli:ingredient",
+          "ingredient": {
+            "item": "minecraft:golden_helmet"
+          }
+        }
+      }
+    ]
+  },
+  "show_first_person": true,
+  "hidden": true
+}

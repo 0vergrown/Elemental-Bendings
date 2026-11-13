@@ -1,0 +1,12 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:earthbender/metalbending/thrown_sword",
+  "texture_location": "minecraft:textures/item/netherite_sword.png",
+  "render_type": "cutout",
+  "animations": {
+    "animation": "elemental_bendings:earthbender/metalbending/thrown_sword",
+    "name": "animation.thrown_sword.spin"
+  },
+  "hidden": true
+}

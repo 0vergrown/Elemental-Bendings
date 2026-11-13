@@ -4,21 +4,7 @@
     "translate": "skill.elemental_bendings.waterbender.plantbending.vine_snare.name"
   },
   "description": {
-    "translate": "skill.elemental_bendings.waterbender.plantbending.vine_snare.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
-      },
-      {
-        "keybind": "key.apoli.skill_tree"
-      }
-    ]
+    "translate": "skill.elemental_bendings.waterbender.plantbending.vine_snare.description"
   },
   "powers": [
     "elemental_bendings:waterbender/plantbending/vine_snare/snared",
@@ -30,7 +16,7 @@
     "elemental_bendings:waterbender/plantbending/vine_snare"
   ],
   "icon": {
-    "item": "minecraft:cobweb"
+    "texture": "elemental_bendings:textures/gui/waterbender/plantbending/vine_snare.png"
   },
   "frame": "task",
   "cost": 2,

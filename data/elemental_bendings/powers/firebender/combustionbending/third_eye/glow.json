@@ -1,0 +1,28 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "texture",
+  "texture_location": "elemental_bendings:textures/entity/firebender/combustionbending/third_eye_glow.png",
+  "render_as_overlay": true,
+  "render_type": "eyes",
+  "body_parts": [
+    "head"
+  ],
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:firebender/combustionbending/third_eye/channel",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:firebender/combustionbending/charged_blast/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "hidden": true
+}

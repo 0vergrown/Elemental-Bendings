@@ -1,0 +1,22 @@
+{
+  "type": "apoli:attribute",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/metalbending/metal_gauntlets/active",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "modifiers": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "add_value",
+      "value": 5
+    },
+    {
+      "attribute": "minecraft:generic.attack_knockback",
+      "operation": "add_value",
+      "value": 1.5
+    }
+  ],
+  "hidden": true
+}

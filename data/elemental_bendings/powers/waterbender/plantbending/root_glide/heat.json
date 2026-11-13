@@ -1,0 +1,41 @@
+{
+  "type": "apoli:fire_immunity",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/plantbending/root_glide/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:fluid_height",
+            "fluid": "minecraft:lava",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:block_in_radius",
+            "radius": {
+              "x": 0,
+              "y": 2,
+              "z": 0
+            },
+            "block_condition": {
+              "type": "apoli:fluid",
+              "fluid_condition": {
+                "type": "apoli:in_tag",
+                "tag": "minecraft:lava"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

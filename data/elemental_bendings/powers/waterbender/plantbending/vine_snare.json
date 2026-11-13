@@ -232,5 +232,6 @@
         "inverted": true
       }
     ]
-  }
+  },
+  "hidden": true
 }

@@ -1,0 +1,24 @@
+{
+  "name": {
+    "translate": "skill_tree.elemental_bendings.firebender.name"
+  },
+  "description": {
+    "translate": "skill_tree.elemental_bendings.firebender.description"
+  },
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/icon.png"
+  },
+  "frame": "goal",
+  "order": 11,
+  "auto_grant": true,
+  "refundable": true,
+  "default_powers": [
+    "elemental_bendings:firebender/mastery/progress",
+    "elemental_bendings:firebender/mastery/training"
+  ],
+  "condition": {
+    "type": "origins:origin",
+    "layer": "elemental_bendings:bending",
+    "origin": "elemental_bendings:firebender"
+  }
+}

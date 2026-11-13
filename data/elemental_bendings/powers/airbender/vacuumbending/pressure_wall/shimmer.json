@@ -1,0 +1,29 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+    "lifetime": 16,
+    "lifetime_variation": 6,
+    "size": 0.5,
+    "size_variation": 0.2,
+    "end_size": 0.15,
+    "color": "#B4BECC50",
+    "end_color": "#46505C00",
+    "friction": 0.85,
+    "frames": 4,
+    "frame_time": 4,
+    "physics": false,
+    "roll": "rUni(0, 360)"
+  },
+  "count": 1,
+  "frequency": 3,
+  "offset_y": 1.5,
+  "spread": {
+    "x": 1.2,
+    "y": 1.2,
+    "z": 0.2
+  },
+  "speed": 0.0,
+  "hidden": true
+}

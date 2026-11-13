@@ -1,0 +1,9 @@
+{
+  "type": "apoli:model_color",
+  "part": "all",
+  "red": 0.62,
+  "green": 1.0,
+  "blue": 1.0,
+  "alpha": 0.5,
+  "hidden": true
+}

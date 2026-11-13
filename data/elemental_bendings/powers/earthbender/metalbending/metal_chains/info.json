@@ -1,0 +1,70 @@
+{
+  "type": "apoli:simple",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/isaacfanta/active.png",
+      "text": {
+        "translate": "badge.elemental_bendings.combo.3.when",
+        "with": [
+          {
+            "keybind": "key.elemental_bendings.stance_3"
+          },
+          {
+            "keybind": "key.elemental_bendings.stance_1"
+          },
+          {
+            "keybind": "key.elemental_bendings.stance_3"
+          },
+          {
+            "translate": "badge.elemental_bendings.when.chain"
+          }
+        ]
+      }
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/isaacfanta/active.png",
+      "text": {
+        "text": "",
+        "extra": [
+          {
+            "translate": "badge.elemental_bendings.combo.3.when",
+            "with": [
+              {
+                "keybind": "key.elemental_bendings.stance_3"
+              },
+              {
+                "keybind": "key.elemental_bendings.stance_1"
+              },
+              {
+                "keybind": "key.elemental_bendings.stance_2"
+              },
+              {
+                "translate": "badge.elemental_bendings.when.chain"
+              }
+            ]
+          },
+          "\n",
+          {
+            "translate": "badge.elemental_bendings.note.grapple_swing",
+            "with": [
+              {
+                "keybind": "key.left"
+              },
+              {
+                "keybind": "key.right"
+              },
+              {
+                "keybind": "key.jump"
+              },
+              {
+                "keybind": "key.sneak"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

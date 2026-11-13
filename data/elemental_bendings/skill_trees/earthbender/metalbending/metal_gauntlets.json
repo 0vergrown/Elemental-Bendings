@@ -1,0 +1,26 @@
+{
+  "parent": "elemental_bendings:earthbender/metalbending/sword_throw",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.metal_gauntlets.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.metal_gauntlets.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/metalbending/metal_gauntlets/active",
+    "elemental_bendings:earthbender/metalbending/metal_gauntlets/pose",
+    "elemental_bendings:earthbender/metalbending/metal_gauntlets/model/netherite",
+    "elemental_bendings:earthbender/metalbending/metal_gauntlets/model/iron",
+    "elemental_bendings:earthbender/metalbending/metal_gauntlets/model/golden",
+    "elemental_bendings:earthbender/metalbending/metal_gauntlets/model/chainmail",
+    "elemental_bendings:earthbender/metalbending/metal_gauntlets/heavy_fists",
+    "elemental_bendings:earthbender/metalbending/metal_gauntlets/impact",
+    "elemental_bendings:earthbender/metalbending/metal_gauntlets"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/metalbending/metal_gauntlets.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

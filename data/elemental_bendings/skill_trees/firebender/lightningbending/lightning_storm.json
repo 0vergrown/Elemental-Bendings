@@ -1,0 +1,55 @@
+{
+  "parent": "elemental_bendings:firebender/lightningbending/lightning_redirection",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.lightning_storm.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.lightning_storm.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/lightningbending/lightning_storm/lightning_storm",
+    "elemental_bendings:firebender/lightningbending/lightning_storm/heartbeat",
+    "elemental_bendings:firebender/lightningbending/lightning_storm/recharge",
+    "elemental_bendings:firebender/lightningbending/lightning_storm/pulse",
+    "elemental_bendings:firebender/lightningbending/lightning_storm/pose",
+    "elemental_bendings:firebender/lightningbending/stance/dragon_shoots_its_whiskers",
+    "elemental_bendings:firebender/lightningbending/stance/separating_yin_and_yang",
+    "elemental_bendings:firebender/lightningbending/stance/the_pathway_of_energy",
+    "elemental_bendings:firebender/lightningbending/emblem"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/lightningbending/lightning_storm.png"
+  },
+  "frame": "challenge",
+  "cost": 3,
+  "order": 0,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/thunderclap"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/chain_lightning"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/lightning_stream"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/flash_step"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/lightning_strike"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/lightning_redirection/window"
+      }
+    ]
+  }
+}

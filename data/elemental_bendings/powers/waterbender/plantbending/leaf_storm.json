@@ -228,18 +228,5 @@
       }
     ]
   },
-  "description": {
-    "translate": "power.elemental_bendings.waterbender/plantbending/leaf_storm.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
-      }
-    ]
-  }
+  "hidden": true
 }

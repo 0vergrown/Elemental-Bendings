@@ -6,7 +6,7 @@
   "y": -42,
   "width": 16,
   "height": 16,
-  "u": "16 * (if(elemental_bendings:airbender/air_ball/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:airbender/air_ball/fuel / 450) * 4)), if(elemental_bendings:airbender/air_jump/jumps > 0, elemental_bendings:airbender/air_jump/jumps, 0)))",
+  "u": "16 * (if(elemental_bendings:airbender/air_ball/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:airbender/air_ball/fuel / 450) * 4)), if(elemental_bendings:airbender/air_jump/jumps > 0, min(4, elemental_bendings:airbender/air_jump/jumps), 0)))",
   "v": 0,
   "texture_width": 80,
   "texture_height": 16,
@@ -15,5 +15,23 @@
   "strength": "if(elemental_bendings:bending/cooldown > 0, 0.55, 1)",
   "draw_phase": "above_hud",
   "visible_in_third_person": true,
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/suffocation"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/shattering_scream"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/astral_projection"
+      }
+    ],
+    "inverted": true
+  },
   "hidden": true
 }

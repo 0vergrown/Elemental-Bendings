@@ -326,6 +326,14 @@
               "tag": "elemental_bendings:earthbender/bendable"
             },
             {
+              "type": "apoli:in_tag",
+              "tag": "elemental_bendings:earthbender/sandbending/extra"
+            },
+            {
+              "type": "apoli:in_tag",
+              "tag": "elemental_bendings:earthbender/metalbending/metal"
+            },
+            {
               "type": "apoli:and",
               "conditions": [
                 {
@@ -335,8 +343,21 @@
                 {
                   "type": "apoli:offset",
                   "condition": {
-                    "type": "apoli:in_tag",
-                    "tag": "elemental_bendings:earthbender/bendable"
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/bendable"
+                      },
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/sandbending/extra"
+                      },
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/metalbending/metal"
+                      }
+                    ]
                   },
                   "y": -1
                 }

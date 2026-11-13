@@ -1,0 +1,18 @@
+{
+  "type": "apoli:prevent_item_use",
+  "item_condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:food"
+      },
+      {
+        "type": "apoli:ingredient",
+        "ingredient": {
+          "item": "minecraft:potion"
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

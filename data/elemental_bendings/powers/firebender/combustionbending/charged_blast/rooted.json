@@ -1,0 +1,15 @@
+{
+  "type": "apoli:attribute",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:firebender/combustionbending/charged_blast/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "modifier": {
+    "attribute": "minecraft:generic.movement_speed",
+    "operation": "multiply_total",
+    "value": -0.55
+  },
+  "hidden": true
+}

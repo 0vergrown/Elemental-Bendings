@@ -1,0 +1,29 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+    "lifetime": 22,
+    "lifetime_variation": 8,
+    "size": 0.07,
+    "size_variation": 0.04,
+    "end_size": 0.05,
+    "color": "#F2E2B0",
+    "end_color": "#C9A86A",
+    "gravity": 0.05,
+    "friction": 0.97,
+    "frames": 4,
+    "roll": "rUni(0, 360)",
+    "roll_speed": "rUni(-20, 20)"
+  },
+  "count": 3,
+  "frequency": 2,
+  "offset_y": 0.15,
+  "spread": {
+    "x": 2.8,
+    "y": 0.05,
+    "z": 2.8
+  },
+  "speed": 0.02,
+  "hidden": true
+}

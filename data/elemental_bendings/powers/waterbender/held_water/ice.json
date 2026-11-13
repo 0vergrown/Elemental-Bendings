@@ -14,7 +14,8 @@
     "frames": 5,
     "physics": false,
     "roll": "rUni(0, 360)",
-    "roll_speed": "rUni(-4, 4)"
+    "roll_speed": "rUni(-4, 4)",
+    "alpha_bleed": true
   },
   "count": 2,
   "frequency": 1,

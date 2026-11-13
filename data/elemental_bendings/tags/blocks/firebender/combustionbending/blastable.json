@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "#elemental_bendings:earthbender/bendable",
+    "#minecraft:leaves",
+    "#minecraft:logs",
+    "#minecraft:flowers",
+    "#minecraft:ice",
+    "minecraft:snow",
+    "minecraft:snow_block",
+    "minecraft:powder_snow",
+    "minecraft:tall_grass",
+    "minecraft:fern",
+    "minecraft:large_fern",
+    "minecraft:dead_bush",
+    "minecraft:sweet_berry_bush",
+    "minecraft:moss_carpet",
+    {
+      "id": "minecraft:short_grass",
+      "required": false
+    },
+    {
+      "id": "minecraft:grass",
+      "required": false
+    }
+  ]
+}

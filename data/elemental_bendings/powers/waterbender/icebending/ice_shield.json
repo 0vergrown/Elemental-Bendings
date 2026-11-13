@@ -1,0 +1,111 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1",
+    {
+      "key": "key.elemental_bendings.stance_3",
+      "hold": 5
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/icebending/ice_shield/fuel",
+          "modifier": {
+            "operation": "set_total",
+            "value": 240
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/icebending/ice_shield/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 6
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 5
+          }
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.glass.place",
+          "volume": 1.0,
+          "pitch": 0.6
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.amethyst_block.resonate",
+          "volume": 0.8,
+          "pitch": 0.8
+        }
+      ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 1
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/water_whip/heartbeat",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/water_shield/heartbeat",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/icebending/ice_whip/heartbeat",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/icebending/ice_shield/heartbeat",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      }
+    ]
+  },
+  "hidden": true
+}

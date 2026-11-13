@@ -5,6 +5,326 @@
   "impact": "medium",
   "order": 4,
   "powers": [
+    "elemental_bendings:airbender/air_nomad",
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/vacuumbending"
+      },
+      "powers": [
+        "elemental_bendings:airbender/vacuumbending/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/soundbending"
+      },
+      "powers": [
+        "elemental_bendings:airbender/soundbending/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spiritual_airbending"
+      },
+      "powers": [
+        "elemental_bendings:airbender/spiritual_airbending/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:airbender/vacuumbending/vacuum_vortex"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:airbender/soundbending/soundbending"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:airbender/spiritual_airbending/spiritual_airbending"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:airbender/air_slice"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/vacuum_vortex"
+      },
+      "powers": [
+        "elemental_bendings:airbender/vacuumbending/vacuum_vortex/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:airbender/soundbending/soundbending"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:airbender/soundbending/shattering_scream",
+            "inverted": true
+          }
+        ]
+      },
+      "powers": [
+        "elemental_bendings:airbender/soundbending/sonic_scream/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/shattering_scream"
+      },
+      "powers": [
+        "elemental_bendings:airbender/soundbending/shattering_scream/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spiritual_airbending"
+      },
+      "powers": [
+        "elemental_bendings:airbender/spiritual_airbending/spiritual_airbending/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:airbender/vacuumbending/pressure_wave"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:airbender/soundbending/sonic_clap"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:airbender/spiritual_airbending/spirit_gust"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:airbender/air_kick"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/pressure_wave"
+      },
+      "powers": [
+        "elemental_bendings:airbender/vacuumbending/pressure_wave/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/sonic_clap"
+      },
+      "powers": [
+        "elemental_bendings:airbender/soundbending/sonic_clap/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spirit_gust"
+      },
+      "powers": [
+        "elemental_bendings:airbender/spiritual_airbending/spirit_gust/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spirit_sphere",
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:airbender/air_ball"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spirit_sphere"
+      },
+      "powers": [
+        "elemental_bendings:airbender/spiritual_airbending/spirit_sphere/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:airbender/vacuumbending/vacuum_pull"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:airbender/spiritual_airbending/spirit_leap"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:airbender/air_jump"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/vacuum_pull"
+      },
+      "powers": [
+        "elemental_bendings:airbender/vacuumbending/vacuum_pull/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spirit_leap"
+      },
+      "powers": [
+        "elemental_bendings:airbender/spiritual_airbending/spirit_leap/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/vacuumbending"
+      },
+      "powers": [
+        "elemental_bendings:airbender/vacuumbending/pressure_burst/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/pressure_barrier"
+      },
+      "powers": [
+        "elemental_bendings:airbender/vacuumbending/pressure_barrier/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/wall_run"
+      },
+      "powers": [
+        "elemental_bendings:airbender/vacuumbending/wall_run/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/suffocation"
+      },
+      "powers": [
+        "elemental_bendings:airbender/vacuumbending/suffocation/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/echolocation"
+      },
+      "powers": [
+        "elemental_bendings:airbender/soundbending/echolocation/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/dead_silence"
+      },
+      "powers": [
+        "elemental_bendings:airbender/soundbending/dead_silence/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/sound_bubble"
+      },
+      "powers": [
+        "elemental_bendings:airbender/soundbending/sound_bubble/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/calming_hum"
+      },
+      "powers": [
+        "elemental_bendings:airbender/soundbending/calming_hum/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/disorienting_tone"
+      },
+      "powers": [
+        "elemental_bendings:airbender/soundbending/disorienting_tone/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/meditation"
+      },
+      "powers": [
+        "elemental_bendings:airbender/spiritual_airbending/meditation/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/flight"
+      },
+      "powers": [
+        "elemental_bendings:airbender/spiritual_airbending/flight/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spirit_dash"
+      },
+      "powers": [
+        "elemental_bendings:airbender/spiritual_airbending/spirit_dash/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/astral_projection"
+      },
+      "powers": [
+        "elemental_bendings:airbender/spiritual_airbending/astral_projection/info"
+      ]
+    },
     "elemental_bendings:bending/cooldown",
     "elemental_bendings:bending/pose",
     "elemental_bendings:bending/pose_timer",
@@ -15,25 +335,20 @@
     "elemental_bendings:airbender/stance/dragon_palm",
     "elemental_bendings:airbender/stance/single_palm_change",
     "elemental_bendings:airbender/stance/lion_holds_the_ball",
-    "elemental_bendings:airbender/air_nomad",
     "elemental_bendings:airbender/air_slice/pose",
-    "elemental_bendings:airbender/air_slice",
     "elemental_bendings:airbender/air_kick/pose",
-    "elemental_bendings:airbender/air_kick",
     "elemental_bendings:airbender/air_ball/ball",
     "elemental_bendings:airbender/air_ball/heartbeat",
     "elemental_bendings:airbender/air_ball/fuel",
     "elemental_bendings:airbender/air_ball/cushion",
     "elemental_bendings:airbender/air_ball/pose",
     "elemental_bendings:airbender/air_ball/rolling",
-    "elemental_bendings:airbender/air_ball",
     "elemental_bendings:airbender/air_jump/jumps",
     "elemental_bendings:airbender/air_jump/cushion",
     "elemental_bendings:airbender/air_jump/landing",
     "elemental_bendings:airbender/air_jump/soft_landing",
     "elemental_bendings:airbender/air_jump/pose",
     "elemental_bendings:airbender/air_jump/glide/pose",
-    "elemental_bendings:airbender/air_jump",
     "elemental_bendings:airbender/emblem"
   ]
 }

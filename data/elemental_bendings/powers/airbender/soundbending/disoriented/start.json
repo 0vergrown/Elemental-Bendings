@@ -1,0 +1,12 @@
+{
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+    "type": "apoli:modify_resource",
+    "resource": "elemental_bendings:airbender/soundbending/disoriented/stumble",
+    "modifier": {
+      "operation": "set_total",
+      "value": 12
+    }
+  },
+  "hidden": true
+}

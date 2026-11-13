@@ -1,0 +1,40 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/waterbender/icebending/packed.png",
+    "lifetime": 10,
+    "lifetime_variation": 2,
+    "size": 0.12,
+    "size_variation": 0.03,
+    "end_size": 0.09,
+    "color": "#FFFFFF",
+    "end_color": "#B9D8FFC0",
+    "friction": 0.8,
+    "frames": 4,
+    "physics": false,
+    "roll": "rUni(0, 360)",
+    "roll_speed": "rUni(-3, 3)"
+  },
+  "count": 2,
+  "frequency": 1,
+  "model_part": "body",
+  "space": "local_horizontal_normalized",
+  "offset_x": 0.0,
+  "offset_y": -0.12,
+  "offset_z": 0.68,
+  "spread": {
+    "x": 0.05,
+    "y": 0.05,
+    "z": 0.05
+  },
+  "speed": 0.002,
+  "visible_in_first_person": true,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/held_water",
+    "comparison": "==",
+    "compare_to": 7
+  },
+  "hidden": true
+}

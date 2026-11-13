@@ -1,0 +1,52 @@
+{
+  "parent": "elemental_bendings:airbender/soundbending/disorienting_tone",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.shattering_scream.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.shattering_scream.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/soundbending/shattering_scream/pose",
+    "elemental_bendings:airbender/soundbending/shattering_scream",
+    "elemental_bendings:airbender/soundbending/stance/play_the_pipa",
+    "elemental_bendings:airbender/soundbending/stance/strike_ears_with_both_fists",
+    "elemental_bendings:airbender/soundbending/stance/fan_through_the_back",
+    "elemental_bendings:airbender/soundbending/emblem"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/soundbending/shattering_scream.png"
+  },
+  "frame": "challenge",
+  "cost": 3,
+  "order": 0,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/sonic_clap"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/sound_bubble"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/echolocation"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/dead_silence"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/calming_hum"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/disorienting_tone"
+      }
+    ]
+  }
+}

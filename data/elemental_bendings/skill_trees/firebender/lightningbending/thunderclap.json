@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:firebender/lightningbending",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.thunderclap.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.thunderclap.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/lightningbending/thunderclap/pose",
+    "elemental_bendings:firebender/lightningbending/thunderclap"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/lightningbending/thunderclap.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

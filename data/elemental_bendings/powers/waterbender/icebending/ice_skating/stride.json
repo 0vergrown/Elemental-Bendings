@@ -1,0 +1,27 @@
+{
+  "type": "apoli:attribute",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:sprinting"
+      },
+      {
+        "type": "apoli:on_block"
+      },
+      {
+        "type": "apoli:fluid_height",
+        "fluid": "minecraft:water",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      }
+    ]
+  },
+  "modifier": {
+    "attribute": "minecraft:generic.movement_speed",
+    "operation": "multiply_total",
+    "value": 0.35
+  },
+  "hidden": true
+}

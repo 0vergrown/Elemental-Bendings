@@ -1,0 +1,100 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 4,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:airbender/vacuumbending/pressure_wave/field",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:area_of_effect",
+          "radius": 2.8,
+          "shape": "sphere",
+          "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+              "type": "apoli:living"
+            }
+          },
+          "bientity_action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:add_velocity",
+                "x": 0,
+                "y": 0.3,
+                "z": 1.0,
+                "reference": "position"
+              },
+              {
+                "type": "apoli:target_action",
+                "action": {
+                  "type": "apoli:spawn_particles",
+                  "particle": {
+                    "type": "apoli:custom",
+                    "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+                    "lifetime": 10,
+                    "lifetime_variation": 4,
+                    "size": 0.1,
+                    "size_variation": 0.04,
+                    "end_size": 0.0,
+                    "color": "#F2F6FCE6",
+                    "end_color": "#5C667400",
+                    "friction": 0.86,
+                    "physics": false,
+                    "frames": 4,
+                    "roll": "rUni(0, 360)",
+                    "alpha_bleed": true
+                  },
+                  "count": 4,
+                  "offset_y": 1.0,
+                  "spread": 0.3,
+                  "speed": 0.05
+                }
+              },
+              {
+                "type": "apoli:actor_action",
+                "action": {
+                  "type": "apoli:if_else",
+                  "condition": {
+                    "type": "apoli:minecraft_version",
+                    "version": "1.21",
+                    "comparison": ">="
+                  },
+                  "if_action": {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:entity.breeze.deflect",
+                    "volume": 0.5,
+                    "pitch": 1.4
+                  },
+                  "else_action": {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:entity.phantom.flap",
+                    "volume": 0.5,
+                    "pitch": 1.4
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:airbender/vacuumbending/pressure_wave/pulse",
+          "modifier": {
+            "operation": "set_total",
+            "value": 4
+          }
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

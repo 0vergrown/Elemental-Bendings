@@ -1,0 +1,76 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 2,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:attached_to_rope",
+      "slot": "chain"
+    },
+    "if_action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:entity_in_radius",
+        "radius": 2.2,
+        "shape": "sphere",
+        "bientity_condition": {
+          "type": "apoli:roped_together"
+        }
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:detach_rope",
+            "slot": "chain"
+          },
+          {
+            "type": "apoli:area_of_effect",
+            "radius": 3,
+            "bientity_condition": {
+              "type": "apoli:target_condition",
+              "condition": {
+                "type": "apoli:living"
+              }
+            },
+            "bientity_action": {
+              "type": "apoli:target_action",
+              "action": {
+                "type": "apoli:revoke_all_powers",
+                "source": "elemental_bendings:chained"
+              }
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.chain.break",
+            "volume": 0.9,
+            "pitch": 1.0
+          }
+        ]
+      },
+      "else_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:rope_pull",
+            "slot": "chain",
+            "which": "other",
+            "speed": 0.16,
+            "reel": 0.4
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/metalbending/metal_chains/reel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 2
+            }
+          }
+        ]
+      }
+    }
+  },
+  "hidden": true
+}

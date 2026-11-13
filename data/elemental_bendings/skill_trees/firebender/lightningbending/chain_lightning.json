@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:firebender/lightningbending/thunderclap",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.chain_lightning.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.chain_lightning.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/lightningbending/chain_lightning/pose",
+    "elemental_bendings:firebender/lightningbending/chain_lightning"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/lightningbending/chain_lightning.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

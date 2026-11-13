@@ -1,0 +1,294 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": {
+    "key": "key.elemental_bendings.stance_3",
+    "continuous": true
+  },
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:random_chance",
+            "chance": "(mod(day_time, 24000) >= 13000)"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+          }
+        ]
+      }
+    ]
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 6
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/grip",
+            "modifier": {
+              "operation": "add_value",
+              "value": "-2 / (1 + 0.25 * (mod(day_time, 24000) >= 13000) + 0.75 * (mod(day_time, 24000) >= 13000) * (moon_phase == 0))"
+            }
+          },
+          {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:key_pressed",
+              "key": "key.jump"
+            },
+            "if_action": {
+              "type": "apoli:add_velocity",
+              "space": "world",
+              "x": 0,
+              "z": 0,
+              "y": "0.08 + 0.0204 * (0.22 - 0.3 * (1 - (elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240)) * (1 - (elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240))) + 0.35 * ((0.22 - 0.3 * (1 - (elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240)) * (1 - (elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240))) - (y - elemental_bendings:waterbender/bloodbending/blood_levitation/last_y))"
+            },
+            "else_action": {
+              "type": "apoli:if_else",
+              "condition": {
+                "type": "apoli:key_pressed",
+                "key": "key.sneak"
+              },
+              "if_action": {
+                "type": "apoli:add_velocity",
+                "space": "world",
+                "x": 0,
+                "z": 0,
+                "y": "0.08 + 0.0204 * (-0.22 - 0.3 * (1 - (elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240)) * (1 - (elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240))) + 0.35 * ((-0.22 - 0.3 * (1 - (elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240)) * (1 - (elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240))) - (y - elemental_bendings:waterbender/bloodbending/blood_levitation/last_y))"
+              },
+              "else_action": {
+                "type": "apoli:add_velocity",
+                "space": "world",
+                "x": 0,
+                "z": 0,
+                "y": "0.08 + 0.0204 * (0 - 0.3 * (1 - (elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240)) * (1 - (elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240))) + 0.35 * ((0 - 0.3 * (1 - (elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240)) * (1 - (elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240))) - (y - elemental_bendings:waterbender/bloodbending/blood_levitation/last_y))"
+              }
+            }
+          },
+          {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:key_pressed",
+              "key": "key.forward"
+            },
+            "if_action": {
+              "type": "apoli:add_velocity",
+              "x": 0,
+              "y": 0,
+              "z": 0.03,
+              "space": "local_horizontal_normalized"
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/last_y",
+            "modifier": {
+              "operation": "set_total",
+              "value": "y"
+            }
+          },
+          {
+            "type": "apoli:set_fall_distance",
+            "fall_distance": 0
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/waterbender/bloodbending/blood_drop.png",
+              "lifetime": 14,
+              "lifetime_variation": 6,
+              "size": 0.14,
+              "size_variation": 0.07,
+              "end_size": 0.05,
+              "color": "#FFFFFFEE",
+              "end_color": "#C0505088",
+              "gravity": 0.05,
+              "friction": 0.95,
+              "frames": 4,
+              "frame_time": 3,
+              "roll": "rUni(0, 360)"
+            },
+            "count": 1,
+            "offset_y": 0.05,
+            "spread": {
+              "x": 0.15,
+              "y": 0.0,
+              "z": 0.15
+            },
+            "speed": 0.0
+          },
+          {
+            "type": "apoli:random_chance",
+            "chance": 0.35,
+            "action": {
+              "type": "apoli:spawn_particles",
+              "particle": {
+                "type": "apoli:custom",
+                "texture": "elemental_bendings:textures/particle/waterbender/bloodbending/blood_drop.png",
+                "lifetime": 14,
+                "lifetime_variation": 3,
+                "size": 0.13,
+                "size_variation": 0.05,
+                "end_size": 0.06,
+                "color": "#FFFFFFEE",
+                "end_color": "#B0303099",
+                "friction": 0.92,
+                "frames": 4,
+                "frame_time": 3,
+                "physics": false,
+                "roll": "rUni(0, 360)"
+              },
+              "count": 1,
+              "offset_y": 0.9,
+              "spread": {
+                "x": 0.4,
+                "y": 0.6,
+                "z": 0.4
+              },
+              "speed": 0.02
+            }
+          },
+          {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:random_chance",
+              "chance": "(elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240) > 0.5"
+            },
+            "if_action": {
+              "type": "apoli:random_chance",
+              "chance": 0.05,
+              "action": {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:entity.warden.heartbeat",
+                "volume": 0.45,
+                "pitch": 1.0
+              }
+            },
+            "else_action": {
+              "type": "apoli:if_else",
+              "condition": {
+                "type": "apoli:random_chance",
+                "chance": "(elemental_bendings:waterbender/bloodbending/blood_levitation/grip / 240) > 0.2"
+              },
+              "if_action": {
+                "type": "apoli:random_chance",
+                "chance": 0.09,
+                "action": {
+                  "type": "apoli:play_sound",
+                  "sound": "minecraft:entity.warden.heartbeat",
+                  "volume": 0.55,
+                  "pitch": 1.3
+                }
+              },
+              "else_action": {
+                "type": "apoli:random_chance",
+                "chance": 0.16,
+                "action": {
+                  "type": "apoli:play_sound",
+                  "sound": "minecraft:entity.warden.heartbeat",
+                  "volume": 0.7,
+                  "pitch": 1.7
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "entity_action_released": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/grip",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/rest",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 100
+                }
+              },
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:entity.slime.squish_small",
+                "volume": 0.6,
+                "pitch": 0.6
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/waterbender/bloodbending/blood_drop.png",
+                  "lifetime": 14,
+                  "lifetime_variation": 6,
+                  "size": 0.14,
+                  "size_variation": 0.07,
+                  "end_size": 0.05,
+                  "color": "#FFFFFFEE",
+                  "end_color": "#C0505088",
+                  "gravity": 0.05,
+                  "friction": 0.95,
+                  "frames": 4,
+                  "frame_time": 3,
+                  "roll": "rUni(0, 360)"
+                },
+                "count": 10,
+                "offset_y": 0.6,
+                "spread": {
+                  "x": 0.3,
+                  "y": 0.5,
+                  "z": 0.3
+                },
+                "speed": 0.06
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

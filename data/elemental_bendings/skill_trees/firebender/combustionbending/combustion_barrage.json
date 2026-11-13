@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:firebender/combustionbending",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.combustion_barrage.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.combustion_barrage.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/combustionbending/combustion_barrage/pose",
+    "elemental_bendings:firebender/combustionbending/combustion_barrage"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/combustionbending/combustion_barrage.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 2
+}

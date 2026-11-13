@@ -1,0 +1,24 @@
+{
+  "parent": "elemental_bendings:airbender/soundbending",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.calming_hum.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.calming_hum.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/soundbending/calming_hum/heartbeat",
+    "elemental_bendings:airbender/soundbending/calming_hum/fuel",
+    "elemental_bendings:airbender/soundbending/calming_hum/pose",
+    "elemental_bendings:airbender/soundbending/calming_hum/notes",
+    "elemental_bendings:airbender/soundbending/calming_hum/rooted",
+    "elemental_bendings:airbender/soundbending/calming_hum/humming",
+    "elemental_bendings:airbender/soundbending/calming_hum"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/soundbending/calming_hum.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 2
+}

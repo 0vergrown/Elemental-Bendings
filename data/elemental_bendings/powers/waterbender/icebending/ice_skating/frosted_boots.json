@@ -1,0 +1,30 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "texture",
+  "texture_location": "elemental_bendings:textures/entity/waterbender/icebending/frosted_soles.png",
+  "render_as_overlay": true,
+  "render_type": "translucent",
+  "body_parts": [
+    "right_leg",
+    "left_leg"
+  ],
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:sprinting"
+      },
+      {
+        "type": "apoli:on_block"
+      },
+      {
+        "type": "apoli:fluid_height",
+        "fluid": "minecraft:water",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      }
+    ]
+  },
+  "hidden": true
+}

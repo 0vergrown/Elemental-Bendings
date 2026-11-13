@@ -1,0 +1,13 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:earthbender/metalbending/shard",
+  "texture_location": "elemental_bendings:textures/entity/earthbender/metalbending/shard_chain.png",
+  "render_type": "cutout",
+  "animations": {
+    "animation": "elemental_bendings:earthbender/metalbending/shard",
+    "name": "animation.shard.roll"
+  },
+  "scale": 2.2,
+  "hidden": true
+}

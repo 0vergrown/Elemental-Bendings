@@ -1,0 +1,24 @@
+{
+  "parent": "elemental_bendings:airbender",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/spiritual_airbending/spiritual_airbending",
+    "elemental_bendings:airbender/spiritual_airbending/aura",
+    "elemental_bendings:airbender/spiritual_airbending/spirit_sight"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/spiritual_airbending/spiritual_airbending.png"
+  },
+  "frame": "goal",
+  "cost": 2,
+  "order": 2,
+  "excludes": [
+    "elemental_bendings:airbender/vacuumbending",
+    "elemental_bendings:airbender/soundbending"
+  ]
+}

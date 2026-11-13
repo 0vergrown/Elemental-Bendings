@@ -1,0 +1,13 @@
+{
+  "type": "apoli:invulnerability",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/metalbending/shrapnel_shield/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "damage_condition": {
+    "type": "apoli:projectile"
+  },
+  "hidden": true
+}

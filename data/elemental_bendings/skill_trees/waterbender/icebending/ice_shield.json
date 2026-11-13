@@ -1,0 +1,28 @@
+{
+  "parent": "elemental_bendings:waterbender/icebending/ice_whip",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.icebending.ice_shield.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.icebending.ice_shield.description"
+  },
+  "powers": [
+    "elemental_bendings:waterbender/icebending/ice_shield/heartbeat",
+    "elemental_bendings:waterbender/icebending/ice_shield/fuel",
+    "elemental_bendings:waterbender/icebending/ice_shield/pose",
+    "elemental_bendings:waterbender/icebending/ice_shield/dome",
+    "elemental_bendings:waterbender/icebending/ice_shield/protection",
+    "elemental_bendings:waterbender/icebending/ice_shield/thick_ice",
+    "elemental_bendings:waterbender/icebending/ice_shield/frostbite",
+    "elemental_bendings:waterbender/icebending/ice_shield/rooted",
+    "elemental_bendings:waterbender/icebending/ice_shield/grounded",
+    "elemental_bendings:waterbender/icebending/ice_shield/holding",
+    "elemental_bendings:waterbender/icebending/ice_shield"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/waterbender/icebending/ice_shield.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

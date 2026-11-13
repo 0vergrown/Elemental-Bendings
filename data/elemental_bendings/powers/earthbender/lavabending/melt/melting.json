@@ -1,0 +1,661 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": {
+    "key": "key.elemental_bendings.stance_3",
+    "continuous": true
+  },
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/lavabending/melt/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/lavabending/melt/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 6
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/lavabending/melt/fuel",
+            "modifier": {
+              "operation": "add_value",
+              "value": -2
+            }
+          },
+          {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:random_chance",
+              "chance": "mod(elemental_bendings:earthbender/lavabending/melt/fuel, 4) == 0"
+            },
+            "if_action": {
+              "type": "apoli:if_else",
+              "condition": {
+                "type": "apoli:raycast",
+                "distance": 3.5,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "any"
+              },
+              "if_action": {
+                "type": "apoli:raycast",
+                "distance": 8,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "any",
+                "block_action": {
+                  "type": "apoli:if_else",
+                  "condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:block",
+                        "block": "minecraft:magma_block"
+                      },
+                      {
+                        "type": "apoli:fluid",
+                        "fluid_condition": {
+                          "type": "apoli:in_tag",
+                          "tag": "minecraft:lava"
+                        }
+                      }
+                    ]
+                  },
+                  "if_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:area_of_effect",
+                        "radius": 1.3,
+                        "shape": "sphere",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:magma_block"
+                            },
+                            {
+                              "type": "apoli:fluid",
+                              "fluid_condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "minecraft:lava"
+                              }
+                            }
+                          ]
+                        },
+                        "block_action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:ghost_block",
+                              "block": "minecraft:stone",
+                              "duration": 600
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:large_smoke",
+                              "count": 3,
+                              "spread": {
+                                "x": 0.3,
+                                "y": 0.3,
+                                "z": 0.3
+                              },
+                              "speed": 0.02
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": {
+                              "type": "apoli:custom",
+                              "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                              "lifetime": 18,
+                              "lifetime_variation": 6,
+                              "size": 0.16,
+                              "size_variation": 0.07,
+                              "end_size": 0.08,
+                              "color": "#FFFFFF",
+                              "end_color": "#FF3A0A90",
+                              "gravity": 0.06,
+                              "friction": 0.97,
+                              "emissive": true,
+                              "frames": 5,
+                              "roll": "rUni(0, 360)",
+                              "roll_speed": "rUni(-10, 10)"
+                            },
+                            "count": 3,
+                            "spread": {
+                              "x": 0.4,
+                              "y": 0.4,
+                              "z": 0.4
+                            },
+                            "speed": 0.15
+                          },
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": "minecraft:lava",
+                            "count": 1,
+                            "spread": {
+                              "x": 0.3,
+                              "y": 0.3,
+                              "z": 0.3
+                            },
+                            "speed": 0.0
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "else_action": {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "if_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:area_of_effect",
+                          "radius": 1.3,
+                          "shape": "sphere",
+                          "block_condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable"
+                          },
+                          "block_action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:magma_block",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": {
+                                "type": "apoli:custom",
+                                "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                                "lifetime": 18,
+                                "lifetime_variation": 6,
+                                "size": 0.16,
+                                "size_variation": 0.07,
+                                "end_size": 0.08,
+                                "color": "#FFFFFF",
+                                "end_color": "#FF3A0A90",
+                                "gravity": 0.06,
+                                "friction": 0.97,
+                                "emissive": true,
+                                "frames": 5,
+                                "roll": "rUni(0, 360)",
+                                "roll_speed": "rUni(-10, 10)"
+                              },
+                              "count": 6,
+                              "spread": {
+                                "x": 0.4,
+                                "y": 0.4,
+                                "z": 0.4
+                              },
+                              "speed": 0.15
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:lava",
+                              "count": 1,
+                              "spread": {
+                                "x": 0.3,
+                                "y": 0.3,
+                                "z": 0.3
+                              },
+                              "speed": 0.0
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "else_action": {
+                "type": "apoli:raycast",
+                "distance": 8,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "any",
+                "block_action": {
+                  "type": "apoli:if_else",
+                  "condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:block",
+                        "block": "minecraft:magma_block"
+                      },
+                      {
+                        "type": "apoli:fluid",
+                        "fluid_condition": {
+                          "type": "apoli:in_tag",
+                          "tag": "minecraft:lava"
+                        }
+                      }
+                    ]
+                  },
+                  "if_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:area_of_effect",
+                        "radius": 1.3,
+                        "shape": "sphere",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:magma_block"
+                            },
+                            {
+                              "type": "apoli:fluid",
+                              "fluid_condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "minecraft:lava"
+                              }
+                            }
+                          ]
+                        },
+                        "block_action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:ghost_block",
+                              "block": "minecraft:stone",
+                              "duration": 600
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:large_smoke",
+                              "count": 3,
+                              "spread": {
+                                "x": 0.3,
+                                "y": 0.3,
+                                "z": 0.3
+                              },
+                              "speed": 0.02
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": {
+                              "type": "apoli:custom",
+                              "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                              "lifetime": 18,
+                              "lifetime_variation": 6,
+                              "size": 0.16,
+                              "size_variation": 0.07,
+                              "end_size": 0.08,
+                              "color": "#FFFFFF",
+                              "end_color": "#FF3A0A90",
+                              "gravity": 0.06,
+                              "friction": 0.97,
+                              "emissive": true,
+                              "frames": 5,
+                              "roll": "rUni(0, 360)",
+                              "roll_speed": "rUni(-10, 10)"
+                            },
+                            "count": 3,
+                            "spread": {
+                              "x": 0.4,
+                              "y": 0.4,
+                              "z": 0.4
+                            },
+                            "speed": 0.15
+                          },
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": "minecraft:lava",
+                            "count": 1,
+                            "spread": {
+                              "x": 0.3,
+                              "y": 0.3,
+                              "z": 0.3
+                            },
+                            "speed": 0.0
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "else_action": {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "if_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:area_of_effect",
+                          "radius": 1.3,
+                          "shape": "sphere",
+                          "block_condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable"
+                          },
+                          "block_action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              },
+                              {
+                                "type": "apoli:if_else",
+                                "condition": {
+                                  "type": "apoli:and",
+                                  "conditions": [
+                                    {
+                                      "type": "apoli:offset",
+                                      "condition": {
+                                        "type": "apoli:or",
+                                        "conditions": [
+                                          {
+                                            "type": "apoli:in_tag",
+                                            "tag": "elemental_bendings:earthbender/bendable"
+                                          },
+                                          {
+                                            "type": "apoli:block",
+                                            "block": "minecraft:magma_block"
+                                          }
+                                        ]
+                                      },
+                                      "x": 1
+                                    },
+                                    {
+                                      "type": "apoli:offset",
+                                      "condition": {
+                                        "type": "apoli:or",
+                                        "conditions": [
+                                          {
+                                            "type": "apoli:in_tag",
+                                            "tag": "elemental_bendings:earthbender/bendable"
+                                          },
+                                          {
+                                            "type": "apoli:block",
+                                            "block": "minecraft:magma_block"
+                                          }
+                                        ]
+                                      },
+                                      "x": -1
+                                    },
+                                    {
+                                      "type": "apoli:offset",
+                                      "condition": {
+                                        "type": "apoli:or",
+                                        "conditions": [
+                                          {
+                                            "type": "apoli:in_tag",
+                                            "tag": "elemental_bendings:earthbender/bendable"
+                                          },
+                                          {
+                                            "type": "apoli:block",
+                                            "block": "minecraft:magma_block"
+                                          }
+                                        ]
+                                      },
+                                      "z": 1
+                                    },
+                                    {
+                                      "type": "apoli:offset",
+                                      "condition": {
+                                        "type": "apoli:or",
+                                        "conditions": [
+                                          {
+                                            "type": "apoli:in_tag",
+                                            "tag": "elemental_bendings:earthbender/bendable"
+                                          },
+                                          {
+                                            "type": "apoli:block",
+                                            "block": "minecraft:magma_block"
+                                          }
+                                        ]
+                                      },
+                                      "z": -1
+                                    },
+                                    {
+                                      "type": "apoli:offset",
+                                      "condition": {
+                                        "type": "apoli:or",
+                                        "conditions": [
+                                          {
+                                            "type": "apoli:in_tag",
+                                            "tag": "elemental_bendings:earthbender/bendable"
+                                          },
+                                          {
+                                            "type": "apoli:block",
+                                            "block": "minecraft:magma_block"
+                                          }
+                                        ]
+                                      },
+                                      "y": -1
+                                    },
+                                    {
+                                      "type": "apoli:random_chance",
+                                      "chance": "0.45"
+                                    }
+                                  ]
+                                },
+                                "if_action": {
+                                  "type": "apoli:ghost_block",
+                                  "block": "minecraft:lava",
+                                  "duration": 600
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": {
+                                "type": "apoli:custom",
+                                "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                                "lifetime": 18,
+                                "lifetime_variation": 6,
+                                "size": 0.16,
+                                "size_variation": 0.07,
+                                "end_size": 0.08,
+                                "color": "#FFFFFF",
+                                "end_color": "#FF3A0A90",
+                                "gravity": 0.06,
+                                "friction": 0.97,
+                                "emissive": true,
+                                "frames": 5,
+                                "roll": "rUni(0, 360)",
+                                "roll_speed": "rUni(-10, 10)"
+                              },
+                              "count": 6,
+                              "spread": {
+                                "x": 0.4,
+                                "y": 0.4,
+                                "z": 0.4
+                              },
+                              "speed": 0.15
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:lava",
+                              "count": 1,
+                              "spread": {
+                                "x": 0.3,
+                                "y": 0.3,
+                                "z": 0.3
+                              },
+                              "speed": 0.0
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+              "lifetime": 9,
+              "lifetime_variation": 3,
+              "size": 0.12,
+              "size_variation": 0.04,
+              "end_size": 0.07,
+              "color": "#FFFFFF",
+              "end_color": "#FF5A1AB0",
+              "friction": 0.8,
+              "emissive": true,
+              "frames": 5,
+              "physics": false,
+              "roll": "rUni(0, 360)",
+              "roll_speed": "rUni(-8, 8)"
+            },
+            "count": 1,
+            "model_part": "hands",
+            "offset_y": 0.0,
+            "spread": 0.12,
+            "speed": 0.01
+          },
+          {
+            "type": "apoli:random_chance",
+            "chance": 0.25,
+            "action": {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:block.lava.ambient",
+              "volume": 0.5,
+              "pitch": 1.2
+            }
+          },
+          {
+            "type": "apoli:random_chance",
+            "chance": 0.15,
+            "action": {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:block.fire.extinguish",
+              "volume": 0.3,
+              "pitch": 0.7
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "entity_action_released": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/lavabending/melt/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/lavabending/melt/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 10
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

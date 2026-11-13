@@ -1,0 +1,33 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/airbender/streak.png",
+    "lifetime": 8,
+    "lifetime_variation": 3,
+    "size": 0.35,
+    "size_variation": 0.15,
+    "end_size": 0.1,
+    "color": "#FFFFFFC0",
+    "end_color": "#DDEEFF00",
+    "friction": 0.9,
+    "physics": false,
+    "roll": "rUni(0, 360)"
+  },
+  "count": 2,
+  "frequency": 1,
+  "offset_y": 0.9,
+  "spread": {
+    "x": 0.3,
+    "y": 0.5,
+    "z": 0.3
+  },
+  "speed": 0.0,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/vacuumbending/vacuum_pull/pulling",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

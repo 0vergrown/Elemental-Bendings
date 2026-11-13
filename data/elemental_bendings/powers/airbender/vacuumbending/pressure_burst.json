@@ -1,0 +1,1341 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_3",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_1"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 40
+          }
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 1,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 78
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose_timer",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 10
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "apoli:if_else",
+          "condition": {
+            "type": "apoli:minecraft_version",
+            "version": "1.21",
+            "comparison": ">="
+          },
+          "if_action": {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.breeze.inhale",
+            "volume": 1.0,
+            "pitch": 1.2
+          },
+          "else_action": {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.illusioner.prepare_mirror",
+            "volume": 1.0,
+            "pitch": 1.2
+          }
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+            "lifetime": 10,
+            "lifetime_variation": 4,
+            "size": 0.1,
+            "size_variation": 0.04,
+            "end_size": 0.0,
+            "color": "#F2F6FCE6",
+            "end_color": "#5C667400",
+            "friction": 0.86,
+            "physics": false,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "alpha_bleed": true
+          },
+          "count": 2,
+          "spread": 0.08,
+          "offset_x": 2.6,
+          "offset_y": 1.0,
+          "offset_z": 0.0,
+          "velocity_x": -0.32,
+          "velocity_y": 0.0,
+          "velocity_z": -0.0
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+            "lifetime": 10,
+            "lifetime_variation": 4,
+            "size": 0.1,
+            "size_variation": 0.04,
+            "end_size": 0.0,
+            "color": "#F2F6FCE6",
+            "end_color": "#5C667400",
+            "friction": 0.86,
+            "physics": false,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "alpha_bleed": true
+          },
+          "count": 2,
+          "spread": 0.08,
+          "offset_x": 2.252,
+          "offset_y": 1.0,
+          "offset_z": 1.3,
+          "velocity_x": -0.277,
+          "velocity_y": 0.0,
+          "velocity_z": -0.16
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+            "lifetime": 10,
+            "lifetime_variation": 4,
+            "size": 0.1,
+            "size_variation": 0.04,
+            "end_size": 0.0,
+            "color": "#F2F6FCE6",
+            "end_color": "#5C667400",
+            "friction": 0.86,
+            "physics": false,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "alpha_bleed": true
+          },
+          "count": 2,
+          "spread": 0.08,
+          "offset_x": 1.3,
+          "offset_y": 1.0,
+          "offset_z": 2.252,
+          "velocity_x": -0.16,
+          "velocity_y": 0.0,
+          "velocity_z": -0.277
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+            "lifetime": 10,
+            "lifetime_variation": 4,
+            "size": 0.1,
+            "size_variation": 0.04,
+            "end_size": 0.0,
+            "color": "#F2F6FCE6",
+            "end_color": "#5C667400",
+            "friction": 0.86,
+            "physics": false,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "alpha_bleed": true
+          },
+          "count": 2,
+          "spread": 0.08,
+          "offset_x": 0.0,
+          "offset_y": 1.0,
+          "offset_z": 2.6,
+          "velocity_x": -0.0,
+          "velocity_y": 0.0,
+          "velocity_z": -0.32
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+            "lifetime": 10,
+            "lifetime_variation": 4,
+            "size": 0.1,
+            "size_variation": 0.04,
+            "end_size": 0.0,
+            "color": "#F2F6FCE6",
+            "end_color": "#5C667400",
+            "friction": 0.86,
+            "physics": false,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "alpha_bleed": true
+          },
+          "count": 2,
+          "spread": 0.08,
+          "offset_x": -1.3,
+          "offset_y": 1.0,
+          "offset_z": 2.252,
+          "velocity_x": 0.16,
+          "velocity_y": 0.0,
+          "velocity_z": -0.277
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+            "lifetime": 10,
+            "lifetime_variation": 4,
+            "size": 0.1,
+            "size_variation": 0.04,
+            "end_size": 0.0,
+            "color": "#F2F6FCE6",
+            "end_color": "#5C667400",
+            "friction": 0.86,
+            "physics": false,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "alpha_bleed": true
+          },
+          "count": 2,
+          "spread": 0.08,
+          "offset_x": -2.252,
+          "offset_y": 1.0,
+          "offset_z": 1.3,
+          "velocity_x": 0.277,
+          "velocity_y": 0.0,
+          "velocity_z": -0.16
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+            "lifetime": 10,
+            "lifetime_variation": 4,
+            "size": 0.1,
+            "size_variation": 0.04,
+            "end_size": 0.0,
+            "color": "#F2F6FCE6",
+            "end_color": "#5C667400",
+            "friction": 0.86,
+            "physics": false,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "alpha_bleed": true
+          },
+          "count": 2,
+          "spread": 0.08,
+          "offset_x": -2.6,
+          "offset_y": 1.0,
+          "offset_z": 0.0,
+          "velocity_x": 0.32,
+          "velocity_y": 0.0,
+          "velocity_z": -0.0
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+            "lifetime": 10,
+            "lifetime_variation": 4,
+            "size": 0.1,
+            "size_variation": 0.04,
+            "end_size": 0.0,
+            "color": "#F2F6FCE6",
+            "end_color": "#5C667400",
+            "friction": 0.86,
+            "physics": false,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "alpha_bleed": true
+          },
+          "count": 2,
+          "spread": 0.08,
+          "offset_x": -2.252,
+          "offset_y": 1.0,
+          "offset_z": -1.3,
+          "velocity_x": 0.277,
+          "velocity_y": 0.0,
+          "velocity_z": 0.16
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+            "lifetime": 10,
+            "lifetime_variation": 4,
+            "size": 0.1,
+            "size_variation": 0.04,
+            "end_size": 0.0,
+            "color": "#F2F6FCE6",
+            "end_color": "#5C667400",
+            "friction": 0.86,
+            "physics": false,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "alpha_bleed": true
+          },
+          "count": 2,
+          "spread": 0.08,
+          "offset_x": -1.3,
+          "offset_y": 1.0,
+          "offset_z": -2.252,
+          "velocity_x": 0.16,
+          "velocity_y": 0.0,
+          "velocity_z": 0.277
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+            "lifetime": 10,
+            "lifetime_variation": 4,
+            "size": 0.1,
+            "size_variation": 0.04,
+            "end_size": 0.0,
+            "color": "#F2F6FCE6",
+            "end_color": "#5C667400",
+            "friction": 0.86,
+            "physics": false,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "alpha_bleed": true
+          },
+          "count": 2,
+          "spread": 0.08,
+          "offset_x": -0.0,
+          "offset_y": 1.0,
+          "offset_z": -2.6,
+          "velocity_x": 0.0,
+          "velocity_y": 0.0,
+          "velocity_z": 0.32
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+            "lifetime": 10,
+            "lifetime_variation": 4,
+            "size": 0.1,
+            "size_variation": 0.04,
+            "end_size": 0.0,
+            "color": "#F2F6FCE6",
+            "end_color": "#5C667400",
+            "friction": 0.86,
+            "physics": false,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "alpha_bleed": true
+          },
+          "count": 2,
+          "spread": 0.08,
+          "offset_x": 1.3,
+          "offset_y": 1.0,
+          "offset_z": -2.252,
+          "velocity_x": -0.16,
+          "velocity_y": 0.0,
+          "velocity_z": 0.277
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+            "lifetime": 10,
+            "lifetime_variation": 4,
+            "size": 0.1,
+            "size_variation": 0.04,
+            "end_size": 0.0,
+            "color": "#F2F6FCE6",
+            "end_color": "#5C667400",
+            "friction": 0.86,
+            "physics": false,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "alpha_bleed": true
+          },
+          "count": 2,
+          "spread": 0.08,
+          "offset_x": 2.252,
+          "offset_y": 1.0,
+          "offset_z": -1.3,
+          "velocity_x": -0.277,
+          "velocity_y": 0.0,
+          "velocity_z": 0.16
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 4,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 1,
+                "spread": 0.08,
+                "offset_x": 1.8,
+                "offset_y": 1.1,
+                "offset_z": 0.0,
+                "velocity_x": -0.22,
+                "velocity_y": 0.0,
+                "velocity_z": -0.0
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 1,
+                "spread": 0.08,
+                "offset_x": 1.273,
+                "offset_y": 1.1,
+                "offset_z": 1.273,
+                "velocity_x": -0.156,
+                "velocity_y": 0.0,
+                "velocity_z": -0.156
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 1,
+                "spread": 0.08,
+                "offset_x": 0.0,
+                "offset_y": 1.1,
+                "offset_z": 1.8,
+                "velocity_x": -0.0,
+                "velocity_y": 0.0,
+                "velocity_z": -0.22
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 1,
+                "spread": 0.08,
+                "offset_x": -1.273,
+                "offset_y": 1.1,
+                "offset_z": 1.273,
+                "velocity_x": 0.156,
+                "velocity_y": 0.0,
+                "velocity_z": -0.156
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 1,
+                "spread": 0.08,
+                "offset_x": -1.8,
+                "offset_y": 1.1,
+                "offset_z": 0.0,
+                "velocity_x": 0.22,
+                "velocity_y": 0.0,
+                "velocity_z": -0.0
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 1,
+                "spread": 0.08,
+                "offset_x": -1.273,
+                "offset_y": 1.1,
+                "offset_z": -1.273,
+                "velocity_x": 0.156,
+                "velocity_y": 0.0,
+                "velocity_z": 0.156
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 1,
+                "spread": 0.08,
+                "offset_x": -0.0,
+                "offset_y": 1.1,
+                "offset_z": -1.8,
+                "velocity_x": 0.0,
+                "velocity_y": 0.0,
+                "velocity_z": 0.22
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 1,
+                "spread": 0.08,
+                "offset_x": 1.273,
+                "offset_y": 1.1,
+                "offset_z": -1.273,
+                "velocity_x": -0.156,
+                "velocity_y": 0.0,
+                "velocity_z": 0.156
+              },
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:block.beacon.deactivate",
+                "volume": 0.6,
+                "pitch": 1.8
+              }
+            ]
+          }
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 9,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:delay",
+                "ticks": 1,
+                "action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:bending/pose",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 79
+                      }
+                    },
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:bending/pose_timer",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 10
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "apoli:area_of_effect",
+                "radius": 5,
+                "shape": "sphere",
+                "bientity_condition": {
+                  "type": "apoli:target_condition",
+                  "condition": {
+                    "type": "apoli:living"
+                  }
+                },
+                "bientity_action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:damage",
+                      "amount": 7,
+                      "damage_type": "elemental_bendings:airbending"
+                    },
+                    {
+                      "type": "apoli:add_velocity",
+                      "x": 0,
+                      "y": 0.6,
+                      "z": 1.5,
+                      "reference": "position"
+                    },
+                    {
+                      "type": "apoli:target_action",
+                      "action": {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                          "lifetime": 12,
+                          "lifetime_variation": 4,
+                          "size": 0.55,
+                          "size_variation": 0.2,
+                          "end_size": 0.12,
+                          "color": "#D2DAE6A8",
+                          "end_color": "#3C465200",
+                          "friction": 0.86,
+                          "frames": 6,
+                          "frame_time": 2,
+                          "physics": false,
+                          "roll": "rUni(0, 360)",
+                          "roll_speed": "rUni(-28, -12)"
+                        },
+                        "count": 4,
+                        "offset_y": 1.0,
+                        "spread": 0.4,
+                        "speed": 0.05
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:minecraft_version",
+                  "version": "1.21",
+                  "comparison": ">="
+                },
+                "if_action": {
+                  "type": "apoli:play_sound",
+                  "sound": "minecraft:entity.breeze.wind_burst",
+                  "volume": 1.0,
+                  "pitch": 0.8
+                },
+                "else_action": {
+                  "type": "apoli:play_sound",
+                  "sound": "minecraft:entity.phantom.flap",
+                  "volume": 1.0,
+                  "pitch": 0.8
+                }
+              },
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "volume": 0.5,
+                "pitch": 1.7
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/pressure_ring.png",
+                  "lifetime": 8,
+                  "size": 0.5,
+                  "end_size": 3.4,
+                  "color": "#FFFFFFD8",
+                  "end_color": "#D6E6FF00",
+                  "physics": false,
+                  "frames": 5,
+                  "easing": "ease_out_quad",
+                  "alpha_bleed": true
+                },
+                "count": 1,
+                "offset_y": 1.0,
+                "spread": 0.0,
+                "speed": 0.0
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": 0.7,
+                "velocity_y": 0.0,
+                "velocity_z": 0.0
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": 0.647,
+                "velocity_y": 0.0,
+                "velocity_z": 0.268
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": 0.495,
+                "velocity_y": 0.0,
+                "velocity_z": 0.495
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": 0.268,
+                "velocity_y": 0.0,
+                "velocity_z": 0.647
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": 0.0,
+                "velocity_y": 0.0,
+                "velocity_z": 0.7
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": -0.268,
+                "velocity_y": 0.0,
+                "velocity_z": 0.647
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": -0.495,
+                "velocity_y": 0.0,
+                "velocity_z": 0.495
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": -0.647,
+                "velocity_y": 0.0,
+                "velocity_z": 0.268
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": -0.7,
+                "velocity_y": 0.0,
+                "velocity_z": 0.0
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": -0.647,
+                "velocity_y": 0.0,
+                "velocity_z": -0.268
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": -0.495,
+                "velocity_y": 0.0,
+                "velocity_z": -0.495
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": -0.268,
+                "velocity_y": 0.0,
+                "velocity_z": -0.647
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": -0.0,
+                "velocity_y": 0.0,
+                "velocity_z": -0.7
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": 0.268,
+                "velocity_y": 0.0,
+                "velocity_z": -0.647
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": 0.495,
+                "velocity_y": 0.0,
+                "velocity_z": -0.495
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                  "lifetime": 12,
+                  "lifetime_variation": 4,
+                  "size": 0.55,
+                  "size_variation": 0.2,
+                  "end_size": 0.12,
+                  "color": "#D2DAE6A8",
+                  "end_color": "#3C465200",
+                  "friction": 0.86,
+                  "frames": 6,
+                  "frame_time": 2,
+                  "physics": false,
+                  "roll": "rUni(0, 360)",
+                  "roll_speed": "rUni(-28, -12)"
+                },
+                "count": 2,
+                "spread": 0.12,
+                "offset_y": 1.0,
+                "velocity_x": 0.647,
+                "velocity_y": 0.0,
+                "velocity_z": -0.268
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:cloud",
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.3,
+                "velocity_x": 0.5,
+                "velocity_y": 0.0,
+                "velocity_z": 0.0
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:cloud",
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.3,
+                "velocity_x": 0.433,
+                "velocity_y": 0.0,
+                "velocity_z": 0.25
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:cloud",
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.3,
+                "velocity_x": 0.25,
+                "velocity_y": 0.0,
+                "velocity_z": 0.433
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:cloud",
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.3,
+                "velocity_x": 0.0,
+                "velocity_y": 0.0,
+                "velocity_z": 0.5
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:cloud",
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.3,
+                "velocity_x": -0.25,
+                "velocity_y": 0.0,
+                "velocity_z": 0.433
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:cloud",
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.3,
+                "velocity_x": -0.433,
+                "velocity_y": 0.0,
+                "velocity_z": 0.25
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:cloud",
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.3,
+                "velocity_x": -0.5,
+                "velocity_y": 0.0,
+                "velocity_z": 0.0
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:cloud",
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.3,
+                "velocity_x": -0.433,
+                "velocity_y": 0.0,
+                "velocity_z": -0.25
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:cloud",
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.3,
+                "velocity_x": -0.25,
+                "velocity_y": 0.0,
+                "velocity_z": -0.433
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:cloud",
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.3,
+                "velocity_x": -0.0,
+                "velocity_y": 0.0,
+                "velocity_z": -0.5
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:cloud",
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.3,
+                "velocity_x": 0.25,
+                "velocity_y": 0.0,
+                "velocity_z": -0.433
+              },
+              {
+                "type": "apoli:spawn_particles",
+                "particle": "minecraft:cloud",
+                "count": 1,
+                "spread": 0.12,
+                "offset_y": 0.3,
+                "velocity_x": 0.433,
+                "velocity_y": 0.0,
+                "velocity_z": -0.25
+              },
+              {
+                "type": "apoli:block_action_at",
+                "block_action": {
+                  "type": "apoli:area_of_effect",
+                  "radius": 4,
+                  "shape": "sphere",
+                  "block_action": {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:in_tag",
+                      "tag": "minecraft:fire"
+                    },
+                    "if_action": {
+                      "type": "apoli:set_block",
+                      "block": "minecraft:air"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "hidden": true
+}

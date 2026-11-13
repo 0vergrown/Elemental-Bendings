@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:earthbender/lavabending",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.lavabending.molten_wall.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.lavabending.molten_wall.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/lavabending/molten_wall/pose",
+    "elemental_bendings:earthbender/lavabending/molten_wall"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/lavabending/molten_wall.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 2
+}

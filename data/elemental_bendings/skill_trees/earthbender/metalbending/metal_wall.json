@@ -1,0 +1,23 @@
+{
+  "parent": "elemental_bendings:earthbender/metalbending",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.metal_wall.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.metal_wall.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/metalbending/metal_wall/heartbeat",
+    "elemental_bendings:earthbender/metalbending/metal_wall/fuel",
+    "elemental_bendings:earthbender/metalbending/metal_wall/pose",
+    "elemental_bendings:earthbender/metalbending/metal_wall/raise_wall",
+    "elemental_bendings:earthbender/metalbending/metal_wall/raising",
+    "elemental_bendings:earthbender/metalbending/metal_wall"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/metalbending/metal_wall.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 2
+}

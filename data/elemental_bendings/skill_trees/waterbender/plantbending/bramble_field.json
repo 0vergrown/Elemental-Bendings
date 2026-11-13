@@ -1,0 +1,58 @@
+{
+  "parent": "elemental_bendings:waterbender/plantbending/snare_trap",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.plantbending.bramble_field.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.plantbending.bramble_field.description"
+  },
+  "powers": [
+    "elemental_bendings:waterbender/plantbending/bramble_field/regrow",
+    "elemental_bendings:waterbender/plantbending/bramble_field/center_x",
+    "elemental_bendings:waterbender/plantbending/bramble_field/center_y",
+    "elemental_bendings:waterbender/plantbending/bramble_field/center_z",
+    "elemental_bendings:waterbender/plantbending/bramble_field/cell_x",
+    "elemental_bendings:waterbender/plantbending/bramble_field/cell_z",
+    "elemental_bendings:waterbender/plantbending/bramble_field/pose",
+    "elemental_bendings:waterbender/plantbending/stance/rooting_the_tree",
+    "elemental_bendings:waterbender/plantbending/stance/pulling_the_vine",
+    "elemental_bendings:waterbender/plantbending/stance/driving_the_root",
+    "elemental_bendings:waterbender/plantbending/emblem",
+    "elemental_bendings:waterbender/plantbending/bramble_field"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/waterbender/plantbending/bramble_field.png"
+  },
+  "frame": "challenge",
+  "cost": 3,
+  "order": 0,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/vine_whip"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/vine_snare"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/snare_trap"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/spore_cloud"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/root_glide"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/plant_golem"
+      }
+    ]
+  }
+}

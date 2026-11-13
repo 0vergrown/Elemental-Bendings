@@ -1,0 +1,22 @@
+{
+  "parent": "elemental_bendings:earthbender",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.sandbending.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.sandbending.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/sandbending/sandbending"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/sandbending/sandbending.png"
+  },
+  "frame": "goal",
+  "cost": 2,
+  "order": 2,
+  "excludes": [
+    "elemental_bendings:earthbender/metalbending",
+    "elemental_bendings:earthbender/lavabending"
+  ]
+}

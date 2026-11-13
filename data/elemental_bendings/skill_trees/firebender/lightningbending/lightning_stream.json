@@ -1,0 +1,24 @@
+{
+  "parent": "elemental_bendings:firebender/lightningbending",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.lightning_stream.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.lightning_stream.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/lightningbending/lightning_stream/heartbeat",
+    "elemental_bendings:firebender/lightningbending/lightning_stream/fuel",
+    "elemental_bendings:firebender/lightningbending/lightning_stream/pose",
+    "elemental_bendings:firebender/lightningbending/lightning_stream/rooted",
+    "elemental_bendings:firebender/lightningbending/lightning_stream/crackle",
+    "elemental_bendings:firebender/lightningbending/lightning_stream/streaming",
+    "elemental_bendings:firebender/lightningbending/lightning_stream"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/lightningbending/lightning_stream.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 1
+}

@@ -1,0 +1,29 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/firebender/ember.png",
+    "lifetime": 20,
+    "lifetime_variation": 10,
+    "size": 0.08,
+    "size_variation": 0.05,
+    "end_size": 0.0,
+    "color": "#FFD25A",
+    "end_color": "#FF3A1A00",
+    "gravity": -0.02,
+    "friction": 0.95,
+    "emissive": true,
+    "blend": "additive",
+    "physics": false
+  },
+  "count": 1,
+  "frequency": 2,
+  "offset_y": 0.25,
+  "spread": {
+    "x": 0.1,
+    "y": 0.1,
+    "z": 0.1
+  },
+  "speed": 0.05,
+  "hidden": true
+}

@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:firebender/combustionbending/explosive_repulsion",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.smoke_screen.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.smoke_screen.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/combustionbending/smoke_screen/pose",
+    "elemental_bendings:firebender/combustionbending/smoke_screen"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/combustionbending/smoke_screen.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

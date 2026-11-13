@@ -1,0 +1,68 @@
+{
+  "type": "apoli:attribute",
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/helmet_shards/out",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/metal_gauntlets/active",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/shrapnel_shield/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/metal_wall/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/metal_pillar/scrapped",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/metal_wall/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/metal_pillar/scrapped",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "modifiers": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "operation": "add_value",
+      "value": "-(if((elemental_bendings:earthbender/metalbending/helmet_shards/out > 0 || elemental_bendings:earthbender/metalbending/metal_gauntlets/active > 0), if(elemental_bendings:earthbender/metalbending/scrap/head == 1, 2, if(elemental_bendings:earthbender/metalbending/scrap/head == 2, 2, if(elemental_bendings:earthbender/metalbending/scrap/head == 3, 2, if(elemental_bendings:earthbender/metalbending/scrap/head == 4, 3, 0)))), 0) + if((elemental_bendings:earthbender/metalbending/shrapnel_shield/heartbeat > 0), if(elemental_bendings:earthbender/metalbending/scrap/chest == 1, 5, if(elemental_bendings:earthbender/metalbending/scrap/chest == 2, 6, if(elemental_bendings:earthbender/metalbending/scrap/chest == 3, 5, if(elemental_bendings:earthbender/metalbending/scrap/chest == 4, 8, 0)))), 0) + if((elemental_bendings:earthbender/metalbending/metal_wall/heartbeat > 0 || elemental_bendings:earthbender/metalbending/metal_pillar/scrapped > 0), if(elemental_bendings:earthbender/metalbending/scrap/legs == 1, 4, if(elemental_bendings:earthbender/metalbending/scrap/legs == 2, 5, if(elemental_bendings:earthbender/metalbending/scrap/legs == 3, 3, if(elemental_bendings:earthbender/metalbending/scrap/legs == 4, 6, 0)))), 0) + if((elemental_bendings:earthbender/metalbending/metal_wall/heartbeat > 0 || elemental_bendings:earthbender/metalbending/metal_pillar/scrapped > 0), if(elemental_bendings:earthbender/metalbending/scrap/feet == 1, 1, if(elemental_bendings:earthbender/metalbending/scrap/feet == 2, 2, if(elemental_bendings:earthbender/metalbending/scrap/feet == 3, 1, if(elemental_bendings:earthbender/metalbending/scrap/feet == 4, 3, 0)))), 0))"
+    },
+    {
+      "attribute": "minecraft:generic.armor_toughness",
+      "operation": "add_value",
+      "value": "-3 * (if((elemental_bendings:earthbender/metalbending/helmet_shards/out > 0 || elemental_bendings:earthbender/metalbending/metal_gauntlets/active > 0) && elemental_bendings:earthbender/metalbending/scrap/head == 4, 1, 0) + if((elemental_bendings:earthbender/metalbending/shrapnel_shield/heartbeat > 0) && elemental_bendings:earthbender/metalbending/scrap/chest == 4, 1, 0) + if((elemental_bendings:earthbender/metalbending/metal_wall/heartbeat > 0 || elemental_bendings:earthbender/metalbending/metal_pillar/scrapped > 0) && elemental_bendings:earthbender/metalbending/scrap/legs == 4, 1, 0) + if((elemental_bendings:earthbender/metalbending/metal_wall/heartbeat > 0 || elemental_bendings:earthbender/metalbending/metal_pillar/scrapped > 0) && elemental_bendings:earthbender/metalbending/scrap/feet == 4, 1, 0))"
+    },
+    {
+      "attribute": "minecraft:generic.knockback_resistance",
+      "operation": "add_value",
+      "value": "-0.1 * (if((elemental_bendings:earthbender/metalbending/helmet_shards/out > 0 || elemental_bendings:earthbender/metalbending/metal_gauntlets/active > 0) && elemental_bendings:earthbender/metalbending/scrap/head == 4, 1, 0) + if((elemental_bendings:earthbender/metalbending/shrapnel_shield/heartbeat > 0) && elemental_bendings:earthbender/metalbending/scrap/chest == 4, 1, 0) + if((elemental_bendings:earthbender/metalbending/metal_wall/heartbeat > 0 || elemental_bendings:earthbender/metalbending/metal_pillar/scrapped > 0) && elemental_bendings:earthbender/metalbending/scrap/legs == 4, 1, 0) + if((elemental_bendings:earthbender/metalbending/metal_wall/heartbeat > 0 || elemental_bendings:earthbender/metalbending/metal_pillar/scrapped > 0) && elemental_bendings:earthbender/metalbending/scrap/feet == 4, 1, 0))"
+    }
+  ],
+  "hidden": true
+}

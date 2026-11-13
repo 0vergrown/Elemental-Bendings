@@ -1,0 +1,25 @@
+{
+  "parent": "elemental_bendings:airbender",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/vacuumbending/vacuumbending",
+    "elemental_bendings:airbender/vacuumbending/pressure_burst/compress/pose",
+    "elemental_bendings:airbender/vacuumbending/pressure_burst/release/pose",
+    "elemental_bendings:airbender/vacuumbending/pressure_burst"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/vacuumbending/vacuumbending.png"
+  },
+  "frame": "goal",
+  "cost": 2,
+  "order": 0,
+  "excludes": [
+    "elemental_bendings:airbender/soundbending",
+    "elemental_bendings:airbender/spiritual_airbending"
+  ]
+}

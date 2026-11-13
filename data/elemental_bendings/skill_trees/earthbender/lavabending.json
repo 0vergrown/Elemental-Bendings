@@ -1,0 +1,28 @@
+{
+  "parent": "elemental_bendings:earthbender",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.lavabending.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.lavabending.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/lavabending/lavabending",
+    "elemental_bendings:earthbender/lavabending/heat_hardened",
+    "elemental_bendings:earthbender/lavabending/melt/heartbeat",
+    "elemental_bendings:earthbender/lavabending/melt/fuel",
+    "elemental_bendings:earthbender/lavabending/melt/pose",
+    "elemental_bendings:earthbender/lavabending/melt/melting",
+    "elemental_bendings:earthbender/lavabending/melt"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/lavabending/lavabending.png"
+  },
+  "frame": "goal",
+  "cost": 2,
+  "order": 1,
+  "excludes": [
+    "elemental_bendings:earthbender/metalbending",
+    "elemental_bendings:earthbender/sandbending"
+  ]
+}

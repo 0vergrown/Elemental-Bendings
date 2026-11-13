@@ -1,0 +1,61 @@
+{
+  "type": "apoli:replace_sound_reception",
+  "sounds": {
+    "minecraft:entity\\..*\\.step": [
+      {
+        "id": "minecraft:entity.zombie.step",
+        "weight": 3
+      },
+      {
+        "id": "minecraft:entity.warden.step",
+        "weight": 1
+      },
+      {
+        "id": "minecraft:entity.skeleton.step",
+        "weight": 2
+      },
+      {
+        "id": "minecraft:block.gravel.step",
+        "weight": 2
+      }
+    ],
+    "minecraft:block\\..*\\.step": [
+      {
+        "id": "minecraft:entity.creeper.primed",
+        "weight": 1,
+        "volume": 0.4
+      },
+      {
+        "id": "minecraft:entity.zombie.step",
+        "weight": 2
+      },
+      {
+        "id": "minecraft:block.gravel.step",
+        "weight": 4
+      }
+    ],
+    "minecraft:entity\\..*\\.ambient": [
+      {
+        "id": "minecraft:entity.zombie.ambient",
+        "weight": 2
+      },
+      {
+        "id": "minecraft:entity.skeleton.ambient",
+        "weight": 2
+      },
+      {
+        "id": "minecraft:entity.spider.ambient",
+        "weight": 2
+      },
+      {
+        "id": "minecraft:entity.enderman.stare",
+        "weight": 1
+      },
+      {
+        "id": "minecraft:entity.creeper.primed",
+        "weight": 1
+      }
+    ]
+  },
+  "hidden": true
+}

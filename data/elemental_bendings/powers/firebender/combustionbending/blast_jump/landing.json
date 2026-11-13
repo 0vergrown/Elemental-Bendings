@@ -1,0 +1,29 @@
+{
+  "type": "apoli:action_on_land",
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:firebender/combustionbending/blast_jump/blasts",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:delay",
+        "ticks": 2,
+        "action": {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:firebender/combustionbending/blast_jump/cushion",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0
+          }
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

@@ -1,0 +1,57 @@
+{
+  "parent": "elemental_bendings:airbender/vacuumbending/vacuum_vortex",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.suffocation.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.suffocation.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/vacuumbending/suffocation/victim",
+    "elemental_bendings:airbender/vacuumbending/suffocation/found",
+    "elemental_bendings:airbender/vacuumbending/suffocation/recharge",
+    "elemental_bendings:airbender/vacuumbending/suffocation/pulse",
+    "elemental_bendings:airbender/vacuumbending/suffocation/heartbeat",
+    "elemental_bendings:airbender/vacuumbending/suffocation/fuel",
+    "elemental_bendings:airbender/vacuumbending/suffocation/pose",
+    "elemental_bendings:airbender/vacuumbending/suffocation/rooted",
+    "elemental_bendings:airbender/vacuumbending/suffocation/focus",
+    "elemental_bendings:airbender/vacuumbending/suffocation/holding",
+    "elemental_bendings:airbender/vacuumbending/suffocation",
+    "elemental_bendings:airbender/vacuumbending/stance/san_ti_shi",
+    "elemental_bendings:airbender/vacuumbending/stance/splitting_palm",
+    "elemental_bendings:airbender/vacuumbending/stance/tiger_embrace",
+    "elemental_bendings:airbender/vacuumbending/emblem"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/vacuumbending/suffocation.png"
+  },
+  "frame": "challenge",
+  "cost": 3,
+  "order": 0,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/pressure_wave"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/pressure_barrier"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/vacuum_pull"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/wall_run"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/vacuum_vortex"
+      }
+    ]
+  }
+}

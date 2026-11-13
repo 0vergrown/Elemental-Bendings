@@ -4,25 +4,16 @@
     "type": "apoli:and",
     "conditions": [
       {
-        "type": "apoli:and",
-        "conditions": [
-          {
-            "type": "apoli:resource",
-            "resource": "elemental_bendings:bending/pose",
-            "comparison": "==",
-            "compare_to": 2
-          },
-          {
-            "type": "apoli:resource",
-            "resource": "elemental_bendings:bending/pose_timer",
-            "comparison": ">",
-            "compare_to": 0
-          }
-        ]
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:bending/pose",
+        "comparison": "==",
+        "compare_to": 2
       },
       {
-        "type": "apoli:power",
-        "power": "elemental_bendings:waterbender/plantbending/plantbending"
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:bending/pose_timer",
+        "comparison": ">",
+        "compare_to": 0
       }
     ]
   },

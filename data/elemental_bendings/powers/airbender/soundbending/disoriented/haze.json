@@ -1,0 +1,12 @@
+{
+  "type": "apoli:overlay",
+  "draw_mode": "nausea",
+  "draw_phase": "below_hud",
+  "strength": "0.28 + 0.12 * sin(world_time * 0.15)",
+  "texture": "minecraft:textures/misc/nausea.png",
+  "red": 0.75,
+  "green": 0.6,
+  "blue": 1.0,
+  "visible_in_third_person": true,
+  "hidden": true
+}

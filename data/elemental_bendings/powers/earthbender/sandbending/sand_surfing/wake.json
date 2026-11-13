@@ -1,0 +1,36 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+    "lifetime": 12,
+    "lifetime_variation": 4,
+    "size": 0.09,
+    "size_variation": 0.04,
+    "end_size": 0.04,
+    "color": "#F6E7BC",
+    "end_color": "#D7B97A90",
+    "gravity": 0.03,
+    "friction": 0.93,
+    "frames": 4,
+    "roll": "rUni(0, 360)",
+    "roll_speed": "rUni(-30, 30)"
+  },
+  "count": 3,
+  "frequency": 1,
+  "offset_y": 0.1,
+  "spread": {
+    "x": 0.45,
+    "y": 0.05,
+    "z": 0.45
+  },
+  "speed": 0.12,
+  "visible_in_first_person": true,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/sandbending/sand_surfing/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

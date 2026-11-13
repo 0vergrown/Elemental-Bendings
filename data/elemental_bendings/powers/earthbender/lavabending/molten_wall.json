@@ -1,0 +1,1244 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3",
+    {
+      "key": "key.elemental_bendings.stance_2",
+      "hold": 3
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 12
+          }
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 1,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 72
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose_timer",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 12
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.lava.extinguish",
+          "volume": 1.0,
+          "pitch": 0.6
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.basalt.place",
+          "volume": 1.0,
+          "pitch": 0.6
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 3,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:raycast",
+                "direction": {
+                  "x": -2,
+                  "y": 0,
+                  "z": 3
+                },
+                "space": "local_horizontal_normalized",
+                "distance": 3.606,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "chain": {
+                  "chain_direction": "custom",
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world",
+                  "distance": 4,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:movement_blocking"
+                  },
+                  "block_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 1
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 2
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 3
+                          }
+                        ]
+                      },
+                      {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": {
+                              "type": "apoli:custom",
+                              "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                              "lifetime": 18,
+                              "lifetime_variation": 6,
+                              "size": 0.16,
+                              "size_variation": 0.07,
+                              "end_size": 0.08,
+                              "color": "#FFFFFF",
+                              "end_color": "#FF3A0A90",
+                              "gravity": 0.06,
+                              "friction": 0.97,
+                              "emissive": true,
+                              "frames": 5,
+                              "roll": "rUni(0, 360)",
+                              "roll_speed": "rUni(-10, 10)"
+                            },
+                            "count": 6,
+                            "spread": {
+                              "x": 0.4,
+                              "y": 0.4,
+                              "z": 0.4
+                            },
+                            "speed": 0.15
+                          },
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": "minecraft:lava",
+                            "count": 1,
+                            "spread": {
+                              "x": 0.3,
+                              "y": 0.3,
+                              "z": 0.3
+                            },
+                            "speed": 0.0
+                          }
+                        ]
+                      },
+                      {
+                        "type": "apoli:delay",
+                        "ticks": 80,
+                        "action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 1
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 2
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 3
+                                }
+                              ]
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:large_smoke",
+                              "count": 4,
+                              "spread": {
+                                "x": 0.3,
+                                "y": 1.0,
+                                "z": 0.3
+                              },
+                              "speed": 0.02
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "apoli:raycast",
+                "direction": {
+                  "x": -1,
+                  "y": 0,
+                  "z": 3
+                },
+                "space": "local_horizontal_normalized",
+                "distance": 3.162,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "chain": {
+                  "chain_direction": "custom",
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world",
+                  "distance": 4,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:movement_blocking"
+                  },
+                  "block_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 1
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 2
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 3
+                          }
+                        ]
+                      },
+                      {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": {
+                              "type": "apoli:custom",
+                              "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                              "lifetime": 18,
+                              "lifetime_variation": 6,
+                              "size": 0.16,
+                              "size_variation": 0.07,
+                              "end_size": 0.08,
+                              "color": "#FFFFFF",
+                              "end_color": "#FF3A0A90",
+                              "gravity": 0.06,
+                              "friction": 0.97,
+                              "emissive": true,
+                              "frames": 5,
+                              "roll": "rUni(0, 360)",
+                              "roll_speed": "rUni(-10, 10)"
+                            },
+                            "count": 6,
+                            "spread": {
+                              "x": 0.4,
+                              "y": 0.4,
+                              "z": 0.4
+                            },
+                            "speed": 0.15
+                          },
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": "minecraft:lava",
+                            "count": 1,
+                            "spread": {
+                              "x": 0.3,
+                              "y": 0.3,
+                              "z": 0.3
+                            },
+                            "speed": 0.0
+                          }
+                        ]
+                      },
+                      {
+                        "type": "apoli:delay",
+                        "ticks": 80,
+                        "action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 1
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 2
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 3
+                                }
+                              ]
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:large_smoke",
+                              "count": 4,
+                              "spread": {
+                                "x": 0.3,
+                                "y": 1.0,
+                                "z": 0.3
+                              },
+                              "speed": 0.02
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "apoli:raycast",
+                "direction": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 3
+                },
+                "space": "local_horizontal_normalized",
+                "distance": 3.0,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "chain": {
+                  "chain_direction": "custom",
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world",
+                  "distance": 4,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:movement_blocking"
+                  },
+                  "block_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 1
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 2
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 3
+                          }
+                        ]
+                      },
+                      {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": {
+                              "type": "apoli:custom",
+                              "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                              "lifetime": 18,
+                              "lifetime_variation": 6,
+                              "size": 0.16,
+                              "size_variation": 0.07,
+                              "end_size": 0.08,
+                              "color": "#FFFFFF",
+                              "end_color": "#FF3A0A90",
+                              "gravity": 0.06,
+                              "friction": 0.97,
+                              "emissive": true,
+                              "frames": 5,
+                              "roll": "rUni(0, 360)",
+                              "roll_speed": "rUni(-10, 10)"
+                            },
+                            "count": 6,
+                            "spread": {
+                              "x": 0.4,
+                              "y": 0.4,
+                              "z": 0.4
+                            },
+                            "speed": 0.15
+                          },
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": "minecraft:lava",
+                            "count": 1,
+                            "spread": {
+                              "x": 0.3,
+                              "y": 0.3,
+                              "z": 0.3
+                            },
+                            "speed": 0.0
+                          }
+                        ]
+                      },
+                      {
+                        "type": "apoli:delay",
+                        "ticks": 80,
+                        "action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 1
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 2
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 3
+                                }
+                              ]
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:large_smoke",
+                              "count": 4,
+                              "spread": {
+                                "x": 0.3,
+                                "y": 1.0,
+                                "z": 0.3
+                              },
+                              "speed": 0.02
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "apoli:raycast",
+                "direction": {
+                  "x": 1,
+                  "y": 0,
+                  "z": 3
+                },
+                "space": "local_horizontal_normalized",
+                "distance": 3.162,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "chain": {
+                  "chain_direction": "custom",
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world",
+                  "distance": 4,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:movement_blocking"
+                  },
+                  "block_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 1
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 2
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 3
+                          }
+                        ]
+                      },
+                      {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": {
+                              "type": "apoli:custom",
+                              "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                              "lifetime": 18,
+                              "lifetime_variation": 6,
+                              "size": 0.16,
+                              "size_variation": 0.07,
+                              "end_size": 0.08,
+                              "color": "#FFFFFF",
+                              "end_color": "#FF3A0A90",
+                              "gravity": 0.06,
+                              "friction": 0.97,
+                              "emissive": true,
+                              "frames": 5,
+                              "roll": "rUni(0, 360)",
+                              "roll_speed": "rUni(-10, 10)"
+                            },
+                            "count": 6,
+                            "spread": {
+                              "x": 0.4,
+                              "y": 0.4,
+                              "z": 0.4
+                            },
+                            "speed": 0.15
+                          },
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": "minecraft:lava",
+                            "count": 1,
+                            "spread": {
+                              "x": 0.3,
+                              "y": 0.3,
+                              "z": 0.3
+                            },
+                            "speed": 0.0
+                          }
+                        ]
+                      },
+                      {
+                        "type": "apoli:delay",
+                        "ticks": 80,
+                        "action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 1
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 2
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 3
+                                }
+                              ]
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:large_smoke",
+                              "count": 4,
+                              "spread": {
+                                "x": 0.3,
+                                "y": 1.0,
+                                "z": 0.3
+                              },
+                              "speed": 0.02
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "apoli:raycast",
+                "direction": {
+                  "x": 2,
+                  "y": 0,
+                  "z": 3
+                },
+                "space": "local_horizontal_normalized",
+                "distance": 3.606,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "chain": {
+                  "chain_direction": "custom",
+                  "direction": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                  },
+                  "space": "world",
+                  "distance": 4,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:movement_blocking"
+                  },
+                  "block_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 1
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 2
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/flowers"
+                                  }
+                                ]
+                              },
+                              "if_action": {
+                                "type": "apoli:ghost_block",
+                                "block": "minecraft:magma_block",
+                                "duration": 600
+                              }
+                            },
+                            "y": 3
+                          }
+                        ]
+                      },
+                      {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": {
+                              "type": "apoli:custom",
+                              "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                              "lifetime": 18,
+                              "lifetime_variation": 6,
+                              "size": 0.16,
+                              "size_variation": 0.07,
+                              "end_size": 0.08,
+                              "color": "#FFFFFF",
+                              "end_color": "#FF3A0A90",
+                              "gravity": 0.06,
+                              "friction": 0.97,
+                              "emissive": true,
+                              "frames": 5,
+                              "roll": "rUni(0, 360)",
+                              "roll_speed": "rUni(-10, 10)"
+                            },
+                            "count": 6,
+                            "spread": {
+                              "x": 0.4,
+                              "y": 0.4,
+                              "z": 0.4
+                            },
+                            "speed": 0.15
+                          },
+                          {
+                            "type": "apoli:spawn_particles",
+                            "particle": "minecraft:lava",
+                            "count": 1,
+                            "spread": {
+                              "x": 0.3,
+                              "y": 0.3,
+                              "z": 0.3
+                            },
+                            "speed": 0.0
+                          }
+                        ]
+                      },
+                      {
+                        "type": "apoli:delay",
+                        "ticks": 80,
+                        "action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 1
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 2
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "action": {
+                                    "type": "apoli:if_else",
+                                    "condition": {
+                                      "type": "apoli:block",
+                                      "block": "minecraft:magma_block"
+                                    },
+                                    "if_action": {
+                                      "type": "apoli:ghost_block",
+                                      "block": "minecraft:stone",
+                                      "duration": 520
+                                    }
+                                  },
+                                  "y": 3
+                                }
+                              ]
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:large_smoke",
+                              "count": 4,
+                              "spread": {
+                                "x": 0.3,
+                                "y": 1.0,
+                                "z": 0.3
+                              },
+                              "speed": 0.02
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+    "comparison": "==",
+    "compare_to": 0
+  },
+  "hidden": true
+}

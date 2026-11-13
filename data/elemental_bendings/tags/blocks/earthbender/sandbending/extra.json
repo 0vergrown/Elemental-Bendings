@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "#elemental_bendings:earthbender/bendable/smooth_sandstone",
+    "#elemental_bendings:earthbender/bendable/cut_sandstone",
+    "#elemental_bendings:earthbender/bendable/smooth_red_sandstone",
+    "#elemental_bendings:earthbender/bendable/cut_red_sandstone",
+    "#elemental_bendings:earthbender/bendable/white_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/orange_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/magenta_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/light_blue_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/yellow_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/lime_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/pink_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/gray_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/light_gray_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/cyan_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/purple_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/blue_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/brown_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/green_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/red_concrete_powder",
+    "#elemental_bendings:earthbender/bendable/black_concrete_powder"
+  ]
+}

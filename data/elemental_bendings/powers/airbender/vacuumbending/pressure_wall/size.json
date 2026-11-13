@@ -1,0 +1,9 @@
+{
+  "type": "apoli:scale",
+  "scale_types": [
+    "apoli:hitbox_width",
+    "apoli:hitbox_height"
+  ],
+  "scale": 0.15,
+  "hidden": true
+}

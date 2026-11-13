@@ -1,0 +1,299 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3",
+    "key.elemental_bendings.stance_2"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:and",
+      "conditions": [
+        {
+          "type": "apoli:resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "apoli:on_block"
+        }
+      ]
+    },
+    "if_action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:on_block",
+            "block_condition": {
+              "type": "apoli:in_tag",
+              "tag": "elemental_bendings:earthbender/bendable"
+            }
+          },
+          {
+            "type": "apoli:on_block",
+            "block_condition": {
+              "type": "apoli:in_tag",
+              "tag": "elemental_bendings:earthbender/sandbending/extra"
+            }
+          },
+          {
+            "type": "apoli:on_block",
+            "block_condition": {
+              "type": "apoli:or",
+              "conditions": [
+                {
+                  "type": "apoli:in_tag",
+                  "tag": "minecraft:sand"
+                },
+                {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/sandbending/surfable"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 30
+            }
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 76
+                  }
+                },
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose_timer",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 14
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.sand.break",
+            "volume": 1.0,
+            "pitch": 0.5
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.rooted_dirt.break",
+            "volume": 0.8,
+            "pitch": 0.5
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+              "lifetime": 22,
+              "lifetime_variation": 8,
+              "size": 0.07,
+              "size_variation": 0.04,
+              "end_size": 0.05,
+              "color": "#F2E2B0",
+              "end_color": "#C9A86A",
+              "gravity": 0.05,
+              "friction": 0.97,
+              "frames": 4,
+              "roll": "rUni(0, 360)",
+              "roll_speed": "rUni(-20, 20)"
+            },
+            "count": 30,
+            "offset_y": 0.1,
+            "spread": {
+              "x": 2.5,
+              "y": 0.1,
+              "z": 2.5
+            },
+            "speed": 0.08
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+              "lifetime": 26,
+              "lifetime_variation": 8,
+              "size": 0.55,
+              "size_variation": 0.25,
+              "end_size": 1.1,
+              "color": "#E6D2A0CC",
+              "end_color": "#C8A96E00",
+              "gravity": -0.002,
+              "friction": 0.9,
+              "frames": 4,
+              "frame_time": 6,
+              "physics": false,
+              "roll": "rUni(0, 360)"
+            },
+            "count": 10,
+            "offset_y": 0.3,
+            "spread": {
+              "x": 2.5,
+              "y": 0.2,
+              "z": 2.5
+            },
+            "speed": 0.02
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 4,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:block_action_at",
+                  "block_action": {
+                    "type": "apoli:offset",
+                    "action": {
+                      "type": "apoli:area_of_effect",
+                      "radius": 4.5,
+                      "shape": "sphere",
+                      "block_condition": {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:or",
+                            "conditions": [
+                              {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable"
+                              },
+                              {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/sandbending/extra"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:or",
+                              "conditions": [
+                                {
+                                  "type": "apoli:replacable"
+                                },
+                                {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/flowers"
+                                }
+                              ]
+                            },
+                            "y": 1
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:movement_blocking"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      },
+                      "block_action": {
+                        "type": "apoli:ghost_block",
+                        "block": "minecraft:sand",
+                        "duration": 170
+                      }
+                    },
+                    "y": -1
+                  }
+                },
+                {
+                  "type": "apoli:summon_minion",
+                  "summon_id": "elemental_bendings:quicksand",
+                  "max_life_ticks": 160,
+                  "invulnerable": true,
+                  "texture": "elemental_bendings:textures/entity/firebender/combustionbending/blast_point.png",
+                  "follow_owner": false,
+                  "powers": [
+                    "elemental_bendings:earthbender/sandbending/quicksand/core/pulse",
+                    "elemental_bendings:earthbender/sandbending/quicksand/core/swirl",
+                    "elemental_bendings:earthbender/sandbending/quicksand/core/haze",
+                    "elemental_bendings:bending/quiet_summon"
+                  ],
+                  "bientity_action": {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:earthbender/sandbending/quicksand/core/pulse",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 2
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "else_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:text",
+            "text": {
+              "translate": "text.elemental_bendings.no_ground"
+            },
+            "bar": "actionbar",
+            "fadein": 2,
+            "duration": 30,
+            "fadeout": 8
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.dispenser.fail",
+            "volume": 0.3,
+            "pitch": 1.8
+          }
+        ]
+      }
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+    "comparison": "==",
+    "compare_to": 0
+  },
+  "hidden": true
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "elemental_bendings:firebender",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/combustionbending/combustionbending",
+    "elemental_bendings:firebender/combustionbending/third_eye/strain",
+    "elemental_bendings:firebender/combustionbending/third_eye/channel",
+    "elemental_bendings:firebender/combustionbending/third_eye/tattoo",
+    "elemental_bendings:firebender/combustionbending/third_eye/glow",
+    "elemental_bendings:firebender/combustionbending/third_eye/focus",
+    "elemental_bendings:firebender/combustionbending/third_eye/bleeding",
+    "elemental_bendings:firebender/combustionbending/third_eye/struck",
+    "elemental_bendings:firebender/combustionbending/combustion_blast/pose",
+    "elemental_bendings:firebender/combustionbending/combustion_blast/charge_pose",
+    "elemental_bendings:firebender/combustionbending/combustion_blast"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/combustionbending/combustionbending.png"
+  },
+  "frame": "goal",
+  "cost": 2,
+  "order": 1,
+  "excludes": [
+    "elemental_bendings:firebender/lightningbending",
+    "elemental_bendings:firebender/blue_fire",
+    "elemental_bendings:firebender/dragon_fire"
+  ]
+}

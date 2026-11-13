@@ -1,0 +1,22 @@
+{
+  "parent": "elemental_bendings:airbender/vacuumbending",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.pressure_wave.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.pressure_wave.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/vacuumbending/pressure_wave/field",
+    "elemental_bendings:airbender/vacuumbending/pressure_wave/pulse",
+    "elemental_bendings:airbender/vacuumbending/pressure_wave/haze",
+    "elemental_bendings:airbender/vacuumbending/pressure_wave/pose",
+    "elemental_bendings:airbender/vacuumbending/pressure_wave"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/vacuumbending/pressure_wave.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

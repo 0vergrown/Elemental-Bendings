@@ -15,9 +15,5 @@
   "strength": "if(elemental_bendings:bending/cooldown > 0, 0.55, 1)",
   "draw_phase": "above_hud",
   "visible_in_third_person": true,
-  "condition": {
-    "type": "apoli:power",
-    "power": "elemental_bendings:waterbender/plantbending/plantbending"
-  },
   "hidden": true
 }

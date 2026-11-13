@@ -1,0 +1,626 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_1"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/charged_blast/charged_blast"
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 4
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:firebender/combustionbending/charged_blast/charge",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:firebender/combustionbending/charged_blast/armed",
+            "modifier": {
+              "operation": "set_total",
+              "value": 1
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:firebender/combustionbending/charged_blast/heartbeat",
+            "modifier": {
+              "operation": "set_total",
+              "value": 6
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:firebender/combustionbending/third_eye/channel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 6
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.blaze.ambient",
+            "volume": 0.6,
+            "pitch": 1.4
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.beacon.power_select",
+            "volume": 0.4,
+            "pitch": 0.8
+          }
+        ]
+      },
+      "else_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 14
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:firebender/combustionbending/third_eye/channel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 10
+            }
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 49
+                  }
+                },
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose_timer",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 12
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.blaze.ambient",
+            "volume": 0.6,
+            "pitch": 1.6
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.fire.ambient",
+            "volume": 1.0,
+            "pitch": 0.7
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 7,
+            "action": {
+              "type": "apoli:if_else",
+              "condition": {
+                "type": "apoli:resource",
+                "resource": "elemental_bendings:firebender/combustionbending/third_eye/channel",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              "if_action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:resource",
+                      "resource": "elemental_bendings:firebender/combustionbending/third_eye/strain",
+                      "comparison": ">",
+                      "compare_to": 0
+                    },
+                    {
+                      "type": "apoli:random_chance",
+                      "chance": "elemental_bendings:firebender/combustionbending/third_eye/strain / 1500"
+                    }
+                  ]
+                },
+                "if_action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:firebender/combustionbending/third_eye/channel",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 0
+                      }
+                    },
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:firebender/combustionbending/charged_blast/armed",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 0
+                      }
+                    },
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:firebender/combustionbending/charged_blast/heartbeat",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 0
+                      }
+                    },
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:firebender/combustionbending/charged_blast/charge",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 0
+                      }
+                    },
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:bending/cooldown",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 40
+                      }
+                    },
+                    {
+                      "type": "apoli:explode",
+                      "power": 1.6,
+                      "destruction_type": "none",
+                      "damage_self": true,
+                      "create_fire": false
+                    },
+                    {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/firebender/combustionbending/blast.png",
+                            "lifetime": 12,
+                            "lifetime_variation": 4,
+                            "size": 0.55,
+                            "size_variation": 0.3,
+                            "end_size": 1.0,
+                            "color": "#FFFFFF",
+                            "end_color": "#FF4A0C00",
+                            "friction": 0.85,
+                            "emissive": true,
+                            "blend": "additive",
+                            "physics": false,
+                            "frames": 6,
+                            "roll": "rUni(0, 360)",
+                            "alpha_bleed": true
+                          },
+                          "count": 14,
+                          "offset_y": 0.0,
+                          "spread": {
+                            "x": 0.6400000000000001,
+                            "y": 0.5599999999999999,
+                            "z": 0.6400000000000001
+                          },
+                          "speed": 0.08
+                        },
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                            "lifetime": 26,
+                            "lifetime_variation": 10,
+                            "size": 0.4,
+                            "size_variation": 0.2,
+                            "end_size": 0.8,
+                            "color": "#3A3430C0",
+                            "end_color": "#22201C00",
+                            "gravity": -0.004,
+                            "friction": 0.9,
+                            "frames": 4,
+                            "frame_time": 6,
+                            "physics": false,
+                            "roll": "rUni(0, 360)"
+                          },
+                          "count": 8,
+                          "offset_y": 0.2,
+                          "spread": {
+                            "x": 0.8,
+                            "y": 0.6400000000000001,
+                            "z": 0.8
+                          },
+                          "speed": 0.04
+                        },
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/firebender/ember.png",
+                            "lifetime": 20,
+                            "lifetime_variation": 10,
+                            "size": 0.08,
+                            "size_variation": 0.05,
+                            "end_size": 0.0,
+                            "color": "#FFD25A",
+                            "end_color": "#FF3A1A00",
+                            "gravity": -0.02,
+                            "friction": 0.95,
+                            "emissive": true,
+                            "blend": "additive",
+                            "physics": false
+                          },
+                          "count": 12,
+                          "offset_y": 0.0,
+                          "spread": {
+                            "x": 0.5,
+                            "y": 0.5,
+                            "z": 0.5
+                          },
+                          "speed": 0.3
+                        },
+                        {
+                          "type": "apoli:play_sound",
+                          "sound": "minecraft:entity.firework_rocket.large_blast",
+                          "volume": 0.8,
+                          "pitch": 0.7
+                        }
+                      ]
+                    },
+                    {
+                      "type": "apoli:damage",
+                      "amount": 5.2,
+                      "damage_type": "elemental_bendings:combustionbending"
+                    },
+                    {
+                      "type": "apoli:text",
+                      "text": {
+                        "translate": "text.elemental_bendings.misfire",
+                        "color": "red"
+                      },
+                      "bar": "actionbar",
+                      "fadein": 2,
+                      "duration": 30,
+                      "fadeout": 8
+                    }
+                  ]
+                },
+                "else_action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:play_sound",
+                          "sound": "minecraft:entity.firework_rocket.blast",
+                          "volume": 1.0,
+                          "pitch": 1.0
+                        },
+                        {
+                          "type": "apoli:play_sound",
+                          "sound": "minecraft:item.firecharge.use",
+                          "volume": 0.8,
+                          "pitch": 1.3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "apoli:spawn_particles",
+                      "particle": {
+                        "type": "apoli:custom",
+                        "texture": "elemental_bendings:textures/particle/firebender/combustionbending/beam.png",
+                        "lifetime": 3,
+                        "size": 0.07,
+                        "end_size": 0.02,
+                        "color": "#FFF4C8",
+                        "end_color": "#FF8A2000",
+                        "emissive": true,
+                        "blend": "additive",
+                        "physics": false,
+                        "frames": 3,
+                        "alpha_bleed": true
+                      },
+                      "count": 6,
+                      "model_part": "head",
+                      "space": "local",
+                      "offset_y": 0.12,
+                      "offset_z": 0.3,
+                      "spread": {
+                        "x": 0.04,
+                        "y": 0.04,
+                        "z": 0.04
+                      },
+                      "speed": 0.02
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 0.6,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "chain": {
+                        "chain_direction": "forward",
+                        "distance": 36,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/firebender/combustionbending/beam.png",
+                          "lifetime": 6,
+                          "lifetime_variation": 2,
+                          "size": 0.11,
+                          "size_variation": 0.02,
+                          "end_size": 0.03,
+                          "color": "#FFFFFF",
+                          "end_color": "#FF7A1800",
+                          "friction": 1.0,
+                          "emissive": true,
+                          "blend": "additive",
+                          "physics": false,
+                          "frames": 3,
+                          "roll": "rUni(0, 360)",
+                          "alpha_bleed": true
+                        },
+                        "spacing": 0.15,
+                        "hit_action": {
+                          "type": "apoli:summon_minion",
+                          "summon_id": "elemental_bendings:combustion_blast",
+                          "max_life_ticks": 4,
+                          "invulnerable": true,
+                          "texture": "elemental_bendings:textures/entity/firebender/combustionbending/blast_point.png",
+                          "follow_owner": false,
+                          "bientity_action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:target_action",
+                                "action": {
+                                  "type": "apoli:teleport",
+                                  "relative": false,
+                                  "x": "hit_x + 0.4 * sin(rad(yaw)) * cos(rad(pitch))",
+                                  "y": "hit_y + 0.4 * sin(rad(pitch))",
+                                  "z": "hit_z - 0.4 * cos(rad(yaw)) * cos(rad(pitch))"
+                                }
+                              },
+                              {
+                                "type": "apoli:target_action",
+                                "action": {
+                                  "type": "apoli:and",
+                                  "actions": [
+                                    {
+                                      "type": "apoli:explode",
+                                      "power": 2.2,
+                                      "destruction_type": "none",
+                                      "damage_self": false,
+                                      "create_fire": false
+                                    },
+                                    {
+                                      "type": "apoli:and",
+                                      "actions": [
+                                        {
+                                          "type": "apoli:spawn_particles",
+                                          "particle": {
+                                            "type": "apoli:custom",
+                                            "texture": "elemental_bendings:textures/particle/firebender/combustionbending/blast.png",
+                                            "lifetime": 12,
+                                            "lifetime_variation": 4,
+                                            "size": 0.55,
+                                            "size_variation": 0.3,
+                                            "end_size": 1.0,
+                                            "color": "#FFFFFF",
+                                            "end_color": "#FF4A0C00",
+                                            "friction": 0.85,
+                                            "emissive": true,
+                                            "blend": "additive",
+                                            "physics": false,
+                                            "frames": 6,
+                                            "roll": "rUni(0, 360)",
+                                            "alpha_bleed": true
+                                          },
+                                          "count": 17,
+                                          "offset_y": 0.0,
+                                          "spread": {
+                                            "x": 0.8800000000000001,
+                                            "y": 0.77,
+                                            "z": 0.8800000000000001
+                                          },
+                                          "speed": 0.08
+                                        },
+                                        {
+                                          "type": "apoli:spawn_particles",
+                                          "particle": {
+                                            "type": "apoli:custom",
+                                            "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                            "lifetime": 26,
+                                            "lifetime_variation": 10,
+                                            "size": 0.4,
+                                            "size_variation": 0.2,
+                                            "end_size": 0.8,
+                                            "color": "#3A3430C0",
+                                            "end_color": "#22201C00",
+                                            "gravity": -0.004,
+                                            "friction": 0.9,
+                                            "frames": 4,
+                                            "frame_time": 6,
+                                            "physics": false,
+                                            "roll": "rUni(0, 360)"
+                                          },
+                                          "count": 10,
+                                          "offset_y": 0.2,
+                                          "spread": {
+                                            "x": 1.1,
+                                            "y": 0.8800000000000001,
+                                            "z": 1.1
+                                          },
+                                          "speed": 0.04
+                                        },
+                                        {
+                                          "type": "apoli:spawn_particles",
+                                          "particle": {
+                                            "type": "apoli:custom",
+                                            "texture": "elemental_bendings:textures/particle/firebender/ember.png",
+                                            "lifetime": 20,
+                                            "lifetime_variation": 10,
+                                            "size": 0.08,
+                                            "size_variation": 0.05,
+                                            "end_size": 0.0,
+                                            "color": "#FFD25A",
+                                            "end_color": "#FF3A1A00",
+                                            "gravity": -0.02,
+                                            "friction": 0.95,
+                                            "emissive": true,
+                                            "blend": "additive",
+                                            "physics": false
+                                          },
+                                          "count": 14,
+                                          "offset_y": 0.0,
+                                          "spread": {
+                                            "x": 0.5,
+                                            "y": 0.5,
+                                            "z": 0.5
+                                          },
+                                          "speed": 0.3
+                                        },
+                                        {
+                                          "type": "apoli:play_sound",
+                                          "sound": "minecraft:entity.firework_rocket.large_blast",
+                                          "volume": 0.8,
+                                          "pitch": 0.7
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "apoli:block_action_at",
+                                      "block_action": {
+                                        "type": "apoli:area_of_effect",
+                                        "radius": 2.0,
+                                        "shape": "sphere",
+                                        "block_condition": {
+                                          "type": "apoli:in_tag",
+                                          "tag": "elemental_bendings:firebender/combustionbending/blastable"
+                                        },
+                                        "block_action": {
+                                          "type": "apoli:and",
+                                          "actions": [
+                                            {
+                                              "type": "apoli:ghost_block",
+                                              "block": "minecraft:air",
+                                              "duration": 600
+                                            },
+                                            {
+                                              "type": "apoli:random_chance",
+                                              "chance": 0.2,
+                                              "action": {
+                                                "type": "apoli:spawn_particles",
+                                                "particle": {
+                                                  "type": "apoli:custom",
+                                                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                                  "lifetime": 26,
+                                                  "lifetime_variation": 10,
+                                                  "size": 0.4,
+                                                  "size_variation": 0.2,
+                                                  "end_size": 0.8,
+                                                  "color": "#3A3430C0",
+                                                  "end_color": "#22201C00",
+                                                  "gravity": -0.004,
+                                                  "friction": 0.9,
+                                                  "frames": 4,
+                                                  "frame_time": 6,
+                                                  "physics": false,
+                                                  "roll": "rUni(0, 360)"
+                                                },
+                                                "count": 1,
+                                                "spread": {
+                                                  "x": 0.4,
+                                                  "y": 0.4,
+                                                  "z": 0.4
+                                                },
+                                                "speed": 0.02
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "apoli:target_action",
+                                "action": {
+                                  "type": "apoli:set_summon_max_life",
+                                  "amount": 1
+                                }
+                              }
+                            ]
+                          },
+                          "powers": [
+                            "elemental_bendings:bending/quiet_summon"
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "hidden": true
+}

@@ -264,5 +264,6 @@
         "inverted": true
       }
     ]
-  }
+  },
+  "hidden": true
 }

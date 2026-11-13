@@ -50,6 +50,29 @@
         "resource": "elemental_bendings:waterbender/water_shield/heartbeat",
         "comparison": "==",
         "compare_to": 0
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:waterbender/icebending/ice_whip/heartbeat",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:waterbender/icebending/ice_shield/heartbeat",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ],
+        "inverted": true
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/icebending",
+        "inverted": true
       }
     ]
   },

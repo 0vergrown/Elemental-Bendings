@@ -1,0 +1,23 @@
+{
+  "parent": "elemental_bendings:firebender",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.blue_fire.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.blue_fire.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/blue_fire/blue_fire_punch"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/blue_fire/blue_fire.png"
+  },
+  "frame": "goal",
+  "cost": 2,
+  "order": 2,
+  "excludes": [
+    "elemental_bendings:firebender/lightningbending",
+    "elemental_bendings:firebender/combustionbending",
+    "elemental_bendings:firebender/dragon_fire"
+  ]
+}

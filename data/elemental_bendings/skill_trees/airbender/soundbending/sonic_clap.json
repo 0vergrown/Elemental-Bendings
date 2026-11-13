@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:airbender/soundbending",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.sonic_clap.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.sonic_clap.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/soundbending/sonic_clap/pose",
+    "elemental_bendings:airbender/soundbending/sonic_clap"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/soundbending/sonic_clap.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

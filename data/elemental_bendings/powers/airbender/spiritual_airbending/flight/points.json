@@ -1,0 +1,46 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/waterbender/glimmer.png",
+    "lifetime": 40,
+    "lifetime_variation": 20,
+    "size": 0.07,
+    "size_variation": 0.04,
+    "end_size": 0.0,
+    "color": "#FFFFFF",
+    "end_color": "#B8F0FF00",
+    "friction": 0.94,
+    "emissive": true,
+    "blend": "additive",
+    "physics": false
+  },
+  "count": 1,
+  "frequency": 2,
+  "offset_y": 0.9,
+  "spread": {
+    "x": 0.5,
+    "y": 0.7,
+    "z": 0.5
+  },
+  "speed": 0.0,
+  "velocity_x": "rUni(-0.04, 0.04)",
+  "velocity_y": "rUni(-0.02, 0.05)",
+  "velocity_z": "rUni(-0.04, 0.04)",
+  "visible_in_first_person": true,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:sprinting"
+      }
+    ]
+  },
+  "hidden": true
+}

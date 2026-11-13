@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:earthbender/lavabending/lava_wave",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.lavabending.eruption.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.lavabending.eruption.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/lavabending/eruption/pose",
+    "elemental_bendings:earthbender/lavabending/eruption"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/lavabending/eruption.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

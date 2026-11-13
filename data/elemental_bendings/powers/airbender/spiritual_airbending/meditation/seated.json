@@ -1,0 +1,14 @@
+{
+  "type": "apoli:modify_jump",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/spiritual_airbending/meditation/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "modifier": {
+    "operation": "multiply_total",
+    "value": -1
+  },
+  "hidden": true
+}

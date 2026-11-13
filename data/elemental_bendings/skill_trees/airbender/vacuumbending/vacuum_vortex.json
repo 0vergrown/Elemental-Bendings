@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:airbender/vacuumbending",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.vacuum_vortex.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.vacuum_vortex.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/vacuumbending/vacuum_vortex/pose",
+    "elemental_bendings:airbender/vacuumbending/vacuum_vortex"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/vacuumbending/vacuum_vortex.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 2
+}

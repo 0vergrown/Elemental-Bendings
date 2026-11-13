@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "minecraft:purple_concrete_powder",
+      "required": false
+    }
+  ]
+}

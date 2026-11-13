@@ -1,0 +1,23 @@
+{
+  "type": "apoli:overlay",
+  "texture": "elemental_bendings:textures/gui/airbender/soundbending/emblem.png",
+  "anchor": "bottom_center",
+  "x": 0,
+  "y": -42,
+  "width": 16,
+  "height": 16,
+  "u": "16 * (if(elemental_bendings:airbender/soundbending/calming_hum/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:airbender/soundbending/calming_hum/fuel / 300) * 4)), if(elemental_bendings:airbender/soundbending/dead_silence/field > 0, 1 + min(3, floor((1 - elemental_bendings:airbender/soundbending/dead_silence/field / 240) * 4)), if(elemental_bendings:airbender/soundbending/echolocation/window > 0, 1 + min(3, floor((1 - elemental_bendings:airbender/soundbending/echolocation/window / 160) * 4)), 0))))",
+  "v": 0,
+  "texture_width": 80,
+  "texture_height": 16,
+  "region_width": 16,
+  "region_height": 16,
+  "strength": "if(elemental_bendings:bending/cooldown > 0, 0.55, 1)",
+  "draw_phase": "above_hud",
+  "visible_in_third_person": true,
+  "condition": {
+    "type": "apoli:power",
+    "power": "elemental_bendings:airbender/soundbending/shattering_scream"
+  },
+  "hidden": true
+}

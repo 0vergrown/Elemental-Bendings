@@ -1,0 +1,30 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/firebender/dragon_fire/ember.png",
+    "lifetime": 20,
+    "lifetime_variation": 10,
+    "size": 0.08,
+    "size_variation": 0.05,
+    "end_size": 0.0,
+    "color": "#FFFFFF",
+    "end_color": "#FF2EB400",
+    "gravity": -0.02,
+    "friction": 0.95,
+    "emissive": true,
+    "blend": "additive",
+    "physics": false,
+    "hue_variation": 180
+  },
+  "count": 1,
+  "frequency": 2,
+  "offset_y": 3.0,
+  "spread": {
+    "x": 1.6,
+    "y": 1.0,
+    "z": 1.6
+  },
+  "speed": 0.08,
+  "hidden": true
+}

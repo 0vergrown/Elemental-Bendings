@@ -1,0 +1,42 @@
+{
+  "parent": "elemental_bendings:firebender/dragon_fire/dragon_fire_jet",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.dragon_fire.fire_tornado.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.dragon_fire.fire_tornado.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/dragon_fire/fire_tornado/recharge",
+    "elemental_bendings:firebender/dragon_fire/fire_tornado/pose",
+    "elemental_bendings:firebender/dragon_fire/fire_tornado",
+    "elemental_bendings:firebender/dragon_fire/emblem"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/dragon_fire/fire_tornado.png"
+  },
+  "frame": "challenge",
+  "cost": 3,
+  "order": 0,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_wall"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_circle"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_breath"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_jet"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "parent": "elemental_bendings:firebender",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/lightningbending/lightningbending",
+    "elemental_bendings:firebender/lightningbending/lightning_bolt/charging",
+    "elemental_bendings:firebender/lightningbending/lightning_bolt/pose",
+    "elemental_bendings:firebender/lightningbending/lightning_bolt/redirect_pose",
+    "elemental_bendings:firebender/lightningbending/lightning_bolt/crackle",
+    "elemental_bendings:firebender/lightningbending/lightning_bolt/rooted",
+    "elemental_bendings:firebender/lightningbending/lightning_bolt"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/lightningbending/lightningbending.png"
+  },
+  "frame": "goal",
+  "cost": 2,
+  "order": 0,
+  "excludes": [
+    "elemental_bendings:firebender/combustionbending",
+    "elemental_bendings:firebender/blue_fire",
+    "elemental_bendings:firebender/dragon_fire"
+  ]
+}

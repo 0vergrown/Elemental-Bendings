@@ -1,0 +1,54 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 140,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:detach_rope",
+        "slot": "chain"
+      },
+      {
+        "type": "apoli:revoke_all_powers",
+        "source": "elemental_bendings:chained"
+      },
+      {
+        "type": "apoli:revoke_power",
+        "power": "elemental_bendings:earthbender/metalbending/chained/reel",
+        "source": "elemental_bendings:chained"
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+          "lifetime": 7,
+          "lifetime_variation": 3,
+          "size": 0.06,
+          "size_variation": 0.03,
+          "end_size": 0.0,
+          "color": "#FFFFFF",
+          "end_color": "#FFD27A00",
+          "gravity": 0.02,
+          "friction": 0.9,
+          "emissive": true,
+          "blend": "additive",
+          "physics": false,
+          "alpha_bleed": true
+        },
+        "count": 6,
+        "offset_y": 1.0,
+        "spread": 0.3,
+        "speed": 0.15
+      },
+      {
+        "type": "apoli:play_sound",
+        "sound": "minecraft:block.chain.break",
+        "volume": 0.7,
+        "pitch": 1.2
+      }
+    ]
+  },
+  "hidden": true
+}

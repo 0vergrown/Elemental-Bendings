@@ -1,0 +1,21 @@
+{
+  "type": "apoli:invulnerability",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/icebending/ice_shield/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "damage_condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:projectile"
+      },
+      {
+        "type": "apoli:fire"
+      }
+    ]
+  },
+  "hidden": true
+}

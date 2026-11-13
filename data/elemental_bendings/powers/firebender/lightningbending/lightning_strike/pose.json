@@ -1,0 +1,317 @@
+{
+  "type": "apoli:modify_model_parts",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:bending/pose",
+        "comparison": "==",
+        "compare_to": 48
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:bending/pose_timer",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "right_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.3491,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": -3.0718,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 6,
+          "value": -1.8151,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 12,
+          "value": -1.7453,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.1047,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": 0.0698,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 6,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.3491,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": -0.6981,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 6,
+          "value": 0.2443,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.1047,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": -0.4538,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 6,
+          "value": -0.2443,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "head",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": -0.384,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 6,
+          "value": 0.1047,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "upper",
+      "type": "pitch",
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": -0.1047,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 6,
+          "value": 0.1396,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "upper",
+      "type": "yaw",
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 6,
+          "value": -0.2443,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 6,
+          "value": 0.3491,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 6,
+          "value": -0.384,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "whole",
+      "type": "pivot_y",
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 6,
+          "value": 1.6,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "reach",
+      "perspectives": [
+        "first_person"
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 4.0,
+      "keyframes": [
+        {
+          "time": 0,
+          "target": [
+            -6,
+            6,
+            -8
+          ],
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "target": [
+            -5,
+            -14,
+            -6
+          ],
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 6,
+          "target": [
+            -2,
+            -2,
+            -19
+          ],
+          "easing": "ease_out_expo"
+        }
+      ]
+    }
+  ],
+  "hidden": true
+}

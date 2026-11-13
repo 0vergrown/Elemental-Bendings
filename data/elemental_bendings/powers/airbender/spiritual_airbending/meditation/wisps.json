@@ -1,0 +1,39 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+    "lifetime": 18,
+    "lifetime_variation": 6,
+    "size": 0.2,
+    "size_variation": 0.07,
+    "end_size": 0.05,
+    "color": "#EFFFFF",
+    "end_color": "#38D6E000",
+    "gravity": -0.015,
+    "friction": 0.92,
+    "emissive": true,
+    "blend": "additive",
+    "frames": 6,
+    "frame_time": 3,
+    "physics": false,
+    "roll": "rUni(-15, 15)"
+  },
+  "count": 1,
+  "frequency": 3,
+  "offset_y": 0.6,
+  "spread": {
+    "x": 0.7,
+    "y": 0.6,
+    "z": 0.7
+  },
+  "speed": 0.01,
+  "visible_in_first_person": true,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/spiritual_airbending/meditation/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

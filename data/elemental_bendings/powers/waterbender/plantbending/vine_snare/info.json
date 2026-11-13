@@ -1,0 +1,23 @@
+{
+  "type": "apoli:simple",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/isaacfanta/holdable.png",
+      "text": {
+        "translate": "badge.elemental_bendings.combo.2.hold.when",
+        "with": [
+          {
+            "keybind": "key.elemental_bendings.stance_1"
+          },
+          {
+            "keybind": "key.elemental_bendings.stance_3"
+          },
+          {
+            "translate": "badge.elemental_bendings.when.sap"
+          }
+        ]
+      }
+    }
+  ]
+}

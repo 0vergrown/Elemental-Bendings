@@ -6,7 +6,7 @@
   "y": -42,
   "width": 16,
   "height": 16,
-  "u": "16 * (if(elemental_bendings:firebender/fire_breath/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:firebender/fire_breath/fuel / 140) * 4)), if(elemental_bendings:firebender/fire_jet/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:firebender/fire_jet/fuel / 140) * 4)), 0)))",
+  "u": "16 * (if(elemental_bendings:firebender/fire_breath/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:firebender/fire_breath/fuel / 140) * 4)), if(elemental_bendings:firebender/fire_jet/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:firebender/fire_jet/fuel / 140) * 4)), if(elemental_bendings:firebender/lightningbending/lightning_stream/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:firebender/lightningbending/lightning_stream/fuel / 140) * 4)), if(elemental_bendings:firebender/lightningbending/lightning_redirection/window > 0, 4, if(elemental_bendings:firebender/lightningbending/lightning_bolt/charging > 0, 2, if(elemental_bendings:firebender/combustionbending/third_eye/strain > 0, 1 + min(3, floor(elemental_bendings:firebender/combustionbending/third_eye/strain / 150)), 0)))))))",
   "v": 0,
   "texture_width": 80,
   "texture_height": 16,
@@ -15,5 +15,27 @@
   "strength": "if(elemental_bendings:bending/cooldown > 0, 0.55, 1)",
   "draw_phase": "above_hud",
   "visible_in_third_person": true,
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/lightning_storm/lightning_storm"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/charged_blast/charged_blast"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/blue_fire/fire_tornado"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/dragon_fire/fire_tornado"
+      }
+    ],
+    "inverted": true
+  },
   "hidden": true
 }

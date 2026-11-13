@@ -4,27 +4,10 @@
     "translate": "skill.elemental_bendings.waterbender.plantbending.name"
   },
   "description": {
-    "translate": "skill.elemental_bendings.waterbender.plantbending.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
-      },
-      {
-        "keybind": "key.apoli.skill_tree"
-      }
-    ]
+    "translate": "skill.elemental_bendings.waterbender.plantbending.description"
   },
   "powers": [
     "elemental_bendings:waterbender/plantbending/plantbending",
-    "elemental_bendings:waterbender/plantbending/stance/rooting_the_tree",
-    "elemental_bendings:waterbender/plantbending/stance/pulling_the_vine",
-    "elemental_bendings:waterbender/plantbending/stance/driving_the_root",
     "elemental_bendings:waterbender/plantbending/wither/pose",
     "elemental_bendings:waterbender/plantbending/wither/draw_pose",
     "elemental_bendings:waterbender/plantbending/wither/sap",
@@ -40,16 +23,16 @@
     "elemental_bendings:waterbender/plantbending/mud_shot/pose",
     "elemental_bendings:waterbender/plantbending/mud_shot",
     "elemental_bendings:waterbender/plantbending/mud_splatter/pose",
-    "elemental_bendings:waterbender/plantbending/mud_splatter",
-    "elemental_bendings:waterbender/plantbending/emblem"
+    "elemental_bendings:waterbender/plantbending/mud_splatter"
   ],
   "icon": {
-    "item": "minecraft:oak_sapling"
+    "texture": "elemental_bendings:textures/gui/waterbender/plantbending/plantbending.png"
   },
   "frame": "goal",
   "cost": 2,
   "order": 1,
   "excludes": [
-    "elemental_bendings:waterbender/bloodbending"
+    "elemental_bendings:waterbender/bloodbending",
+    "elemental_bendings:waterbender/icebending"
   ]
 }

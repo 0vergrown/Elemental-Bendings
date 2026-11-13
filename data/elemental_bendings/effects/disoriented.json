@@ -1,0 +1,19 @@
+{
+  "type": "harmful",
+  "r": 0.7,
+  "g": 0.55,
+  "b": 1.0,
+  "name": "Disoriented",
+  "icon": "elemental_bendings:disoriented",
+  "powers": [
+    "elemental_bendings:airbender/soundbending/disoriented/sway",
+    "elemental_bendings:airbender/soundbending/disoriented/haze",
+    "elemental_bendings:airbender/soundbending/disoriented/clumsy",
+    "elemental_bendings:airbender/soundbending/disoriented/echoes",
+    "elemental_bendings:airbender/soundbending/disoriented/stagger",
+    "elemental_bendings:airbender/soundbending/disoriented/dazed",
+    "elemental_bendings:airbender/soundbending/disoriented/stumble",
+    "elemental_bendings:airbender/soundbending/disoriented/start",
+    "elemental_bendings:airbender/soundbending/disoriented/stars"
+  ]
+}

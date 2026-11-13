@@ -1,0 +1,217 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": {
+    "key": "key.elemental_bendings.stance_2",
+    "continuous": true
+  },
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/sandbending/sand_surfing/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/sandbending/sand_surfing/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 6
+        }
+      },
+      {
+        "type": "apoli:if_else",
+        "condition": {
+          "type": "apoli:or",
+          "conditions": [
+            {
+              "type": "apoli:on_block",
+              "block_condition": {
+                "type": "apoli:or",
+                "conditions": [
+                  {
+                    "type": "apoli:in_tag",
+                    "tag": "minecraft:sand"
+                  },
+                  {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/sandbending/surfable"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "apoli:block_in_radius",
+              "radius": {
+                "x": 0,
+                "y": 2,
+                "z": 0
+              },
+              "shape": "cube",
+              "block_condition": {
+                "type": "apoli:or",
+                "conditions": [
+                  {
+                    "type": "apoli:in_tag",
+                    "tag": "minecraft:sand"
+                  },
+                  {
+                    "type": "apoli:in_tag",
+                    "tag": "elemental_bendings:earthbender/sandbending/surfable"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "if_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/sandbending/sand_surfing/fuel",
+              "modifier": {
+                "operation": "add_value",
+                "value": -2
+              }
+            },
+            {
+              "type": "apoli:add_velocity",
+              "x": 0,
+              "y": -0.12,
+              "z": 0.72,
+              "space": "local_horizontal_normalized",
+              "set": true
+            },
+            {
+              "type": "apoli:set_fall_distance",
+              "fall_distance": 0
+            },
+            {
+              "type": "apoli:if_else",
+              "condition": {
+                "type": "apoli:random_chance",
+                "chance": "mod(elemental_bendings:earthbender/sandbending/sand_surfing/fuel, 4) == 0"
+              },
+              "if_action": {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                  "lifetime": 26,
+                  "lifetime_variation": 8,
+                  "size": 0.55,
+                  "size_variation": 0.25,
+                  "end_size": 1.1,
+                  "color": "#E6D2A0CC",
+                  "end_color": "#C8A96E00",
+                  "gravity": -0.002,
+                  "friction": 0.9,
+                  "frames": 4,
+                  "frame_time": 6,
+                  "physics": false,
+                  "roll": "rUni(0, 360)"
+                },
+                "count": 1,
+                "offset_y": 0.2,
+                "spread": {
+                  "x": 0.4,
+                  "y": 0.1,
+                  "z": 0.4
+                },
+                "speed": 0.02
+              }
+            },
+            {
+              "type": "apoli:random_chance",
+              "chance": 0.25,
+              "action": {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:block.sand.step",
+                "volume": 0.6,
+                "pitch": 0.8
+              }
+            },
+            {
+              "type": "apoli:random_chance",
+              "chance": 0.08,
+              "action": {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:block.sand.break",
+                "volume": 0.5,
+                "pitch": 0.6
+              }
+            }
+          ]
+        },
+        "else_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/sandbending/sand_surfing/heartbeat",
+              "modifier": {
+                "operation": "set_total",
+                "value": 0
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/sandbending/sand_surfing/fuel",
+              "modifier": {
+                "operation": "set_total",
+                "value": 0
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:bending/cooldown",
+              "modifier": {
+                "operation": "set_total",
+                "value": 10
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "entity_action_released": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/sandbending/sand_surfing/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/sandbending/sand_surfing/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 10
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

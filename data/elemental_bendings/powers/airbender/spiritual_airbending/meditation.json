@@ -1,0 +1,415 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_3",
+    "key.elemental_bendings.stance_2",
+    {
+      "key": "key.elemental_bendings.stance_2",
+      "hold": 4
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:and",
+      "conditions": [
+        {
+          "type": "apoli:resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "apoli:on_block"
+        },
+        {
+          "type": "apoli:riding",
+          "inverted": true
+        },
+        {
+          "type": "apoli:resource",
+          "resource": "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+          "comparison": ">",
+          "compare_to": 0,
+          "inverted": true
+        },
+        {
+          "type": "apoli:resource",
+          "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+          "comparison": ">",
+          "compare_to": 0,
+          "inverted": true
+        }
+      ]
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:airbender/spiritual_airbending/meditation/fuel",
+          "modifier": {
+            "operation": "set_total",
+            "value": 400
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:airbender/spiritual_airbending/meditation/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 6
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 4
+          }
+        },
+        {
+          "type": "apoli:clear_effect",
+          "effect": "minecraft:poison"
+        },
+        {
+          "type": "apoli:clear_effect",
+          "effect": "minecraft:wither"
+        },
+        {
+          "type": "apoli:clear_effect",
+          "effect": "minecraft:nausea"
+        },
+        {
+          "type": "apoli:clear_effect",
+          "effect": "minecraft:blindness"
+        },
+        {
+          "type": "apoli:clear_effect",
+          "effect": "minecraft:darkness"
+        },
+        {
+          "type": "apoli:clear_effect",
+          "effect": "minecraft:hunger"
+        },
+        {
+          "type": "apoli:clear_effect",
+          "effect": "minecraft:weakness"
+        },
+        {
+          "type": "apoli:clear_effect",
+          "effect": "minecraft:slowness"
+        },
+        {
+          "type": "apoli:clear_effect",
+          "effect": "minecraft:mining_fatigue"
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.beacon.activate",
+          "volume": 0.4,
+          "pitch": 1.6
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.amethyst_block.resonate",
+          "volume": 0.6,
+          "pitch": 1.2
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+            "lifetime": 18,
+            "lifetime_variation": 6,
+            "size": 0.2,
+            "size_variation": 0.07,
+            "end_size": 0.05,
+            "color": "#EFFFFF",
+            "end_color": "#38D6E000",
+            "gravity": -0.015,
+            "friction": 0.92,
+            "emissive": true,
+            "blend": "additive",
+            "frames": 6,
+            "frame_time": 3,
+            "physics": false,
+            "roll": "rUni(-15, 15)"
+          },
+          "count": 1,
+          "spread": 0.12,
+          "offset_y": 0.2,
+          "velocity_x": 0.12,
+          "velocity_y": 0.0,
+          "velocity_z": 0.0
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+            "lifetime": 18,
+            "lifetime_variation": 6,
+            "size": 0.2,
+            "size_variation": 0.07,
+            "end_size": 0.05,
+            "color": "#EFFFFF",
+            "end_color": "#38D6E000",
+            "gravity": -0.015,
+            "friction": 0.92,
+            "emissive": true,
+            "blend": "additive",
+            "frames": 6,
+            "frame_time": 3,
+            "physics": false,
+            "roll": "rUni(-15, 15)"
+          },
+          "count": 1,
+          "spread": 0.12,
+          "offset_y": 0.2,
+          "velocity_x": 0.097,
+          "velocity_y": 0.0,
+          "velocity_z": 0.071
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+            "lifetime": 18,
+            "lifetime_variation": 6,
+            "size": 0.2,
+            "size_variation": 0.07,
+            "end_size": 0.05,
+            "color": "#EFFFFF",
+            "end_color": "#38D6E000",
+            "gravity": -0.015,
+            "friction": 0.92,
+            "emissive": true,
+            "blend": "additive",
+            "frames": 6,
+            "frame_time": 3,
+            "physics": false,
+            "roll": "rUni(-15, 15)"
+          },
+          "count": 1,
+          "spread": 0.12,
+          "offset_y": 0.2,
+          "velocity_x": 0.037,
+          "velocity_y": 0.0,
+          "velocity_z": 0.114
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+            "lifetime": 18,
+            "lifetime_variation": 6,
+            "size": 0.2,
+            "size_variation": 0.07,
+            "end_size": 0.05,
+            "color": "#EFFFFF",
+            "end_color": "#38D6E000",
+            "gravity": -0.015,
+            "friction": 0.92,
+            "emissive": true,
+            "blend": "additive",
+            "frames": 6,
+            "frame_time": 3,
+            "physics": false,
+            "roll": "rUni(-15, 15)"
+          },
+          "count": 1,
+          "spread": 0.12,
+          "offset_y": 0.2,
+          "velocity_x": -0.037,
+          "velocity_y": 0.0,
+          "velocity_z": 0.114
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+            "lifetime": 18,
+            "lifetime_variation": 6,
+            "size": 0.2,
+            "size_variation": 0.07,
+            "end_size": 0.05,
+            "color": "#EFFFFF",
+            "end_color": "#38D6E000",
+            "gravity": -0.015,
+            "friction": 0.92,
+            "emissive": true,
+            "blend": "additive",
+            "frames": 6,
+            "frame_time": 3,
+            "physics": false,
+            "roll": "rUni(-15, 15)"
+          },
+          "count": 1,
+          "spread": 0.12,
+          "offset_y": 0.2,
+          "velocity_x": -0.097,
+          "velocity_y": 0.0,
+          "velocity_z": 0.071
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+            "lifetime": 18,
+            "lifetime_variation": 6,
+            "size": 0.2,
+            "size_variation": 0.07,
+            "end_size": 0.05,
+            "color": "#EFFFFF",
+            "end_color": "#38D6E000",
+            "gravity": -0.015,
+            "friction": 0.92,
+            "emissive": true,
+            "blend": "additive",
+            "frames": 6,
+            "frame_time": 3,
+            "physics": false,
+            "roll": "rUni(-15, 15)"
+          },
+          "count": 1,
+          "spread": 0.12,
+          "offset_y": 0.2,
+          "velocity_x": -0.12,
+          "velocity_y": 0.0,
+          "velocity_z": 0.0
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+            "lifetime": 18,
+            "lifetime_variation": 6,
+            "size": 0.2,
+            "size_variation": 0.07,
+            "end_size": 0.05,
+            "color": "#EFFFFF",
+            "end_color": "#38D6E000",
+            "gravity": -0.015,
+            "friction": 0.92,
+            "emissive": true,
+            "blend": "additive",
+            "frames": 6,
+            "frame_time": 3,
+            "physics": false,
+            "roll": "rUni(-15, 15)"
+          },
+          "count": 1,
+          "spread": 0.12,
+          "offset_y": 0.2,
+          "velocity_x": -0.097,
+          "velocity_y": 0.0,
+          "velocity_z": -0.071
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+            "lifetime": 18,
+            "lifetime_variation": 6,
+            "size": 0.2,
+            "size_variation": 0.07,
+            "end_size": 0.05,
+            "color": "#EFFFFF",
+            "end_color": "#38D6E000",
+            "gravity": -0.015,
+            "friction": 0.92,
+            "emissive": true,
+            "blend": "additive",
+            "frames": 6,
+            "frame_time": 3,
+            "physics": false,
+            "roll": "rUni(-15, 15)"
+          },
+          "count": 1,
+          "spread": 0.12,
+          "offset_y": 0.2,
+          "velocity_x": -0.037,
+          "velocity_y": 0.0,
+          "velocity_z": -0.114
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+            "lifetime": 18,
+            "lifetime_variation": 6,
+            "size": 0.2,
+            "size_variation": 0.07,
+            "end_size": 0.05,
+            "color": "#EFFFFF",
+            "end_color": "#38D6E000",
+            "gravity": -0.015,
+            "friction": 0.92,
+            "emissive": true,
+            "blend": "additive",
+            "frames": 6,
+            "frame_time": 3,
+            "physics": false,
+            "roll": "rUni(-15, 15)"
+          },
+          "count": 1,
+          "spread": 0.12,
+          "offset_y": 0.2,
+          "velocity_x": 0.037,
+          "velocity_y": 0.0,
+          "velocity_z": -0.114
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+            "lifetime": 18,
+            "lifetime_variation": 6,
+            "size": 0.2,
+            "size_variation": 0.07,
+            "end_size": 0.05,
+            "color": "#EFFFFF",
+            "end_color": "#38D6E000",
+            "gravity": -0.015,
+            "friction": 0.92,
+            "emissive": true,
+            "blend": "additive",
+            "frames": 6,
+            "frame_time": 3,
+            "physics": false,
+            "roll": "rUni(-15, 15)"
+          },
+          "count": 1,
+          "spread": 0.12,
+          "offset_y": 0.2,
+          "velocity_x": 0.097,
+          "velocity_y": 0.0,
+          "velocity_z": -0.071
+        }
+      ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "hidden": true
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:sandstone",
+    "minecraft:red_sandstone",
+    "#elemental_bendings:earthbender/sandbending/extra"
+  ]
+}

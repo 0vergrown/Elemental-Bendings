@@ -1,0 +1,37 @@
+{
+  "parent": "elemental_bendings:earthbender/sandbending/sand_surfing",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.sandbending.quicksand.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.sandbending.quicksand.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/sandbending/quicksand/quicksand",
+    "elemental_bendings:earthbender/sandbending/quicksand/pose",
+    "elemental_bendings:earthbender/sandbending/quicksand",
+    "elemental_bendings:earthbender/sandbending/stance/sweeping_the_dunes",
+    "elemental_bendings:earthbender/sandbending/stance/coiling_the_storm",
+    "elemental_bendings:earthbender/sandbending/stance/sand_sail_push",
+    "elemental_bendings:earthbender/sandbending/emblem"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/sandbending/quicksand.png"
+  },
+  "frame": "challenge",
+  "cost": 3,
+  "order": 0,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/sandbending/sand_surfing"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/sandbending/sand_clones"
+      }
+    ]
+  }
+}

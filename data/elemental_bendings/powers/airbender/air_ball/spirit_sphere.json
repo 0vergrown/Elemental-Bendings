@@ -1,0 +1,12 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:airbender/air_ball",
+  "texture_location": "elemental_bendings:textures/entity/airbender/spiritual_airbending/spirit_sphere.png",
+  "render_type": "translucent",
+  "animations": {
+    "animation": "elemental_bendings:airbender/air_ball",
+    "name": "animation.air_ball.spin"
+  },
+  "hidden": true
+}

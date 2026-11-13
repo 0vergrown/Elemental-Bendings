@@ -1,0 +1,13 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:earthbender/lavabending/lava_disc",
+  "texture_location": "elemental_bendings:textures/entity/earthbender/lavabending/lava_disc.png",
+  "render_type": "emissive",
+  "scale": 1.0,
+  "animations": {
+    "animation": "elemental_bendings:earthbender/lavabending/lava_disc",
+    "name": "animation.lava_disc.spin"
+  },
+  "hidden": true
+}

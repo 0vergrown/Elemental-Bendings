@@ -1,0 +1,1338 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": {
+    "key": "key.elemental_bendings.stance_2",
+    "continuous": true
+  },
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/metalbending/metal_wall/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/metalbending/metal_wall/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 6
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/metalbending/metal_wall/fuel",
+            "modifier": {
+              "operation": "add_value",
+              "value": -2
+            }
+          },
+          {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:and",
+              "conditions": [
+                {
+                  "type": "apoli:equipped_item",
+                  "equipment_slot": "legs",
+                  "item_condition": {
+                    "type": "apoli:ingredient",
+                    "ingredient": {
+                      "tag": "elemental_bendings:earthbender/metalbending/leggings"
+                    }
+                  }
+                },
+                {
+                  "type": "apoli:equipped_item",
+                  "equipment_slot": "feet",
+                  "item_condition": {
+                    "type": "apoli:ingredient",
+                    "ingredient": {
+                      "tag": "elemental_bendings:earthbender/metalbending/boots"
+                    }
+                  }
+                }
+              ]
+            },
+            "if_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:if_else_list",
+                  "actions": [
+                    {
+                      "condition": {
+                        "type": "apoli:equipped_item",
+                        "equipment_slot": "legs",
+                        "item_condition": {
+                          "type": "apoli:ingredient",
+                          "ingredient": {
+                            "item": "minecraft:netherite_leggings"
+                          }
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/metalbending/metal_wall/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:netherite_block"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:equipped_item",
+                        "equipment_slot": "legs",
+                        "item_condition": {
+                          "type": "apoli:ingredient",
+                          "ingredient": {
+                            "item": "minecraft:iron_leggings"
+                          }
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/metalbending/metal_wall/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:iron_block"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:equipped_item",
+                        "equipment_slot": "legs",
+                        "item_condition": {
+                          "type": "apoli:ingredient",
+                          "ingredient": {
+                            "item": "minecraft:golden_leggings"
+                          }
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/metalbending/metal_wall/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:gold_block"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:equipped_item",
+                        "equipment_slot": "legs",
+                        "item_condition": {
+                          "type": "apoli:ingredient",
+                          "ingredient": {
+                            "item": "minecraft:chainmail_leggings"
+                          }
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/metalbending/metal_wall/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:iron_bars"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "apoli:random_chance",
+                  "chance": 0.3,
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/earthbender/metalbending/glint.png",
+                          "lifetime": 8,
+                          "lifetime_variation": 2,
+                          "size": 0.12,
+                          "end_size": 0.0,
+                          "color": "#FFFFFF",
+                          "end_color": "#D8E6FF00",
+                          "emissive": true,
+                          "blend": "additive",
+                          "frames": 4,
+                          "physics": false,
+                          "alpha_bleed": true
+                        },
+                        "count": 2,
+                        "model_part": "legs",
+                        "offset_y": 0.0,
+                        "spread": 0.2,
+                        "speed": 0.0
+                      },
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                          "lifetime": 7,
+                          "lifetime_variation": 3,
+                          "size": 0.06,
+                          "size_variation": 0.03,
+                          "end_size": 0.0,
+                          "color": "#FFFFFF",
+                          "end_color": "#FFD27A00",
+                          "gravity": 0.02,
+                          "friction": 0.9,
+                          "emissive": true,
+                          "blend": "additive",
+                          "physics": false,
+                          "alpha_bleed": true
+                        },
+                        "count": 3,
+                        "model_part": "feet",
+                        "offset_y": 0.0,
+                        "spread": 0.2,
+                        "speed": 0.12
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "apoli:random_chance",
+                  "chance": 0.35,
+                  "action": {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:block.chain.place",
+                    "volume": 0.6,
+                    "pitch": 0.7
+                  }
+                }
+              ]
+            },
+            "else_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:and",
+                    "conditions": [
+                      {
+                        "type": "apoli:block",
+                        "block": "minecraft:snow"
+                      },
+                      {
+                        "type": "apoli:offset",
+                        "condition": {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable"
+                        },
+                        "y": -1
+                      }
+                    ]
+                  },
+                  "block_action": {
+                    "type": "apoli:ghost_block",
+                    "block": "minecraft:air",
+                    "duration": 600
+                  }
+                },
+                {
+                  "type": "apoli:if_else_list",
+                  "actions": [
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/dirt"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/dirt"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:dirt"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/stone"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/stone"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:stone"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/cobblestone"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/cobblestone"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:cobblestone"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/mossy_cobblestone"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/mossy_cobblestone"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:mossy_cobblestone"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/deepslate"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/deepslate"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:deepslate"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/cobbled_deepslate"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/cobbled_deepslate"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:cobbled_deepslate"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/granite"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/granite"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:granite"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/diorite"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/diorite"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:diorite"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/andesite"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/andesite"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:andesite"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/tuff"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/tuff"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:tuff"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/calcite"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/calcite"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:calcite"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/dripstone_block"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/dripstone_block"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:dripstone_block"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/sandstone"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/sandstone"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:sandstone"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/red_sandstone"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/red_sandstone"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:red_sandstone"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/clay"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/clay"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:clay"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/mud"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/mud"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:mud"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/packed_mud"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/packed_mud"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:packed_mud"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/moss_block"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/moss_block"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:moss_block"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/terracotta"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/terracotta"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:terracotta"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/netherrack"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/netherrack"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:netherrack"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/soul_soil"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/soul_soil"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:soul_soil"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/basalt"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/basalt"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:basalt"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/blackstone"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/blackstone"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:blackstone"
+                        }
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:raycast",
+                        "distance": 7,
+                        "block": true,
+                        "entity": false,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/end_stone"
+                            },
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:block",
+                                  "block": "minecraft:snow"
+                                },
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:earthbender/family/end_stone"
+                                  },
+                                  "y": -1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:run_function",
+                        "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                        "arguments": {
+                          "block": "minecraft:end_stone"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "apoli:random_chance",
+                  "chance": 0.4,
+                  "action": {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:block.rooted_dirt.place",
+                    "volume": 0.7,
+                    "pitch": 0.7
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "entity_action_released": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/metalbending/metal_wall/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/metalbending/metal_wall/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 8
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

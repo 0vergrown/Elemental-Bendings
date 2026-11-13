@@ -1,0 +1,27 @@
+{
+  "parent": "elemental_bendings:waterbender/plantbending/spore_cloud",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.plantbending.root_glide.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.plantbending.root_glide.description"
+  },
+  "powers": [
+    "elemental_bendings:waterbender/plantbending/root_glide/heartbeat",
+    "elemental_bendings:waterbender/plantbending/root_glide/fuel",
+    "elemental_bendings:waterbender/plantbending/root_glide/pose",
+    "elemental_bendings:waterbender/plantbending/root_glide/water_surface",
+    "elemental_bendings:waterbender/plantbending/root_glide/lava_surface",
+    "elemental_bendings:waterbender/plantbending/root_glide/heat",
+    "elemental_bendings:waterbender/plantbending/root_glide/raft",
+    "elemental_bendings:waterbender/plantbending/root_glide/nether_raft",
+    "elemental_bendings:waterbender/plantbending/root_glide/riding",
+    "elemental_bendings:waterbender/plantbending/root_glide"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/waterbender/plantbending/root_glide.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

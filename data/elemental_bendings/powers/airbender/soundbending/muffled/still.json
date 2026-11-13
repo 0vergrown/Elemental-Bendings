@@ -1,0 +1,5 @@
+{
+  "type": "apoli:prevent_game_event",
+  "tag": "minecraft:vibrations",
+  "hidden": true
+}

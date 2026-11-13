@@ -240,18 +240,5 @@
       }
     ]
   },
-  "description": {
-    "translate": "power.elemental_bendings.waterbender/bloodbending/clot.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
-      }
-    ]
-  }
+  "hidden": true
 }

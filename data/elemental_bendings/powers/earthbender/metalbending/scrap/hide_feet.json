@@ -1,0 +1,35 @@
+{
+  "type": "apoli:prevent_feature_render",
+  "features": [
+    "armor_feet"
+  ],
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:earthbender/metalbending/metal_wall/heartbeat",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:earthbender/metalbending/metal_pillar/scrapped",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/scrap/feet",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "hidden": true
+}

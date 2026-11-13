@@ -1,0 +1,327 @@
+{
+  "type": "apoli:modify_model_parts",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:bending/pose",
+        "comparison": "==",
+        "compare_to": 46
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:bending/pose_timer",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "right_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.6981,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": -1.6755,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 8,
+          "value": -1.6057,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "yaw",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": 0.4538,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 5,
+          "value": 0.4538,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 8,
+          "value": -0.6283,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.1047,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.6981,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": -1.0472,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 8,
+          "value": 0.3142,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "yaw",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": 0.5236,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 8,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.1047,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 8,
+          "value": -0.1745,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "upper",
+      "type": "yaw",
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": 0.2793,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 5,
+          "value": 0.2793,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 8,
+          "value": -0.384,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": 0.3142,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": -0.3491,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "whole",
+      "type": "pivot_y",
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "value": 1.4,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "reach",
+      "perspectives": [
+        "first_person"
+      ],
+      "duration": 1.0,
+      "fade_out_duration": 3.0,
+      "keyframes": [
+        {
+          "time": 0,
+          "target": [
+            -6,
+            6,
+            -8
+          ],
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 3,
+          "target": [
+            2,
+            -4,
+            -20
+          ],
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 5,
+          "target": [
+            2,
+            -4,
+            -20
+          ],
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 8,
+          "target": [
+            -6,
+            -4,
+            -19
+          ],
+          "easing": "ease_out_expo"
+        }
+      ]
+    }
+  ],
+  "hidden": true
+}

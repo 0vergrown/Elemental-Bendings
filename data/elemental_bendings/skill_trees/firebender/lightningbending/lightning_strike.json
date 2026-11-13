@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:firebender/lightningbending",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.lightning_strike.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.lightning_strike.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/lightningbending/lightning_strike/pose",
+    "elemental_bendings:firebender/lightningbending/lightning_strike"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/lightningbending/lightning_strike.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 2
+}

@@ -1,0 +1,15 @@
+{
+  "type": "apoli:phasing",
+  "render_type": "blindness",
+  "view_distance": 10,
+  "phase_down_condition": {
+    "type": "apoli:sneaking"
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

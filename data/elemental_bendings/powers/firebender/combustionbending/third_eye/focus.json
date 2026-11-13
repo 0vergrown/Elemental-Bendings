@@ -1,0 +1,47 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/firebender/combustionbending/beam.png",
+    "lifetime": 3,
+    "size": 0.07,
+    "end_size": 0.02,
+    "color": "#FFF4C8",
+    "end_color": "#FF8A2000",
+    "emissive": true,
+    "blend": "additive",
+    "physics": false,
+    "frames": 3,
+    "alpha_bleed": true
+  },
+  "count": 1,
+  "frequency": 1,
+  "model_part": "head",
+  "space": "local",
+  "offset_y": 0.12,
+  "offset_z": 0.3,
+  "spread": {
+    "x": 0.03,
+    "y": 0.03,
+    "z": 0.03
+  },
+  "speed": 0.0,
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:firebender/combustionbending/third_eye/channel",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:firebender/combustionbending/charged_blast/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "hidden": true
+}

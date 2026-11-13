@@ -1,0 +1,36 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/airbender/soundbending/note.png",
+    "lifetime": 26,
+    "lifetime_variation": 8,
+    "size": 0.13,
+    "size_variation": 0.03,
+    "end_size": 0.09,
+    "color": "#FFFFFF",
+    "end_color": "#FFFFFF00",
+    "gravity": -0.012,
+    "friction": 0.93,
+    "frames": 2,
+    "frame_time": 13,
+    "physics": false,
+    "hue_variation": 360
+  },
+  "count": 1,
+  "frequency": 4,
+  "offset_y": 1.7,
+  "spread": {
+    "x": 0.4,
+    "y": 0.2,
+    "z": 0.4
+  },
+  "speed": 0.02,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/soundbending/calming_hum/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

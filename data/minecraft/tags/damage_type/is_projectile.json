@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "elemental_bendings:icebending",
-    "elemental_bendings:earthbending"
+    "elemental_bendings:earthbending",
+    "elemental_bendings:metalbending"
   ]
 }

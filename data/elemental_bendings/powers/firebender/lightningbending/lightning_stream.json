@@ -1,0 +1,80 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3",
+    {
+      "key": "key.elemental_bendings.stance_1",
+      "hold": 3
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:firebender/lightningbending/lightning_stream/fuel",
+          "modifier": {
+            "operation": "set_total",
+            "value": 140
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:firebender/lightningbending/lightning_stream/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 6
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 200
+          }
+        },
+        {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:entity.lightning_bolt.impact",
+              "volume": 0.6,
+              "pitch": 1.6
+            },
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:item.trident.thunder",
+              "volume": 0.3,
+              "pitch": 1.8
+            }
+          ]
+        }
+      ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "hidden": true
+}

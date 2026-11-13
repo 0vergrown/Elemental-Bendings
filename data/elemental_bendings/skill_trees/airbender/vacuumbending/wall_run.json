@@ -1,0 +1,30 @@
+{
+  "parent": "elemental_bendings:airbender/vacuumbending/vacuum_pull",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.wall_run.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.wall_run.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/vacuumbending/wall_run",
+    "elemental_bendings:airbender/vacuumbending/wall_run/momentum",
+    "elemental_bendings:airbender/vacuumbending/wall_run/running",
+    "elemental_bendings:airbender/vacuumbending/wall_run/fuel",
+    "elemental_bendings:airbender/vacuumbending/wall_run/cushion",
+    "elemental_bendings:airbender/vacuumbending/wall_run/stride",
+    "elemental_bendings:airbender/vacuumbending/wall_run/grip",
+    "elemental_bendings:airbender/vacuumbending/wall_run/climb",
+    "elemental_bendings:airbender/vacuumbending/wall_run/soft_landing",
+    "elemental_bendings:airbender/vacuumbending/wall_run/landing",
+    "elemental_bendings:airbender/vacuumbending/wall_run/pose",
+    "elemental_bendings:airbender/vacuumbending/wall_run/jump/pose",
+    "elemental_bendings:airbender/vacuumbending/wall_run/kick_off"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/vacuumbending/wall_run.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

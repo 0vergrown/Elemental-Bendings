@@ -1,0 +1,18 @@
+{
+  "parent": "elemental_bendings:firebender/blue_fire/blue_fire_breath",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.blue_fire.blue_fire_jet.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.blue_fire.blue_fire_jet.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/blue_fire/blue_fire_jet"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/blue_fire/blue_fire_jet.png"
+  },
+  "frame": "task",
+  "cost": 1,
+  "order": 0
+}

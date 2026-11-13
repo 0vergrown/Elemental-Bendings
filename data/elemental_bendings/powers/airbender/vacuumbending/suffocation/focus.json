@@ -1,0 +1,94 @@
+{
+  "type": "apoli:action_when_damage_taken",
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/vacuumbending/suffocation/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:action_on_entity_set",
+            "set": "elemental_bendings:airbender/vacuumbending/suffocation/victim",
+            "bientity_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:target_action",
+                  "action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:revoke_all_powers",
+                        "source": "elemental_bendings:suffocating"
+                      },
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": "minecraft:cloud",
+                        "count": 8,
+                        "offset_y": 1.6,
+                        "spread": 0.3,
+                        "speed": 0.05
+                      },
+                      {
+                        "type": "apoli:play_sound",
+                        "sound": "minecraft:entity.player.breath",
+                        "volume": 1.0,
+                        "pitch": 0.8
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "apoli:remove_from_entity_set",
+                  "set": "elemental_bendings:airbender/vacuumbending/suffocation/victim"
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:airbender/vacuumbending/suffocation/heartbeat",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:airbender/vacuumbending/suffocation/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 10
+            }
+          }
+        ]
+      },
+      {
+        "type": "apoli:text",
+        "text": {
+          "translate": "text.elemental_bendings.focus_broken"
+        },
+        "bar": "actionbar",
+        "fadein": 2,
+        "duration": 30,
+        "fadeout": 8
+      }
+    ]
+  },
+  "hidden": true
+}

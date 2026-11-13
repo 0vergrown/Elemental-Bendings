@@ -1,0 +1,391 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": {
+    "key": "key.elemental_bendings.stance_2",
+    "continuous": true
+  },
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/soundbending/calming_hum/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:airbender/soundbending/calming_hum/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 6
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:airbender/soundbending/calming_hum/fuel",
+            "modifier": {
+              "operation": "add_value",
+              "value": -2
+            }
+          },
+          {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:random_chance",
+              "chance": "mod(elemental_bendings:airbender/soundbending/calming_hum/fuel, 10) == 0"
+            },
+            "if_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:if_else_list",
+                  "actions": [
+                    {
+                      "condition": {
+                        "type": "apoli:random_chance",
+                        "chance": "mod(elemental_bendings:airbender/soundbending/calming_hum/fuel, 40) < 10"
+                      },
+                      "action": {
+                        "type": "apoli:play_sound",
+                        "sound": "minecraft:block.note_block.flute",
+                        "volume": 0.7,
+                        "pitch": 0.8
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:random_chance",
+                        "chance": "mod(elemental_bendings:airbender/soundbending/calming_hum/fuel, 40) < 20"
+                      },
+                      "action": {
+                        "type": "apoli:play_sound",
+                        "sound": "minecraft:block.note_block.flute",
+                        "volume": 0.7,
+                        "pitch": 1.0
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:random_chance",
+                        "chance": "mod(elemental_bendings:airbender/soundbending/calming_hum/fuel, 40) < 30"
+                      },
+                      "action": {
+                        "type": "apoli:play_sound",
+                        "sound": "minecraft:block.note_block.flute",
+                        "volume": 0.7,
+                        "pitch": 1.19
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:random_chance",
+                        "chance": "1 == 1"
+                      },
+                      "action": {
+                        "type": "apoli:play_sound",
+                        "sound": "minecraft:block.note_block.flute",
+                        "volume": 0.7,
+                        "pitch": 0.89
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "apoli:area_of_effect",
+                  "radius": 16,
+                  "shape": "sphere",
+                  "bientity_condition": {
+                    "type": "apoli:target_condition",
+                    "condition": {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:airbender/soundbending/hum_animals"
+                    }
+                  },
+                  "bientity_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:if_else",
+                        "condition": {
+                          "type": "apoli:distance",
+                          "comparison": "<=",
+                          "compare_to": 5,
+                          "inverted": true
+                        },
+                        "if_action": {
+                          "type": "apoli:add_velocity",
+                          "x": 0,
+                          "y": 0.14,
+                          "z": -0.32,
+                          "reference": "position"
+                        }
+                      },
+                      {
+                        "type": "apoli:target_action",
+                        "action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:heal",
+                              "amount": 1
+                            },
+                            {
+                              "type": "apoli:random_chance",
+                              "chance": 0.3,
+                              "action": {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/airbender/soundbending/note.png",
+                                  "lifetime": 26,
+                                  "lifetime_variation": 8,
+                                  "size": 0.13,
+                                  "size_variation": 0.03,
+                                  "end_size": 0.09,
+                                  "color": "#FFFFFF",
+                                  "end_color": "#FFFFFF00",
+                                  "gravity": -0.012,
+                                  "friction": 0.93,
+                                  "frames": 2,
+                                  "frame_time": 13,
+                                  "physics": false,
+                                  "hue_variation": 360
+                                },
+                                "count": 1,
+                                "offset_y": 1.2,
+                                "spread": 0.3,
+                                "speed": 0.02
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "apoli:area_of_effect",
+                  "radius": 16,
+                  "shape": "sphere",
+                  "bientity_condition": {
+                    "type": "apoli:and",
+                    "conditions": [
+                      {
+                        "type": "apoli:target_condition",
+                        "condition": {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:airbender/soundbending/hum_defenders"
+                        }
+                      },
+                      {
+                        "type": "apoli:target_condition",
+                        "condition": {
+                          "type": "apoli:power",
+                          "power": "elemental_bendings:airbender/soundbending/rallied/marker"
+                        },
+                        "inverted": true
+                      }
+                    ]
+                  },
+                  "bientity_action": {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:grant_power",
+                              "power": "elemental_bendings:airbender/soundbending/rallied/marker",
+                              "source": "elemental_bendings:rallied"
+                            },
+                            {
+                              "type": "apoli:modify_resource",
+                              "resource": "elemental_bendings:airbender/soundbending/rallied/marker",
+                              "modifier": {
+                                "operation": "set_total",
+                                "value": 100
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "apoli:area_of_effect",
+                          "radius": 10,
+                          "shape": "sphere",
+                          "bientity_condition": {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:target_condition",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/sandbending/clone_bait"
+                                }
+                              },
+                              {
+                                "type": "apoli:equal",
+                                "inverted": true
+                              }
+                            ]
+                          },
+                          "bientity_action": {
+                            "type": "apoli:punch",
+                            "damage_type": "elemental_bendings:soundbending",
+                            "swing_hand": false
+                          }
+                        },
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/airbender/soundbending/note.png",
+                            "lifetime": 26,
+                            "lifetime_variation": 8,
+                            "size": 0.13,
+                            "size_variation": 0.03,
+                            "end_size": 0.09,
+                            "color": "#FFFFFF",
+                            "end_color": "#FFFFFF00",
+                            "gravity": -0.012,
+                            "friction": 0.93,
+                            "frames": 2,
+                            "frame_time": 13,
+                            "physics": false,
+                            "hue_variation": 360
+                          },
+                          "count": 3,
+                          "offset_y": 1.4,
+                          "spread": 0.3,
+                          "speed": 0.03
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "apoli:area_of_effect",
+                  "radius": 5,
+                  "shape": "sphere",
+                  "bientity_condition": {
+                    "type": "apoli:and",
+                    "conditions": [
+                      {
+                        "type": "apoli:target_condition",
+                        "condition": {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:airbender/soundbending/hum_animals"
+                        }
+                      },
+                      {
+                        "type": "apoli:target_condition",
+                        "condition": {
+                          "type": "apoli:power",
+                          "power": "elemental_bendings:airbender/soundbending/rallied/marker"
+                        },
+                        "inverted": true
+                      }
+                    ]
+                  },
+                  "bientity_action": {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:grant_power",
+                              "power": "elemental_bendings:airbender/soundbending/rallied/marker",
+                              "source": "elemental_bendings:rallied"
+                            },
+                            {
+                              "type": "apoli:modify_resource",
+                              "resource": "elemental_bendings:airbender/soundbending/rallied/marker",
+                              "modifier": {
+                                "operation": "set_total",
+                                "value": 100
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "apoli:area_of_effect",
+                          "radius": 8,
+                          "shape": "sphere",
+                          "bientity_condition": {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:target_condition",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/sandbending/clone_bait"
+                                }
+                              },
+                              {
+                                "type": "apoli:equal",
+                                "inverted": true
+                              }
+                            ]
+                          },
+                          "bientity_action": {
+                            "type": "apoli:punch",
+                            "damage_type": "elemental_bendings:soundbending",
+                            "swing_hand": false
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "entity_action_released": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:airbender/soundbending/calming_hum/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:airbender/soundbending/calming_hum/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 10
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

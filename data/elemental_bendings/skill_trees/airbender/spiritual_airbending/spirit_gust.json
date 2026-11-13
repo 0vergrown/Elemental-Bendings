@@ -1,0 +1,18 @@
+{
+  "parent": "elemental_bendings:airbender/spiritual_airbending",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.spirit_gust.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.spirit_gust.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/spiritual_airbending/spirit_gust"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/spiritual_airbending/spirit_gust.png"
+  },
+  "frame": "task",
+  "cost": 1,
+  "order": 0
+}

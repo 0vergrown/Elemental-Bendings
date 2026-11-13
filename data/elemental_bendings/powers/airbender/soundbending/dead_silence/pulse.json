@@ -1,0 +1,92 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 10,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:airbender/soundbending/dead_silence/field",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:area_of_effect",
+          "radius": 8,
+          "shape": "sphere",
+          "bientity_condition": {
+            "type": "apoli:and",
+            "conditions": [
+              {
+                "type": "apoli:target_condition",
+                "condition": {
+                  "type": "apoli:living"
+                }
+              },
+              {
+                "type": "apoli:equal",
+                "inverted": true
+              },
+              {
+                "type": "apoli:target_condition",
+                "condition": {
+                  "type": "apoli:entity_type",
+                  "entity_type": "minecraft:player"
+                },
+                "inverted": true
+              }
+            ]
+          },
+          "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:grant_power",
+                  "power": "elemental_bendings:airbender/soundbending/muffled/leash",
+                  "source": "elemental_bendings:muffled"
+                },
+                {
+                  "type": "apoli:grant_power",
+                  "power": "elemental_bendings:airbender/soundbending/muffled/deafened",
+                  "source": "elemental_bendings:muffled"
+                },
+                {
+                  "type": "apoli:grant_power",
+                  "power": "elemental_bendings:airbender/soundbending/muffled/hushed",
+                  "source": "elemental_bendings:muffled"
+                },
+                {
+                  "type": "apoli:grant_power",
+                  "power": "elemental_bendings:airbender/soundbending/muffled/still",
+                  "source": "elemental_bendings:muffled"
+                },
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:airbender/soundbending/muffled/leash",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 14
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:airbender/soundbending/dead_silence/pulse",
+          "modifier": {
+            "operation": "set_total",
+            "value": 10
+          }
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

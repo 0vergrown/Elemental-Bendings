@@ -1,0 +1,253 @@
+{
+  "type": "apoli:modify_model_parts",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:bending/pose",
+        "comparison": "==",
+        "compare_to": 53
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:bending/pose_timer",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "right_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -1.0472,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": 0.8378,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 0.5,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.1745,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": 0.4887,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 0.5,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -1.0472,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": 0.8378,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 0.5,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.1745,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": -0.4887,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 0.5,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": -0.8029,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 8,
+          "value": -0.2094,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 0.5,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": -0.5236,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 8,
+          "value": -0.1047,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 0.5,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "upper",
+      "type": "pitch",
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "value": 0.2443,
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 8,
+          "value": 0.0698,
+          "easing": "ease_out_expo"
+        }
+      ],
+      "duration": 0.5,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "reach",
+      "perspectives": [
+        "first_person"
+      ],
+      "duration": 0.5,
+      "fade_out_duration": 4.0,
+      "keyframes": [
+        {
+          "time": 0,
+          "target": [
+            -6,
+            0,
+            -8
+          ],
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "target": [
+            -9,
+            9,
+            -2
+          ],
+          "easing": "ease_out_expo"
+        }
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "reach",
+      "perspectives": [
+        "first_person"
+      ],
+      "duration": 0.5,
+      "fade_out_duration": 4.0,
+      "keyframes": [
+        {
+          "time": 0,
+          "target": [
+            6,
+            0,
+            -8
+          ],
+          "easing": "ease_out_expo"
+        },
+        {
+          "time": 2,
+          "target": [
+            9,
+            9,
+            -2
+          ],
+          "easing": "ease_out_expo"
+        }
+      ]
+    }
+  ],
+  "hidden": true
+}

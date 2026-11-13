@@ -1,0 +1,16 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:waterbender/ice_shard",
+  "texture_location": "elemental_bendings:textures/entity/waterbender/ice_spear.png",
+  "render_type": "translucent",
+  "condition": {
+    "type": "apoli:constant",
+    "value": true
+  },
+  "scale": 1.4,
+  "red": 0.72,
+  "green": 0.84,
+  "blue": 1.0,
+  "hidden": true
+}

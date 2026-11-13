@@ -1,0 +1,21 @@
+{
+  "parent": "elemental_bendings:earthbender/sandbending",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.sandbending.sand_clones.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.sandbending.sand_clones.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/sandbending/sand_clones/clones",
+    "elemental_bendings:earthbender/sandbending/sand_clones/pose",
+    "elemental_bendings:earthbender/sandbending/sand_clones/burst_pose",
+    "elemental_bendings:earthbender/sandbending/sand_clones"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/sandbending/sand_clones.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 1
+}

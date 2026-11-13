@@ -15,5 +15,23 @@
   "strength": "if(elemental_bendings:bending/cooldown > 0, 0.55, 1)",
   "draw_phase": "above_hud",
   "visible_in_third_person": true,
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/metal_chains/metal_chains"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/magma_slam/magma_slam"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/sandbending/quicksand/quicksand"
+      }
+    ],
+    "inverted": true
+  },
   "hidden": true
 }

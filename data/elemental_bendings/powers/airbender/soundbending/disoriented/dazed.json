@@ -1,0 +1,16 @@
+{
+  "type": "apoli:attribute",
+  "modifiers": [
+    {
+      "attribute": "minecraft:generic.follow_range",
+      "operation": "multiply_total",
+      "value": -0.75
+    },
+    {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total",
+      "value": -0.15
+    }
+  ],
+  "hidden": true
+}

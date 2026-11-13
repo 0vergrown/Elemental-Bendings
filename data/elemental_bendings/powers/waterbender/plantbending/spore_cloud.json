@@ -317,47 +317,42 @@
     "type": "apoli:and",
     "conditions": [
       {
-        "type": "apoli:and",
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/healing_water/heartbeat",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/water_glide/heartbeat",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      },
+      {
+        "type": "apoli:or",
         "conditions": [
           {
             "type": "apoli:resource",
-            "resource": "elemental_bendings:waterbender/held_water",
-            "comparison": "==",
+            "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/heartbeat",
+            "comparison": ">",
             "compare_to": 0
           },
           {
             "type": "apoli:resource",
-            "resource": "elemental_bendings:waterbender/healing_water/heartbeat",
+            "resource": "elemental_bendings:waterbender/plantbending/plant_golem/active",
             "comparison": ">",
-            "compare_to": 0,
-            "inverted": true
-          },
-          {
-            "type": "apoli:resource",
-            "resource": "elemental_bendings:waterbender/water_glide/heartbeat",
-            "comparison": ">",
-            "compare_to": 0,
-            "inverted": true
-          },
-          {
-            "type": "apoli:or",
-            "conditions": [
-              {
-                "type": "apoli:resource",
-                "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/heartbeat",
-                "comparison": ">",
-                "compare_to": 0
-              },
-              {
-                "type": "apoli:resource",
-                "resource": "elemental_bendings:waterbender/plantbending/plant_golem/active",
-                "comparison": ">",
-                "compare_to": 0
-              }
-            ],
-            "inverted": true
+            "compare_to": 0
           }
-        ]
+        ],
+        "inverted": true
       },
       {
         "type": "apoli:resource",
@@ -367,5 +362,6 @@
         "inverted": true
       }
     ]
-  }
+  },
+  "hidden": true
 }

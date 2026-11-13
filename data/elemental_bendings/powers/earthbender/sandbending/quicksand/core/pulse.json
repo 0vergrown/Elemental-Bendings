@@ -1,0 +1,197 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 10,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:area_of_effect",
+        "radius": 4.5,
+        "shape": "sphere",
+        "bientity_condition": {
+          "type": "apoli:and",
+          "conditions": [
+            {
+              "type": "apoli:target_condition",
+              "condition": {
+                "type": "apoli:living"
+              }
+            },
+            {
+              "type": "apoli:invert",
+              "condition": {
+                "type": "apoli:owner"
+              },
+              "inverted": true
+            },
+            {
+              "type": "apoli:target_condition",
+              "condition": {
+                "type": "apoli:or",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sinking/leash"
+                  },
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sinking/spat"
+                  }
+                ]
+              },
+              "inverted": true
+            },
+            {
+              "type": "apoli:target_condition",
+              "condition": {
+                "type": "apoli:or",
+                "conditions": [
+                  {
+                    "type": "apoli:on_block",
+                    "block_condition": {
+                      "type": "apoli:block",
+                      "block": "minecraft:sand"
+                    }
+                  },
+                  {
+                    "type": "apoli:in_block",
+                    "block_condition": {
+                      "type": "apoli:block",
+                      "block": "minecraft:sand"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "bientity_action": {
+          "type": "apoli:target_action",
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:grant_power",
+                "power": "elemental_bendings:earthbender/sandbending/sinking/leash",
+                "source": "elemental_bendings:sinking"
+              },
+              {
+                "type": "apoli:grant_power",
+                "power": "elemental_bendings:earthbender/sandbending/sinking/stuck",
+                "source": "elemental_bendings:sinking"
+              },
+              {
+                "type": "apoli:grant_power",
+                "power": "elemental_bendings:earthbender/sandbending/sinking/grounded",
+                "source": "elemental_bendings:sinking"
+              },
+              {
+                "type": "apoli:grant_power",
+                "power": "elemental_bendings:earthbender/sandbending/sinking/grains",
+                "source": "elemental_bendings:sinking"
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:earthbender/sandbending/sinking/leash",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 126
+                }
+              },
+              {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:teleport",
+                    "relative": false,
+                    "x": "floor(x) + 0.5",
+                    "y": "y",
+                    "z": "floor(z) + 0.5"
+                  },
+                  {
+                    "type": "apoli:block_action_at",
+                    "block_action": {
+                      "type": "apoli:offset",
+                      "action": {
+                        "type": "apoli:if_else",
+                        "condition": {
+                          "type": "apoli:block",
+                          "block": "minecraft:sand"
+                        },
+                        "if_action": {
+                          "type": "apoli:ghost_block",
+                          "block": "minecraft:air",
+                          "duration": 120
+                        }
+                      },
+                      "y": -1
+                    }
+                  },
+                  {
+                    "type": "apoli:apply_effect",
+                    "effect": {
+                      "effect": "minecraft:slow_falling",
+                      "duration": 40,
+                      "amplifier": 0,
+                      "show_particles": false,
+                      "show_icon": false
+                    }
+                  },
+                  {
+                    "type": "apoli:spawn_particles",
+                    "particle": {
+                      "type": "apoli:custom",
+                      "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+                      "lifetime": 22,
+                      "lifetime_variation": 8,
+                      "size": 0.07,
+                      "size_variation": 0.04,
+                      "end_size": 0.05,
+                      "color": "#F2E2B0",
+                      "end_color": "#C9A86A",
+                      "gravity": 0.05,
+                      "friction": 0.97,
+                      "frames": 4,
+                      "roll": "rUni(0, 360)",
+                      "roll_speed": "rUni(-20, 20)"
+                    },
+                    "count": 12,
+                    "offset_y": 0.2,
+                    "spread": {
+                      "x": 0.4,
+                      "y": 0.1,
+                      "z": 0.4
+                    },
+                    "speed": 0.1
+                  },
+                  {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:block.sand.break",
+                    "volume": 0.8,
+                    "pitch": 0.6
+                  },
+                  {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:block.sand.fall",
+                    "volume": 0.6,
+                    "pitch": 0.5
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/sandbending/quicksand/core/pulse",
+        "modifier": {
+          "operation": "set_total",
+          "value": 10
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

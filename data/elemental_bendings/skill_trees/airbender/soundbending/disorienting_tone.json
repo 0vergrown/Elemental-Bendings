@@ -1,0 +1,20 @@
+{
+  "parent": "elemental_bendings:airbender/soundbending/calming_hum",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.disorienting_tone.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.disorienting_tone.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/soundbending/disorienting_tone/pose",
+    "elemental_bendings:airbender/soundbending/disorienting_tone/recharge",
+    "elemental_bendings:airbender/soundbending/disorienting_tone"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/soundbending/disorienting_tone.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

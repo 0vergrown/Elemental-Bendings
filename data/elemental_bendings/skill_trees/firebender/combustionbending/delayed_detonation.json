@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:firebender/combustionbending",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.delayed_detonation.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.delayed_detonation.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/combustionbending/delayed_detonation/pose",
+    "elemental_bendings:firebender/combustionbending/delayed_detonation"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/combustionbending/delayed_detonation.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 1
+}

@@ -1,0 +1,24 @@
+{
+  "type": "apoli:prevent_feature_render",
+  "features": [
+    "armor_chest"
+  ],
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/shrapnel_shield/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/scrap/chest",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "hidden": true
+}

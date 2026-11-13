@@ -20,6 +20,48 @@
               "condition": {
                 "type": "apoli:resource",
                 "resource": "elemental_bendings:waterbender/held_water",
+                "comparison": "==",
+                "compare_to": 7
+              },
+              "action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:block.glass.break",
+                    "volume": 0.5,
+                    "pitch": 1.2
+                  },
+                  {
+                    "type": "apoli:spawn_particles",
+                    "particle": {
+                      "type": "apoli:custom",
+                      "texture": "elemental_bendings:textures/particle/waterbender/icebending/crushed.png",
+                      "lifetime": 20,
+                      "lifetime_variation": 8,
+                      "size": 0.09,
+                      "size_variation": 0.05,
+                      "end_size": 0.05,
+                      "color": "#FFFFFF",
+                      "end_color": "#A8E2FF80",
+                      "gravity": 0.06,
+                      "friction": 0.97,
+                      "frames": 4,
+                      "roll": "rUni(0, 360)",
+                      "roll_speed": "rUni(-25, 25)"
+                    },
+                    "count": 12,
+                    "model_part": "hands",
+                    "spread": 0.2,
+                    "speed": 0.08
+                  }
+                ]
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:resource",
+                "resource": "elemental_bendings:waterbender/held_water",
                 "comparison": "<=",
                 "compare_to": 2
               },

@@ -1,0 +1,139 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3",
+    {
+      "key": "key.elemental_bendings.stance_2",
+      "hold": 4
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:and",
+      "conditions": [
+        {
+          "type": "apoli:resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "apoli:entity_set_size",
+          "set": "elemental_bendings:airbender/vacuumbending/pressure_barrier/wall",
+          "comparison": ">",
+          "compare_to": 0,
+          "inverted": true
+        }
+      ]
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:airbender/vacuumbending/pressure_barrier/fuel",
+          "modifier": {
+            "operation": "set_total",
+            "value": 200
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:airbender/vacuumbending/pressure_barrier/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 6
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 6
+          }
+        },
+        {
+          "type": "apoli:if_else",
+          "condition": {
+            "type": "apoli:minecraft_version",
+            "version": "1.21",
+            "comparison": ">="
+          },
+          "if_action": {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.breeze.inhale",
+            "volume": 0.8,
+            "pitch": 1.4
+          },
+          "else_action": {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.illusioner.prepare_mirror",
+            "volume": 0.8,
+            "pitch": 1.4
+          }
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.beacon.activate",
+          "volume": 0.5,
+          "pitch": 1.6
+        },
+        {
+          "type": "apoli:summon_minion",
+          "summon_id": "elemental_bendings:airbender/vacuumbending/pressure_wall",
+          "max_life_ticks": 220,
+          "invulnerable": true,
+          "texture": "elemental_bendings:textures/entity/firebender/combustionbending/blast_point.png",
+          "follow_owner": true,
+          "follow_offset": {
+            "x": 0,
+            "y": 0,
+            "z": 2.4
+          },
+          "powers": [
+            "elemental_bendings:airbender/vacuumbending/pressure_wall/model",
+            "elemental_bendings:airbender/vacuumbending/pressure_wall/size",
+            "elemental_bendings:airbender/vacuumbending/pressure_wall/pulse",
+            "elemental_bendings:airbender/vacuumbending/pressure_wall/shimmer",
+            "elemental_bendings:bending/quiet_summon"
+          ],
+          "bientity_action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:add_to_entity_set",
+                "set": "elemental_bendings:airbender/vacuumbending/pressure_barrier/wall"
+              },
+              {
+                "type": "apoli:target_action",
+                "action": {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:airbender/vacuumbending/pressure_wall/pulse",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 2
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "hidden": true
+}

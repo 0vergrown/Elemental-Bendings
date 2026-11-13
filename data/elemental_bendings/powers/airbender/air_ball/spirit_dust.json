@@ -1,0 +1,29 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/waterbender/glimmer.png",
+    "lifetime": 34,
+    "lifetime_variation": 14,
+    "size": 0.06,
+    "size_variation": 0.03,
+    "end_size": 0.0,
+    "color": "#DFFFFF",
+    "end_color": "#4CE8FF00",
+    "gravity": -0.004,
+    "friction": 0.9,
+    "emissive": true,
+    "blend": "additive",
+    "physics": false
+  },
+  "count": 1,
+  "frequency": 3,
+  "offset_y": 0.2,
+  "spread": {
+    "x": 0.4,
+    "y": 0.2,
+    "z": 0.4
+  },
+  "speed": 0.01,
+  "hidden": true
+}

@@ -1,0 +1,23 @@
+{
+  "parent": "elemental_bendings:firebender/combustionbending/combustion_barrage",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.blast_jump.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.blast_jump.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/combustionbending/blast_jump/blasts",
+    "elemental_bendings:firebender/combustionbending/blast_jump/cushion",
+    "elemental_bendings:firebender/combustionbending/blast_jump/pose",
+    "elemental_bendings:firebender/combustionbending/blast_jump/landing",
+    "elemental_bendings:firebender/combustionbending/blast_jump/soft_landing",
+    "elemental_bendings:firebender/combustionbending/blast_jump"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/combustionbending/blast_jump.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

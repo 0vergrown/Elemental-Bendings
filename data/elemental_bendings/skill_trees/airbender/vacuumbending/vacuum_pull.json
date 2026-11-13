@@ -1,0 +1,28 @@
+{
+  "parent": "elemental_bendings:airbender/vacuumbending",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.vacuum_pull.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.vacuum_pull.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/vacuumbending/vacuum_pull/target_x",
+    "elemental_bendings:airbender/vacuumbending/vacuum_pull/target_y",
+    "elemental_bendings:airbender/vacuumbending/vacuum_pull/target_z",
+    "elemental_bendings:airbender/vacuumbending/vacuum_pull/pulling",
+    "elemental_bendings:airbender/vacuumbending/vacuum_pull/pulls",
+    "elemental_bendings:airbender/vacuumbending/vacuum_pull/cushion",
+    "elemental_bendings:airbender/vacuumbending/vacuum_pull/landing",
+    "elemental_bendings:airbender/vacuumbending/vacuum_pull/soft_landing",
+    "elemental_bendings:airbender/vacuumbending/vacuum_pull/trail",
+    "elemental_bendings:airbender/vacuumbending/vacuum_pull/pose",
+    "elemental_bendings:airbender/vacuumbending/vacuum_pull"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/vacuumbending/vacuum_pull.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 1
+}

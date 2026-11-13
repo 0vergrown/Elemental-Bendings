@@ -438,5 +438,6 @@
         "inverted": true
       }
     ]
-  }
+  },
+  "hidden": true
 }

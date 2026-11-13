@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#elemental_bendings:earthbender/metalbending/helmets",
+    "#elemental_bendings:earthbender/metalbending/chestplates",
+    "#elemental_bendings:earthbender/metalbending/leggings",
+    "#elemental_bendings:earthbender/metalbending/boots"
+  ]
+}

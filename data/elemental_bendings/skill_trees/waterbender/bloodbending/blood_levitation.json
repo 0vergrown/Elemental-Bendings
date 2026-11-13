@@ -1,0 +1,24 @@
+{
+  "parent": "elemental_bendings:waterbender/bloodbending/levitation",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.blood_levitation.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.blood_levitation.description"
+  },
+  "powers": [
+    "elemental_bendings:waterbender/bloodbending/blood_levitation/heartbeat",
+    "elemental_bendings:waterbender/bloodbending/blood_levitation/grip",
+    "elemental_bendings:waterbender/bloodbending/blood_levitation/rest",
+    "elemental_bendings:waterbender/bloodbending/blood_levitation/last_y",
+    "elemental_bendings:waterbender/bloodbending/blood_levitation/pose",
+    "elemental_bendings:waterbender/bloodbending/blood_levitation/rising",
+    "elemental_bendings:waterbender/bloodbending/blood_levitation"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/waterbender/bloodbending/blood_levitation.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 1
+}

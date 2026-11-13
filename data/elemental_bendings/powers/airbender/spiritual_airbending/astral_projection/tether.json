@@ -1,0 +1,345 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 10,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/return_due",
+              "modifier": {
+                "operation": "set_total",
+                "value": 0
+              }
+            },
+            {
+              "type": "apoli:if_else",
+              "condition": {
+                "type": "apoli:entity_set_size",
+                "set": "elemental_bendings:airbender/spiritual_airbending/astral_projection/body",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              "if_action": {
+                "type": "apoli:action_on_entity_set",
+                "set": "elemental_bendings:airbender/spiritual_airbending/astral_projection/body",
+                "bientity_action": {
+                  "type": "apoli:if_else",
+                  "condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:target_condition",
+                        "condition": {
+                          "type": "apoli:resource",
+                          "resource": "elemental_bendings:airbender/spiritual_airbending/body/hurt",
+                          "comparison": ">",
+                          "compare_to": 0
+                        }
+                      },
+                      {
+                        "type": "apoli:distance",
+                        "comparison": ">",
+                        "compare_to": 64
+                      }
+                    ]
+                  },
+                  "if_action": {
+                    "type": "apoli:actor_action",
+                    "action": {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/return_due",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 1
+                      }
+                    }
+                  }
+                }
+              },
+              "else_action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/recharge",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 600
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:bending/cooldown",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 20
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/return_due",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 0
+                        }
+                      },
+                      {
+                        "type": "apoli:play_sound",
+                        "sound": "minecraft:block.beacon.deactivate",
+                        "volume": 0.6,
+                        "pitch": 1.4
+                      },
+                      {
+                        "type": "apoli:play_sound",
+                        "sound": "minecraft:block.amethyst_block.chime",
+                        "volume": 0.8,
+                        "pitch": 0.8
+                      },
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+                          "lifetime": 18,
+                          "lifetime_variation": 6,
+                          "size": 0.2,
+                          "size_variation": 0.07,
+                          "end_size": 0.05,
+                          "color": "#EFFFFF",
+                          "end_color": "#38D6E000",
+                          "gravity": -0.015,
+                          "friction": 0.92,
+                          "emissive": true,
+                          "blend": "additive",
+                          "frames": 6,
+                          "frame_time": 3,
+                          "physics": false,
+                          "roll": "rUni(-15, 15)"
+                        },
+                        "count": 14,
+                        "offset_y": 1.0,
+                        "spread": {
+                          "x": 0.4,
+                          "y": 0.8,
+                          "z": 0.4
+                        },
+                        "speed": 0.04
+                      }
+                    ]
+                  },
+                  {
+                    "type": "apoli:text",
+                    "text": {
+                      "translate": "text.elemental_bendings.body_lost"
+                    },
+                    "bar": "actionbar",
+                    "fadein": 2,
+                    "duration": 30,
+                    "fadeout": 8
+                  }
+                ]
+              }
+            },
+            {
+              "type": "apoli:if_else",
+              "condition": {
+                "type": "apoli:resource",
+                "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/return_due",
+                "comparison": "==",
+                "compare_to": 1
+              },
+              "if_action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:action_on_entity_set",
+                    "set": "elemental_bendings:airbender/spiritual_airbending/astral_projection/body",
+                    "bientity_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:actor_action",
+                          "action": {
+                            "type": "apoli:teleport",
+                            "relative": false,
+                            "x": "target_x",
+                            "y": "target_y",
+                            "z": "target_z"
+                          }
+                        },
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/glow.png",
+                                  "lifetime": 12,
+                                  "lifetime_variation": 3,
+                                  "size": 0.34,
+                                  "size_variation": 0.06,
+                                  "end_size": 0.0,
+                                  "color": "#FFFFFFC8",
+                                  "end_color": "#46E6FF00",
+                                  "friction": 1.0,
+                                  "emissive": true,
+                                  "blend": "additive",
+                                  "physics": false
+                                },
+                                "count": 10,
+                                "offset_y": 1.0,
+                                "spread": {
+                                  "x": 0.4,
+                                  "y": 0.7,
+                                  "z": 0.4
+                                },
+                                "speed": 0.03
+                              },
+                              {
+                                "type": "apoli:set_summon_max_life",
+                                "amount": 1,
+                                "summon_id": "elemental_bendings:airbender/spiritual_airbending/body"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "apoli:remove_from_entity_set",
+                          "set": "elemental_bendings:airbender/spiritual_airbending/astral_projection/body"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/recharge",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 600
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:bending/cooldown",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 20
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/return_due",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 0
+                        }
+                      },
+                      {
+                        "type": "apoli:play_sound",
+                        "sound": "minecraft:block.beacon.deactivate",
+                        "volume": 0.6,
+                        "pitch": 1.4
+                      },
+                      {
+                        "type": "apoli:play_sound",
+                        "sound": "minecraft:block.amethyst_block.chime",
+                        "volume": 0.8,
+                        "pitch": 0.8
+                      },
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+                          "lifetime": 18,
+                          "lifetime_variation": 6,
+                          "size": 0.2,
+                          "size_variation": 0.07,
+                          "end_size": 0.05,
+                          "color": "#EFFFFF",
+                          "end_color": "#38D6E000",
+                          "gravity": -0.015,
+                          "friction": 0.92,
+                          "emissive": true,
+                          "blend": "additive",
+                          "frames": 6,
+                          "frame_time": 3,
+                          "physics": false,
+                          "roll": "rUni(-15, 15)"
+                        },
+                        "count": 14,
+                        "offset_y": 1.0,
+                        "spread": {
+                          "x": 0.4,
+                          "y": 0.8,
+                          "z": 0.4
+                        },
+                        "speed": 0.04
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "apoli:if_else",
+          "condition": {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          "if_action": {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/tether",
+            "modifier": {
+              "operation": "set_total",
+              "value": 10
+            }
+          }
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

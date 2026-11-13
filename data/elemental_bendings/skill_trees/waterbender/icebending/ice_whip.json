@@ -1,0 +1,29 @@
+{
+  "parent": "elemental_bendings:waterbender/icebending",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.icebending.ice_whip.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.icebending.ice_whip.description"
+  },
+  "powers": [
+    "elemental_bendings:waterbender/icebending/ice_whip/heartbeat",
+    "elemental_bendings:waterbender/icebending/ice_whip/fuel",
+    "elemental_bendings:waterbender/icebending/ice_whip/strike_cooldown",
+    "elemental_bendings:waterbender/icebending/ice_whip/strike_timer",
+    "elemental_bendings:waterbender/icebending/ice_whip/pose",
+    "elemental_bendings:waterbender/icebending/ice_whip/strike/pose",
+    "elemental_bendings:waterbender/icebending/ice_whip/ring",
+    "elemental_bendings:waterbender/icebending/ice_whip/stance",
+    "elemental_bendings:waterbender/icebending/ice_whip/rime",
+    "elemental_bendings:waterbender/icebending/ice_whip/coiling",
+    "elemental_bendings:waterbender/icebending/ice_whip",
+    "elemental_bendings:waterbender/icebending/ice_whip/lash"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/waterbender/icebending/ice_whip.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 1
+}

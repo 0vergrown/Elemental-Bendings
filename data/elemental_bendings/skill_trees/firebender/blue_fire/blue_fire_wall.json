@@ -1,0 +1,18 @@
+{
+  "parent": "elemental_bendings:firebender/blue_fire",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.blue_fire.blue_fire_wall.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.blue_fire.blue_fire_wall.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/blue_fire/blue_fire_wall"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/blue_fire/blue_fire_wall.png"
+  },
+  "frame": "task",
+  "cost": 1,
+  "order": 0
+}

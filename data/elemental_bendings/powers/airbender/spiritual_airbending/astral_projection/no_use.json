@@ -1,0 +1,22 @@
+{
+  "type": "apoli:prevent_block_use",
+  "block_condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:movement_blocking"
+      },
+      {
+        "type": "apoli:movement_blocking",
+        "inverted": true
+      }
+    ]
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

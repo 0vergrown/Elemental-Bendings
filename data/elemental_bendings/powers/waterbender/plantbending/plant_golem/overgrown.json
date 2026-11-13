@@ -1,0 +1,22 @@
+{
+  "type": "apoli:prevent_feature_render",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/plantbending/plant_golem/active",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "features": [
+    "armor",
+    "head",
+    "elytra",
+    "cape",
+    "held_item",
+    "shoulder_parrot",
+    "stuck_arrows",
+    "stuck_stingers",
+    "stuck_objects",
+    "deadmau5"
+  ],
+  "hidden": true
+}

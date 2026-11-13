@@ -1,0 +1,24 @@
+{
+  "parent": "elemental_bendings:airbender",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/soundbending/soundbending",
+    "elemental_bendings:airbender/soundbending/sonic_scream/pose",
+    "elemental_bendings:airbender/soundbending/sonic_scream"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/soundbending/soundbending.png"
+  },
+  "frame": "goal",
+  "cost": 2,
+  "order": 1,
+  "excludes": [
+    "elemental_bendings:airbender/vacuumbending",
+    "elemental_bendings:airbender/spiritual_airbending"
+  ]
+}

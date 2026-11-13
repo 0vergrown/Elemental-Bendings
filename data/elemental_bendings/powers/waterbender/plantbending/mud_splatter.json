@@ -357,18 +357,5 @@
     "comparison": "==",
     "compare_to": 6
   },
-  "description": {
-    "translate": "power.elemental_bendings.waterbender/plantbending/mud_splatter.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
-      }
-    ]
-  }
+  "hidden": true
 }

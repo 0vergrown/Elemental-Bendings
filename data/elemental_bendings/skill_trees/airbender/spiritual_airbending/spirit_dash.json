@@ -1,0 +1,27 @@
+{
+  "parent": "elemental_bendings:airbender/spiritual_airbending/flight",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.spirit_dash.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.spirit_dash.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/spiritual_airbending/spirit_dash/copy",
+    "elemental_bendings:airbender/spiritual_airbending/spirit_dash/step",
+    "elemental_bendings:airbender/spiritual_airbending/spirit_dash/pose",
+    "elemental_bendings:airbender/spiritual_airbending/spirit_dash/x",
+    "elemental_bendings:airbender/spiritual_airbending/spirit_dash/y",
+    "elemental_bendings:airbender/spiritual_airbending/spirit_dash/z",
+    "elemental_bendings:airbender/spiritual_airbending/spirit_dash/start_x",
+    "elemental_bendings:airbender/spiritual_airbending/spirit_dash/start_y",
+    "elemental_bendings:airbender/spiritual_airbending/spirit_dash/start_z",
+    "elemental_bendings:airbender/spiritual_airbending/spirit_dash"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/spiritual_airbending/spirit_dash.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

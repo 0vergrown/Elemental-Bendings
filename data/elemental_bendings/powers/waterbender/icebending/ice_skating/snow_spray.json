@@ -1,0 +1,33 @@
+{
+  "type": "apoli:particle",
+  "particle": "minecraft:snowflake",
+  "count": 1,
+  "frequency": 3,
+  "model_part": "feet",
+  "offset_y": 0.0,
+  "spread": {
+    "x": 0.15,
+    "y": 0.02,
+    "z": 0.15
+  },
+  "speed": 0.06,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:sprinting"
+      },
+      {
+        "type": "apoli:on_block"
+      },
+      {
+        "type": "apoli:fluid_height",
+        "fluid": "minecraft:water",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      }
+    ]
+  },
+  "hidden": true
+}

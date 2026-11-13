@@ -1,0 +1,10 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 160,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:revoke_all_powers",
+    "source": "elemental_bendings:echo_listening"
+  },
+  "hidden": true
+}

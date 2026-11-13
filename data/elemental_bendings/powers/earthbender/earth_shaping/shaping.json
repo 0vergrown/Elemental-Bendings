@@ -34,2102 +34,1869 @@
             }
           },
           {
-            "type": "apoli:and",
+            "type": "apoli:if_else_list",
             "actions": [
               {
-                "type": "apoli:raycast",
-                "distance": 7,
-                "block": true,
-                "entity": false,
-                "shape_type": "collider",
-                "fluid_handling": "none",
-                "block_condition": {
-                  "type": "apoli:and",
-                  "conditions": [
-                    {
-                      "type": "apoli:block",
-                      "block": "minecraft:snow"
-                    },
-                    {
-                      "type": "apoli:offset",
-                      "condition": {
-                        "type": "apoli:in_tag",
-                        "tag": "elemental_bendings:earthbender/bendable"
-                      },
-                      "y": -1
-                    }
-                  ]
-                },
-                "block_action": {
-                  "type": "apoli:ghost_block",
-                  "block": "minecraft:air",
-                  "duration": 600
-                }
-              },
-              {
-                "type": "apoli:raycast",
-                "distance": 7,
-                "block": true,
-                "entity": false,
-                "shape_type": "collider",
-                "fluid_handling": "none",
-                "block_condition": {
-                  "type": "apoli:in_tag",
-                  "tag": "elemental_bendings:earthbender/bendable"
-                },
-                "block_action": {
-                  "type": "apoli:if_else",
-                  "condition": {
-                    "type": "apoli:and",
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
                     "conditions": [
                       {
-                        "type": "apoli:random_chance",
-                        "chance": "hit_y <= y + 1.1"
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/dirt"
                       },
                       {
-                        "type": "apoli:random_chance",
-                        "chance": "(hit_x - x) * (hit_x - x) + (hit_z - z) * (hit_z - z) >= 4"
-                      },
-                      {
-                        "type": "apoli:or",
+                        "type": "apoli:and",
                         "conditions": [
                           {
-                            "type": "apoli:random_chance",
-                            "chance": "abs(hit_y - round(hit_y)) < 0.001 && pitch > 0"
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
-                            "type": "apoli:random_chance",
-                            "chance": "pitch > 0 && abs(hit_x - round(hit_x)) >= 0.001 && abs(hit_z - round(hit_z)) >= 0.001"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  "if_action": {
-                    "type": "apoli:and",
-                    "actions": [
-                      {
-                        "type": "apoli:if_else_list",
-                        "actions": [
-                          {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/dirt"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:dirt",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:dirt",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:dirt",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:dirt"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/stone"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/stone"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:stone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:stone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:stone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:stone"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/cobblestone"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/cobblestone"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:cobblestone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:cobblestone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:cobblestone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:cobblestone"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/mossy_cobblestone"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/mossy_cobblestone"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:mossy_cobblestone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:mossy_cobblestone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:mossy_cobblestone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:mossy_cobblestone"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/deepslate"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/deepslate"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:deepslate",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:deepslate",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:deepslate",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:deepslate"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/cobbled_deepslate"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/cobbled_deepslate"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:cobbled_deepslate",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:cobbled_deepslate",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:cobbled_deepslate",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:cobbled_deepslate"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/granite"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/granite"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:granite",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:granite",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:granite",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:granite"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/diorite"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/diorite"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:diorite",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:diorite",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:diorite",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:diorite"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/andesite"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/andesite"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:andesite",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:andesite",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:andesite",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:andesite"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/tuff"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/tuff"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:tuff",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:tuff",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:tuff",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:tuff"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/calcite"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/calcite"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:calcite",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:calcite",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:calcite",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:calcite"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/dripstone_block"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/dripstone_block"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:dripstone_block",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:dripstone_block",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:dripstone_block",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:dripstone_block"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/sandstone"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/sandstone"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:sandstone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:sandstone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:sandstone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:sandstone"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/red_sandstone"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/red_sandstone"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:red_sandstone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:red_sandstone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:red_sandstone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:red_sandstone"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/clay"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/clay"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:clay",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:clay",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:clay",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:clay"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/mud"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/mud"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:mud",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:mud",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:mud",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:mud"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/packed_mud"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/packed_mud"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:packed_mud",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:packed_mud",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:packed_mud",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:packed_mud"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/moss_block"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/moss_block"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:moss_block",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:moss_block",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:moss_block",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:moss_block"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/terracotta"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/terracotta"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:terracotta",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:terracotta",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:terracotta",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:terracotta"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/netherrack"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/netherrack"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:netherrack",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:netherrack",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:netherrack",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:netherrack"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/soul_soil"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/soul_soil"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:soul_soil",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:soul_soil",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:soul_soil",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:soul_soil"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/basalt"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/basalt"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:basalt",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:basalt",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:basalt",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:basalt"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/blackstone"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/blackstone"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:blackstone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:blackstone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:blackstone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:blackstone"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 7,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/end_stone"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
                           },
                           {
+                            "type": "apoli:offset",
                             "condition": {
                               "type": "apoli:in_tag",
                               "tag": "elemental_bendings:earthbender/family/end_stone"
                             },
-                            "action": {
-                              "type": "apoli:and",
-                              "actions": [
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:end_stone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 1
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:end_stone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 2
-                                },
-                                {
-                                  "type": "apoli:offset",
-                                  "action": {
-                                    "type": "apoli:if_else",
-                                    "condition": {
-                                      "type": "apoli:or",
-                                      "conditions": [
-                                        {
-                                          "type": "apoli:replacable"
-                                        },
-                                        {
-                                          "type": "apoli:in_tag",
-                                          "tag": "elemental_bendings:earthbender/flowers"
-                                        }
-                                      ]
-                                    },
-                                    "if_action": {
-                                      "type": "apoli:ghost_block",
-                                      "block": "minecraft:end_stone",
-                                      "duration": 600
-                                    }
-                                  },
-                                  "y": 3
-                                }
-                              ]
-                            }
+                            "y": -1
                           }
                         ]
-                      },
-                      {
-                        "type": "apoli:spawn_particles",
-                        "particle": {
-                          "type": "apoli:custom",
-                          "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
-                          "lifetime": 24,
-                          "lifetime_variation": 10,
-                          "size": 0.09,
-                          "size_variation": 0.06,
-                          "end_size": 0.07,
-                          "color": "#7A6A58",
-                          "gravity": 0.06,
-                          "friction": 0.98,
-                          "roll": "rUni(0, 360)",
-                          "roll_speed": "rUni(-25, 25)"
-                        },
-                        "count": 8,
-                        "spread": {
-                          "x": 0.4,
-                          "y": 0.4,
-                          "z": 0.4
-                        },
-                        "speed": 0.12
                       }
                     ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:end_stone"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/white_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/white_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:white_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/orange_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/orange_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:orange_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/magenta_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/magenta_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:magenta_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/light_blue_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/light_blue_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:light_blue_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/yellow_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/yellow_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:yellow_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/lime_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/lime_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:lime_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/pink_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/pink_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:pink_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/gray_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/gray_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:gray_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/light_gray_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/light_gray_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:light_gray_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/cyan_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/cyan_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:cyan_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/purple_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/purple_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:purple_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/blue_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/blue_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:blue_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/brown_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/brown_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:brown_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/green_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/green_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:green_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/red_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/red_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:red_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:power",
+                      "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "distance": 7,
+                      "block": true,
+                      "entity": false,
+                      "shape_type": "collider",
+                      "fluid_handling": "none",
+                      "block_condition": {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/family/black_concrete"
+                          },
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:block",
+                                "block": "minecraft:snow"
+                              },
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:earthbender/family/black_concrete"
+                                },
+                                "y": -1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_shaping/raise_wall",
+                  "arguments": {
+                    "block": "minecraft:black_concrete"
                   }
                 }
               }

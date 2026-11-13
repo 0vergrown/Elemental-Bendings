@@ -1,0 +1,13 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:airbender/vacuumbending/vacuum_bubble",
+  "texture_location": "elemental_bendings:textures/entity/airbender/vacuumbending/vacuum_bubble.png",
+  "render_type": "translucent",
+  "animations": {
+    "animation": "elemental_bendings:airbender/vacuumbending/vacuum_bubble",
+    "name": "animation.vacuum_bubble.pulse"
+  },
+  "render_as_overlay": true,
+  "hidden": true
+}

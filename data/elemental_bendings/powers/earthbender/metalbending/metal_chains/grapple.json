@@ -1,0 +1,591 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_3",
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "apoli:ingredient",
+              "ingredient": {
+                "item": "minecraft:chain"
+              }
+            }
+          },
+          {
+            "type": "apoli:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+              "type": "apoli:ingredient",
+              "ingredient": {
+                "item": "minecraft:chain"
+              }
+            }
+          }
+        ]
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 6
+            }
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 67
+                  }
+                },
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose_timer",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 6
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:item.trident.throw",
+            "volume": 0.7,
+            "pitch": 1.3
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.chain.fall",
+            "volume": 0.8,
+            "pitch": 1.2
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 2,
+            "action": {
+              "type": "apoli:raycast",
+              "distance": 64,
+              "block": true,
+              "entity": true,
+              "shape_type": "collider",
+              "fluid_handling": "none",
+              "bientity_condition": {
+                "type": "apoli:target_condition",
+                "condition": {
+                  "type": "apoli:living"
+                }
+              },
+              "before_action": {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/pending",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 0
+                }
+              },
+              "bientity_action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:attach_rope",
+                    "to": {
+                      "source": "target"
+                    },
+                    "from": {
+                      "source": "self"
+                    },
+                    "slot": "cable",
+                    "texture": "elemental_bendings:textures/rope/earthbender/metalbending/cable.png",
+                    "toggle": false,
+                    "mode": "leash",
+                    "min_length": 0.5,
+                    "max_length": 0.5,
+                    "start_length": 0.5,
+                    "constrain_from": false,
+                    "constrain_to": false,
+                    "controllable": false,
+                    "break_beyond": 80
+                  },
+                  {
+                    "type": "apoli:actor_action",
+                    "action": {
+                      "type": "apoli:action_on_entity_set",
+                      "set": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/anchor",
+                      "bientity_action": {
+                        "type": "apoli:remove_from_entity_set",
+                        "set": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/anchor"
+                      }
+                    }
+                  },
+                  {
+                    "type": "apoli:add_to_entity_set",
+                    "set": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/anchor"
+                  },
+                  {
+                    "type": "apoli:actor_action",
+                    "action": {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/pending",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 2
+                      }
+                    }
+                  },
+                  {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                            "lifetime": 7,
+                            "lifetime_variation": 3,
+                            "size": 0.06,
+                            "size_variation": 0.03,
+                            "end_size": 0.0,
+                            "color": "#FFFFFF",
+                            "end_color": "#FFD27A00",
+                            "gravity": 0.02,
+                            "friction": 0.9,
+                            "emissive": true,
+                            "blend": "additive",
+                            "physics": false,
+                            "alpha_bleed": true
+                          },
+                          "count": 8,
+                          "spread": {
+                            "x": 0.25,
+                            "y": 0.25,
+                            "z": 0.25
+                          },
+                          "speed": 0.18,
+                          "offset_y": 1.0
+                        },
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                            "lifetime": 24,
+                            "lifetime_variation": 10,
+                            "size": 0.09,
+                            "size_variation": 0.06,
+                            "end_size": 0.07,
+                            "color": "#B8BCC4",
+                            "gravity": 0.06,
+                            "friction": 0.98,
+                            "roll": "rUni(0, 360)",
+                            "roll_speed": "rUni(-25, 25)"
+                          },
+                          "count": 4,
+                          "spread": {
+                            "x": 0.2,
+                            "y": 0.2,
+                            "z": 0.2
+                          },
+                          "speed": 0.1,
+                          "offset_y": 1.0
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:play_sound",
+                      "sound": "minecraft:block.chain.hit",
+                      "volume": 1.0,
+                      "pitch": 0.9
+                    }
+                  }
+                ]
+              },
+              "hit_action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:resource",
+                      "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/pending",
+                      "comparison": "==",
+                      "compare_to": 2
+                    },
+                    "if_action": {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/hooked",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 2
+                      }
+                    },
+                    "else_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:action_on_entity_set",
+                          "set": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/anchor",
+                          "bientity_action": {
+                            "type": "apoli:remove_from_entity_set",
+                            "set": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/anchor"
+                          }
+                        },
+                        {
+                          "type": "apoli:attach_rope",
+                          "from": {
+                            "source": "self"
+                          },
+                          "slot": "cable",
+                          "texture": "elemental_bendings:textures/rope/earthbender/metalbending/cable.png",
+                          "toggle": false,
+                          "mode": "leash",
+                          "min_length": 0.5,
+                          "max_length": 0.5,
+                          "start_length": 0.5,
+                          "constrain_from": false,
+                          "constrain_to": false,
+                          "controllable": false,
+                          "break_beyond": 80,
+                          "to": {
+                            "source": "raycast",
+                            "distance": 65,
+                            "blocks": true,
+                            "entities": false
+                          }
+                        },
+                        {
+                          "type": "apoli:modify_resource",
+                          "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/hooked",
+                          "modifier": {
+                            "operation": "set_total",
+                            "value": 1
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/hook_x",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": "hit_x"
+                    }
+                  },
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/hook_y",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": "hit_y"
+                    }
+                  },
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/hook_z",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": "hit_z"
+                    }
+                  },
+                  {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/last_x",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "x"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/last_y",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "y"
+                        }
+                      },
+                      {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/last_z",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": "z"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/lean",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/pulse",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:block.chain.place",
+                    "volume": 1.0,
+                    "pitch": 0.8
+                  },
+                  {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:block.anvil.land",
+                    "volume": 0.25,
+                    "pitch": 1.9
+                  }
+                ]
+              },
+              "miss_action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:resource",
+                  "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/hooked",
+                  "comparison": ">",
+                  "compare_to": 0
+                },
+                "if_action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:detach_rope",
+                      "slot": "cable"
+                    },
+                    {
+                      "type": "apoli:action_on_entity_set",
+                      "set": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/anchor",
+                      "bientity_action": {
+                        "type": "apoli:remove_from_entity_set",
+                        "set": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/anchor"
+                      }
+                    },
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/carry_x",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": "x - elemental_bendings:earthbender/metalbending/metal_chains/grapple/last_x"
+                      }
+                    },
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/carry_z",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": "z - elemental_bendings:earthbender/metalbending/metal_chains/grapple/last_z"
+                      }
+                    },
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/hooked",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 0
+                      }
+                    },
+                    {
+                      "type": "apoli:if_else",
+                      "condition": {
+                        "type": "apoli:on_block",
+                        "inverted": true
+                      },
+                      "if_action": {
+                        "type": "apoli:modify_resource",
+                        "resource": "elemental_bendings:earthbender/metalbending/metal_chains/grapple/glide",
+                        "modifier": {
+                          "operation": "set_total",
+                          "value": 90
+                        }
+                      }
+                    },
+                    {
+                      "type": "apoli:play_sound",
+                      "sound": "minecraft:block.chain.break",
+                      "volume": 0.45,
+                      "pitch": 1.7
+                    },
+                    {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                            "lifetime": 7,
+                            "lifetime_variation": 3,
+                            "size": 0.06,
+                            "size_variation": 0.03,
+                            "end_size": 0.0,
+                            "color": "#FFFFFF",
+                            "end_color": "#FFD27A00",
+                            "gravity": 0.02,
+                            "friction": 0.9,
+                            "emissive": true,
+                            "blend": "additive",
+                            "physics": false,
+                            "alpha_bleed": true
+                          },
+                          "count": 4,
+                          "spread": {
+                            "x": 0.25,
+                            "y": 0.25,
+                            "z": 0.25
+                          },
+                          "speed": 0.18,
+                          "offset_y": 1.0
+                        },
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                            "lifetime": 24,
+                            "lifetime_variation": 10,
+                            "size": 0.09,
+                            "size_variation": 0.06,
+                            "end_size": 0.07,
+                            "color": "#B8BCC4",
+                            "gravity": 0.06,
+                            "friction": 0.98,
+                            "roll": "rUni(0, 360)",
+                            "roll_speed": "rUni(-25, 25)"
+                          },
+                          "count": 2,
+                          "spread": {
+                            "x": 0.2,
+                            "y": 0.2,
+                            "z": 0.2
+                          },
+                          "speed": 0.1,
+                          "offset_y": 1.0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "else_action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:text",
+                      "text": {
+                        "translate": "text.elemental_bendings.no_anchor"
+                      },
+                      "bar": "actionbar",
+                      "fadein": 2,
+                      "duration": 30,
+                      "fadeout": 8
+                    },
+                    {
+                      "type": "apoli:play_sound",
+                      "sound": "minecraft:block.dispenser.fail",
+                      "volume": 0.3,
+                      "pitch": 1.8
+                    }
+                  ]
+                }
+              },
+              "particle": {
+                "type": "apoli:custom",
+                "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                "lifetime": 7,
+                "lifetime_variation": 3,
+                "size": 0.06,
+                "size_variation": 0.03,
+                "end_size": 0.0,
+                "color": "#FFFFFF",
+                "end_color": "#FFD27A00",
+                "gravity": 0.02,
+                "friction": 0.9,
+                "emissive": true,
+                "blend": "additive",
+                "physics": false,
+                "alpha_bleed": true
+              },
+              "spacing": 0.6
+            }
+          }
+        ]
+      },
+      "else_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:text",
+            "text": {
+              "translate": "text.elemental_bendings.need_chain"
+            },
+            "bar": "actionbar",
+            "fadein": 2,
+            "duration": 30,
+            "fadeout": 8
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.dispenser.fail",
+            "volume": 0.3,
+            "pitch": 1.8
+          }
+        ]
+      }
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "hidden": true
+}

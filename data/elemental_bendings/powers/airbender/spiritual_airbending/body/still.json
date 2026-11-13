@@ -1,0 +1,16 @@
+{
+  "type": "apoli:attribute",
+  "modifiers": [
+    {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total",
+      "value": -1
+    },
+    {
+      "attribute": "minecraft:generic.knockback_resistance",
+      "operation": "add_value",
+      "value": 1
+    }
+  ],
+  "hidden": true
+}

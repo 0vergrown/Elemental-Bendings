@@ -1,0 +1,271 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_2"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 10
+          }
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 1,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 85
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/pose_timer",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 14
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:entity.ghast.scream",
+              "volume": 0.5,
+              "pitch": 1.7
+            },
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:block.bell.resonate",
+              "volume": 0.5,
+              "pitch": 1.9
+            }
+          ]
+        },
+        {
+          "type": "apoli:delay",
+          "ticks": 2,
+          "action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:raycast",
+                "distance": 10,
+                "radius": 1.2,
+                "block": true,
+                "entity": true,
+                "pierce_entities": true,
+                "fluid_handling": "none",
+                "shape_type": "collider",
+                "bientity_condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:target_condition",
+                      "condition": {
+                        "type": "apoli:living"
+                      }
+                    },
+                    {
+                      "type": "apoli:equal",
+                      "inverted": true
+                    }
+                  ]
+                },
+                "bientity_action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:damage",
+                      "amount": 4.5,
+                      "damage_type": "elemental_bendings:soundbending"
+                    },
+                    {
+                      "type": "apoli:add_velocity",
+                      "x": 0,
+                      "y": 0.2,
+                      "z": 0.6,
+                      "space": "local"
+                    },
+                    {
+                      "type": "apoli:target_action",
+                      "action": {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/airbender/soundbending/wave.png",
+                          "lifetime": 10,
+                          "size": 0.35,
+                          "end_size": 1.7,
+                          "color": "#F0F8FFE6",
+                          "end_color": "#9CC4FF00",
+                          "physics": false,
+                          "frames": 4,
+                          "easing": "ease_out_quad",
+                          "alpha_bleed": true
+                        },
+                        "count": 2,
+                        "offset_y": 1.0,
+                        "spread": 0.3,
+                        "speed": 0.02
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "apoli:delay",
+                "ticks": 0,
+                "action": {
+                  "type": "apoli:spawn_particles",
+                  "particle": {
+                    "type": "apoli:custom",
+                    "texture": "elemental_bendings:textures/particle/airbender/soundbending/wave.png",
+                    "lifetime": 10,
+                    "size": 0.35,
+                    "end_size": 1.7,
+                    "color": "#F0F8FFE6",
+                    "end_color": "#9CC4FF00",
+                    "physics": false,
+                    "frames": 4,
+                    "easing": "ease_out_quad",
+                    "alpha_bleed": true
+                  },
+                  "count": 1,
+                  "model_part": "head",
+                  "space": "local",
+                  "offset_y": 0.05,
+                  "offset_z": 0.6,
+                  "velocity_z": 0.9,
+                  "spread": 0.0
+                }
+              },
+              {
+                "type": "apoli:delay",
+                "ticks": 2,
+                "action": {
+                  "type": "apoli:spawn_particles",
+                  "particle": {
+                    "type": "apoli:custom",
+                    "texture": "elemental_bendings:textures/particle/airbender/soundbending/wave.png",
+                    "lifetime": 10,
+                    "size": 0.35,
+                    "end_size": 1.7,
+                    "color": "#F0F8FFE6",
+                    "end_color": "#9CC4FF00",
+                    "physics": false,
+                    "frames": 4,
+                    "easing": "ease_out_quad",
+                    "alpha_bleed": true
+                  },
+                  "count": 1,
+                  "model_part": "head",
+                  "space": "local",
+                  "offset_y": 0.05,
+                  "offset_z": 0.6,
+                  "velocity_z": 0.9,
+                  "spread": 0.0
+                }
+              },
+              {
+                "type": "apoli:delay",
+                "ticks": 4,
+                "action": {
+                  "type": "apoli:spawn_particles",
+                  "particle": {
+                    "type": "apoli:custom",
+                    "texture": "elemental_bendings:textures/particle/airbender/soundbending/wave.png",
+                    "lifetime": 10,
+                    "size": 0.35,
+                    "end_size": 1.7,
+                    "color": "#F0F8FFE6",
+                    "end_color": "#9CC4FF00",
+                    "physics": false,
+                    "frames": 4,
+                    "easing": "ease_out_quad",
+                    "alpha_bleed": true
+                  },
+                  "count": 1,
+                  "model_part": "head",
+                  "space": "local",
+                  "offset_y": 0.05,
+                  "offset_z": 0.6,
+                  "velocity_z": 0.9,
+                  "spread": 0.0
+                }
+              },
+              {
+                "type": "apoli:delay",
+                "ticks": 6,
+                "action": {
+                  "type": "apoli:spawn_particles",
+                  "particle": {
+                    "type": "apoli:custom",
+                    "texture": "elemental_bendings:textures/particle/airbender/soundbending/wave.png",
+                    "lifetime": 10,
+                    "size": 0.35,
+                    "end_size": 1.7,
+                    "color": "#F0F8FFE6",
+                    "end_color": "#9CC4FF00",
+                    "physics": false,
+                    "frames": 4,
+                    "easing": "ease_out_quad",
+                    "alpha_bleed": true
+                  },
+                  "count": 1,
+                  "model_part": "head",
+                  "space": "local",
+                  "offset_y": 0.05,
+                  "offset_z": 0.6,
+                  "velocity_z": 0.9,
+                  "spread": 0.0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "condition": {
+    "type": "apoli:power",
+    "power": "elemental_bendings:airbender/soundbending/shattering_scream",
+    "inverted": true
+  },
+  "hidden": true
+}

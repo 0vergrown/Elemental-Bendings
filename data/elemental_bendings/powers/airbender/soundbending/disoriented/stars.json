@@ -1,0 +1,29 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/airbender/soundbending/note.png",
+    "lifetime": 14,
+    "lifetime_variation": 4,
+    "size": 0.1,
+    "end_size": 0.06,
+    "color": "#E8D8FF",
+    "end_color": "#9A70FF00",
+    "friction": 0.9,
+    "frames": 2,
+    "frame_time": 7,
+    "physics": false,
+    "roll": "rUni(-30, 30)"
+  },
+  "count": 1,
+  "frequency": 5,
+  "offset_y": 2.1,
+  "spread": {
+    "x": 0.35,
+    "y": 0.05,
+    "z": 0.35
+  },
+  "speed": 0.0,
+  "visible_in_first_person": false,
+  "hidden": true
+}

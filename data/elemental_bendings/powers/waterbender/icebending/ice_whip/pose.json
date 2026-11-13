@@ -1,0 +1,197 @@
+{
+  "type": "apoli:modify_model_parts",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/icebending/ice_whip/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/icebending/ice_whip/strike_timer",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    ]
+  },
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "right_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -2.0246,
+          "easing": "ease_out_quad"
+        },
+        {
+          "time": 20,
+          "value": -2.234,
+          "easing": "ease_in_out_quad"
+        },
+        {
+          "time": 40,
+          "value": -2.0246,
+          "easing": "ease_in_out_quad"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "roll",
+      "override_animation": true,
+      "value": 0.3491,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -1.1519,
+          "easing": "ease_out_quad"
+        },
+        {
+          "time": 20,
+          "value": -1.0472,
+          "easing": "ease_in_out_quad"
+        },
+        {
+          "time": 40,
+          "value": -1.1519,
+          "easing": "ease_in_out_quad"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "yaw",
+      "override_animation": true,
+      "value": 0.4189,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "upper",
+      "type": "yaw",
+      "value": -0.2443,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "value": -0.1396,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_leg",
+      "type": "roll",
+      "override_animation": true,
+      "value": 0.2443,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "value": 0.1745,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_leg",
+      "type": "roll",
+      "override_animation": true,
+      "value": -0.2443,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "whole",
+      "type": "pivot_y",
+      "value": 0.9,
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "reach",
+      "perspectives": [
+        "first_person"
+      ],
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "target": [
+        -7,
+        -8,
+        -9
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "reach",
+      "perspectives": [
+        "first_person"
+      ],
+      "duration": 4.0,
+      "fade_out_duration": 4.0,
+      "target": [
+        4,
+        0,
+        -11
+      ]
+    }
+  ],
+  "hidden": true
+}

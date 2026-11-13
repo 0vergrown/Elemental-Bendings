@@ -1,0 +1,13 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:firebender/dragon_fire/fire_tornado",
+  "texture_location": "elemental_bendings:textures/entity/firebender/dragon_fire/fire_tornado.png",
+  "render_type": "emissive",
+  "scale": 1.3,
+  "animations": {
+    "animation": "elemental_bendings:firebender/dragon_fire/fire_tornado",
+    "name": "animation.dragon_fire_tornado.spin"
+  },
+  "hidden": true
+}

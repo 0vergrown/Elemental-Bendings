@@ -4,21 +4,7 @@
     "translate": "skill.elemental_bendings.waterbender.plantbending.snare_trap.name"
   },
   "description": {
-    "translate": "skill.elemental_bendings.waterbender.plantbending.snare_trap.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
-      },
-      {
-        "keybind": "key.apoli.skill_tree"
-      }
-    ]
+    "translate": "skill.elemental_bendings.waterbender.plantbending.snare_trap.description"
   },
   "powers": [
     "elemental_bendings:waterbender/plantbending/snare_trap/traps",
@@ -26,7 +12,7 @@
     "elemental_bendings:waterbender/plantbending/snare_trap"
   ],
   "icon": {
-    "item": "minecraft:tripwire_hook"
+    "texture": "elemental_bendings:textures/gui/waterbender/plantbending/snare_trap.png"
   },
   "frame": "task",
   "cost": 2,

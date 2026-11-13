@@ -1,0 +1,47 @@
+{
+  "type": "apoli:action_when_damage_taken",
+  "cooldown": 1,
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:waterbender/icebending/encased/cracks",
+        "modifier": {
+          "operation": "add_value",
+          "value": 2
+        }
+      },
+      {
+        "type": "apoli:play_sound",
+        "sound": "minecraft:block.glass.hit",
+        "volume": 1.0,
+        "pitch": 0.7
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/waterbender/icebending/crushed.png",
+          "lifetime": 20,
+          "lifetime_variation": 8,
+          "size": 0.09,
+          "size_variation": 0.05,
+          "end_size": 0.05,
+          "color": "#FFFFFF",
+          "end_color": "#A8E2FF80",
+          "gravity": 0.06,
+          "friction": 0.97,
+          "frames": 4,
+          "roll": "rUni(0, 360)",
+          "roll_speed": "rUni(-25, 25)"
+        },
+        "count": 8,
+        "offset_y": 1.0,
+        "spread": 0.4,
+        "speed": 0.12
+      }
+    ]
+  },
+  "hidden": true
+}

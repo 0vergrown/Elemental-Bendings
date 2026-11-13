@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "elemental_bendings:firebending"
+    "elemental_bendings:firebending",
+    "elemental_bendings:lavabending"
   ]
 }

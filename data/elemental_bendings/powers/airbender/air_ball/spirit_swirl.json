@@ -1,0 +1,16 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:airbender/air_ball_swirl",
+  "texture_location": "elemental_bendings:textures/entity/airbender/air_ball_swirl.png",
+  "render_type": "energy_swirl",
+  "scroll_speed": 0.03,
+  "red": 0.25,
+  "green": 0.72,
+  "blue": 0.78,
+  "animations": {
+    "animation": "elemental_bendings:airbender/air_ball",
+    "name": "animation.air_ball.spin"
+  },
+  "hidden": true
+}

@@ -1,0 +1,57 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": {
+    "key": "key.elemental_bendings.stance_1",
+    "continuous": true
+  },
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/metalbending/sword_throw/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/metalbending/sword_throw/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 6
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/metalbending/sword_throw/fuel",
+        "modifier": {
+          "operation": "add_value",
+          "value": -2
+        }
+      }
+    ]
+  },
+  "entity_action_released": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/metalbending/sword_throw/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/metalbending/sword_throw/fuel",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "#elemental_bendings:earthbender/bendable/iron_block",
+    "#elemental_bendings:earthbender/bendable/raw_iron_block",
+    "#elemental_bendings:earthbender/bendable/gold_block",
+    "#elemental_bendings:earthbender/bendable/raw_gold_block",
+    "#elemental_bendings:earthbender/bendable/copper_block",
+    "#elemental_bendings:earthbender/bendable/exposed_copper",
+    "#elemental_bendings:earthbender/bendable/weathered_copper",
+    "#elemental_bendings:earthbender/bendable/oxidized_copper",
+    "#elemental_bendings:earthbender/bendable/raw_copper_block",
+    "#elemental_bendings:earthbender/bendable/netherite_block",
+    "#elemental_bendings:earthbender/bendable/ancient_debris"
+  ]
+}

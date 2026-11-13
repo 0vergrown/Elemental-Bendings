@@ -4,21 +4,7 @@
     "translate": "skill.elemental_bendings.waterbender.plantbending.plant_golem.name"
   },
   "description": {
-    "translate": "skill.elemental_bendings.waterbender.plantbending.plant_golem.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
-      },
-      {
-        "keybind": "key.apoli.skill_tree"
-      }
-    ]
+    "translate": "skill.elemental_bendings.waterbender.plantbending.plant_golem.description"
   },
   "powers": [
     "elemental_bendings:waterbender/plantbending/plant_golem/active",
@@ -26,6 +12,7 @@
     "elemental_bendings:waterbender/plantbending/plant_golem/slam_cooldown",
     "elemental_bendings:waterbender/plantbending/plant_golem/shell",
     "elemental_bendings:waterbender/plantbending/plant_golem/encased",
+    "elemental_bendings:waterbender/plantbending/plant_golem/overgrown",
     "elemental_bendings:waterbender/plantbending/plant_golem/size",
     "elemental_bendings:waterbender/plantbending/plant_golem/armor",
     "elemental_bendings:waterbender/plantbending/plant_golem/toughness",
@@ -41,9 +28,9 @@
     "elemental_bendings:waterbender/plantbending/plant_golem/slam"
   ],
   "icon": {
-    "item": "minecraft:moss_block"
+    "texture": "elemental_bendings:textures/gui/waterbender/plantbending/plant_golem.png"
   },
-  "frame": "challenge",
+  "frame": "task",
   "cost": 4,
   "order": 0
 }

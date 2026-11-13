@@ -1,0 +1,29 @@
+{
+  "type": "apoli:action_on_land",
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:airbender/vacuumbending/wall_run/fuel",
+        "modifier": {
+          "operation": "set_total",
+          "value": 60
+        }
+      },
+      {
+        "type": "apoli:delay",
+        "ticks": 2,
+        "action": {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:airbender/vacuumbending/wall_run/cushion",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0
+          }
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

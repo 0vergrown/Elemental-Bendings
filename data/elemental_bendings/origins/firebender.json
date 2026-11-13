@@ -5,6 +5,440 @@
   "impact": "medium",
   "order": 3,
   "powers": [
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/lightningbending/lightning_storm/lightning_storm"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/combustionbending/charged_blast/charged_blast"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:firebender/inner_fire"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/lightningbending"
+      },
+      "powers": [
+        "elemental_bendings:firebender/lightningbending/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/combustionbending"
+      },
+      "powers": [
+        "elemental_bendings:firebender/combustionbending/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/lightningbending/lightningbending"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/combustionbending/combustionbending"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/blue_fire/blue_fire_punch"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_punch"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:firebender/fire_punch"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/lightningbending"
+      },
+      "powers": [
+        "elemental_bendings:firebender/lightningbending/lightning_bolt/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/combustionbending"
+      },
+      "powers": [
+        "elemental_bendings:firebender/combustionbending/combustion_blast/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/blue_fire/blue_fire_punch"
+      },
+      "powers": [
+        "elemental_bendings:firebender/blue_fire/blue_fire_punch/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_punch"
+      },
+      "powers": [
+        "elemental_bendings:firebender/dragon_fire/dragon_fire_punch/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/lightningbending/thunderclap"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/combustionbending/delayed_detonation"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/blue_fire/blue_fire_wall"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_wall"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:firebender/fire_wall"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/thunderclap"
+      },
+      "powers": [
+        "elemental_bendings:firebender/lightningbending/thunderclap/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/delayed_detonation"
+      },
+      "powers": [
+        "elemental_bendings:firebender/combustionbending/delayed_detonation/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/blue_fire/blue_fire_wall"
+      },
+      "powers": [
+        "elemental_bendings:firebender/blue_fire/blue_fire_wall/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_wall"
+      },
+      "powers": [
+        "elemental_bendings:firebender/dragon_fire/dragon_fire_wall/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/lightningbending/chain_lightning"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/combustionbending/explosive_repulsion"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/blue_fire/blue_fire_circle"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_circle"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:firebender/fire_circle"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/chain_lightning"
+      },
+      "powers": [
+        "elemental_bendings:firebender/lightningbending/chain_lightning/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/explosive_repulsion"
+      },
+      "powers": [
+        "elemental_bendings:firebender/combustionbending/explosive_repulsion/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/blue_fire/blue_fire_circle"
+      },
+      "powers": [
+        "elemental_bendings:firebender/blue_fire/blue_fire_circle/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_circle"
+      },
+      "powers": [
+        "elemental_bendings:firebender/dragon_fire/dragon_fire_circle/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/lightningbending/lightning_stream"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/combustionbending/combustion_barrage"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/blue_fire/blue_fire_breath"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_breath"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:firebender/fire_breath"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/lightning_stream"
+      },
+      "powers": [
+        "elemental_bendings:firebender/lightningbending/lightning_stream/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/combustion_barrage"
+      },
+      "powers": [
+        "elemental_bendings:firebender/combustionbending/combustion_barrage/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/blue_fire/blue_fire_breath"
+      },
+      "powers": [
+        "elemental_bendings:firebender/blue_fire/blue_fire_breath/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_breath"
+      },
+      "powers": [
+        "elemental_bendings:firebender/dragon_fire/dragon_fire_breath/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/lightningbending/flash_step"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/combustionbending/blast_jump"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/blue_fire/blue_fire_jet"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_jet"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:firebender/fire_jump"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/flash_step"
+      },
+      "powers": [
+        "elemental_bendings:firebender/lightningbending/flash_step/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/blast_jump"
+      },
+      "powers": [
+        "elemental_bendings:firebender/combustionbending/blast_jump/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/blue_fire/blue_fire_jet"
+      },
+      "powers": [
+        "elemental_bendings:firebender/blue_fire/blue_fire_jet/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_jet"
+      },
+      "powers": [
+        "elemental_bendings:firebender/dragon_fire/dragon_fire_jet/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/lightningbending/lightning_strike"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/lightningbending/lightning_storm/lightning_storm",
+            "inverted": true
+          }
+        ]
+      },
+      "powers": [
+        "elemental_bendings:firebender/lightningbending/lightning_strike/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/lightning_storm/lightning_storm"
+      },
+      "powers": [
+        "elemental_bendings:firebender/lightningbending/lightning_storm/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/lightningbending/lightning_redirection/window"
+      },
+      "powers": [
+        "elemental_bendings:firebender/lightningbending/lightning_redirection/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/cluster_detonation"
+      },
+      "powers": [
+        "elemental_bendings:firebender/combustionbending/cluster_detonation/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/smoke_screen"
+      },
+      "powers": [
+        "elemental_bendings:firebender/combustionbending/smoke_screen/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/combustionbending/charged_blast/charged_blast"
+      },
+      "powers": [
+        "elemental_bendings:firebender/combustionbending/charged_blast/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/blue_fire/fire_tornado"
+      },
+      "powers": [
+        "elemental_bendings:firebender/blue_fire/fire_tornado/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:firebender/dragon_fire/fire_tornado"
+      },
+      "powers": [
+        "elemental_bendings:firebender/dragon_fire/fire_tornado/info"
+      ]
+    },
     "elemental_bendings:bending/cooldown",
     "elemental_bendings:bending/pose",
     "elemental_bendings:bending/pose_timer",
@@ -15,19 +449,14 @@
     "elemental_bendings:firebender/stance/bow_stance_punch",
     "elemental_bendings:firebender/stance/horse_stance_double_punch",
     "elemental_bendings:firebender/stance/front_heel_kick",
-    "elemental_bendings:firebender/inner_fire",
     "elemental_bendings:firebender/fire_punch/pose",
-    "elemental_bendings:firebender/fire_punch",
     "elemental_bendings:firebender/fire_wall/pose",
-    "elemental_bendings:firebender/fire_wall",
     "elemental_bendings:firebender/fire_circle/pose",
-    "elemental_bendings:firebender/fire_circle",
     "elemental_bendings:firebender/fire_breath/heartbeat",
     "elemental_bendings:firebender/fire_breath/fuel",
     "elemental_bendings:firebender/fire_breath/pose",
     "elemental_bendings:firebender/fire_breath/rooted",
     "elemental_bendings:firebender/fire_breath/breathing",
-    "elemental_bendings:firebender/fire_breath",
     "elemental_bendings:firebender/fire_jump/jumped",
     "elemental_bendings:firebender/fire_jump/boost",
     "elemental_bendings:firebender/fire_jet/heartbeat",
@@ -42,7 +471,6 @@
     "elemental_bendings:firebender/fire_jump/pose",
     "elemental_bendings:firebender/fire_jet/pose",
     "elemental_bendings:firebender/fire_jet/jetting",
-    "elemental_bendings:firebender/fire_jump",
     "elemental_bendings:firebender/fire_jet",
     "elemental_bendings:firebender/emblem"
   ]

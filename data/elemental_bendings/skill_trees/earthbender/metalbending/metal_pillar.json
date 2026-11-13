@@ -1,0 +1,21 @@
+{
+  "parent": "elemental_bendings:earthbender/metalbending/metal_wall",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.metal_pillar.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.metal_pillar.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/metalbending/metal_pillar/pose",
+    "elemental_bendings:earthbender/metalbending/metal_pillar/raise",
+    "elemental_bendings:earthbender/metalbending/metal_pillar/scrapped",
+    "elemental_bendings:earthbender/metalbending/metal_pillar"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/metalbending/metal_pillar.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

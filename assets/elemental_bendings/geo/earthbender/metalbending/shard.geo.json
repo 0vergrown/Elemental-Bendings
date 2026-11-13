@@ -1,0 +1,292 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.shard",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 1.5,
+        "visible_bounds_height": 1.5,
+        "visible_bounds_offset": [
+          0,
+          0.375,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "shard",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [
+                -0.8,
+                -0.8,
+                -3
+              ],
+              "size": [
+                1.6,
+                1.6,
+                6
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    3,
+                    3
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    3,
+                    3
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    8,
+                    3
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    8,
+                    3
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    8,
+                    3
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    8,
+                    3
+                  ]
+                }
+              },
+              "rotation": [
+                0,
+                0,
+                45
+              ],
+              "pivot": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "origin": [
+                -0.5,
+                -0.5,
+                3
+              ],
+              "size": [
+                1,
+                1,
+                2.6
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    3,
+                    3
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    3,
+                    3
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    4
+                  ],
+                  "uv_size": [
+                    6,
+                    2
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    0,
+                    4
+                  ],
+                  "uv_size": [
+                    6,
+                    2
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    4
+                  ],
+                  "uv_size": [
+                    6,
+                    2
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    4
+                  ],
+                  "uv_size": [
+                    6,
+                    2
+                  ]
+                }
+              },
+              "rotation": [
+                8,
+                -10,
+                45
+              ],
+              "pivot": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "origin": [
+                -0.4,
+                -0.4,
+                -5
+              ],
+              "size": [
+                0.8,
+                0.8,
+                2.2
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    3,
+                    3
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    3,
+                    3
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    4
+                  ],
+                  "uv_size": [
+                    6,
+                    2
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    0,
+                    4
+                  ],
+                  "uv_size": [
+                    6,
+                    2
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    4
+                  ],
+                  "uv_size": [
+                    6,
+                    2
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    4
+                  ],
+                  "uv_size": [
+                    6,
+                    2
+                  ]
+                }
+              },
+              "rotation": [
+                -12,
+                14,
+                20
+              ],
+              "pivot": [
+                0,
+                0,
+                -3
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

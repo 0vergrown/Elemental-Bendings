@@ -14,6 +14,20 @@
         "resource": "elemental_bendings:bending/pose_timer",
         "comparison": ">",
         "compare_to": 0
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/lightningbending/lightning_storm/lightning_storm"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/combustionbending/charged_blast/charged_blast"
+          }
+        ],
+        "inverted": true
       }
     ]
   },

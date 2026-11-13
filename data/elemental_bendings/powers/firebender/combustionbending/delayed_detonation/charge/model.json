@@ -1,0 +1,13 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:firebender/combustionbending/charge",
+  "texture_location": "elemental_bendings:textures/entity/firebender/combustionbending/charge.png",
+  "render_type": "eyes",
+  "scale": 1.0,
+  "animations": {
+    "animation": "elemental_bendings:firebender/combustionbending/charge",
+    "name": "animation.combustion_charge.pulse"
+  },
+  "hidden": true
+}

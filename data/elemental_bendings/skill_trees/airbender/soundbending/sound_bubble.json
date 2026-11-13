@@ -1,0 +1,20 @@
+{
+  "parent": "elemental_bendings:airbender/soundbending/sonic_clap",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.sound_bubble.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.sound_bubble.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/soundbending/sound_bubble/pose",
+    "elemental_bendings:airbender/soundbending/sound_bubble/recharge",
+    "elemental_bendings:airbender/soundbending/sound_bubble"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/soundbending/sound_bubble.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

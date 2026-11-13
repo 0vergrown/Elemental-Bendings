@@ -19,150 +19,526 @@
       "compare_to": 0
     },
     "if_action": {
-      "type": "apoli:and",
-      "actions": [
-        {
-          "type": "apoli:modify_resource",
-          "resource": "elemental_bendings:bending/cooldown",
-          "modifier": {
-            "operation": "set_total",
-            "value": 8
-          }
-        },
-        {
-          "type": "apoli:delay",
-          "ticks": 1,
-          "action": {
-            "type": "apoli:and",
-            "actions": [
-              {
-                "type": "apoli:modify_resource",
-                "resource": "elemental_bendings:bending/pose",
-                "modifier": {
-                  "operation": "set_total",
-                  "value": 20
-                }
-              },
-              {
-                "type": "apoli:modify_resource",
-                "resource": "elemental_bendings:bending/pose_timer",
-                "modifier": {
-                  "operation": "set_total",
-                  "value": 10
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "apoli:play_sound",
-          "sound": "minecraft:entity.player.attack.sweep",
-          "volume": 1.0,
-          "pitch": 1.3
-        },
-        {
-          "type": "apoli:delay",
-          "ticks": 2,
-          "action": {
-            "type": "apoli:and",
-            "actions": [
-              {
-                "type": "apoli:if_else",
-                "condition": {
-                  "type": "apoli:minecraft_version",
-                  "version": "1.21",
-                  "comparison": ">="
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spiritual_airbending"
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 8
+            }
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 20
+                  }
                 },
-                "if_action": {
-                  "type": "apoli:play_sound",
-                  "sound": "minecraft:entity.wind_charge.throw",
-                  "volume": 0.8,
-                  "pitch": 1.2
-                },
-                "else_action": {
-                  "type": "apoli:play_sound",
-                  "sound": "minecraft:entity.ender_dragon.flap",
-                  "volume": 0.8,
-                  "pitch": 1.2
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose_timer",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 10
+                  }
                 }
-              },
-              {
-                "type": "apoli:fire_projectile",
-                "texture_location": "elemental_bendings:textures/entity/airbender/air_slice.png",
-                "speed": 2.5,
-                "divergence": 0,
-                "tag": "{NoGravity:1b}",
-                "lifetime": 36,
-                "pierce": 15,
-                "offset_y": -0.25,
-                "offset_z": 1.0,
-                "space": "local",
-                "projectile_action": {
-                  "type": "apoli:grant_power",
-                  "power": "elemental_bendings:airbender/air_slice/model",
-                  "source": "elemental_bendings:projectile"
+              ]
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.player.attack.sweep",
+            "volume": 1.0,
+            "pitch": 1.3
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.amethyst_block.chime",
+            "volume": 0.5,
+            "pitch": 1.6
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 2,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:if_else",
+                  "condition": {
+                    "type": "apoli:minecraft_version",
+                    "version": "1.21",
+                    "comparison": ">="
+                  },
+                  "if_action": {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:entity.wind_charge.throw",
+                    "volume": 0.8,
+                    "pitch": 1.2
+                  },
+                  "else_action": {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:entity.ender_dragon.flap",
+                    "volume": 0.8,
+                    "pitch": 1.2
+                  }
                 },
-                "tick_bientity_action": {
-                  "type": "apoli:target_action",
-                  "action": {
+                {
+                  "type": "apoli:fire_projectile",
+                  "texture_location": "elemental_bendings:textures/entity/airbender/spiritual_airbending/spirit_slice.png",
+                  "speed": 3.0,
+                  "divergence": 0,
+                  "tag": "{NoGravity:1b}",
+                  "lifetime": 48,
+                  "pierce": 20,
+                  "offset_y": -0.25,
+                  "offset_z": 1.0,
+                  "space": "local",
+                  "projectile_action": {
+                    "type": "apoli:grant_power",
+                    "power": "elemental_bendings:airbender/air_slice/spirit_model",
+                    "source": "elemental_bendings:projectile"
+                  },
+                  "tick_bientity_action": {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": {
+                                "type": "apoli:custom",
+                                "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+                                "lifetime": 18,
+                                "lifetime_variation": 6,
+                                "size": 0.2,
+                                "size_variation": 0.07,
+                                "end_size": 0.05,
+                                "color": "#EFFFFF",
+                                "end_color": "#38D6E000",
+                                "gravity": -0.015,
+                                "friction": 0.92,
+                                "emissive": true,
+                                "blend": "additive",
+                                "frames": 6,
+                                "frame_time": 3,
+                                "physics": false,
+                                "roll": "rUni(-15, 15)"
+                              },
+                              "count": 1,
+                              "offset_y": 0.0,
+                              "spread": 0.15,
+                              "speed": 0.0
+                            },
+                            {
+                              "type": "apoli:random_chance",
+                              "chance": 0.5,
+                              "action": {
+                                "type": "apoli:spawn_particles",
+                                "particle": {
+                                  "type": "apoli:custom",
+                                  "texture": "elemental_bendings:textures/particle/waterbender/glimmer.png",
+                                  "lifetime": 34,
+                                  "lifetime_variation": 14,
+                                  "size": 0.06,
+                                  "size_variation": 0.03,
+                                  "end_size": 0.0,
+                                  "color": "#DFFFFF",
+                                  "end_color": "#4CE8FF00",
+                                  "gravity": -0.004,
+                                  "friction": 0.9,
+                                  "emissive": true,
+                                  "blend": "additive",
+                                  "physics": false
+                                },
+                                "count": 1,
+                                "offset_y": 0.0,
+                                "spread": 0.2,
+                                "speed": 0.0
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "apoli:block_action_at",
+                          "block_action": {
+                            "type": "apoli:if_else",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:fire"
+                            },
+                            "if_action": {
+                              "type": "apoli:set_block",
+                              "block": "minecraft:air"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "owner_target_bientity_action_on_hit": {
+                    "type": "apoli:damage",
+                    "amount": 7,
+                    "damage_type": "elemental_bendings:airbending"
+                  },
+                  "bientity_action_on_hit": {
                     "type": "apoli:and",
                     "actions": [
+                      {
+                        "type": "apoli:add_velocity",
+                        "x": 0,
+                        "y": 0.2,
+                        "z": 0.6,
+                        "space": "velocity_normalized"
+                      },
+                      {
+                        "type": "apoli:target_action",
+                        "action": {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+                            "lifetime": 18,
+                            "lifetime_variation": 6,
+                            "size": 0.2,
+                            "size_variation": 0.07,
+                            "end_size": 0.05,
+                            "color": "#EFFFFF",
+                            "end_color": "#38D6E000",
+                            "gravity": -0.015,
+                            "friction": 0.92,
+                            "emissive": true,
+                            "blend": "additive",
+                            "frames": 6,
+                            "frame_time": 3,
+                            "physics": false,
+                            "roll": "rUni(-15, 15)"
+                          },
+                          "count": 6,
+                          "offset_y": 1.0,
+                          "spread": 0.4,
+                          "speed": 0.05
+                        }
+                      }
+                    ]
+                  },
+                  "block_action_on_hit": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:if_else",
+                        "condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:wooden_doors"
+                            },
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:wooden_trapdoors"
+                            },
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:fence_gates"
+                            }
+                          ]
+                        },
+                        "if_action": {
+                          "type": "apoli:modify_block_state",
+                          "property": "open",
+                          "value": true
+                        }
+                      },
                       {
                         "type": "apoli:spawn_particles",
                         "particle": {
                           "type": "apoli:custom",
-                          "texture": "elemental_bendings:textures/particle/airbender/streak.png",
-                          "lifetime": 8,
-                          "lifetime_variation": 3,
-                          "size": 0.35,
-                          "size_variation": 0.15,
-                          "end_size": 0.1,
-                          "color": "#FFFFFFC0",
-                          "end_color": "#DDEEFF00",
-                          "friction": 0.9,
+                          "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+                          "lifetime": 18,
+                          "lifetime_variation": 6,
+                          "size": 0.2,
+                          "size_variation": 0.07,
+                          "end_size": 0.05,
+                          "color": "#EFFFFF",
+                          "end_color": "#38D6E000",
+                          "gravity": -0.015,
+                          "friction": 0.92,
+                          "emissive": true,
+                          "blend": "additive",
+                          "frames": 6,
+                          "frame_time": 3,
                           "physics": false,
-                          "roll": "rUni(0, 360)"
+                          "roll": "rUni(-15, 15)"
                         },
-                        "count": 1,
-                        "offset_y": 0.0,
-                        "spread": 0.15,
-                        "speed": 0.0
+                        "count": 6,
+                        "spread": {
+                          "x": 0.3,
+                          "y": 0.3,
+                          "z": 0.3
+                        },
+                        "speed": 0.05
+                      }
+                    ]
+                  },
+                  "bientity_action_on_miss": {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:if_else",
+                      "condition": {
+                        "type": "apoli:block_in_radius",
+                        "radius": 1,
+                        "shape": "cube",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:wooden_doors"
+                            },
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:wooden_trapdoors"
+                            },
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:fence_gates"
+                            }
+                          ]
+                        }
+                      },
+                      "if_action": {
+                        "type": "apoli:play_sound",
+                        "sound": "minecraft:block.wooden_door.open",
+                        "volume": 0.9,
+                        "pitch": 1.1
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "else_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 8
+            }
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 20
+                  }
+                },
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose_timer",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 10
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.player.attack.sweep",
+            "volume": 1.0,
+            "pitch": 1.3
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 2,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:if_else",
+                  "condition": {
+                    "type": "apoli:minecraft_version",
+                    "version": "1.21",
+                    "comparison": ">="
+                  },
+                  "if_action": {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:entity.wind_charge.throw",
+                    "volume": 0.8,
+                    "pitch": 1.2
+                  },
+                  "else_action": {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:entity.ender_dragon.flap",
+                    "volume": 0.8,
+                    "pitch": 1.2
+                  }
+                },
+                {
+                  "type": "apoli:fire_projectile",
+                  "texture_location": "elemental_bendings:textures/entity/airbender/air_slice.png",
+                  "speed": 2.5,
+                  "divergence": 0,
+                  "tag": "{NoGravity:1b}",
+                  "lifetime": 36,
+                  "pierce": 15,
+                  "offset_y": -0.25,
+                  "offset_z": 1.0,
+                  "space": "local",
+                  "projectile_action": {
+                    "type": "apoli:grant_power",
+                    "power": "elemental_bendings:airbender/air_slice/model",
+                    "source": "elemental_bendings:projectile"
+                  },
+                  "tick_bientity_action": {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/airbender/streak.png",
+                            "lifetime": 8,
+                            "lifetime_variation": 3,
+                            "size": 0.35,
+                            "size_variation": 0.15,
+                            "end_size": 0.1,
+                            "color": "#FFFFFFC0",
+                            "end_color": "#DDEEFF00",
+                            "friction": 0.9,
+                            "physics": false,
+                            "roll": "rUni(0, 360)"
+                          },
+                          "count": 1,
+                          "offset_y": 0.0,
+                          "spread": 0.15,
+                          "speed": 0.0
+                        },
+                        {
+                          "type": "apoli:block_action_at",
+                          "block_action": {
+                            "type": "apoli:if_else",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:fire"
+                            },
+                            "if_action": {
+                              "type": "apoli:set_block",
+                              "block": "minecraft:air"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "owner_target_bientity_action_on_hit": {
+                    "type": "apoli:damage",
+                    "amount": 5,
+                    "damage_type": "elemental_bendings:airbending"
+                  },
+                  "bientity_action_on_hit": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:add_velocity",
+                        "x": 0,
+                        "y": 0.2,
+                        "z": 0.6,
+                        "space": "velocity_normalized"
                       },
                       {
-                        "type": "apoli:block_action_at",
-                        "block_action": {
-                          "type": "apoli:if_else",
-                          "condition": {
-                            "type": "apoli:in_tag",
-                            "tag": "minecraft:fire"
+                        "type": "apoli:target_action",
+                        "action": {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
+                            "lifetime": 12,
+                            "lifetime_variation": 4,
+                            "size": 0.4,
+                            "size_variation": 0.2,
+                            "end_size": 0.7,
+                            "color": "#FFFFFFB0",
+                            "end_color": "#E6F4FF00",
+                            "friction": 0.88,
+                            "frames": 6,
+                            "frame_time": 2,
+                            "physics": false,
+                            "roll": "rUni(0, 360)",
+                            "roll_speed": "rUni(-20, 20)"
                           },
-                          "if_action": {
-                            "type": "apoli:set_block",
-                            "block": "minecraft:air"
-                          }
+                          "count": 6,
+                          "offset_y": 1.0,
+                          "spread": 0.4,
+                          "speed": 0.05
                         }
                       }
                     ]
-                  }
-                },
-                "owner_target_bientity_action_on_hit": {
-                  "type": "apoli:damage",
-                  "amount": 5,
-                  "damage_type": "elemental_bendings:airbending"
-                },
-                "bientity_action_on_hit": {
-                  "type": "apoli:and",
-                  "actions": [
-                    {
-                      "type": "apoli:add_velocity",
-                      "x": 0,
-                      "y": 0.2,
-                      "z": 0.6,
-                      "space": "velocity_normalized"
-                    },
-                    {
-                      "type": "apoli:target_action",
-                      "action": {
+                  },
+                  "block_action_on_hit": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:if_else",
+                        "condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:wooden_doors"
+                            },
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:wooden_trapdoors"
+                            },
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:fence_gates"
+                            }
+                          ]
+                        },
+                        "if_action": {
+                          "type": "apoli:modify_block_state",
+                          "property": "open",
+                          "value": true
+                        }
+                      },
+                      {
                         "type": "apoli:spawn_particles",
                         "particle": {
                           "type": "apoli:custom",
@@ -182,109 +558,55 @@
                           "roll_speed": "rUni(-20, 20)"
                         },
                         "count": 6,
-                        "offset_y": 1.0,
-                        "spread": 0.4,
+                        "spread": {
+                          "x": 0.3,
+                          "y": 0.3,
+                          "z": 0.3
+                        },
                         "speed": 0.05
                       }
-                    }
-                  ]
-                },
-                "block_action_on_hit": {
-                  "type": "apoli:and",
-                  "actions": [
-                    {
+                    ]
+                  },
+                  "bientity_action_on_miss": {
+                    "type": "apoli:target_action",
+                    "action": {
                       "type": "apoli:if_else",
                       "condition": {
-                        "type": "apoli:or",
-                        "conditions": [
-                          {
-                            "type": "apoli:in_tag",
-                            "tag": "minecraft:wooden_doors"
-                          },
-                          {
-                            "type": "apoli:in_tag",
-                            "tag": "minecraft:wooden_trapdoors"
-                          },
-                          {
-                            "type": "apoli:in_tag",
-                            "tag": "minecraft:fence_gates"
-                          }
-                        ]
+                        "type": "apoli:block_in_radius",
+                        "radius": 1,
+                        "shape": "cube",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:wooden_doors"
+                            },
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:wooden_trapdoors"
+                            },
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:fence_gates"
+                            }
+                          ]
+                        }
                       },
                       "if_action": {
-                        "type": "apoli:modify_block_state",
-                        "property": "open",
-                        "value": true
+                        "type": "apoli:play_sound",
+                        "sound": "minecraft:block.wooden_door.open",
+                        "volume": 0.9,
+                        "pitch": 1.1
                       }
-                    },
-                    {
-                      "type": "apoli:spawn_particles",
-                      "particle": {
-                        "type": "apoli:custom",
-                        "texture": "elemental_bendings:textures/particle/airbender/swirl.png",
-                        "lifetime": 12,
-                        "lifetime_variation": 4,
-                        "size": 0.4,
-                        "size_variation": 0.2,
-                        "end_size": 0.7,
-                        "color": "#FFFFFFB0",
-                        "end_color": "#E6F4FF00",
-                        "friction": 0.88,
-                        "frames": 6,
-                        "frame_time": 2,
-                        "physics": false,
-                        "roll": "rUni(0, 360)",
-                        "roll_speed": "rUni(-20, 20)"
-                      },
-                      "count": 6,
-                      "spread": {
-                        "x": 0.3,
-                        "y": 0.3,
-                        "z": 0.3
-                      },
-                      "speed": 0.05
-                    }
-                  ]
-                },
-                "bientity_action_on_miss": {
-                  "type": "apoli:target_action",
-                  "action": {
-                    "type": "apoli:if_else",
-                    "condition": {
-                      "type": "apoli:block_in_radius",
-                      "radius": 1,
-                      "shape": "cube",
-                      "block_condition": {
-                        "type": "apoli:or",
-                        "conditions": [
-                          {
-                            "type": "apoli:in_tag",
-                            "tag": "minecraft:wooden_doors"
-                          },
-                          {
-                            "type": "apoli:in_tag",
-                            "tag": "minecraft:wooden_trapdoors"
-                          },
-                          {
-                            "type": "apoli:in_tag",
-                            "tag": "minecraft:fence_gates"
-                          }
-                        ]
-                      }
-                    },
-                    "if_action": {
-                      "type": "apoli:play_sound",
-                      "sound": "minecraft:block.wooden_door.open",
-                      "volume": 0.9,
-                      "pitch": 1.1
                     }
                   }
                 }
-              }
-            ]
+              ]
+            }
           }
-        }
-      ]
+        ]
+      }
     },
     "else_action": {
       "type": "apoli:play_sound",
@@ -293,18 +615,38 @@
       "pitch": 1.8
     }
   },
-  "description": {
-    "translate": "power.elemental_bendings.airbender/air_slice.description",
-    "with": [
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
       {
-        "keybind": "key.elemental_bendings.stance_1"
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/vacuumbending/vacuum_vortex"
       },
       {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/soundbending"
       }
-    ]
-  }
+    ],
+    "inverted": true
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/isaacfanta/active.png",
+      "text": {
+        "translate": "badge.elemental_bendings.combo.3",
+        "with": [
+          {
+            "keybind": "key.elemental_bendings.stance_1"
+          },
+          {
+            "keybind": "key.elemental_bendings.stance_2"
+          },
+          {
+            "keybind": "key.elemental_bendings.stance_2"
+          }
+        ]
+      }
+    }
+  ]
 }

@@ -1,0 +1,49 @@
+{
+  "parent": "elemental_bendings:earthbender/lavabending/molten_wall",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.lavabending.magma_slam.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.lavabending.magma_slam.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/lavabending/magma_slam/magma_slam",
+    "elemental_bendings:earthbender/lavabending/magma_slam/pose",
+    "elemental_bendings:earthbender/lavabending/magma_slam",
+    "elemental_bendings:earthbender/lavabending/stance/bajiquan_elbow",
+    "elemental_bendings:earthbender/lavabending/stance/spinning_shuriken_palm",
+    "elemental_bendings:earthbender/lavabending/stance/pro_bending_sweep",
+    "elemental_bendings:earthbender/lavabending/emblem"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/lavabending/magma_slam.png"
+  },
+  "frame": "challenge",
+  "cost": 3,
+  "order": 0,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lava_ball"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lava_disc"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lava_wave"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/eruption"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/molten_wall"
+      }
+    ]
+  }
+}

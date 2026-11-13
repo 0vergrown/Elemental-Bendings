@@ -4,27 +4,10 @@
     "translate": "skill.elemental_bendings.waterbender.bloodbending.name"
   },
   "description": {
-    "translate": "skill.elemental_bendings.waterbender.bloodbending.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
-      },
-      {
-        "keybind": "key.apoli.skill_tree"
-      }
-    ]
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.description"
   },
   "powers": [
     "elemental_bendings:waterbender/bloodbending/bloodbending",
-    "elemental_bendings:waterbender/bloodbending/stance/eagle_claw",
-    "elemental_bendings:waterbender/bloodbending/stance/dividing_the_muscle",
-    "elemental_bendings:waterbender/bloodbending/stance/misplacing_the_bone",
     "elemental_bendings:waterbender/bloodbending/draw_blood/pose",
     "elemental_bendings:waterbender/bloodbending/draw_blood/draw_pose",
     "elemental_bendings:waterbender/bloodbending/draw_blood/blood",
@@ -40,16 +23,16 @@
     "elemental_bendings:waterbender/bloodbending/clot_spear/pose",
     "elemental_bendings:waterbender/bloodbending/clot_spear",
     "elemental_bendings:waterbender/bloodbending/clot_shards/pose",
-    "elemental_bendings:waterbender/bloodbending/clot_shards",
-    "elemental_bendings:waterbender/bloodbending/emblem"
+    "elemental_bendings:waterbender/bloodbending/clot_shards"
   ],
   "icon": {
-    "item": "minecraft:redstone"
+    "texture": "elemental_bendings:textures/gui/waterbender/bloodbending/bloodbending.png"
   },
   "frame": "goal",
   "cost": 2,
   "order": 0,
   "excludes": [
-    "elemental_bendings:waterbender/plantbending"
+    "elemental_bendings:waterbender/plantbending",
+    "elemental_bendings:waterbender/icebending"
   ]
 }

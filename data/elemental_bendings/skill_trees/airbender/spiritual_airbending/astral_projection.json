@@ -1,0 +1,70 @@
+{
+  "parent": "elemental_bendings:airbender/spiritual_airbending/meditation",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.astral_projection.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.astral_projection.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/body",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/tether",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/return_due",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/recharge",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/pose",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/ghost",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/phasing",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/untouchable",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/spirit_eyes",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/no_use",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/no_items",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/no_place",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/no_break",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/no_touch",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/no_pickup",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/no_push",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/no_harm",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection/trail",
+    "elemental_bendings:airbender/spiritual_airbending/astral_projection",
+    "elemental_bendings:airbender/spiritual_airbending/stance/double_palm_change",
+    "elemental_bendings:airbender/spiritual_airbending/stance/point_to_heaven_stab_the_earth",
+    "elemental_bendings:airbender/spiritual_airbending/stance/turning_the_millstone",
+    "elemental_bendings:airbender/spiritual_airbending/emblem"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/spiritual_airbending/astral_projection.png"
+  },
+  "frame": "challenge",
+  "cost": 3,
+  "order": 0,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spirit_gust"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spirit_sphere"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spirit_leap"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/flight"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spirit_dash"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/meditation"
+      }
+    ]
+  }
+}

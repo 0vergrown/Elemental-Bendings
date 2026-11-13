@@ -5,6 +5,297 @@
   "impact": "medium",
   "order": 2,
   "powers": [
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:earthbender/metalbending/metal_chains/metal_chains"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:earthbender/lavabending/magma_slam/magma_slam"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:earthbender/sandbending/quicksand/quicksand"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:earthbender/neutral_jing"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/metalbending"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/metalbending/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lavabending"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/lavabending/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/sandbending/sandbending"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/sandbending/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lava_disc",
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:earthbender/earth_kick"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lava_disc"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/lavabending/lava_disc/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lava_ball",
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:earthbender/earth_lift"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lava_ball"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/lavabending/lava_ball/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/sword_throw"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/metalbending/sword_throw/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/helmet_shards"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/metalbending/helmet_shards/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:earthbender/metalbending/metal_pillar"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:earthbender/lavabending/eruption"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:earthbender/earth_pillar"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/metal_pillar"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/metalbending/metal_pillar/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/eruption"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/lavabending/eruption/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:earthbender/metalbending/metal_wall"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:earthbender/lavabending/molten_wall"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:earthbender/earth_shaping"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/metal_wall"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/metalbending/metal_wall/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/molten_wall"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/lavabending/molten_wall/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lavabending",
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:earthbender/earth_tunnel"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lavabending"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/lavabending/melt/info"
+      ]
+    },
+    "elemental_bendings:earthbender/earth_column",
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lava_wave",
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:earthbender/earth_wave"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lava_wave"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/lavabending/lava_wave/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/shrapnel_shield"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/metalbending/shrapnel_shield/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/metal_gauntlets"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/metalbending/metal_gauntlets/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/magnetic_pull"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/metalbending/magnetic_pull/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/metal_chains/metal_chains"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/metalbending/metal_chains/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/magma_slam/magma_slam"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/lavabending/magma_slam/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/sandbending/sand_surfing"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/sandbending/sand_surfing/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/sandbending/sand_clones"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/sandbending/sand_clones/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/sandbending/quicksand/quicksand"
+      },
+      "powers": [
+        "elemental_bendings:earthbender/sandbending/quicksand/info"
+      ]
+    },
     "elemental_bendings:bending/cooldown",
     "elemental_bendings:bending/pose",
     "elemental_bendings:bending/pose_timer",
@@ -17,18 +308,17 @@
     "elemental_bendings:earthbender/stance/stomp",
     "elemental_bendings:earthbender/earth_lift/aim_yaw",
     "elemental_bendings:earthbender/earth_lift/aim_turn",
-    "elemental_bendings:earthbender/neutral_jing",
     "elemental_bendings:earthbender/earth_kick/pose",
     "elemental_bendings:earthbender/earth_launch/pose",
     "elemental_bendings:earthbender/earth_kick/kick_block",
-    "elemental_bendings:earthbender/earth_kick",
+    "elemental_bendings:earthbender/earth_kick/kick_block_sand",
     "elemental_bendings:earthbender/earth_lift/held",
     "elemental_bendings:earthbender/earth_lift/lifting",
     "elemental_bendings:earthbender/earth_lift/timer",
     "elemental_bendings:earthbender/earth_lift/pose",
     "elemental_bendings:earthbender/earth_lift/hold/pose",
     "elemental_bendings:earthbender/earth_lift/lift_block",
-    "elemental_bendings:earthbender/earth_lift",
+    "elemental_bendings:earthbender/earth_lift/lift_block_sand",
     "elemental_bendings:earthbender/earth_throw/pose",
     "elemental_bendings:earthbender/earth_lift/throw",
     "elemental_bendings:earthbender/earth_lift/drop",
@@ -38,25 +328,22 @@
     "elemental_bendings:earthbender/earth_pillar/y",
     "elemental_bendings:earthbender/earth_pillar/z",
     "elemental_bendings:earthbender/earth_pillar/raise",
-    "elemental_bendings:earthbender/earth_pillar",
     "elemental_bendings:earthbender/earth_shaping/heartbeat",
     "elemental_bendings:earthbender/earth_shaping/fuel",
     "elemental_bendings:earthbender/earth_shaping/pose",
+    "elemental_bendings:earthbender/earth_shaping/raise_wall",
     "elemental_bendings:earthbender/earth_shaping/shaping",
-    "elemental_bendings:earthbender/earth_shaping",
     "elemental_bendings:earthbender/earth_tunnel/heartbeat",
     "elemental_bendings:earthbender/earth_tunnel/fuel",
     "elemental_bendings:earthbender/earth_tunnel/pose",
     "elemental_bendings:earthbender/earth_tunnel/digging",
-    "elemental_bendings:earthbender/earth_tunnel",
     "elemental_bendings:earthbender/earth_column/heartbeat",
     "elemental_bendings:earthbender/earth_column/fuel",
     "elemental_bendings:earthbender/earth_column/pose",
     "elemental_bendings:earthbender/earth_column/rising",
-    "elemental_bendings:earthbender/earth_column",
     "elemental_bendings:earthbender/earth_wave/pose",
     "elemental_bendings:earthbender/earth_wave/send_wave",
-    "elemental_bendings:earthbender/earth_wave",
+    "elemental_bendings:earthbender/earth_wave/send_wave_sand",
     "elemental_bendings:earthbender/emblem"
   ]
 }

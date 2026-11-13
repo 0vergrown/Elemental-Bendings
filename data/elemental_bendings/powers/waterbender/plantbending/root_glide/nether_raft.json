@@ -1,0 +1,51 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:waterbender/plantbending/root_raft",
+  "texture_location": "elemental_bendings:textures/entity/waterbender/plantbending/root_raft_nether.png",
+  "render_type": "cutout",
+  "bind_body_parts": false,
+  "show_first_person": true,
+  "animations": {
+    "animation": "elemental_bendings:waterbender/plantbending/root_raft",
+    "name": "animation.root_raft.sway"
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/plantbending/root_glide/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:fluid_height",
+            "fluid": "minecraft:lava",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:block_in_radius",
+            "radius": {
+              "x": 0,
+              "y": 2,
+              "z": 0
+            },
+            "block_condition": {
+              "type": "apoli:fluid",
+              "fluid_condition": {
+                "type": "apoli:in_tag",
+                "tag": "minecraft:lava"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

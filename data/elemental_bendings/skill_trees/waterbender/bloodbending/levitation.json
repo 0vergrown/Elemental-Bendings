@@ -4,21 +4,7 @@
     "translate": "skill.elemental_bendings.waterbender.bloodbending.levitation.name"
   },
   "description": {
-    "translate": "skill.elemental_bendings.waterbender.bloodbending.levitation.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
-      },
-      {
-        "keybind": "key.apoli.skill_tree"
-      }
-    ]
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.levitation.description"
   },
   "powers": [
     "elemental_bendings:waterbender/bloodbending/levitation/lifted",
@@ -30,7 +16,7 @@
     "elemental_bendings:waterbender/bloodbending/levitation"
   ],
   "icon": {
-    "item": "minecraft:phantom_membrane"
+    "texture": "elemental_bendings:textures/gui/waterbender/bloodbending/levitation.png"
   },
   "frame": "task",
   "cost": 2,

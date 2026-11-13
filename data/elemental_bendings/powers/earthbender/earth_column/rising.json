@@ -431,6 +431,246 @@
                             "block": "minecraft:end_stone",
                             "duration": 600
                           }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/white_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:white_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/orange_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:orange_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/magenta_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:magenta_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/light_blue_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:light_blue_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/yellow_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:yellow_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/lime_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:lime_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/pink_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:pink_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/gray_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:gray_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/light_gray_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:light_gray_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/cyan_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:cyan_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/purple_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:purple_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/blue_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:blue_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/brown_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:brown_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/green_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:green_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/red_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:red_concrete",
+                            "duration": 600
+                          }
+                        },
+                        {
+                          "condition": {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/black_concrete"
+                            },
+                            "y": -1
+                          },
+                          "action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:black_concrete",
+                            "duration": 600
+                          }
                         }
                       ]
                     }

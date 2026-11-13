@@ -4,29 +4,44 @@
     "translate": "skill.elemental_bendings.waterbender.bloodbending.psychic_bloodbending.name"
   },
   "description": {
-    "translate": "skill.elemental_bendings.waterbender.bloodbending.psychic_bloodbending.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
-      },
-      {
-        "keybind": "key.apoli.skill_tree"
-      }
-    ]
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.psychic_bloodbending.description"
   },
   "powers": [
-    "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+    "elemental_bendings:waterbender/bloodbending/psychic_bloodbending",
+    "elemental_bendings:waterbender/bloodbending/stance/eagle_claw",
+    "elemental_bendings:waterbender/bloodbending/stance/dividing_the_muscle",
+    "elemental_bendings:waterbender/bloodbending/stance/misplacing_the_bone",
+    "elemental_bendings:waterbender/bloodbending/emblem"
   ],
   "icon": {
-    "item": "minecraft:ender_eye"
+    "texture": "elemental_bendings:textures/gui/waterbender/bloodbending/psychic_bloodbending.png"
   },
   "frame": "challenge",
   "cost": 4,
-  "order": 0
+  "order": 0,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/blood_whip"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/transfusion"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/levitation"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/blood_levitation"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/blood_puppetry"
+      }
+    ]
+  }
 }

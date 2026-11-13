@@ -1,0 +1,12 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:airbender/vacuumbending/pressure_wall",
+  "texture_location": "elemental_bendings:textures/entity/airbender/vacuumbending/pressure_wall.png",
+  "render_type": "translucent",
+  "animations": {
+    "animation": "elemental_bendings:airbender/vacuumbending/pressure_wall",
+    "name": "animation.pressure_wall.ripple"
+  },
+  "hidden": true
+}

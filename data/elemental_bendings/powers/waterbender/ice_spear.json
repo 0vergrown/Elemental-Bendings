@@ -19,6 +19,31 @@
       "type": "apoli:and",
       "actions": [
         {
+          "type": "apoli:if_else",
+          "condition": {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:waterbender/held_water",
+            "comparison": "==",
+            "compare_to": 7
+          },
+          "if_action": {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/ice_spear/packed",
+            "modifier": {
+              "operation": "set_total",
+              "value": 1
+            }
+          },
+          "else_action": {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/ice_spear/packed",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          }
+        },
+        {
           "type": "apoli:modify_resource",
           "resource": "elemental_bendings:waterbender/held_water",
           "modifier": {
@@ -86,154 +111,314 @@
                 "pitch": 1.2
               },
               {
-                "type": "apoli:fire_projectile",
-                "texture_location": "elemental_bendings:textures/entity/waterbender/ice_spear.png",
-                "speed": 2.0,
-                "divergence": 0,
-                "tag": "{NoGravity:1b}",
-                "lifetime": 60,
-                "pierce": 5,
-                "offset_y": -0.25,
-                "offset_z": 1.0,
-                "space": "local",
-                "projectile_action": {
-                  "type": "apoli:grant_power",
-                  "power": "elemental_bendings:waterbender/ice_spear/model",
-                  "source": "elemental_bendings:projectile"
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:resource",
+                  "resource": "elemental_bendings:waterbender/ice_spear/packed",
+                  "comparison": ">",
+                  "compare_to": 0
                 },
-                "tick_bientity_action": {
-                  "type": "apoli:target_action",
-                  "action": {
+                "if_action": {
+                  "type": "apoli:fire_projectile",
+                  "texture_location": "elemental_bendings:textures/entity/waterbender/ice_spear.png",
+                  "speed": 2.0,
+                  "divergence": 0,
+                  "tag": "{NoGravity:1b}",
+                  "lifetime": 60,
+                  "pierce": 5,
+                  "offset_y": -0.25,
+                  "offset_z": 1.0,
+                  "space": "local",
+                  "projectile_action": {
+                    "type": "apoli:grant_power",
+                    "power": "elemental_bendings:waterbender/ice_spear/packed_model",
+                    "source": "elemental_bendings:projectile"
+                  },
+                  "tick_bientity_action": {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/waterbender/frost.png",
+                            "lifetime": 14,
+                            "lifetime_variation": 6,
+                            "size": 0.22,
+                            "size_variation": 0.1,
+                            "end_size": 0.04,
+                            "color": "#FFFFFF",
+                            "end_color": "#9FE6FF40",
+                            "gravity": 0.0,
+                            "friction": 0.9,
+                            "physics": false,
+                            "roll": "rUni(0, 360)",
+                            "roll_speed": "rUni(-10, 10)"
+                          },
+                          "count": 2,
+                          "offset_y": 0.0,
+                          "spread": 0.08,
+                          "speed": 0.01
+                        },
+                        {
+                          "type": "apoli:random_chance",
+                          "chance": 0.5,
+                          "action": {
+                            "type": "apoli:spawn_particles",
+                            "particle": "minecraft:snowflake",
+                            "count": 1,
+                            "offset_y": 0.0,
+                            "spread": 0.05,
+                            "speed": 0.0
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "owner_target_bientity_action_on_hit": {
                     "type": "apoli:and",
                     "actions": [
+                      {
+                        "type": "apoli:damage",
+                        "amount": "8 * 1.5 * (1 + 0.25 * (mod(day_time, 24000) >= 13000) + 0.75 * (mod(day_time, 24000) >= 13000) * (moon_phase == 0))",
+                        "damage_type": "elemental_bendings:icebending"
+                      },
+                      {
+                        "type": "apoli:target_action",
+                        "action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:extinguish"
+                            },
+                            {
+                              "type": "apoli:freeze",
+                              "duration": 180
+                            },
+                            {
+                              "type": "apoli:apply_effect",
+                              "effect": {
+                                "effect": "minecraft:slowness",
+                                "duration": 30,
+                                "amplifier": 4,
+                                "show_particles": true,
+                                "show_icon": false
+                              }
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:snowflake",
+                              "count": 10,
+                              "offset_y": 1.0,
+                              "spread": {
+                                "x": 0.4,
+                                "y": 0.6,
+                                "z": 0.4
+                              },
+                              "speed": 0.05
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "block_action_on_hit": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:offset",
+                        "action": {
+                          "type": "apoli:if_else",
+                          "condition": {
+                            "type": "apoli:replacable"
+                          },
+                          "if_action": {
+                            "type": "apoli:set_block",
+                            "block": "minecraft:snow"
+                          }
+                        },
+                        "y": 1
+                      },
                       {
                         "type": "apoli:spawn_particles",
                         "particle": {
                           "type": "apoli:custom",
                           "texture": "elemental_bendings:textures/particle/waterbender/frost.png",
-                          "lifetime": 14,
-                          "lifetime_variation": 6,
-                          "size": 0.22,
-                          "size_variation": 0.1,
-                          "end_size": 0.04,
+                          "lifetime": 18,
+                          "lifetime_variation": 8,
+                          "size": 0.12,
+                          "size_variation": 0.06,
+                          "end_size": 0.02,
                           "color": "#FFFFFF",
-                          "end_color": "#9FE6FF40",
-                          "gravity": 0.0,
-                          "friction": 0.9,
-                          "physics": false,
+                          "end_color": "#9FE6FF55",
+                          "gravity": 0.01,
+                          "friction": 0.95,
                           "roll": "rUni(0, 360)",
-                          "roll_speed": "rUni(-10, 10)"
+                          "roll_speed": "rUni(-8, 8)"
                         },
-                        "count": 2,
-                        "offset_y": 0.0,
-                        "spread": 0.08,
-                        "speed": 0.01
-                      },
-                      {
-                        "type": "apoli:random_chance",
-                        "chance": 0.5,
-                        "action": {
-                          "type": "apoli:spawn_particles",
-                          "particle": "minecraft:snowflake",
-                          "count": 1,
-                          "offset_y": 0.0,
-                          "spread": 0.05,
-                          "speed": 0.0
-                        }
+                        "count": 8,
+                        "spread": {
+                          "x": 0.3,
+                          "y": 0.3,
+                          "z": 0.3
+                        },
+                        "speed": 0.05
                       }
                     ]
                   }
                 },
-                "owner_target_bientity_action_on_hit": {
-                  "type": "apoli:and",
-                  "actions": [
-                    {
-                      "type": "apoli:damage",
-                      "amount": "8 * (1 + 0.25 * (mod(day_time, 24000) >= 13000) + 0.75 * (mod(day_time, 24000) >= 13000) * (moon_phase == 0))",
-                      "damage_type": "elemental_bendings:icebending"
-                    },
-                    {
-                      "type": "apoli:target_action",
-                      "action": {
-                        "type": "apoli:and",
-                        "actions": [
-                          {
-                            "type": "apoli:extinguish"
+                "else_action": {
+                  "type": "apoli:fire_projectile",
+                  "texture_location": "elemental_bendings:textures/entity/waterbender/ice_spear.png",
+                  "speed": 2.0,
+                  "divergence": 0,
+                  "tag": "{NoGravity:1b}",
+                  "lifetime": 60,
+                  "pierce": 5,
+                  "offset_y": -0.25,
+                  "offset_z": 1.0,
+                  "space": "local",
+                  "projectile_action": {
+                    "type": "apoli:grant_power",
+                    "power": "elemental_bendings:waterbender/ice_spear/model",
+                    "source": "elemental_bendings:projectile"
+                  },
+                  "tick_bientity_action": {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/waterbender/frost.png",
+                            "lifetime": 14,
+                            "lifetime_variation": 6,
+                            "size": 0.22,
+                            "size_variation": 0.1,
+                            "end_size": 0.04,
+                            "color": "#FFFFFF",
+                            "end_color": "#9FE6FF40",
+                            "gravity": 0.0,
+                            "friction": 0.9,
+                            "physics": false,
+                            "roll": "rUni(0, 360)",
+                            "roll_speed": "rUni(-10, 10)"
                           },
-                          {
-                            "type": "apoli:freeze",
-                            "duration": 180
-                          },
-                          {
-                            "type": "apoli:apply_effect",
-                            "effect": {
-                              "effect": "minecraft:slowness",
-                              "duration": 30,
-                              "amplifier": 4,
-                              "show_particles": true,
-                              "show_icon": false
-                            }
-                          },
-                          {
+                          "count": 2,
+                          "offset_y": 0.0,
+                          "spread": 0.08,
+                          "speed": 0.01
+                        },
+                        {
+                          "type": "apoli:random_chance",
+                          "chance": 0.5,
+                          "action": {
                             "type": "apoli:spawn_particles",
                             "particle": "minecraft:snowflake",
-                            "count": 10,
-                            "offset_y": 1.0,
-                            "spread": {
-                              "x": 0.4,
-                              "y": 0.6,
-                              "z": 0.4
-                            },
-                            "speed": 0.05
+                            "count": 1,
+                            "offset_y": 0.0,
+                            "spread": 0.05,
+                            "speed": 0.0
                           }
-                        ]
-                      }
-                    }
-                  ]
-                },
-                "block_action_on_hit": {
-                  "type": "apoli:and",
-                  "actions": [
-                    {
-                      "type": "apoli:offset",
-                      "action": {
-                        "type": "apoli:if_else",
-                        "condition": {
-                          "type": "apoli:replacable"
-                        },
-                        "if_action": {
-                          "type": "apoli:set_block",
-                          "block": "minecraft:snow"
                         }
-                      },
-                      "y": 1
-                    },
-                    {
-                      "type": "apoli:spawn_particles",
-                      "particle": {
-                        "type": "apoli:custom",
-                        "texture": "elemental_bendings:textures/particle/waterbender/frost.png",
-                        "lifetime": 18,
-                        "lifetime_variation": 8,
-                        "size": 0.12,
-                        "size_variation": 0.06,
-                        "end_size": 0.02,
-                        "color": "#FFFFFF",
-                        "end_color": "#9FE6FF55",
-                        "gravity": 0.01,
-                        "friction": 0.95,
-                        "roll": "rUni(0, 360)",
-                        "roll_speed": "rUni(-8, 8)"
-                      },
-                      "count": 8,
-                      "spread": {
-                        "x": 0.3,
-                        "y": 0.3,
-                        "z": 0.3
-                      },
-                      "speed": 0.05
+                      ]
                     }
-                  ]
+                  },
+                  "owner_target_bientity_action_on_hit": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:damage",
+                        "amount": "8 * 1 * (1 + 0.25 * (mod(day_time, 24000) >= 13000) + 0.75 * (mod(day_time, 24000) >= 13000) * (moon_phase == 0))",
+                        "damage_type": "elemental_bendings:icebending"
+                      },
+                      {
+                        "type": "apoli:target_action",
+                        "action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:extinguish"
+                            },
+                            {
+                              "type": "apoli:freeze",
+                              "duration": 180
+                            },
+                            {
+                              "type": "apoli:apply_effect",
+                              "effect": {
+                                "effect": "minecraft:slowness",
+                                "duration": 30,
+                                "amplifier": 4,
+                                "show_particles": true,
+                                "show_icon": false
+                              }
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:snowflake",
+                              "count": 10,
+                              "offset_y": 1.0,
+                              "spread": {
+                                "x": 0.4,
+                                "y": 0.6,
+                                "z": 0.4
+                              },
+                              "speed": 0.05
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "block_action_on_hit": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:offset",
+                        "action": {
+                          "type": "apoli:if_else",
+                          "condition": {
+                            "type": "apoli:replacable"
+                          },
+                          "if_action": {
+                            "type": "apoli:set_block",
+                            "block": "minecraft:snow"
+                          }
+                        },
+                        "y": 1
+                      },
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/waterbender/frost.png",
+                          "lifetime": 18,
+                          "lifetime_variation": 8,
+                          "size": 0.12,
+                          "size_variation": 0.06,
+                          "end_size": 0.02,
+                          "color": "#FFFFFF",
+                          "end_color": "#9FE6FF55",
+                          "gravity": 0.01,
+                          "friction": 0.95,
+                          "roll": "rUni(0, 360)",
+                          "roll_speed": "rUni(-8, 8)"
+                        },
+                        "count": 8,
+                        "spread": {
+                          "x": 0.3,
+                          "y": 0.3,
+                          "z": 0.3
+                        },
+                        "speed": 0.05
+                      }
+                    ]
+                  }
                 }
               }
             ]
@@ -249,23 +434,37 @@
     }
   },
   "condition": {
-    "type": "apoli:resource",
-    "resource": "elemental_bendings:waterbender/held_water",
-    "comparison": "==",
-    "compare_to": 2
-  },
-  "description": {
-    "translate": "power.elemental_bendings.waterbender/ice_spear.description",
-    "with": [
+    "type": "apoli:or",
+    "conditions": [
       {
-        "keybind": "key.elemental_bendings.stance_1"
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 2
       },
       {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 7
       }
     ]
-  }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/isaacfanta/active.png",
+      "text": {
+        "translate": "badge.elemental_bendings.combo.1.when",
+        "with": [
+          {
+            "keybind": "key.elemental_bendings.stance_1"
+          },
+          {
+            "translate": "badge.elemental_bendings.when.ice"
+          }
+        ]
+      }
+    }
+  ]
 }

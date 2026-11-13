@@ -1,0 +1,35 @@
+{
+  "type": "apoli:prevent_feature_render",
+  "features": [
+    "armor_head"
+  ],
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:earthbender/metalbending/helmet_shards/out",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:earthbender/metalbending/metal_gauntlets/active",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/scrap/head",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "hidden": true
+}

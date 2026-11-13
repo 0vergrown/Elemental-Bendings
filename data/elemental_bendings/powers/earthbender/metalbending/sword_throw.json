@@ -1,0 +1,1140 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_3",
+    "key.elemental_bendings.stance_1",
+    {
+      "key": "key.elemental_bendings.stance_1",
+      "hold": 3
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "apoli:ingredient",
+              "ingredient": {
+                "tag": "elemental_bendings:earthbender/metalbending/swords"
+              }
+            }
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:earthbender/metalbending/sword_throw/out",
+            "comparison": "==",
+            "compare_to": 0
+          }
+        ]
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/metalbending/sword_throw/out",
+            "modifier": {
+              "operation": "set_total",
+              "value": 400
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/metalbending/sword_throw/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 200
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/metalbending/sword_throw/heartbeat",
+            "modifier": {
+              "operation": "set_total",
+              "value": 6
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 6
+            }
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 61
+                  }
+                },
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose_timer",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 10
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.player.attack.sweep",
+            "volume": 1.0,
+            "pitch": 0.8
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:item.trident.throw",
+            "volume": 0.8,
+            "pitch": 1.2
+          },
+          {
+            "type": "apoli:if_else_list",
+            "actions": [
+              {
+                "condition": {
+                  "type": "apoli:equipped_item",
+                  "equipment_slot": "mainhand",
+                  "item_condition": {
+                    "type": "apoli:ingredient",
+                    "ingredient": {
+                      "item": "minecraft:netherite_sword"
+                    }
+                  }
+                },
+                "action": {
+                  "type": "apoli:fire_projectile",
+                  "texture_location": "elemental_bendings:textures/entity/earthbender/metalbending/blank.png",
+                  "speed": 0.05,
+                  "divergence": 0,
+                  "tag": "{NoGravity:1b}",
+                  "lifetime": 400,
+                  "pierce": -1,
+                  "offset_z": 0.9,
+                  "offset_y": -0.2,
+                  "space": "local",
+                  "projectile_action": {
+                    "type": "apoli:grant_power",
+                    "power": "elemental_bendings:earthbender/metalbending/sword_throw/model/netherite",
+                    "source": "elemental_bendings:projectile"
+                  },
+                  "owner_bientity_condition": {
+                    "type": "apoli:equal",
+                    "inverted": true
+                  },
+                  "bientity_action_after_firing": {
+                    "type": "apoli:add_velocity",
+                    "x": 0,
+                    "y": 0,
+                    "z": 1.5,
+                    "space": "local",
+                    "set": true
+                  },
+                  "owner_target_bientity_action_on_hit": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:damage",
+                        "amount": 11,
+                        "damage_type": "elemental_bendings:metalbending"
+                      },
+                      {
+                        "type": "apoli:add_velocity",
+                        "x": 0,
+                        "y": 0.2,
+                        "z": 0.45,
+                        "reference": "position"
+                      },
+                      {
+                        "type": "apoli:target_action",
+                        "action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": {
+                                "type": "apoli:custom",
+                                "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                                "lifetime": 7,
+                                "lifetime_variation": 3,
+                                "size": 0.06,
+                                "size_variation": 0.03,
+                                "end_size": 0.0,
+                                "color": "#FFFFFF",
+                                "end_color": "#FFD27A00",
+                                "gravity": 0.02,
+                                "friction": 0.9,
+                                "emissive": true,
+                                "blend": "additive",
+                                "physics": false,
+                                "alpha_bleed": true
+                              },
+                              "count": 8,
+                              "spread": {
+                                "x": 0.25,
+                                "y": 0.25,
+                                "z": 0.25
+                              },
+                              "speed": 0.18,
+                              "offset_y": 1.0
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": {
+                                "type": "apoli:custom",
+                                "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                                "lifetime": 24,
+                                "lifetime_variation": 10,
+                                "size": 0.09,
+                                "size_variation": 0.06,
+                                "end_size": 0.07,
+                                "color": "#B8BCC4",
+                                "gravity": 0.06,
+                                "friction": 0.98,
+                                "roll": "rUni(0, 360)",
+                                "roll_speed": "rUni(-25, 25)"
+                              },
+                              "count": 4,
+                              "spread": {
+                                "x": 0.2,
+                                "y": 0.2,
+                                "z": 0.2
+                              },
+                              "speed": 0.1,
+                              "offset_y": 1.0
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "apoli:actor_action",
+                        "action": {
+                          "type": "apoli:play_sound",
+                          "sound": "minecraft:entity.player.attack.sweep",
+                          "volume": 0.8,
+                          "pitch": 1.3
+                        }
+                      }
+                    ]
+                  },
+                  "block_action_on_hit": {
+                    "type": "apoli:spawn_particles",
+                    "particle": {
+                      "type": "apoli:custom",
+                      "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                      "lifetime": 7,
+                      "lifetime_variation": 3,
+                      "size": 0.06,
+                      "size_variation": 0.03,
+                      "end_size": 0.0,
+                      "color": "#FFFFFF",
+                      "end_color": "#FFD27A00",
+                      "gravity": 0.02,
+                      "friction": 0.9,
+                      "emissive": true,
+                      "blend": "additive",
+                      "physics": false,
+                      "alpha_bleed": true
+                    },
+                    "count": 10,
+                    "spread": {
+                      "x": 0.3,
+                      "y": 0.3,
+                      "z": 0.3
+                    },
+                    "speed": 0.2
+                  },
+                  "tick_bientity_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:if_else",
+                        "condition": {
+                          "type": "apoli:actor_condition",
+                          "condition": {
+                            "type": "apoli:resource",
+                            "resource": "elemental_bendings:earthbender/metalbending/sword_throw/heartbeat",
+                            "comparison": ">",
+                            "compare_to": 0
+                          }
+                        },
+                        "if_action": {
+                          "type": "apoli:add_velocity",
+                          "space": "world",
+                          "set": true,
+                          "x": "clamp(0.32 * (x - sin(rad(yaw)) * cos(rad(pitch)) * 12 - target_x), -1.6, 1.6)",
+                          "y": "clamp(0.32 * (y + 1.62 - sin(rad(pitch)) * 12 - target_y), -1.6, 1.6)",
+                          "z": "clamp(0.32 * (z + cos(rad(yaw)) * cos(rad(pitch)) * 12 - target_z), -1.6, 1.6)"
+                        }
+                      },
+                      {
+                        "type": "apoli:target_action",
+                        "action": {
+                          "type": "apoli:random_chance",
+                          "chance": 0.35,
+                          "action": {
+                            "type": "apoli:spawn_particles",
+                            "particle": {
+                              "type": "apoli:custom",
+                              "texture": "elemental_bendings:textures/particle/earthbender/metalbending/glint.png",
+                              "lifetime": 8,
+                              "lifetime_variation": 2,
+                              "size": 0.12,
+                              "end_size": 0.0,
+                              "color": "#FFFFFF",
+                              "end_color": "#D8E6FF00",
+                              "emissive": true,
+                              "blend": "additive",
+                              "frames": 4,
+                              "physics": false,
+                              "alpha_bleed": true
+                            },
+                            "count": 1,
+                            "offset_y": 0.0,
+                            "spread": 0.15,
+                            "speed": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": 0.12,
+                        "action": {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:play_sound",
+                            "sound": "minecraft:entity.player.attack.sweep",
+                            "volume": 0.3,
+                            "pitch": 1.8
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "return": {
+                    "after": 4,
+                    "speed": 2.4,
+                    "hit_while_returning": true,
+                    "on_hit_entity": false,
+                    "on_hit_block": true,
+                    "condition": {
+                      "type": "apoli:actor_condition",
+                      "condition": {
+                        "type": "apoli:resource",
+                        "resource": "elemental_bendings:earthbender/metalbending/sword_throw/heartbeat",
+                        "comparison": "==",
+                        "compare_to": 0
+                      }
+                    },
+                    "bientity_action_on_catch": {
+                      "type": "apoli:actor_action",
+                      "action": {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:modify_resource",
+                            "resource": "elemental_bendings:earthbender/metalbending/sword_throw/out",
+                            "modifier": {
+                              "operation": "set_total",
+                              "value": 0
+                            }
+                          },
+                          {
+                            "type": "apoli:delay",
+                            "ticks": 1,
+                            "action": {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:modify_resource",
+                                  "resource": "elemental_bendings:bending/pose",
+                                  "modifier": {
+                                    "operation": "set_total",
+                                    "value": 62
+                                  }
+                                },
+                                {
+                                  "type": "apoli:modify_resource",
+                                  "resource": "elemental_bendings:bending/pose_timer",
+                                  "modifier": {
+                                    "operation": "set_total",
+                                    "value": 8
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:play_sound",
+                                "sound": "minecraft:block.anvil.land",
+                                "volume": 0.27999999999999997,
+                                "pitch": 2.08
+                              },
+                              {
+                                "type": "apoli:play_sound",
+                                "sound": "minecraft:item.armor.equip_iron",
+                                "volume": 0.8,
+                                "pitch": 1.3
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "bientity_action_on_expire": {
+                    "type": "apoli:actor_action",
+                    "action": {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:earthbender/metalbending/sword_throw/out",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "bientity_action_on_miss": {
+                    "type": "apoli:actor_action",
+                    "action": {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:earthbender/metalbending/sword_throw/out",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 0
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:equipped_item",
+                  "equipment_slot": "mainhand",
+                  "item_condition": {
+                    "type": "apoli:ingredient",
+                    "ingredient": {
+                      "item": "minecraft:iron_sword"
+                    }
+                  }
+                },
+                "action": {
+                  "type": "apoli:fire_projectile",
+                  "texture_location": "elemental_bendings:textures/entity/earthbender/metalbending/blank.png",
+                  "speed": 0.05,
+                  "divergence": 0,
+                  "tag": "{NoGravity:1b}",
+                  "lifetime": 400,
+                  "pierce": -1,
+                  "offset_z": 0.9,
+                  "offset_y": -0.2,
+                  "space": "local",
+                  "projectile_action": {
+                    "type": "apoli:grant_power",
+                    "power": "elemental_bendings:earthbender/metalbending/sword_throw/model/iron",
+                    "source": "elemental_bendings:projectile"
+                  },
+                  "owner_bientity_condition": {
+                    "type": "apoli:equal",
+                    "inverted": true
+                  },
+                  "bientity_action_after_firing": {
+                    "type": "apoli:add_velocity",
+                    "x": 0,
+                    "y": 0,
+                    "z": 1.5,
+                    "space": "local",
+                    "set": true
+                  },
+                  "owner_target_bientity_action_on_hit": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:damage",
+                        "amount": 8,
+                        "damage_type": "elemental_bendings:metalbending"
+                      },
+                      {
+                        "type": "apoli:add_velocity",
+                        "x": 0,
+                        "y": 0.2,
+                        "z": 0.45,
+                        "reference": "position"
+                      },
+                      {
+                        "type": "apoli:target_action",
+                        "action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": {
+                                "type": "apoli:custom",
+                                "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                                "lifetime": 7,
+                                "lifetime_variation": 3,
+                                "size": 0.06,
+                                "size_variation": 0.03,
+                                "end_size": 0.0,
+                                "color": "#FFFFFF",
+                                "end_color": "#FFD27A00",
+                                "gravity": 0.02,
+                                "friction": 0.9,
+                                "emissive": true,
+                                "blend": "additive",
+                                "physics": false,
+                                "alpha_bleed": true
+                              },
+                              "count": 8,
+                              "spread": {
+                                "x": 0.25,
+                                "y": 0.25,
+                                "z": 0.25
+                              },
+                              "speed": 0.18,
+                              "offset_y": 1.0
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": {
+                                "type": "apoli:custom",
+                                "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                                "lifetime": 24,
+                                "lifetime_variation": 10,
+                                "size": 0.09,
+                                "size_variation": 0.06,
+                                "end_size": 0.07,
+                                "color": "#B8BCC4",
+                                "gravity": 0.06,
+                                "friction": 0.98,
+                                "roll": "rUni(0, 360)",
+                                "roll_speed": "rUni(-25, 25)"
+                              },
+                              "count": 4,
+                              "spread": {
+                                "x": 0.2,
+                                "y": 0.2,
+                                "z": 0.2
+                              },
+                              "speed": 0.1,
+                              "offset_y": 1.0
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "apoli:actor_action",
+                        "action": {
+                          "type": "apoli:play_sound",
+                          "sound": "minecraft:entity.player.attack.sweep",
+                          "volume": 0.8,
+                          "pitch": 1.3
+                        }
+                      }
+                    ]
+                  },
+                  "block_action_on_hit": {
+                    "type": "apoli:spawn_particles",
+                    "particle": {
+                      "type": "apoli:custom",
+                      "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                      "lifetime": 7,
+                      "lifetime_variation": 3,
+                      "size": 0.06,
+                      "size_variation": 0.03,
+                      "end_size": 0.0,
+                      "color": "#FFFFFF",
+                      "end_color": "#FFD27A00",
+                      "gravity": 0.02,
+                      "friction": 0.9,
+                      "emissive": true,
+                      "blend": "additive",
+                      "physics": false,
+                      "alpha_bleed": true
+                    },
+                    "count": 10,
+                    "spread": {
+                      "x": 0.3,
+                      "y": 0.3,
+                      "z": 0.3
+                    },
+                    "speed": 0.2
+                  },
+                  "tick_bientity_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:if_else",
+                        "condition": {
+                          "type": "apoli:actor_condition",
+                          "condition": {
+                            "type": "apoli:resource",
+                            "resource": "elemental_bendings:earthbender/metalbending/sword_throw/heartbeat",
+                            "comparison": ">",
+                            "compare_to": 0
+                          }
+                        },
+                        "if_action": {
+                          "type": "apoli:add_velocity",
+                          "space": "world",
+                          "set": true,
+                          "x": "clamp(0.32 * (x - sin(rad(yaw)) * cos(rad(pitch)) * 12 - target_x), -1.6, 1.6)",
+                          "y": "clamp(0.32 * (y + 1.62 - sin(rad(pitch)) * 12 - target_y), -1.6, 1.6)",
+                          "z": "clamp(0.32 * (z + cos(rad(yaw)) * cos(rad(pitch)) * 12 - target_z), -1.6, 1.6)"
+                        }
+                      },
+                      {
+                        "type": "apoli:target_action",
+                        "action": {
+                          "type": "apoli:random_chance",
+                          "chance": 0.35,
+                          "action": {
+                            "type": "apoli:spawn_particles",
+                            "particle": {
+                              "type": "apoli:custom",
+                              "texture": "elemental_bendings:textures/particle/earthbender/metalbending/glint.png",
+                              "lifetime": 8,
+                              "lifetime_variation": 2,
+                              "size": 0.12,
+                              "end_size": 0.0,
+                              "color": "#FFFFFF",
+                              "end_color": "#D8E6FF00",
+                              "emissive": true,
+                              "blend": "additive",
+                              "frames": 4,
+                              "physics": false,
+                              "alpha_bleed": true
+                            },
+                            "count": 1,
+                            "offset_y": 0.0,
+                            "spread": 0.15,
+                            "speed": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": 0.12,
+                        "action": {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:play_sound",
+                            "sound": "minecraft:entity.player.attack.sweep",
+                            "volume": 0.3,
+                            "pitch": 1.8
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "return": {
+                    "after": 4,
+                    "speed": 2.4,
+                    "hit_while_returning": true,
+                    "on_hit_entity": false,
+                    "on_hit_block": true,
+                    "condition": {
+                      "type": "apoli:actor_condition",
+                      "condition": {
+                        "type": "apoli:resource",
+                        "resource": "elemental_bendings:earthbender/metalbending/sword_throw/heartbeat",
+                        "comparison": "==",
+                        "compare_to": 0
+                      }
+                    },
+                    "bientity_action_on_catch": {
+                      "type": "apoli:actor_action",
+                      "action": {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:modify_resource",
+                            "resource": "elemental_bendings:earthbender/metalbending/sword_throw/out",
+                            "modifier": {
+                              "operation": "set_total",
+                              "value": 0
+                            }
+                          },
+                          {
+                            "type": "apoli:delay",
+                            "ticks": 1,
+                            "action": {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:modify_resource",
+                                  "resource": "elemental_bendings:bending/pose",
+                                  "modifier": {
+                                    "operation": "set_total",
+                                    "value": 62
+                                  }
+                                },
+                                {
+                                  "type": "apoli:modify_resource",
+                                  "resource": "elemental_bendings:bending/pose_timer",
+                                  "modifier": {
+                                    "operation": "set_total",
+                                    "value": 8
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:play_sound",
+                                "sound": "minecraft:block.anvil.land",
+                                "volume": 0.27999999999999997,
+                                "pitch": 2.08
+                              },
+                              {
+                                "type": "apoli:play_sound",
+                                "sound": "minecraft:item.armor.equip_iron",
+                                "volume": 0.8,
+                                "pitch": 1.3
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "bientity_action_on_expire": {
+                    "type": "apoli:actor_action",
+                    "action": {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:earthbender/metalbending/sword_throw/out",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "bientity_action_on_miss": {
+                    "type": "apoli:actor_action",
+                    "action": {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:earthbender/metalbending/sword_throw/out",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 0
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:equipped_item",
+                  "equipment_slot": "mainhand",
+                  "item_condition": {
+                    "type": "apoli:ingredient",
+                    "ingredient": {
+                      "item": "minecraft:golden_sword"
+                    }
+                  }
+                },
+                "action": {
+                  "type": "apoli:fire_projectile",
+                  "texture_location": "elemental_bendings:textures/entity/earthbender/metalbending/blank.png",
+                  "speed": 0.05,
+                  "divergence": 0,
+                  "tag": "{NoGravity:1b}",
+                  "lifetime": 400,
+                  "pierce": -1,
+                  "offset_z": 0.9,
+                  "offset_y": -0.2,
+                  "space": "local",
+                  "projectile_action": {
+                    "type": "apoli:grant_power",
+                    "power": "elemental_bendings:earthbender/metalbending/sword_throw/model/golden",
+                    "source": "elemental_bendings:projectile"
+                  },
+                  "owner_bientity_condition": {
+                    "type": "apoli:equal",
+                    "inverted": true
+                  },
+                  "bientity_action_after_firing": {
+                    "type": "apoli:add_velocity",
+                    "x": 0,
+                    "y": 0,
+                    "z": 1.5,
+                    "space": "local",
+                    "set": true
+                  },
+                  "owner_target_bientity_action_on_hit": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:damage",
+                        "amount": 7,
+                        "damage_type": "elemental_bendings:metalbending"
+                      },
+                      {
+                        "type": "apoli:add_velocity",
+                        "x": 0,
+                        "y": 0.2,
+                        "z": 0.45,
+                        "reference": "position"
+                      },
+                      {
+                        "type": "apoli:target_action",
+                        "action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": {
+                                "type": "apoli:custom",
+                                "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                                "lifetime": 7,
+                                "lifetime_variation": 3,
+                                "size": 0.06,
+                                "size_variation": 0.03,
+                                "end_size": 0.0,
+                                "color": "#FFFFFF",
+                                "end_color": "#FFD27A00",
+                                "gravity": 0.02,
+                                "friction": 0.9,
+                                "emissive": true,
+                                "blend": "additive",
+                                "physics": false,
+                                "alpha_bleed": true
+                              },
+                              "count": 8,
+                              "spread": {
+                                "x": 0.25,
+                                "y": 0.25,
+                                "z": 0.25
+                              },
+                              "speed": 0.18,
+                              "offset_y": 1.0
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": {
+                                "type": "apoli:custom",
+                                "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                                "lifetime": 24,
+                                "lifetime_variation": 10,
+                                "size": 0.09,
+                                "size_variation": 0.06,
+                                "end_size": 0.07,
+                                "color": "#B8BCC4",
+                                "gravity": 0.06,
+                                "friction": 0.98,
+                                "roll": "rUni(0, 360)",
+                                "roll_speed": "rUni(-25, 25)"
+                              },
+                              "count": 4,
+                              "spread": {
+                                "x": 0.2,
+                                "y": 0.2,
+                                "z": 0.2
+                              },
+                              "speed": 0.1,
+                              "offset_y": 1.0
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "apoli:actor_action",
+                        "action": {
+                          "type": "apoli:play_sound",
+                          "sound": "minecraft:entity.player.attack.sweep",
+                          "volume": 0.8,
+                          "pitch": 1.3
+                        }
+                      }
+                    ]
+                  },
+                  "block_action_on_hit": {
+                    "type": "apoli:spawn_particles",
+                    "particle": {
+                      "type": "apoli:custom",
+                      "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                      "lifetime": 7,
+                      "lifetime_variation": 3,
+                      "size": 0.06,
+                      "size_variation": 0.03,
+                      "end_size": 0.0,
+                      "color": "#FFFFFF",
+                      "end_color": "#FFD27A00",
+                      "gravity": 0.02,
+                      "friction": 0.9,
+                      "emissive": true,
+                      "blend": "additive",
+                      "physics": false,
+                      "alpha_bleed": true
+                    },
+                    "count": 10,
+                    "spread": {
+                      "x": 0.3,
+                      "y": 0.3,
+                      "z": 0.3
+                    },
+                    "speed": 0.2
+                  },
+                  "tick_bientity_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:if_else",
+                        "condition": {
+                          "type": "apoli:actor_condition",
+                          "condition": {
+                            "type": "apoli:resource",
+                            "resource": "elemental_bendings:earthbender/metalbending/sword_throw/heartbeat",
+                            "comparison": ">",
+                            "compare_to": 0
+                          }
+                        },
+                        "if_action": {
+                          "type": "apoli:add_velocity",
+                          "space": "world",
+                          "set": true,
+                          "x": "clamp(0.32 * (x - sin(rad(yaw)) * cos(rad(pitch)) * 12 - target_x), -1.6, 1.6)",
+                          "y": "clamp(0.32 * (y + 1.62 - sin(rad(pitch)) * 12 - target_y), -1.6, 1.6)",
+                          "z": "clamp(0.32 * (z + cos(rad(yaw)) * cos(rad(pitch)) * 12 - target_z), -1.6, 1.6)"
+                        }
+                      },
+                      {
+                        "type": "apoli:target_action",
+                        "action": {
+                          "type": "apoli:random_chance",
+                          "chance": 0.35,
+                          "action": {
+                            "type": "apoli:spawn_particles",
+                            "particle": {
+                              "type": "apoli:custom",
+                              "texture": "elemental_bendings:textures/particle/earthbender/metalbending/glint.png",
+                              "lifetime": 8,
+                              "lifetime_variation": 2,
+                              "size": 0.12,
+                              "end_size": 0.0,
+                              "color": "#FFFFFF",
+                              "end_color": "#D8E6FF00",
+                              "emissive": true,
+                              "blend": "additive",
+                              "frames": 4,
+                              "physics": false,
+                              "alpha_bleed": true
+                            },
+                            "count": 1,
+                            "offset_y": 0.0,
+                            "spread": 0.15,
+                            "speed": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": 0.12,
+                        "action": {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:play_sound",
+                            "sound": "minecraft:entity.player.attack.sweep",
+                            "volume": 0.3,
+                            "pitch": 1.8
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "return": {
+                    "after": 4,
+                    "speed": 2.4,
+                    "hit_while_returning": true,
+                    "on_hit_entity": false,
+                    "on_hit_block": true,
+                    "condition": {
+                      "type": "apoli:actor_condition",
+                      "condition": {
+                        "type": "apoli:resource",
+                        "resource": "elemental_bendings:earthbender/metalbending/sword_throw/heartbeat",
+                        "comparison": "==",
+                        "compare_to": 0
+                      }
+                    },
+                    "bientity_action_on_catch": {
+                      "type": "apoli:actor_action",
+                      "action": {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:modify_resource",
+                            "resource": "elemental_bendings:earthbender/metalbending/sword_throw/out",
+                            "modifier": {
+                              "operation": "set_total",
+                              "value": 0
+                            }
+                          },
+                          {
+                            "type": "apoli:delay",
+                            "ticks": 1,
+                            "action": {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:modify_resource",
+                                  "resource": "elemental_bendings:bending/pose",
+                                  "modifier": {
+                                    "operation": "set_total",
+                                    "value": 62
+                                  }
+                                },
+                                {
+                                  "type": "apoli:modify_resource",
+                                  "resource": "elemental_bendings:bending/pose_timer",
+                                  "modifier": {
+                                    "operation": "set_total",
+                                    "value": 8
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:play_sound",
+                                "sound": "minecraft:block.anvil.land",
+                                "volume": 0.27999999999999997,
+                                "pitch": 2.08
+                              },
+                              {
+                                "type": "apoli:play_sound",
+                                "sound": "minecraft:item.armor.equip_iron",
+                                "volume": 0.8,
+                                "pitch": 1.3
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "bientity_action_on_expire": {
+                    "type": "apoli:actor_action",
+                    "action": {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:earthbender/metalbending/sword_throw/out",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "bientity_action_on_miss": {
+                    "type": "apoli:actor_action",
+                    "action": {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:earthbender/metalbending/sword_throw/out",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 0
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "else_action": {
+        "type": "apoli:if_else",
+        "condition": {
+          "type": "apoli:resource",
+          "resource": "elemental_bendings:earthbender/metalbending/sword_throw/out",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        "if_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:text",
+              "text": {
+                "translate": "text.elemental_bendings.sword_out"
+              },
+              "bar": "actionbar",
+              "fadein": 2,
+              "duration": 30,
+              "fadeout": 8
+            },
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:block.dispenser.fail",
+              "volume": 0.3,
+              "pitch": 1.8
+            }
+          ]
+        },
+        "else_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:text",
+              "text": {
+                "translate": "text.elemental_bendings.need_sword"
+              },
+              "bar": "actionbar",
+              "fadein": 2,
+              "duration": 30,
+              "fadeout": 8
+            },
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:block.dispenser.fail",
+              "volume": 0.3,
+              "pitch": 1.8
+            }
+          ]
+        }
+      }
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "hidden": true
+}

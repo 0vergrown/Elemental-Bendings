@@ -1,0 +1,20 @@
+{
+  "parent": "elemental_bendings:firebender/lightningbending/lightning_strike",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.lightning_redirection.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.lightning_redirection.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/lightningbending/lightning_redirection/window",
+    "elemental_bendings:firebender/lightningbending/lightning_redirection/catch",
+    "elemental_bendings:firebender/lightningbending/lightning_redirection/absorb"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/lightningbending/lightning_redirection.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

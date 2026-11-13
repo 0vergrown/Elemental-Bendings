@@ -1,0 +1,24 @@
+{
+  "name": {
+    "translate": "skill_tree.elemental_bendings.earthbender.name"
+  },
+  "description": {
+    "translate": "skill_tree.elemental_bendings.earthbender.description"
+  },
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/icon.png"
+  },
+  "frame": "goal",
+  "order": 12,
+  "auto_grant": true,
+  "refundable": true,
+  "default_powers": [
+    "elemental_bendings:earthbender/mastery/progress",
+    "elemental_bendings:earthbender/mastery/training"
+  ],
+  "condition": {
+    "type": "origins:origin",
+    "layer": "elemental_bendings:bending",
+    "origin": "elemental_bendings:earthbender"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "parent": "elemental_bendings:earthbender/metalbending/helmet_shards",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.shrapnel_shield.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.shrapnel_shield.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/metalbending/shrapnel_shield/heartbeat",
+    "elemental_bendings:earthbender/metalbending/shrapnel_shield/fuel",
+    "elemental_bendings:earthbender/metalbending/shrapnel_shield/pose",
+    "elemental_bendings:earthbender/metalbending/shrapnel_shield/model/netherite",
+    "elemental_bendings:earthbender/metalbending/shrapnel_shield/model/iron",
+    "elemental_bendings:earthbender/metalbending/shrapnel_shield/model/golden",
+    "elemental_bendings:earthbender/metalbending/shrapnel_shield/model/chainmail",
+    "elemental_bendings:earthbender/metalbending/shrapnel_shield/deflect",
+    "elemental_bendings:earthbender/metalbending/shrapnel_shield/guard",
+    "elemental_bendings:earthbender/metalbending/shrapnel_shield/rooted",
+    "elemental_bendings:earthbender/metalbending/shrapnel_shield/whirling",
+    "elemental_bendings:earthbender/metalbending/shrapnel_shield"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/metalbending/shrapnel_shield.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

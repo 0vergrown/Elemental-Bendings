@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:waterbender/icebending/ice_blast",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.icebending.deep_freeze.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.icebending.deep_freeze.description"
+  },
+  "powers": [
+    "elemental_bendings:waterbender/icebending/deep_freeze/pose",
+    "elemental_bendings:waterbender/icebending/deep_freeze"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/waterbender/icebending/deep_freeze.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

@@ -1,0 +1,7 @@
+{
+  "type": "apoli:replace_sound_emission",
+  "sounds": {
+    ".*": "minecraft:empty"
+  },
+  "hidden": true
+}

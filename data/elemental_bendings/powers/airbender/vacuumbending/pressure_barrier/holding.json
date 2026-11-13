@@ -1,0 +1,73 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": {
+    "key": "key.elemental_bendings.stance_2",
+    "continuous": true
+  },
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/vacuumbending/pressure_barrier/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:airbender/vacuumbending/pressure_barrier/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 6
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:airbender/vacuumbending/pressure_barrier/fuel",
+            "modifier": {
+              "operation": "add_value",
+              "value": -2
+            }
+          },
+          {
+            "type": "apoli:random_chance",
+            "chance": 0.05,
+            "action": {
+              "type": "apoli:if_else",
+              "condition": {
+                "type": "apoli:minecraft_version",
+                "version": "1.21",
+                "comparison": ">="
+              },
+              "if_action": {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:entity.breeze.whirl",
+                "volume": 0.3,
+                "pitch": 1.4
+              },
+              "else_action": {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:entity.phantom.swoop",
+                "volume": 0.3,
+                "pitch": 1.4
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "entity_action_released": {
+    "type": "apoli:modify_resource",
+    "resource": "elemental_bendings:airbender/vacuumbending/pressure_barrier/heartbeat",
+    "modifier": {
+      "operation": "set_total",
+      "value": 0
+    }
+  },
+  "hidden": true
+}

@@ -1,0 +1,27 @@
+{
+  "parent": "elemental_bendings:earthbender/metalbending",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.sword_throw.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.sword_throw.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/metalbending/sword_throw/out",
+    "elemental_bendings:earthbender/metalbending/sword_throw/heartbeat",
+    "elemental_bendings:earthbender/metalbending/sword_throw/fuel",
+    "elemental_bendings:earthbender/metalbending/sword_throw/pose",
+    "elemental_bendings:earthbender/metalbending/sword_throw/catch_pose",
+    "elemental_bendings:earthbender/metalbending/sword_throw/steer/pose",
+    "elemental_bendings:earthbender/metalbending/sword_throw/empty_hand",
+    "elemental_bendings:earthbender/metalbending/sword_throw/bare_hand",
+    "elemental_bendings:earthbender/metalbending/sword_throw/steering",
+    "elemental_bendings:earthbender/metalbending/sword_throw"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/metalbending/sword_throw.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

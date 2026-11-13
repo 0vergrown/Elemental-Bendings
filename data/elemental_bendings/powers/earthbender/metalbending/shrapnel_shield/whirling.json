@@ -1,0 +1,226 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": {
+    "key": "key.elemental_bendings.stance_3",
+    "continuous": true
+  },
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/metalbending/shrapnel_shield/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/metalbending/shrapnel_shield/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 6
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/metalbending/shrapnel_shield/fuel",
+            "modifier": {
+              "operation": "add_value",
+              "value": -2
+            }
+          },
+          {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:random_chance",
+              "chance": "mod(elemental_bendings:earthbender/metalbending/shrapnel_shield/fuel, 10) == 0"
+            },
+            "if_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:area_of_effect",
+                  "radius": 2.4,
+                  "shape": "sphere",
+                  "bientity_condition": {
+                    "type": "apoli:target_condition",
+                    "condition": {
+                      "type": "apoli:living"
+                    }
+                  },
+                  "bientity_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:damage",
+                        "amount": 3,
+                        "damage_type": "elemental_bendings:metalbending"
+                      },
+                      {
+                        "type": "apoli:add_velocity",
+                        "x": 0,
+                        "y": 0.2,
+                        "z": 0.6,
+                        "reference": "position"
+                      },
+                      {
+                        "type": "apoli:target_action",
+                        "action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": {
+                                "type": "apoli:custom",
+                                "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                                "lifetime": 7,
+                                "lifetime_variation": 3,
+                                "size": 0.06,
+                                "size_variation": 0.03,
+                                "end_size": 0.0,
+                                "color": "#FFFFFF",
+                                "end_color": "#FFD27A00",
+                                "gravity": 0.02,
+                                "friction": 0.9,
+                                "emissive": true,
+                                "blend": "additive",
+                                "physics": false,
+                                "alpha_bleed": true
+                              },
+                              "count": 4,
+                              "spread": {
+                                "x": 0.25,
+                                "y": 0.25,
+                                "z": 0.25
+                              },
+                              "speed": 0.18,
+                              "offset_y": 1.0
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": {
+                                "type": "apoli:custom",
+                                "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                                "lifetime": 24,
+                                "lifetime_variation": 10,
+                                "size": 0.09,
+                                "size_variation": 0.06,
+                                "end_size": 0.07,
+                                "color": "#B8BCC4",
+                                "gravity": 0.06,
+                                "friction": 0.98,
+                                "roll": "rUni(0, 360)",
+                                "roll_speed": "rUni(-25, 25)"
+                              },
+                              "count": 2,
+                              "spread": {
+                                "x": 0.2,
+                                "y": 0.2,
+                                "z": 0.2
+                              },
+                              "speed": 0.1,
+                              "offset_y": 1.0
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "apoli:random_chance",
+                  "chance": 0.6,
+                  "action": {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:block.chain.hit",
+                    "volume": 0.5,
+                    "pitch": 1.4
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "entity_action_released": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/metalbending/shrapnel_shield/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:earthbender/metalbending/shrapnel_shield/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/earthbender/metalbending/glint.png",
+                  "lifetime": 8,
+                  "lifetime_variation": 2,
+                  "size": 0.12,
+                  "end_size": 0.0,
+                  "color": "#FFFFFF",
+                  "end_color": "#D8E6FF00",
+                  "emissive": true,
+                  "blend": "additive",
+                  "frames": 4,
+                  "physics": false,
+                  "alpha_bleed": true
+                },
+                "count": 6,
+                "model_part": "body",
+                "offset_y": 0.0,
+                "spread": 0.3,
+                "speed": 0.0
+              },
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:block.chain.place",
+                "volume": 0.9,
+                "pitch": 1.1
+              },
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:item.armor.equip_chain",
+                "volume": 0.8,
+                "pitch": 1.0
+              }
+            ]
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 6
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

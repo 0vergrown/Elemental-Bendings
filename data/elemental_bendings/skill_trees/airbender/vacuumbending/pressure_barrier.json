@@ -1,0 +1,25 @@
+{
+  "parent": "elemental_bendings:airbender/vacuumbending/pressure_wave",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.pressure_barrier.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.vacuumbending.pressure_barrier.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/vacuumbending/pressure_barrier/wall",
+    "elemental_bendings:airbender/vacuumbending/pressure_barrier/heartbeat",
+    "elemental_bendings:airbender/vacuumbending/pressure_barrier/fuel",
+    "elemental_bendings:airbender/vacuumbending/pressure_barrier/pose",
+    "elemental_bendings:airbender/vacuumbending/pressure_barrier/push/pose",
+    "elemental_bendings:airbender/vacuumbending/pressure_barrier/rooted",
+    "elemental_bendings:airbender/vacuumbending/pressure_barrier/holding",
+    "elemental_bendings:airbender/vacuumbending/pressure_barrier"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/vacuumbending/pressure_barrier.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

@@ -1,0 +1,47 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:zombie",
+    "minecraft:husk",
+    "minecraft:drowned",
+    "minecraft:zombie_villager",
+    "minecraft:skeleton",
+    "minecraft:stray",
+    "minecraft:wither_skeleton",
+    "minecraft:spider",
+    "minecraft:cave_spider",
+    "minecraft:creeper",
+    "minecraft:witch",
+    "minecraft:pillager",
+    "minecraft:vindicator",
+    "minecraft:evoker",
+    "minecraft:illusioner",
+    "minecraft:ravager",
+    "minecraft:vex",
+    "minecraft:blaze",
+    "minecraft:ghast",
+    "minecraft:magma_cube",
+    "minecraft:slime",
+    "minecraft:hoglin",
+    "minecraft:zoglin",
+    "minecraft:piglin_brute",
+    "minecraft:phantom",
+    "minecraft:silverfish",
+    "minecraft:endermite",
+    "minecraft:guardian",
+    "minecraft:elder_guardian",
+    "minecraft:shulker",
+    {
+      "id": "minecraft:bogged",
+      "required": false
+    },
+    {
+      "id": "minecraft:breeze",
+      "required": false
+    },
+    {
+      "id": "minecraft:creaking",
+      "required": false
+    }
+  ]
+}

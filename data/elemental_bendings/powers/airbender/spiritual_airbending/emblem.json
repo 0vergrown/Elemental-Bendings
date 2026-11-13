@@ -1,0 +1,23 @@
+{
+  "type": "apoli:overlay",
+  "texture": "elemental_bendings:textures/gui/airbender/spiritual_airbending/emblem.png",
+  "anchor": "bottom_center",
+  "x": 0,
+  "y": -42,
+  "width": 16,
+  "height": 16,
+  "u": "16 * (if(elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting > 0, 1 + min(3, floor((1 - elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting / 800) * 4)), if(elemental_bendings:airbender/spiritual_airbending/flight/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:airbender/spiritual_airbending/flight/fuel / 240) * 4)), if(elemental_bendings:airbender/spiritual_airbending/meditation/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:airbender/spiritual_airbending/meditation/fuel / 400) * 4)), 0))))",
+  "v": 0,
+  "texture_width": 80,
+  "texture_height": 16,
+  "region_width": 16,
+  "region_height": 16,
+  "strength": "if(elemental_bendings:bending/cooldown > 0, 0.55, 1)",
+  "draw_phase": "above_hud",
+  "visible_in_third_person": true,
+  "condition": {
+    "type": "apoli:power",
+    "power": "elemental_bendings:airbender/spiritual_airbending/astral_projection"
+  },
+  "hidden": true
+}

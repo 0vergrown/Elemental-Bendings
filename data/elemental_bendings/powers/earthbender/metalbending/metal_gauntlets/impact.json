@@ -1,0 +1,86 @@
+{
+  "type": "apoli:action_on_hit",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/metalbending/metal_gauntlets/active",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "bientity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:target_action",
+        "action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:spawn_particles",
+              "particle": {
+                "type": "apoli:custom",
+                "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                "lifetime": 7,
+                "lifetime_variation": 3,
+                "size": 0.06,
+                "size_variation": 0.03,
+                "end_size": 0.0,
+                "color": "#FFFFFF",
+                "end_color": "#FFD27A00",
+                "gravity": 0.02,
+                "friction": 0.9,
+                "emissive": true,
+                "blend": "additive",
+                "physics": false,
+                "alpha_bleed": true
+              },
+              "count": 6,
+              "spread": {
+                "x": 0.25,
+                "y": 0.25,
+                "z": 0.25
+              },
+              "speed": 0.18,
+              "offset_y": 1.0
+            },
+            {
+              "type": "apoli:spawn_particles",
+              "particle": {
+                "type": "apoli:custom",
+                "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                "lifetime": 24,
+                "lifetime_variation": 10,
+                "size": 0.09,
+                "size_variation": 0.06,
+                "end_size": 0.07,
+                "color": "#B8BCC4",
+                "gravity": 0.06,
+                "friction": 0.98,
+                "roll": "rUni(0, 360)",
+                "roll_speed": "rUni(-25, 25)"
+              },
+              "count": 3,
+              "spread": {
+                "x": 0.2,
+                "y": 0.2,
+                "z": 0.2
+              },
+              "speed": 0.1,
+              "offset_y": 1.0
+            }
+          ]
+        }
+      },
+      {
+        "type": "apoli:actor_action",
+        "action": {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.anvil.land",
+          "volume": 0.25,
+          "pitch": 1.7
+        }
+      }
+    ]
+  },
+  "cooldown": 1,
+  "hidden": true
+}

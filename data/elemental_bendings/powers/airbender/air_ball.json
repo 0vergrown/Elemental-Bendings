@@ -26,111 +26,231 @@
           "compare_to": 0
         },
         {
-          "type": "apoli:and",
-          "conditions": [
-            {
-              "type": "apoli:riding",
-              "inverted": true
-            },
-            {
-              "type": "apoli:fall_flying",
-              "inverted": true
-            }
-          ]
+          "type": "apoli:riding",
+          "inverted": true
+        },
+        {
+          "type": "apoli:fall_flying",
+          "inverted": true
         }
       ]
     },
     "if_action": {
-      "type": "apoli:and",
-      "actions": [
-        {
-          "type": "apoli:modify_resource",
-          "resource": "elemental_bendings:airbender/air_ball/fuel",
-          "modifier": {
-            "operation": "set_total",
-            "value": 450
-          }
-        },
-        {
-          "type": "apoli:modify_resource",
-          "resource": "elemental_bendings:airbender/air_ball/heartbeat",
-          "modifier": {
-            "operation": "set_total",
-            "value": 10
-          }
-        },
-        {
-          "type": "apoli:modify_resource",
-          "resource": "elemental_bendings:bending/cooldown",
-          "modifier": {
-            "operation": "set_total",
-            "value": 480
-          }
-        },
-        {
-          "type": "apoli:if_else",
-          "condition": {
-            "type": "apoli:minecraft_version",
-            "version": "1.21",
-            "comparison": ">="
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/spiritual_airbending/spirit_sphere"
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:airbender/air_ball/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 450
+            }
           },
-          "if_action": {
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:airbender/air_ball/heartbeat",
+            "modifier": {
+              "operation": "set_total",
+              "value": 10
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 720
+            }
+          },
+          {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:minecraft_version",
+              "version": "1.21",
+              "comparison": ">="
+            },
+            "if_action": {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:entity.breeze.wind_burst",
+              "volume": 0.9,
+              "pitch": 1.1
+            },
+            "else_action": {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:entity.phantom.flap",
+              "volume": 0.9,
+              "pitch": 1.1
+            }
+          },
+          {
             "type": "apoli:play_sound",
-            "sound": "minecraft:entity.breeze.wind_burst",
-            "volume": 0.9,
-            "pitch": 1.1
+            "sound": "minecraft:block.amethyst_block.resonate",
+            "volume": 0.6,
+            "pitch": 1.5
           },
-          "else_action": {
-            "type": "apoli:play_sound",
-            "sound": "minecraft:entity.phantom.flap",
-            "volume": 0.9,
-            "pitch": 1.1
-          }
-        },
-        {
-          "type": "apoli:spawn_particles",
-          "particle": "minecraft:cloud",
-          "count": 16,
-          "offset_y": 0.6,
-          "spread": {
-            "x": 0.8,
-            "y": 0.5,
-            "z": 0.8
+          {
+            "type": "apoli:spawn_particles",
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/airbender/spiritual_airbending/wisp.png",
+              "lifetime": 18,
+              "lifetime_variation": 6,
+              "size": 0.2,
+              "size_variation": 0.07,
+              "end_size": 0.05,
+              "color": "#EFFFFF",
+              "end_color": "#38D6E000",
+              "gravity": -0.015,
+              "friction": 0.92,
+              "emissive": true,
+              "blend": "additive",
+              "frames": 6,
+              "frame_time": 3,
+              "physics": false,
+              "roll": "rUni(-15, 15)"
+            },
+            "count": 16,
+            "offset_y": 0.6,
+            "spread": {
+              "x": 0.8,
+              "y": 0.5,
+              "z": 0.8
+            },
+            "speed": 0.05
           },
-          "speed": 0.05
-        },
-        {
-          "type": "apoli:summon_minion",
-          "summon_id": "elemental_bendings:airbender/air_ball",
-          "max_life_ticks": 480,
-          "invulnerable": true,
-          "follow_owner": false,
-          "powers": [
-            "elemental_bendings:airbender/air_ball/sphere",
-            "elemental_bendings:airbender/air_ball/swirl",
-            "elemental_bendings:airbender/air_ball/heading",
-            "elemental_bendings:airbender/air_ball/level",
-            "elemental_bendings:airbender/air_ball/water_walk",
-            "elemental_bendings:airbender/air_ball/step",
-            "elemental_bendings:airbender/air_ball/trail",
-            "elemental_bendings:airbender/air_ball/dust"
-          ],
-          "bientity_action": {
-            "type": "apoli:and",
-            "actions": [
-              {
-                "type": "apoli:mount",
-                "y": -0.175,
-                "force": true
-              },
-              {
-                "type": "apoli:add_to_entity_set",
-                "set": "elemental_bendings:airbender/air_ball/ball"
-              }
-            ]
+          {
+            "type": "apoli:summon_minion",
+            "summon_id": "elemental_bendings:airbender/air_ball",
+            "max_life_ticks": 720,
+            "invulnerable": true,
+            "follow_owner": false,
+            "powers": [
+              "elemental_bendings:airbender/air_ball/spirit_sphere",
+              "elemental_bendings:airbender/air_ball/spirit_swirl",
+              "elemental_bendings:airbender/air_ball/heading",
+              "elemental_bendings:airbender/air_ball/level",
+              "elemental_bendings:airbender/air_ball/water_walk",
+              "elemental_bendings:airbender/air_ball/step",
+              "elemental_bendings:airbender/air_ball/spirit_trail",
+              "elemental_bendings:airbender/air_ball/spirit_dust",
+              "elemental_bendings:bending/quiet_summon"
+            ],
+            "bientity_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:mount",
+                  "y": -0.175,
+                  "force": true
+                },
+                {
+                  "type": "apoli:add_to_entity_set",
+                  "set": "elemental_bendings:airbender/air_ball/ball"
+                }
+              ]
+            }
           }
-        }
-      ]
+        ]
+      },
+      "else_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:airbender/air_ball/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 450
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:airbender/air_ball/heartbeat",
+            "modifier": {
+              "operation": "set_total",
+              "value": 10
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 480
+            }
+          },
+          {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:minecraft_version",
+              "version": "1.21",
+              "comparison": ">="
+            },
+            "if_action": {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:entity.breeze.wind_burst",
+              "volume": 0.9,
+              "pitch": 1.1
+            },
+            "else_action": {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:entity.phantom.flap",
+              "volume": 0.9,
+              "pitch": 1.1
+            }
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": "minecraft:cloud",
+            "count": 16,
+            "offset_y": 0.6,
+            "spread": {
+              "x": 0.8,
+              "y": 0.5,
+              "z": 0.8
+            },
+            "speed": 0.05
+          },
+          {
+            "type": "apoli:summon_minion",
+            "summon_id": "elemental_bendings:airbender/air_ball",
+            "max_life_ticks": 480,
+            "invulnerable": true,
+            "follow_owner": false,
+            "powers": [
+              "elemental_bendings:airbender/air_ball/sphere",
+              "elemental_bendings:airbender/air_ball/swirl",
+              "elemental_bendings:airbender/air_ball/heading",
+              "elemental_bendings:airbender/air_ball/level",
+              "elemental_bendings:airbender/air_ball/water_walk",
+              "elemental_bendings:airbender/air_ball/step",
+              "elemental_bendings:airbender/air_ball/trail",
+              "elemental_bendings:airbender/air_ball/dust",
+              "elemental_bendings:bending/quiet_summon"
+            ],
+            "bientity_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:mount",
+                  "y": -0.175,
+                  "force": true
+                },
+                {
+                  "type": "apoli:add_to_entity_set",
+                  "set": "elemental_bendings:airbender/air_ball/ball"
+                }
+              ]
+            }
+          }
+        ]
+      }
     },
     "else_action": {
       "type": "apoli:play_sound",
@@ -139,18 +259,24 @@
       "pitch": 1.8
     }
   },
-  "description": {
-    "translate": "power.elemental_bendings.airbender/air_ball.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/isaacfanta/holdable.png",
+      "text": {
+        "translate": "badge.elemental_bendings.combo.3.hold",
+        "with": [
+          {
+            "keybind": "key.elemental_bendings.stance_3"
+          },
+          {
+            "keybind": "key.elemental_bendings.stance_1"
+          },
+          {
+            "keybind": "key.elemental_bendings.stance_2"
+          }
+        ]
       }
-    ]
-  }
+    }
+  ]
 }

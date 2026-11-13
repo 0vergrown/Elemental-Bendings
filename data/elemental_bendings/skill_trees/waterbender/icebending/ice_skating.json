@@ -1,0 +1,24 @@
+{
+  "parent": "elemental_bendings:waterbender/icebending",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.icebending.ice_skating.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.icebending.ice_skating.description"
+  },
+  "powers": [
+    "elemental_bendings:waterbender/icebending/ice_skating",
+    "elemental_bendings:waterbender/icebending/ice_skating/frozen_soles",
+    "elemental_bendings:waterbender/icebending/ice_skating/stride",
+    "elemental_bendings:waterbender/icebending/ice_skating/frost_spray",
+    "elemental_bendings:waterbender/icebending/ice_skating/snow_spray",
+    "elemental_bendings:waterbender/icebending/ice_skating/frosted_boots",
+    "elemental_bendings:waterbender/icebending/ice_skating/pose"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/waterbender/icebending/ice_skating.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 2
+}

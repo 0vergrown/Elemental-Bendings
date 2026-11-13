@@ -1,0 +1,25 @@
+{
+  "parent": "elemental_bendings:airbender/soundbending/echolocation",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.dead_silence.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.dead_silence.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/soundbending/dead_silence/field",
+    "elemental_bendings:airbender/soundbending/dead_silence/pulse",
+    "elemental_bendings:airbender/soundbending/dead_silence/recharge",
+    "elemental_bendings:airbender/soundbending/dead_silence/mute",
+    "elemental_bendings:airbender/soundbending/dead_silence/still",
+    "elemental_bendings:airbender/soundbending/dead_silence/hush",
+    "elemental_bendings:airbender/soundbending/dead_silence/pose",
+    "elemental_bendings:airbender/soundbending/dead_silence"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/soundbending/dead_silence.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

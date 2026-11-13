@@ -1,0 +1,31 @@
+{
+  "type": "apoli:overlay",
+  "texture": "elemental_bendings:textures/gui/airbender/spiritual_airbending/speed_lines.png",
+  "draw_phase": "below_hud",
+  "strength": 0.85,
+  "texture_width": 320,
+  "texture_height": 720,
+  "region_width": 320,
+  "region_height": 180,
+  "u": 0,
+  "v": "180 * mod(floor(world_time / 2), 4)",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:sprinting"
+      },
+      {
+        "type": "apoli:key_pressed",
+        "key": "key.forward"
+      }
+    ]
+  },
+  "hidden": true
+}

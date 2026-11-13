@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:earthbender/metalbending",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.magnetic_pull.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.magnetic_pull.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/metalbending/magnetic_pull/pose",
+    "elemental_bendings:earthbender/metalbending/magnetic_pull"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/metalbending/magnetic_pull.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 3
+}

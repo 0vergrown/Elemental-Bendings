@@ -1,0 +1,15 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:waterbender/icebending/ice_prison",
+  "texture_location": "elemental_bendings:textures/entity/waterbender/icebending/ice_prison_shattering.png",
+  "render_type": "translucent",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/icebending/encased/cracks",
+    "comparison": ">=",
+    "compare_to": 4
+  },
+  "bind_body_parts": false,
+  "hidden": true
+}

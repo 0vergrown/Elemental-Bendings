@@ -717,8 +717,17 @@
         "shape_type": "collider",
         "fluid_handling": "none",
         "block_condition": {
-          "type": "apoli:in_tag",
-          "tag": "elemental_bendings:earthbender/bendable"
+          "type": "apoli:or",
+          "conditions": [
+            {
+              "type": "apoli:in_tag",
+              "tag": "elemental_bendings:earthbender/bendable"
+            },
+            {
+              "type": "apoli:in_tag",
+              "tag": "elemental_bendings:earthbender/sandbending/extra"
+            }
+          ]
         },
         "block_action": {
           "type": "apoli:if_else_list",

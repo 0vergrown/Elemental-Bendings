@@ -1,0 +1,13 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:airbender/air_slice",
+  "texture_location": "elemental_bendings:textures/entity/airbender/spiritual_airbending/spirit_slice.png",
+  "render_type": "emissive",
+  "scale": 1.15,
+  "animations": {
+    "animation": "elemental_bendings:airbender/air_slice",
+    "name": "animation.air_slice.spin"
+  },
+  "hidden": true
+}

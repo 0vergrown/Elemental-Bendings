@@ -1,0 +1,26 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:airbender/vacuumbending/vacuum_vortex",
+  "texture_location": "elemental_bendings:textures/entity/airbender/vacuumbending/vacuum_vortex.png",
+  "render_type": "translucent",
+  "animations": [
+    {
+      "animation": "elemental_bendings:airbender/vacuumbending/vacuum_vortex",
+      "name": "animation.vacuum_vortex.collapse",
+      "condition": {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:airbender/vacuumbending/vacuum_vortex/collapse",
+        "comparison": "<=",
+        "compare_to": 8
+      },
+      "loop": "hold_on_last_frame"
+    },
+    {
+      "animation": "elemental_bendings:airbender/vacuumbending/vacuum_vortex",
+      "name": "animation.vacuum_vortex.spin"
+    }
+  ],
+  "scale": 1.6,
+  "hidden": true
+}

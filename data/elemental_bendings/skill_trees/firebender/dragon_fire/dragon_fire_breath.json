@@ -1,0 +1,18 @@
+{
+  "parent": "elemental_bendings:firebender/dragon_fire",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.dragon_fire.dragon_fire_breath.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.dragon_fire.dragon_fire_breath.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/dragon_fire/dragon_fire_breath"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/dragon_fire/dragon_fire_breath.png"
+  },
+  "frame": "task",
+  "cost": 1,
+  "order": 1
+}

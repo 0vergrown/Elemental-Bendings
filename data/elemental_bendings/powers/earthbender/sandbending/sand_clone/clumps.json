@@ -1,0 +1,10 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:earthbender/sandbending/clone_clumps",
+  "texture_location": "elemental_bendings:textures/entity/earthbender/sandbending/clone_clumps.png",
+  "render_type": "cutout",
+  "render_as_overlay": true,
+  "bind_body_parts": true,
+  "hidden": true
+}

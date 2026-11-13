@@ -1,0 +1,34 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/waterbender/frost.png",
+    "lifetime": 18,
+    "lifetime_variation": 8,
+    "size": 0.12,
+    "size_variation": 0.06,
+    "end_size": 0.02,
+    "color": "#FFFFFF",
+    "end_color": "#9FE6FF55",
+    "gravity": 0.01,
+    "friction": 0.95,
+    "roll": "rUni(0, 360)",
+    "roll_speed": "rUni(-8, 8)"
+  },
+  "count": 1,
+  "frequency": 3,
+  "offset_y": 1.2,
+  "spread": {
+    "x": 0.9,
+    "y": 0.5,
+    "z": 0.9
+  },
+  "speed": 0.0,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/icebending/ice_whip/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

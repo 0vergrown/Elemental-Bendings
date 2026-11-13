@@ -1,0 +1,11 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 160,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:revoke_power",
+    "power": "elemental_bendings:earthbender/sandbending/sinking/spat",
+    "source": "elemental_bendings:spat_out"
+  },
+  "hidden": true
+}

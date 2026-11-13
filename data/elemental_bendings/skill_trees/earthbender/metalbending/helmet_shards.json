@@ -1,0 +1,20 @@
+{
+  "parent": "elemental_bendings:earthbender/metalbending",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.helmet_shards.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.helmet_shards.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/metalbending/helmet_shards/out",
+    "elemental_bendings:earthbender/metalbending/helmet_shards/pose",
+    "elemental_bendings:earthbender/metalbending/helmet_shards"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/metalbending/helmet_shards.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 1
+}

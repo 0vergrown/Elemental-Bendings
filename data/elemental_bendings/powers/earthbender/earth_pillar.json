@@ -22,38 +22,86 @@
     "if_action": {
       "type": "apoli:if_else",
       "condition": {
-        "type": "apoli:raycast",
-        "distance": 12,
-        "block": true,
-        "entity": false,
-        "shape_type": "collider",
-        "fluid_handling": "none",
-        "block_condition": {
-          "type": "apoli:or",
-          "conditions": [
-            {
-              "type": "apoli:in_tag",
-              "tag": "elemental_bendings:earthbender/bendable"
-            },
-            {
-              "type": "apoli:and",
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:raycast",
+            "distance": 12,
+            "block": true,
+            "entity": false,
+            "shape_type": "collider",
+            "fluid_handling": "none",
+            "block_condition": {
+              "type": "apoli:or",
               "conditions": [
                 {
-                  "type": "apoli:block",
-                  "block": "minecraft:snow"
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable"
                 },
                 {
-                  "type": "apoli:offset",
-                  "condition": {
-                    "type": "apoli:in_tag",
-                    "tag": "elemental_bendings:earthbender/bendable"
-                  },
-                  "y": -1
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:block",
+                      "block": "minecraft:snow"
+                    },
+                    {
+                      "type": "apoli:offset",
+                      "condition": {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/bendable"
+                      },
+                      "y": -1
+                    }
+                  ]
                 }
               ]
             }
-          ]
-        }
+          },
+          {
+            "type": "apoli:and",
+            "conditions": [
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:earthbender/sandbending/sandbending"
+              },
+              {
+                "type": "apoli:raycast",
+                "distance": 12,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/sandbending/extra"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/sandbending/extra"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       },
       "if_action": {
         "type": "apoli:and",
@@ -1092,6 +1140,694 @@
                     "block": "minecraft:end_stone"
                   }
                 }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/white_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/white_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:white_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/orange_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/orange_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:orange_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/magenta_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/magenta_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:magenta_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/light_blue_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/light_blue_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:light_blue_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/yellow_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/yellow_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:yellow_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/lime_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/lime_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:lime_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/pink_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/pink_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:pink_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/gray_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/gray_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:gray_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/light_gray_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/light_gray_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:light_gray_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/cyan_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/cyan_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:cyan_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/purple_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/purple_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:purple_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/blue_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/blue_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:blue_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/brown_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/brown_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:brown_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/green_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/green_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:green_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/red_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/red_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:red_concrete"
+                  }
+                }
+              },
+              {
+                "condition": {
+                  "type": "apoli:raycast",
+                  "distance": 12,
+                  "block": true,
+                  "entity": false,
+                  "shape_type": "collider",
+                  "fluid_handling": "none",
+                  "block_condition": {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/family/black_concrete"
+                      },
+                      {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:block",
+                            "block": "minecraft:snow"
+                          },
+                          {
+                            "type": "apoli:offset",
+                            "condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:earthbender/family/black_concrete"
+                            },
+                            "y": -1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_pillar/raise",
+                  "arguments": {
+                    "block": "minecraft:black_concrete"
+                  }
+                }
               }
             ]
           },
@@ -1172,23 +1908,51 @@
     }
   },
   "condition": {
-    "type": "apoli:resource",
-    "resource": "elemental_bendings:earthbender/earth_lift/lifting",
-    "comparison": "==",
-    "compare_to": 0
-  },
-  "description": {
-    "translate": "power.elemental_bendings.earthbender/earth_pillar.description",
-    "with": [
+    "type": "apoli:and",
+    "conditions": [
       {
-        "keybind": "key.elemental_bendings.stance_1"
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+        "comparison": "==",
+        "compare_to": 0
       },
       {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:earthbender/metalbending/metal_pillar"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:earthbender/lavabending/eruption"
+          }
+        ],
+        "inverted": true
       }
     ]
-  }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/isaacfanta/active.png",
+      "text": {
+        "translate": "badge.elemental_bendings.combo.3.when",
+        "with": [
+          {
+            "keybind": "key.elemental_bendings.stance_1"
+          },
+          {
+            "keybind": "key.elemental_bendings.stance_3"
+          },
+          {
+            "keybind": "key.elemental_bendings.stance_2"
+          },
+          {
+            "translate": "badge.elemental_bendings.when.earth"
+          }
+        ]
+      }
+    }
+  ]
 }

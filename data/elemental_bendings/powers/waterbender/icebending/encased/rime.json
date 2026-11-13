@@ -1,0 +1,14 @@
+{
+  "type": "apoli:particle",
+  "particle": "minecraft:snowflake",
+  "count": 1,
+  "frequency": 6,
+  "offset_y": 1.0,
+  "spread": {
+    "x": 0.5,
+    "y": 0.8,
+    "z": 0.5
+  },
+  "speed": 0.0,
+  "hidden": true
+}

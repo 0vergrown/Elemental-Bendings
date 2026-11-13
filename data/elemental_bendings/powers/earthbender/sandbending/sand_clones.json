@@ -1,0 +1,1327 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_3",
+    "key.elemental_bendings.stance_1"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:raycast",
+        "distance": 24,
+        "block": true,
+        "entity": true,
+        "shape_type": "collider",
+        "fluid_handling": "none",
+        "match_bientity_condition": {
+          "type": "apoli:and",
+          "conditions": [
+            {
+              "type": "apoli:target_condition",
+              "condition": {
+                "type": "apoli:entity_type",
+                "entity_type": "apoli:clone"
+              }
+            },
+            {
+              "type": "apoli:owner"
+            }
+          ]
+        },
+        "block_condition": {
+          "type": "apoli:constant",
+          "value": false
+        }
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 6
+            }
+          },
+          {
+            "type": "apoli:delay",
+            "ticks": 1,
+            "action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 75
+                  }
+                },
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:bending/pose_timer",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 8
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.sand.hit",
+            "volume": 0.8,
+            "pitch": 1.3
+          },
+          {
+            "type": "apoli:raycast",
+            "distance": 24,
+            "block": true,
+            "entity": true,
+            "shape_type": "collider",
+            "fluid_handling": "none",
+            "bientity_condition": {
+              "type": "apoli:and",
+              "conditions": [
+                {
+                  "type": "apoli:target_condition",
+                  "condition": {
+                    "type": "apoli:entity_type",
+                    "entity_type": "apoli:clone"
+                  }
+                },
+                {
+                  "type": "apoli:owner"
+                }
+              ]
+            },
+            "bientity_action": {
+              "type": "apoli:target_action",
+              "action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:spawn_particles",
+                    "particle": {
+                      "type": "apoli:custom",
+                      "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                      "lifetime": 26,
+                      "lifetime_variation": 8,
+                      "size": 0.55,
+                      "size_variation": 0.25,
+                      "end_size": 1.1,
+                      "color": "#E6D2A0CC",
+                      "end_color": "#C8A96E00",
+                      "gravity": -0.002,
+                      "friction": 0.9,
+                      "frames": 4,
+                      "frame_time": 6,
+                      "physics": false,
+                      "roll": "rUni(0, 360)"
+                    },
+                    "count": 40,
+                    "offset_y": 1.0,
+                    "spread": {
+                      "x": 1.6,
+                      "y": 1.0,
+                      "z": 1.6
+                    },
+                    "speed": 0.06
+                  },
+                  {
+                    "type": "apoli:spawn_particles",
+                    "particle": {
+                      "type": "apoli:custom",
+                      "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+                      "lifetime": 22,
+                      "lifetime_variation": 8,
+                      "size": 0.07,
+                      "size_variation": 0.04,
+                      "end_size": 0.05,
+                      "color": "#F2E2B0",
+                      "end_color": "#C9A86A",
+                      "gravity": 0.05,
+                      "friction": 0.97,
+                      "frames": 4,
+                      "roll": "rUni(0, 360)",
+                      "roll_speed": "rUni(-20, 20)"
+                    },
+                    "count": 40,
+                    "offset_y": 1.0,
+                    "spread": {
+                      "x": 1.2,
+                      "y": 0.8,
+                      "z": 1.2
+                    },
+                    "speed": 0.25
+                  },
+                  {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:block.sand.break",
+                    "volume": 1.0,
+                    "pitch": 0.5
+                  },
+                  {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:entity.generic.explode",
+                    "volume": 0.35,
+                    "pitch": 1.7
+                  },
+                  {
+                    "type": "apoli:area_of_effect",
+                    "radius": 4,
+                    "shape": "sphere",
+                    "bientity_condition": {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:target_condition",
+                          "condition": {
+                            "type": "apoli:living"
+                          }
+                        },
+                        {
+                          "type": "apoli:invert",
+                          "condition": {
+                            "type": "apoli:owner"
+                          },
+                          "inverted": true
+                        },
+                        {
+                          "type": "apoli:target_condition",
+                          "condition": {
+                            "type": "apoli:entity_type",
+                            "entity_type": "apoli:clone"
+                          },
+                          "inverted": true
+                        }
+                      ]
+                    },
+                    "bientity_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:damage",
+                          "amount": 2,
+                          "damage_type": "elemental_bendings:sandbending"
+                        },
+                        {
+                          "type": "apoli:target_action",
+                          "action": {
+                            "type": "apoli:and",
+                            "actions": [
+                              {
+                                "type": "apoli:apply_effect",
+                                "effect": {
+                                  "effect": "minecraft:blindness",
+                                  "duration": 60,
+                                  "amplifier": 0,
+                                  "show_particles": false,
+                                  "show_icon": false
+                                }
+                              },
+                              {
+                                "type": "apoli:apply_effect",
+                                "effect": {
+                                  "effect": "minecraft:slowness",
+                                  "duration": 40,
+                                  "amplifier": 1,
+                                  "show_particles": false,
+                                  "show_icon": false
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "apoli:damage",
+                    "amount": 1000,
+                    "damage_type": "minecraft:generic_kill"
+                  }
+                ]
+              }
+            },
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+              "lifetime": 12,
+              "lifetime_variation": 4,
+              "size": 0.09,
+              "size_variation": 0.04,
+              "end_size": 0.04,
+              "color": "#F6E7BC",
+              "end_color": "#D7B97A90",
+              "gravity": 0.03,
+              "friction": 0.93,
+              "frames": 4,
+              "roll": "rUni(0, 360)",
+              "roll_speed": "rUni(-30, 30)"
+            },
+            "spacing": 0.8
+          }
+        ]
+      },
+      "else_action": {
+        "type": "apoli:if_else",
+        "condition": {
+          "type": "apoli:entity_set_size",
+          "set": "elemental_bendings:earthbender/sandbending/sand_clones/clones",
+          "comparison": ">=",
+          "compare_to": 4
+        },
+        "if_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:text",
+              "text": {
+                "translate": "text.elemental_bendings.clones_full"
+              },
+              "bar": "actionbar",
+              "fadein": 2,
+              "duration": 30,
+              "fadeout": 8
+            },
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:block.dispenser.fail",
+              "volume": 0.3,
+              "pitch": 1.8
+            }
+          ]
+        },
+        "else_action": {
+          "type": "apoli:if_else",
+          "condition": {
+            "type": "apoli:or",
+            "conditions": [
+              {
+                "type": "apoli:on_block",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable"
+                }
+              },
+              {
+                "type": "apoli:on_block",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/sandbending/extra"
+                }
+              },
+              {
+                "type": "apoli:on_block",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "minecraft:sand"
+                    },
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/sandbending/surfable"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "if_action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/cooldown",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 20
+                }
+              },
+              {
+                "type": "apoli:delay",
+                "ticks": 1,
+                "action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:bending/pose",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 74
+                      }
+                    },
+                    {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:bending/pose_timer",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 18
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:block.sand.step",
+                "volume": 1.0,
+                "pitch": 0.6
+              },
+              {
+                "type": "apoli:delay",
+                "ticks": 4,
+                "action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:spawn_particles",
+                      "particle": {
+                        "type": "apoli:custom",
+                        "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+                        "lifetime": 22,
+                        "lifetime_variation": 8,
+                        "size": 0.07,
+                        "size_variation": 0.04,
+                        "end_size": 0.05,
+                        "color": "#F2E2B0",
+                        "end_color": "#C9A86A",
+                        "gravity": 0.05,
+                        "friction": 0.97,
+                        "frames": 4,
+                        "roll": "rUni(0, 360)",
+                        "roll_speed": "rUni(-20, 20)"
+                      },
+                      "count": 14,
+                      "model_part": "hands",
+                      "offset_y": 0.0,
+                      "spread": {
+                        "x": 0.3,
+                        "y": 0.1,
+                        "z": 0.3
+                      },
+                      "speed": 0.1
+                    },
+                    {
+                      "type": "apoli:play_sound",
+                      "sound": "minecraft:block.sand.break",
+                      "volume": 0.8,
+                      "pitch": 0.5
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "apoli:delay",
+                "ticks": 8,
+                "action": {
+                  "type": "apoli:if_else_list",
+                  "actions": [
+                    {
+                      "condition": {
+                        "type": "apoli:entity_set_size",
+                        "set": "elemental_bendings:earthbender/sandbending/sand_clones/clones",
+                        "comparison": "<=",
+                        "compare_to": 1
+                      },
+                      "action": {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:summon_clone",
+                            "can_attack": true,
+                            "can_sit": false,
+                            "follow_owner": true,
+                            "inherit_equipment": false,
+                            "inherit_enchantments": false,
+                            "wide_texture": "elemental_bendings:textures/entity/earthbender/sandbending/sand_clone.png",
+                            "max_life_ticks": 600,
+                            "summon_id": "elemental_bendings:sand_clone",
+                            "powers": [
+                              "elemental_bendings:earthbender/sandbending/sand_clone/frail",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/clumps",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/grains",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/crumble",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/struck",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/dispel",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise_pose",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise_scale",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/taunt",
+                              "elemental_bendings:bending/quiet_summon"
+                            ],
+                            "offset": {
+                              "x": 0,
+                              "y": 0.05,
+                              "z": 2.2
+                            },
+                            "space": "local_horizontal_normalized",
+                            "bientity_action": {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:add_to_entity_set",
+                                  "set": "elemental_bendings:earthbender/sandbending/sand_clones/clones"
+                                },
+                                {
+                                  "type": "apoli:target_action",
+                                  "action": {
+                                    "type": "apoli:and",
+                                    "actions": [
+                                      {
+                                        "type": "apoli:modify_resource",
+                                        "resource": "elemental_bendings:earthbender/sandbending/sand_clone/rise",
+                                        "modifier": {
+                                          "operation": "set_total",
+                                          "value": 14
+                                        }
+                                      },
+                                      {
+                                        "type": "apoli:modify_resource",
+                                        "resource": "elemental_bendings:earthbender/sandbending/sand_clone/taunt",
+                                        "modifier": {
+                                          "operation": "set_total",
+                                          "value": 6
+                                        }
+                                      },
+                                      {
+                                        "type": "apoli:modify_entity_data",
+                                        "data": "silent",
+                                        "value": true
+                                      },
+                                      {
+                                        "type": "apoli:spawn_particles",
+                                        "particle": {
+                                          "type": "apoli:custom",
+                                          "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                          "lifetime": 26,
+                                          "lifetime_variation": 8,
+                                          "size": 0.55,
+                                          "size_variation": 0.25,
+                                          "end_size": 1.1,
+                                          "color": "#E6D2A0CC",
+                                          "end_color": "#C8A96E00",
+                                          "gravity": -0.002,
+                                          "friction": 0.9,
+                                          "frames": 4,
+                                          "frame_time": 6,
+                                          "physics": false,
+                                          "roll": "rUni(0, 360)"
+                                        },
+                                        "count": 10,
+                                        "offset_y": 0.3,
+                                        "spread": {
+                                          "x": 0.5,
+                                          "y": 0.2,
+                                          "z": 0.5
+                                        },
+                                        "speed": 0.04
+                                      },
+                                      {
+                                        "type": "apoli:spawn_particles",
+                                        "particle": {
+                                          "type": "apoli:custom",
+                                          "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+                                          "lifetime": 22,
+                                          "lifetime_variation": 8,
+                                          "size": 0.07,
+                                          "size_variation": 0.04,
+                                          "end_size": 0.05,
+                                          "color": "#F2E2B0",
+                                          "end_color": "#C9A86A",
+                                          "gravity": 0.05,
+                                          "friction": 0.97,
+                                          "frames": 4,
+                                          "roll": "rUni(0, 360)",
+                                          "roll_speed": "rUni(-20, 20)"
+                                        },
+                                        "count": 18,
+                                        "offset_y": 0.2,
+                                        "spread": {
+                                          "x": 0.4,
+                                          "y": 0.1,
+                                          "z": 0.4
+                                        },
+                                        "speed": 0.22
+                                      },
+                                      {
+                                        "type": "apoli:play_sound",
+                                        "sound": "minecraft:block.sand.break",
+                                        "volume": 0.9,
+                                        "pitch": 0.6
+                                      },
+                                      {
+                                        "type": "apoli:play_sound",
+                                        "sound": "minecraft:block.rooted_dirt.break",
+                                        "volume": 0.6,
+                                        "pitch": 0.5
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "apoli:summon_clone",
+                            "can_attack": true,
+                            "can_sit": false,
+                            "follow_owner": true,
+                            "inherit_equipment": false,
+                            "inherit_enchantments": false,
+                            "wide_texture": "elemental_bendings:textures/entity/earthbender/sandbending/sand_clone.png",
+                            "max_life_ticks": 600,
+                            "summon_id": "elemental_bendings:sand_clone",
+                            "powers": [
+                              "elemental_bendings:earthbender/sandbending/sand_clone/frail",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/clumps",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/grains",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/crumble",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/struck",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/dispel",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise_pose",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise_scale",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/taunt",
+                              "elemental_bendings:bending/quiet_summon"
+                            ],
+                            "offset": {
+                              "x": 1.8,
+                              "y": 0.05,
+                              "z": 1.2
+                            },
+                            "space": "local_horizontal_normalized",
+                            "bientity_action": {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:add_to_entity_set",
+                                  "set": "elemental_bendings:earthbender/sandbending/sand_clones/clones"
+                                },
+                                {
+                                  "type": "apoli:target_action",
+                                  "action": {
+                                    "type": "apoli:and",
+                                    "actions": [
+                                      {
+                                        "type": "apoli:modify_resource",
+                                        "resource": "elemental_bendings:earthbender/sandbending/sand_clone/rise",
+                                        "modifier": {
+                                          "operation": "set_total",
+                                          "value": 14
+                                        }
+                                      },
+                                      {
+                                        "type": "apoli:modify_resource",
+                                        "resource": "elemental_bendings:earthbender/sandbending/sand_clone/taunt",
+                                        "modifier": {
+                                          "operation": "set_total",
+                                          "value": 6
+                                        }
+                                      },
+                                      {
+                                        "type": "apoli:modify_entity_data",
+                                        "data": "silent",
+                                        "value": true
+                                      },
+                                      {
+                                        "type": "apoli:spawn_particles",
+                                        "particle": {
+                                          "type": "apoli:custom",
+                                          "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                          "lifetime": 26,
+                                          "lifetime_variation": 8,
+                                          "size": 0.55,
+                                          "size_variation": 0.25,
+                                          "end_size": 1.1,
+                                          "color": "#E6D2A0CC",
+                                          "end_color": "#C8A96E00",
+                                          "gravity": -0.002,
+                                          "friction": 0.9,
+                                          "frames": 4,
+                                          "frame_time": 6,
+                                          "physics": false,
+                                          "roll": "rUni(0, 360)"
+                                        },
+                                        "count": 10,
+                                        "offset_y": 0.3,
+                                        "spread": {
+                                          "x": 0.5,
+                                          "y": 0.2,
+                                          "z": 0.5
+                                        },
+                                        "speed": 0.04
+                                      },
+                                      {
+                                        "type": "apoli:spawn_particles",
+                                        "particle": {
+                                          "type": "apoli:custom",
+                                          "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+                                          "lifetime": 22,
+                                          "lifetime_variation": 8,
+                                          "size": 0.07,
+                                          "size_variation": 0.04,
+                                          "end_size": 0.05,
+                                          "color": "#F2E2B0",
+                                          "end_color": "#C9A86A",
+                                          "gravity": 0.05,
+                                          "friction": 0.97,
+                                          "frames": 4,
+                                          "roll": "rUni(0, 360)",
+                                          "roll_speed": "rUni(-20, 20)"
+                                        },
+                                        "count": 18,
+                                        "offset_y": 0.2,
+                                        "spread": {
+                                          "x": 0.4,
+                                          "y": 0.1,
+                                          "z": 0.4
+                                        },
+                                        "speed": 0.22
+                                      },
+                                      {
+                                        "type": "apoli:play_sound",
+                                        "sound": "minecraft:block.sand.break",
+                                        "volume": 0.9,
+                                        "pitch": 0.6
+                                      },
+                                      {
+                                        "type": "apoli:play_sound",
+                                        "sound": "minecraft:block.rooted_dirt.break",
+                                        "volume": 0.6,
+                                        "pitch": 0.5
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "apoli:summon_clone",
+                            "can_attack": true,
+                            "can_sit": false,
+                            "follow_owner": true,
+                            "inherit_equipment": false,
+                            "inherit_enchantments": false,
+                            "wide_texture": "elemental_bendings:textures/entity/earthbender/sandbending/sand_clone.png",
+                            "max_life_ticks": 600,
+                            "summon_id": "elemental_bendings:sand_clone",
+                            "powers": [
+                              "elemental_bendings:earthbender/sandbending/sand_clone/frail",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/clumps",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/grains",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/crumble",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/struck",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/dispel",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise_pose",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise_scale",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/taunt",
+                              "elemental_bendings:bending/quiet_summon"
+                            ],
+                            "offset": {
+                              "x": -1.8,
+                              "y": 0.05,
+                              "z": 1.2
+                            },
+                            "space": "local_horizontal_normalized",
+                            "bientity_action": {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:add_to_entity_set",
+                                  "set": "elemental_bendings:earthbender/sandbending/sand_clones/clones"
+                                },
+                                {
+                                  "type": "apoli:target_action",
+                                  "action": {
+                                    "type": "apoli:and",
+                                    "actions": [
+                                      {
+                                        "type": "apoli:modify_resource",
+                                        "resource": "elemental_bendings:earthbender/sandbending/sand_clone/rise",
+                                        "modifier": {
+                                          "operation": "set_total",
+                                          "value": 14
+                                        }
+                                      },
+                                      {
+                                        "type": "apoli:modify_resource",
+                                        "resource": "elemental_bendings:earthbender/sandbending/sand_clone/taunt",
+                                        "modifier": {
+                                          "operation": "set_total",
+                                          "value": 6
+                                        }
+                                      },
+                                      {
+                                        "type": "apoli:modify_entity_data",
+                                        "data": "silent",
+                                        "value": true
+                                      },
+                                      {
+                                        "type": "apoli:spawn_particles",
+                                        "particle": {
+                                          "type": "apoli:custom",
+                                          "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                          "lifetime": 26,
+                                          "lifetime_variation": 8,
+                                          "size": 0.55,
+                                          "size_variation": 0.25,
+                                          "end_size": 1.1,
+                                          "color": "#E6D2A0CC",
+                                          "end_color": "#C8A96E00",
+                                          "gravity": -0.002,
+                                          "friction": 0.9,
+                                          "frames": 4,
+                                          "frame_time": 6,
+                                          "physics": false,
+                                          "roll": "rUni(0, 360)"
+                                        },
+                                        "count": 10,
+                                        "offset_y": 0.3,
+                                        "spread": {
+                                          "x": 0.5,
+                                          "y": 0.2,
+                                          "z": 0.5
+                                        },
+                                        "speed": 0.04
+                                      },
+                                      {
+                                        "type": "apoli:spawn_particles",
+                                        "particle": {
+                                          "type": "apoli:custom",
+                                          "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+                                          "lifetime": 22,
+                                          "lifetime_variation": 8,
+                                          "size": 0.07,
+                                          "size_variation": 0.04,
+                                          "end_size": 0.05,
+                                          "color": "#F2E2B0",
+                                          "end_color": "#C9A86A",
+                                          "gravity": 0.05,
+                                          "friction": 0.97,
+                                          "frames": 4,
+                                          "roll": "rUni(0, 360)",
+                                          "roll_speed": "rUni(-20, 20)"
+                                        },
+                                        "count": 18,
+                                        "offset_y": 0.2,
+                                        "spread": {
+                                          "x": 0.4,
+                                          "y": 0.1,
+                                          "z": 0.4
+                                        },
+                                        "speed": 0.22
+                                      },
+                                      {
+                                        "type": "apoli:play_sound",
+                                        "sound": "minecraft:block.sand.break",
+                                        "volume": 0.9,
+                                        "pitch": 0.6
+                                      },
+                                      {
+                                        "type": "apoli:play_sound",
+                                        "sound": "minecraft:block.rooted_dirt.break",
+                                        "volume": 0.6,
+                                        "pitch": 0.5
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:entity_set_size",
+                        "set": "elemental_bendings:earthbender/sandbending/sand_clones/clones",
+                        "comparison": "==",
+                        "compare_to": 2
+                      },
+                      "action": {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:summon_clone",
+                            "can_attack": true,
+                            "can_sit": false,
+                            "follow_owner": true,
+                            "inherit_equipment": false,
+                            "inherit_enchantments": false,
+                            "wide_texture": "elemental_bendings:textures/entity/earthbender/sandbending/sand_clone.png",
+                            "max_life_ticks": 600,
+                            "summon_id": "elemental_bendings:sand_clone",
+                            "powers": [
+                              "elemental_bendings:earthbender/sandbending/sand_clone/frail",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/clumps",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/grains",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/crumble",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/struck",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/dispel",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise_pose",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise_scale",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/taunt",
+                              "elemental_bendings:bending/quiet_summon"
+                            ],
+                            "offset": {
+                              "x": 0,
+                              "y": 0.05,
+                              "z": 2.2
+                            },
+                            "space": "local_horizontal_normalized",
+                            "bientity_action": {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:add_to_entity_set",
+                                  "set": "elemental_bendings:earthbender/sandbending/sand_clones/clones"
+                                },
+                                {
+                                  "type": "apoli:target_action",
+                                  "action": {
+                                    "type": "apoli:and",
+                                    "actions": [
+                                      {
+                                        "type": "apoli:modify_resource",
+                                        "resource": "elemental_bendings:earthbender/sandbending/sand_clone/rise",
+                                        "modifier": {
+                                          "operation": "set_total",
+                                          "value": 14
+                                        }
+                                      },
+                                      {
+                                        "type": "apoli:modify_resource",
+                                        "resource": "elemental_bendings:earthbender/sandbending/sand_clone/taunt",
+                                        "modifier": {
+                                          "operation": "set_total",
+                                          "value": 6
+                                        }
+                                      },
+                                      {
+                                        "type": "apoli:modify_entity_data",
+                                        "data": "silent",
+                                        "value": true
+                                      },
+                                      {
+                                        "type": "apoli:spawn_particles",
+                                        "particle": {
+                                          "type": "apoli:custom",
+                                          "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                          "lifetime": 26,
+                                          "lifetime_variation": 8,
+                                          "size": 0.55,
+                                          "size_variation": 0.25,
+                                          "end_size": 1.1,
+                                          "color": "#E6D2A0CC",
+                                          "end_color": "#C8A96E00",
+                                          "gravity": -0.002,
+                                          "friction": 0.9,
+                                          "frames": 4,
+                                          "frame_time": 6,
+                                          "physics": false,
+                                          "roll": "rUni(0, 360)"
+                                        },
+                                        "count": 10,
+                                        "offset_y": 0.3,
+                                        "spread": {
+                                          "x": 0.5,
+                                          "y": 0.2,
+                                          "z": 0.5
+                                        },
+                                        "speed": 0.04
+                                      },
+                                      {
+                                        "type": "apoli:spawn_particles",
+                                        "particle": {
+                                          "type": "apoli:custom",
+                                          "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+                                          "lifetime": 22,
+                                          "lifetime_variation": 8,
+                                          "size": 0.07,
+                                          "size_variation": 0.04,
+                                          "end_size": 0.05,
+                                          "color": "#F2E2B0",
+                                          "end_color": "#C9A86A",
+                                          "gravity": 0.05,
+                                          "friction": 0.97,
+                                          "frames": 4,
+                                          "roll": "rUni(0, 360)",
+                                          "roll_speed": "rUni(-20, 20)"
+                                        },
+                                        "count": 18,
+                                        "offset_y": 0.2,
+                                        "spread": {
+                                          "x": 0.4,
+                                          "y": 0.1,
+                                          "z": 0.4
+                                        },
+                                        "speed": 0.22
+                                      },
+                                      {
+                                        "type": "apoli:play_sound",
+                                        "sound": "minecraft:block.sand.break",
+                                        "volume": 0.9,
+                                        "pitch": 0.6
+                                      },
+                                      {
+                                        "type": "apoli:play_sound",
+                                        "sound": "minecraft:block.rooted_dirt.break",
+                                        "volume": 0.6,
+                                        "pitch": 0.5
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "apoli:summon_clone",
+                            "can_attack": true,
+                            "can_sit": false,
+                            "follow_owner": true,
+                            "inherit_equipment": false,
+                            "inherit_enchantments": false,
+                            "wide_texture": "elemental_bendings:textures/entity/earthbender/sandbending/sand_clone.png",
+                            "max_life_ticks": 600,
+                            "summon_id": "elemental_bendings:sand_clone",
+                            "powers": [
+                              "elemental_bendings:earthbender/sandbending/sand_clone/frail",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/clumps",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/grains",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/crumble",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/struck",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/dispel",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise_pose",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/rise_scale",
+                              "elemental_bendings:earthbender/sandbending/sand_clone/taunt",
+                              "elemental_bendings:bending/quiet_summon"
+                            ],
+                            "offset": {
+                              "x": 1.8,
+                              "y": 0.05,
+                              "z": 1.2
+                            },
+                            "space": "local_horizontal_normalized",
+                            "bientity_action": {
+                              "type": "apoli:and",
+                              "actions": [
+                                {
+                                  "type": "apoli:add_to_entity_set",
+                                  "set": "elemental_bendings:earthbender/sandbending/sand_clones/clones"
+                                },
+                                {
+                                  "type": "apoli:target_action",
+                                  "action": {
+                                    "type": "apoli:and",
+                                    "actions": [
+                                      {
+                                        "type": "apoli:modify_resource",
+                                        "resource": "elemental_bendings:earthbender/sandbending/sand_clone/rise",
+                                        "modifier": {
+                                          "operation": "set_total",
+                                          "value": 14
+                                        }
+                                      },
+                                      {
+                                        "type": "apoli:modify_resource",
+                                        "resource": "elemental_bendings:earthbender/sandbending/sand_clone/taunt",
+                                        "modifier": {
+                                          "operation": "set_total",
+                                          "value": 6
+                                        }
+                                      },
+                                      {
+                                        "type": "apoli:modify_entity_data",
+                                        "data": "silent",
+                                        "value": true
+                                      },
+                                      {
+                                        "type": "apoli:spawn_particles",
+                                        "particle": {
+                                          "type": "apoli:custom",
+                                          "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                          "lifetime": 26,
+                                          "lifetime_variation": 8,
+                                          "size": 0.55,
+                                          "size_variation": 0.25,
+                                          "end_size": 1.1,
+                                          "color": "#E6D2A0CC",
+                                          "end_color": "#C8A96E00",
+                                          "gravity": -0.002,
+                                          "friction": 0.9,
+                                          "frames": 4,
+                                          "frame_time": 6,
+                                          "physics": false,
+                                          "roll": "rUni(0, 360)"
+                                        },
+                                        "count": 10,
+                                        "offset_y": 0.3,
+                                        "spread": {
+                                          "x": 0.5,
+                                          "y": 0.2,
+                                          "z": 0.5
+                                        },
+                                        "speed": 0.04
+                                      },
+                                      {
+                                        "type": "apoli:spawn_particles",
+                                        "particle": {
+                                          "type": "apoli:custom",
+                                          "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+                                          "lifetime": 22,
+                                          "lifetime_variation": 8,
+                                          "size": 0.07,
+                                          "size_variation": 0.04,
+                                          "end_size": 0.05,
+                                          "color": "#F2E2B0",
+                                          "end_color": "#C9A86A",
+                                          "gravity": 0.05,
+                                          "friction": 0.97,
+                                          "frames": 4,
+                                          "roll": "rUni(0, 360)",
+                                          "roll_speed": "rUni(-20, 20)"
+                                        },
+                                        "count": 18,
+                                        "offset_y": 0.2,
+                                        "spread": {
+                                          "x": 0.4,
+                                          "y": 0.1,
+                                          "z": 0.4
+                                        },
+                                        "speed": 0.22
+                                      },
+                                      {
+                                        "type": "apoli:play_sound",
+                                        "sound": "minecraft:block.sand.break",
+                                        "volume": 0.9,
+                                        "pitch": 0.6
+                                      },
+                                      {
+                                        "type": "apoli:play_sound",
+                                        "sound": "minecraft:block.rooted_dirt.break",
+                                        "volume": 0.6,
+                                        "pitch": 0.5
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:entity_set_size",
+                        "set": "elemental_bendings:earthbender/sandbending/sand_clones/clones",
+                        "comparison": "==",
+                        "compare_to": 3
+                      },
+                      "action": {
+                        "type": "apoli:summon_clone",
+                        "can_attack": true,
+                        "can_sit": false,
+                        "follow_owner": true,
+                        "inherit_equipment": false,
+                        "inherit_enchantments": false,
+                        "wide_texture": "elemental_bendings:textures/entity/earthbender/sandbending/sand_clone.png",
+                        "max_life_ticks": 600,
+                        "summon_id": "elemental_bendings:sand_clone",
+                        "powers": [
+                          "elemental_bendings:earthbender/sandbending/sand_clone/frail",
+                          "elemental_bendings:earthbender/sandbending/sand_clone/clumps",
+                          "elemental_bendings:earthbender/sandbending/sand_clone/grains",
+                          "elemental_bendings:earthbender/sandbending/sand_clone/crumble",
+                          "elemental_bendings:earthbender/sandbending/sand_clone/struck",
+                          "elemental_bendings:earthbender/sandbending/sand_clone/dispel",
+                          "elemental_bendings:earthbender/sandbending/sand_clone/rise",
+                          "elemental_bendings:earthbender/sandbending/sand_clone/rise_pose",
+                          "elemental_bendings:earthbender/sandbending/sand_clone/rise_scale",
+                          "elemental_bendings:earthbender/sandbending/sand_clone/taunt",
+                          "elemental_bendings:bending/quiet_summon"
+                        ],
+                        "offset": {
+                          "x": 0,
+                          "y": 0.05,
+                          "z": 2.2
+                        },
+                        "space": "local_horizontal_normalized",
+                        "bientity_action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:add_to_entity_set",
+                              "set": "elemental_bendings:earthbender/sandbending/sand_clones/clones"
+                            },
+                            {
+                              "type": "apoli:target_action",
+                              "action": {
+                                "type": "apoli:and",
+                                "actions": [
+                                  {
+                                    "type": "apoli:modify_resource",
+                                    "resource": "elemental_bendings:earthbender/sandbending/sand_clone/rise",
+                                    "modifier": {
+                                      "operation": "set_total",
+                                      "value": 14
+                                    }
+                                  },
+                                  {
+                                    "type": "apoli:modify_resource",
+                                    "resource": "elemental_bendings:earthbender/sandbending/sand_clone/taunt",
+                                    "modifier": {
+                                      "operation": "set_total",
+                                      "value": 6
+                                    }
+                                  },
+                                  {
+                                    "type": "apoli:modify_entity_data",
+                                    "data": "silent",
+                                    "value": true
+                                  },
+                                  {
+                                    "type": "apoli:spawn_particles",
+                                    "particle": {
+                                      "type": "apoli:custom",
+                                      "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+                                      "lifetime": 26,
+                                      "lifetime_variation": 8,
+                                      "size": 0.55,
+                                      "size_variation": 0.25,
+                                      "end_size": 1.1,
+                                      "color": "#E6D2A0CC",
+                                      "end_color": "#C8A96E00",
+                                      "gravity": -0.002,
+                                      "friction": 0.9,
+                                      "frames": 4,
+                                      "frame_time": 6,
+                                      "physics": false,
+                                      "roll": "rUni(0, 360)"
+                                    },
+                                    "count": 10,
+                                    "offset_y": 0.3,
+                                    "spread": {
+                                      "x": 0.5,
+                                      "y": 0.2,
+                                      "z": 0.5
+                                    },
+                                    "speed": 0.04
+                                  },
+                                  {
+                                    "type": "apoli:spawn_particles",
+                                    "particle": {
+                                      "type": "apoli:custom",
+                                      "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+                                      "lifetime": 22,
+                                      "lifetime_variation": 8,
+                                      "size": 0.07,
+                                      "size_variation": 0.04,
+                                      "end_size": 0.05,
+                                      "color": "#F2E2B0",
+                                      "end_color": "#C9A86A",
+                                      "gravity": 0.05,
+                                      "friction": 0.97,
+                                      "frames": 4,
+                                      "roll": "rUni(0, 360)",
+                                      "roll_speed": "rUni(-20, 20)"
+                                    },
+                                    "count": 18,
+                                    "offset_y": 0.2,
+                                    "spread": {
+                                      "x": 0.4,
+                                      "y": 0.1,
+                                      "z": 0.4
+                                    },
+                                    "speed": 0.22
+                                  },
+                                  {
+                                    "type": "apoli:play_sound",
+                                    "sound": "minecraft:block.sand.break",
+                                    "volume": 0.9,
+                                    "pitch": 0.6
+                                  },
+                                  {
+                                    "type": "apoli:play_sound",
+                                    "sound": "minecraft:block.rooted_dirt.break",
+                                    "volume": 0.6,
+                                    "pitch": 0.5
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "else_action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:text",
+                "text": {
+                  "translate": "text.elemental_bendings.no_ground"
+                },
+                "bar": "actionbar",
+                "fadein": 2,
+                "duration": 30,
+                "fadeout": 8
+              },
+              {
+                "type": "apoli:play_sound",
+                "sound": "minecraft:block.dispenser.fail",
+                "volume": 0.3,
+                "pitch": 1.8
+              }
+            ]
+          }
+        }
+      }
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+    "comparison": "==",
+    "compare_to": 0
+  },
+  "hidden": true
+}

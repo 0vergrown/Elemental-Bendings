@@ -14,6 +14,24 @@
         "resource": "elemental_bendings:bending/pose_timer",
         "comparison": ">",
         "compare_to": 0
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:earthbender/metalbending/metal_chains/metal_chains"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:earthbender/lavabending/magma_slam/magma_slam"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:earthbender/sandbending/quicksand/quicksand"
+          }
+        ],
+        "inverted": true
       }
     ]
   },

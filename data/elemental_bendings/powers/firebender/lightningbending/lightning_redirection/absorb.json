@@ -1,0 +1,67 @@
+{
+  "type": "apoli:modify_damage_taken",
+  "damage_condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:in_tag",
+        "tag": "minecraft:is_lightning"
+      },
+      {
+        "type": "apoli:type",
+        "damage_type": "elemental_bendings:lightningbending"
+      }
+    ]
+  },
+  "modifier": {
+    "operation": "multiply_total",
+    "value": -0.75
+  },
+  "self_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:firebender/lightningbending/lightning_redirection/window",
+        "modifier": {
+          "operation": "set_total",
+          "value": 80
+        }
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/firebender/lightningbending/crackle.png",
+          "lifetime": 4,
+          "lifetime_variation": 2,
+          "size": 0.16,
+          "size_variation": 0.08,
+          "color": "#FFFFFF",
+          "end_color": "#4C9EFF00",
+          "friction": 0.8,
+          "emissive": true,
+          "physics": false,
+          "frames": 4,
+          "roll": "rUni(0, 360)",
+          "alpha_bleed": true
+        },
+        "count": 6,
+        "model_part": "left_hand",
+        "spread": 0.15,
+        "speed": 0.0
+      },
+      {
+        "type": "apoli:text",
+        "text": {
+          "translate": "text.elemental_bendings.caught_lightning"
+        },
+        "bar": "actionbar",
+        "fadein": 2,
+        "duration": 30,
+        "fadeout": 8
+      }
+    ]
+  },
+  "hidden": true
+}

@@ -4,21 +4,7 @@
     "translate": "skill.elemental_bendings.waterbender.bloodbending.blood_puppetry.name"
   },
   "description": {
-    "translate": "skill.elemental_bendings.waterbender.bloodbending.blood_puppetry.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
-      },
-      {
-        "keybind": "key.apoli.skill_tree"
-      }
-    ]
+    "translate": "skill.elemental_bendings.waterbender.bloodbending.blood_puppetry.description"
   },
   "powers": [
     "elemental_bendings:waterbender/bloodbending/blood_puppetry/puppet",
@@ -35,7 +21,7 @@
     "elemental_bendings:waterbender/bloodbending/blood_puppetry/hurl"
   ],
   "icon": {
-    "item": "minecraft:lead"
+    "texture": "elemental_bendings:textures/gui/waterbender/bloodbending/blood_puppetry.png"
   },
   "frame": "task",
   "cost": 3,

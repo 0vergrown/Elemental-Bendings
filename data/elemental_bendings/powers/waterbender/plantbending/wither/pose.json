@@ -11,6 +11,12 @@
       },
       {
         "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "<=",
+        "compare_to": 6
+      },
+      {
+        "type": "apoli:resource",
         "resource": "elemental_bendings:waterbender/plantbending/vine_whip/heartbeat",
         "comparison": ">",
         "compare_to": 0,

@@ -136,6 +136,20 @@
         "resource": "elemental_bendings:firebender/fire_jet/heartbeat",
         "comparison": "==",
         "compare_to": 0
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/lightningbending/flash_step"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/combustionbending/blast_jump"
+          }
+        ],
+        "inverted": true
       }
     ]
   },

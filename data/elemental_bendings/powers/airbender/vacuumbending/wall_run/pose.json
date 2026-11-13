@@ -1,0 +1,194 @@
+{
+  "type": "apoli:modify_model_parts",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:airbender/vacuumbending/wall_run/running",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:block_collision",
+            "offset_x": 0.3,
+            "offset_y": 0.1,
+            "offset_z": 0
+          },
+          {
+            "type": "apoli:block_collision",
+            "offset_x": -0.3,
+            "offset_y": 0.1,
+            "offset_z": 0
+          },
+          {
+            "type": "apoli:block_collision",
+            "offset_x": 0,
+            "offset_y": 0.1,
+            "offset_z": 0.3
+          },
+          {
+            "type": "apoli:block_collision",
+            "offset_x": 0,
+            "offset_y": 0.1,
+            "offset_z": -0.3
+          }
+        ]
+      }
+    ]
+  },
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "right_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -1.2217,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 4,
+          "value": 0.5236,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 8,
+          "value": -1.2217,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 1.5,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.5236,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 4,
+          "value": -1.2217,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 8,
+          "value": 0.5236,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 1.5,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.6981,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 4,
+          "value": -1.2217,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 8,
+          "value": 0.6981,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 1.5,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "roll",
+      "override_animation": true,
+      "value": 0.1396,
+      "duration": 1.5,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -1.2217,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 4,
+          "value": 0.6981,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 8,
+          "value": -1.2217,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 1.5,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "roll",
+      "override_animation": true,
+      "value": -0.1396,
+      "duration": 1.5,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "upper",
+      "type": "pitch",
+      "value": 0.2094,
+      "duration": 1.5,
+      "fade_out_duration": 3.0,
+      "perspectives": [
+        "third_person"
+      ]
+    }
+  ],
+  "hidden": true
+}

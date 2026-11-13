@@ -1,0 +1,374 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_1",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3",
+    {
+      "key": "key.elemental_bendings.stance_2",
+      "hold": 3
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/metalbending/scrap/legs",
+              "modifier": {
+                "operation": "set_total",
+                "value": 0
+              }
+            },
+            {
+              "type": "apoli:if_else_list",
+              "actions": [
+                {
+                  "condition": {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                      "type": "apoli:ingredient",
+                      "ingredient": {
+                        "item": "minecraft:netherite_leggings"
+                      }
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/scrap/legs",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 4
+                    }
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                      "type": "apoli:ingredient",
+                      "ingredient": {
+                        "item": "minecraft:iron_leggings"
+                      }
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/scrap/legs",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 2
+                    }
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                      "type": "apoli:ingredient",
+                      "ingredient": {
+                        "item": "minecraft:golden_leggings"
+                      }
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/scrap/legs",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 3
+                    }
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                      "type": "apoli:ingredient",
+                      "ingredient": {
+                        "item": "minecraft:chainmail_leggings"
+                      }
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/scrap/legs",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/metalbending/scrap/feet",
+              "modifier": {
+                "operation": "set_total",
+                "value": 0
+              }
+            },
+            {
+              "type": "apoli:if_else_list",
+              "actions": [
+                {
+                  "condition": {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                      "type": "apoli:ingredient",
+                      "ingredient": {
+                        "item": "minecraft:netherite_boots"
+                      }
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/scrap/feet",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 4
+                    }
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                      "type": "apoli:ingredient",
+                      "ingredient": {
+                        "item": "minecraft:iron_boots"
+                      }
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/scrap/feet",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 2
+                    }
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                      "type": "apoli:ingredient",
+                      "ingredient": {
+                        "item": "minecraft:golden_boots"
+                      }
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/scrap/feet",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 3
+                    }
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                      "type": "apoli:ingredient",
+                      "ingredient": {
+                        "item": "minecraft:chainmail_boots"
+                      }
+                    }
+                  },
+                  "action": {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:earthbender/metalbending/scrap/feet",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:earthbender/metalbending/metal_wall/fuel",
+          "modifier": {
+            "operation": "set_total",
+            "value": 240
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:earthbender/metalbending/metal_wall/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 6
+          }
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:bending/cooldown",
+          "modifier": {
+            "operation": "set_total",
+            "value": 5
+          }
+        },
+        {
+          "type": "apoli:if_else",
+          "condition": {
+            "type": "apoli:and",
+            "conditions": [
+              {
+                "type": "apoli:equipped_item",
+                "equipment_slot": "legs",
+                "item_condition": {
+                  "type": "apoli:ingredient",
+                  "ingredient": {
+                    "tag": "elemental_bendings:earthbender/metalbending/leggings"
+                  }
+                }
+              },
+              {
+                "type": "apoli:equipped_item",
+                "equipment_slot": "feet",
+                "item_condition": {
+                  "type": "apoli:ingredient",
+                  "ingredient": {
+                    "tag": "elemental_bendings:earthbender/metalbending/boots"
+                  }
+                }
+              }
+            ]
+          },
+          "if_action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:spawn_particles",
+                    "particle": {
+                      "type": "apoli:custom",
+                      "texture": "elemental_bendings:textures/particle/earthbender/metalbending/glint.png",
+                      "lifetime": 8,
+                      "lifetime_variation": 2,
+                      "size": 0.12,
+                      "end_size": 0.0,
+                      "color": "#FFFFFF",
+                      "end_color": "#D8E6FF00",
+                      "emissive": true,
+                      "blend": "additive",
+                      "frames": 4,
+                      "physics": false,
+                      "alpha_bleed": true
+                    },
+                    "count": 2,
+                    "model_part": "legs",
+                    "offset_y": 0.0,
+                    "spread": 0.2,
+                    "speed": 0.0
+                  },
+                  {
+                    "type": "apoli:spawn_particles",
+                    "particle": {
+                      "type": "apoli:custom",
+                      "texture": "elemental_bendings:textures/particle/earthbender/metalbending/spark.png",
+                      "lifetime": 7,
+                      "lifetime_variation": 3,
+                      "size": 0.06,
+                      "size_variation": 0.03,
+                      "end_size": 0.0,
+                      "color": "#FFFFFF",
+                      "end_color": "#FFD27A00",
+                      "gravity": 0.02,
+                      "friction": 0.9,
+                      "emissive": true,
+                      "blend": "additive",
+                      "physics": false,
+                      "alpha_bleed": true
+                    },
+                    "count": 3,
+                    "model_part": "feet",
+                    "offset_y": 0.0,
+                    "spread": 0.2,
+                    "speed": 0.12
+                  }
+                ]
+              },
+              {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:block.anvil.land",
+                    "volume": 0.315,
+                    "pitch": 1.1199999999999999
+                  },
+                  {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:item.armor.equip_iron",
+                    "volume": 0.9,
+                    "pitch": 0.7
+                  }
+                ]
+              }
+            ]
+          },
+          "else_action": {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.rooted_dirt.break",
+            "volume": 0.9,
+            "pitch": 0.6
+          }
+        }
+      ]
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+    "comparison": "==",
+    "compare_to": 0
+  },
+  "hidden": true
+}

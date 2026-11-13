@@ -105,218 +105,662 @@
           ]
         },
         "else_action": {
-          "type": "apoli:and",
-          "actions": [
-            {
-              "type": "apoli:modify_resource",
-              "resource": "elemental_bendings:firebender/fire_jet/fuel",
-              "modifier": {
-                "operation": "add_value",
-                "value": -2
-              }
-            },
-            {
-              "type": "apoli:if_else",
-              "condition": {
-                "type": "apoli:fall_flying"
+          "type": "apoli:if_else",
+          "condition": {
+            "type": "apoli:power",
+            "power": "elemental_bendings:firebender/blue_fire/blue_fire_jet"
+          },
+          "if_action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:firebender/fire_jet/fuel",
+                "modifier": {
+                  "operation": "add_value",
+                  "value": -2
+                }
               },
-              "if_action": {
-                "type": "apoli:and",
-                "actions": [
-                  {
-                    "type": "apoli:add_velocity",
-                    "x": 0,
-                    "y": 0,
-                    "z": 0.06,
-                    "space": "local"
-                  },
-                  {
-                    "type": "apoli:spawn_particles",
-                    "particle": {
-                      "type": "apoli:custom",
-                      "texture": "elemental_bendings:textures/particle/firebender/flame.png",
-                      "lifetime": 14,
-                      "lifetime_variation": 4,
-                      "size": 0.55,
-                      "size_variation": 0.2,
-                      "end_size": 0.1,
-                      "color": "#FFFFFF",
-                      "end_color": "#FF3A0A70",
-                      "friction": 0.93,
-                      "emissive": true,
-                      "blend": "additive",
-                      "frames": 6,
-                      "frame_time": 2,
-                      "physics": false,
-                      "roll": "rUni(0, 360)",
-                      "easing": "ease_in_quad"
-                    },
-                    "count": 6,
-                    "model_part": "feet",
-                    "offset_y": 0.0,
-                    "velocity_y": 0.0,
-                    "velocity_z": -0.4,
-                    "spread": {
-                      "x": 0.15,
-                      "y": 0.15,
-                      "z": 0.1
-                    }
-                  }
-                ]
-              },
-              "else_action": {
-                "type": "apoli:and",
-                "actions": [
-                  {
-                    "type": "apoli:spawn_particles",
-                    "particle": {
-                      "type": "apoli:custom",
-                      "texture": "elemental_bendings:textures/particle/firebender/flame.png",
-                      "lifetime": 14,
-                      "lifetime_variation": 4,
-                      "size": 0.55,
-                      "size_variation": 0.2,
-                      "end_size": 0.1,
-                      "color": "#FFFFFF",
-                      "end_color": "#FF3A0A70",
-                      "friction": 0.93,
-                      "emissive": true,
-                      "blend": "additive",
-                      "frames": 6,
-                      "frame_time": 2,
-                      "physics": false,
-                      "roll": "rUni(0, 360)",
-                      "easing": "ease_in_quad"
-                    },
-                    "count": 5,
-                    "offset_y": 0.0,
-                    "velocity_y": -0.45,
-                    "spread": {
-                      "x": 0.18,
-                      "y": 0.05,
-                      "z": 0.18
-                    }
-                  },
-                  {
-                    "type": "apoli:random_chance",
-                    "chance": 0.5,
-                    "action": {
-                      "type": "apoli:spawn_particles",
-                      "particle": "minecraft:smoke",
-                      "count": 2,
-                      "offset_y": -0.3,
-                      "spread": {
-                        "x": 0.3,
-                        "y": 0.1,
-                        "z": 0.3
-                      },
-                      "speed": 0.02
-                    }
-                  },
-                  {
-                    "type": "apoli:raycast",
-                    "direction": {
-                      "x": 0,
-                      "y": -1,
-                      "z": 0
-                    },
-                    "space": "world",
-                    "distance": 4,
-                    "block": true,
-                    "entity": true,
-                    "radius": 0.6,
-                    "pierce_entities": true,
-                    "bientity_action": {
-                      "type": "apoli:and",
-                      "actions": [
-                        {
-                          "type": "apoli:damage",
-                          "amount": "3 * (1 + 0.25 * (mod(day_time, 24000) < 12000))",
-                          "damage_type": "elemental_bendings:firebending"
-                        },
-                        {
-                          "type": "apoli:target_action",
-                          "action": {
-                            "type": "apoli:set_on_fire",
-                            "duration": 4
-                          }
-                        }
-                      ]
-                    },
-                    "block_action": {
-                      "type": "apoli:random_chance",
-                      "chance": 0.1,
-                      "action": {
-                        "type": "apoli:offset",
-                        "action": {
-                          "type": "apoli:if_else",
-                          "condition": {
-                            "type": "apoli:replacable"
-                          },
-                          "if_action": {
-                            "type": "apoli:set_block",
-                            "block": "minecraft:fire"
-                          }
-                        },
-                        "y": 1
-                      }
-                    }
-                  },
-                  {
-                    "type": "apoli:if_else",
-                    "condition": {
-                      "type": "apoli:key_pressed",
-                      "key": "key.jump"
-                    },
-                    "if_action": {
-                      "type": "apoli:and",
-                      "actions": [
-                        {
-                          "type": "apoli:add_velocity",
-                          "x": 0,
-                          "y": 0.3,
-                          "z": 0,
-                          "space": "world"
-                        },
-                        {
-                          "type": "apoli:modify_resource",
-                          "resource": "elemental_bendings:firebender/fire_jet/climbing",
-                          "modifier": {
-                            "operation": "set_total",
-                            "value": 4
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "type": "apoli:if_else",
-                    "condition": {
-                      "type": "apoli:key_pressed",
-                      "key": "key.sneak"
-                    },
-                    "if_action": {
+              {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:fall_flying"
+                },
+                "if_action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
                       "type": "apoli:add_velocity",
                       "x": 0,
-                      "y": -0.2,
-                      "z": 0,
-                      "space": "world"
+                      "y": 0,
+                      "z": 0.06,
+                      "space": "local"
+                    },
+                    {
+                      "type": "apoli:spawn_particles",
+                      "particle": {
+                        "type": "apoli:custom",
+                        "texture": "elemental_bendings:textures/particle/firebender/blue_fire/flame.png",
+                        "lifetime": 14,
+                        "lifetime_variation": 4,
+                        "size": 0.55,
+                        "size_variation": 0.2,
+                        "end_size": 0.1,
+                        "color": "#FFFFFF",
+                        "end_color": "#1C52FF70",
+                        "friction": 0.93,
+                        "emissive": true,
+                        "blend": "additive",
+                        "frames": 6,
+                        "frame_time": 2,
+                        "physics": false,
+                        "roll": "rUni(0, 360)",
+                        "easing": "ease_in_quad"
+                      },
+                      "count": 6,
+                      "model_part": "feet",
+                      "offset_y": 0.0,
+                      "velocity_y": 0.0,
+                      "velocity_z": -0.4,
+                      "spread": {
+                        "x": 0.15,
+                        "y": 0.15,
+                        "z": 0.1
+                      }
                     }
-                  }
-                ]
+                  ]
+                },
+                "else_action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:spawn_particles",
+                      "particle": {
+                        "type": "apoli:custom",
+                        "texture": "elemental_bendings:textures/particle/firebender/blue_fire/flame.png",
+                        "lifetime": 14,
+                        "lifetime_variation": 4,
+                        "size": 0.55,
+                        "size_variation": 0.2,
+                        "end_size": 0.1,
+                        "color": "#FFFFFF",
+                        "end_color": "#1C52FF70",
+                        "friction": 0.93,
+                        "emissive": true,
+                        "blend": "additive",
+                        "frames": 6,
+                        "frame_time": 2,
+                        "physics": false,
+                        "roll": "rUni(0, 360)",
+                        "easing": "ease_in_quad"
+                      },
+                      "count": 5,
+                      "offset_y": 0.0,
+                      "velocity_y": -0.45,
+                      "spread": {
+                        "x": 0.18,
+                        "y": 0.05,
+                        "z": 0.18
+                      }
+                    },
+                    {
+                      "type": "apoli:random_chance",
+                      "chance": 0.5,
+                      "action": {
+                        "type": "apoli:spawn_particles",
+                        "particle": "minecraft:smoke",
+                        "count": 2,
+                        "offset_y": -0.3,
+                        "spread": {
+                          "x": 0.3,
+                          "y": 0.1,
+                          "z": 0.3
+                        },
+                        "speed": 0.02
+                      }
+                    },
+                    {
+                      "type": "apoli:raycast",
+                      "direction": {
+                        "x": 0,
+                        "y": -1,
+                        "z": 0
+                      },
+                      "space": "world",
+                      "distance": 4,
+                      "block": true,
+                      "entity": true,
+                      "radius": 0.6,
+                      "pierce_entities": true,
+                      "bientity_action": {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:damage",
+                            "amount": "3 * (1 + 0.25 * (mod(day_time, 24000) < 12000)) * 1.4",
+                            "damage_type": "elemental_bendings:firebending"
+                          },
+                          {
+                            "type": "apoli:target_action",
+                            "action": {
+                              "type": "apoli:set_on_fire",
+                              "duration": 7
+                            }
+                          }
+                        ]
+                      },
+                      "block_action": {
+                        "type": "apoli:random_chance",
+                        "chance": 0.1,
+                        "action": {
+                          "type": "apoli:offset",
+                          "action": {
+                            "type": "apoli:if_else",
+                            "condition": {
+                              "type": "apoli:replacable"
+                            },
+                            "if_action": {
+                              "type": "apoli:set_block",
+                              "block": "minecraft:fire"
+                            }
+                          },
+                          "y": 1
+                        }
+                      }
+                    },
+                    {
+                      "type": "apoli:if_else",
+                      "condition": {
+                        "type": "apoli:key_pressed",
+                        "key": "key.jump"
+                      },
+                      "if_action": {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:add_velocity",
+                            "x": 0,
+                            "y": 0.3,
+                            "z": 0,
+                            "space": "world"
+                          },
+                          {
+                            "type": "apoli:modify_resource",
+                            "resource": "elemental_bendings:firebender/fire_jet/climbing",
+                            "modifier": {
+                              "operation": "set_total",
+                              "value": 4
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "apoli:if_else",
+                      "condition": {
+                        "type": "apoli:key_pressed",
+                        "key": "key.sneak"
+                      },
+                      "if_action": {
+                        "type": "apoli:add_velocity",
+                        "x": 0,
+                        "y": -0.2,
+                        "z": 0,
+                        "space": "world"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "apoli:random_chance",
+                "chance": 0.3,
+                "action": {
+                  "type": "apoli:play_sound",
+                  "sound": "minecraft:item.firecharge.use",
+                  "volume": 0.25,
+                  "pitch": 1.0
+                }
               }
+            ]
+          },
+          "else_action": {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:power",
+              "power": "elemental_bendings:firebender/dragon_fire/dragon_fire_jet"
             },
-            {
-              "type": "apoli:random_chance",
-              "chance": 0.3,
-              "action": {
-                "type": "apoli:play_sound",
-                "sound": "minecraft:item.firecharge.use",
-                "volume": 0.25,
-                "pitch": 1.0
-              }
+            "if_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:firebender/fire_jet/fuel",
+                  "modifier": {
+                    "operation": "add_value",
+                    "value": -2
+                  }
+                },
+                {
+                  "type": "apoli:if_else",
+                  "condition": {
+                    "type": "apoli:fall_flying"
+                  },
+                  "if_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:add_velocity",
+                        "x": 0,
+                        "y": 0,
+                        "z": 0.06,
+                        "space": "local"
+                      },
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/firebender/dragon_fire/flame.png",
+                          "lifetime": 14,
+                          "lifetime_variation": 4,
+                          "size": 0.55,
+                          "size_variation": 0.2,
+                          "end_size": 0.1,
+                          "color": "#FFFFFF",
+                          "end_color": "#FF2EB470",
+                          "friction": 0.93,
+                          "emissive": true,
+                          "blend": "additive",
+                          "frames": 6,
+                          "frame_time": 2,
+                          "physics": false,
+                          "roll": "rUni(0, 360)",
+                          "easing": "ease_in_quad",
+                          "hue_variation": 180
+                        },
+                        "count": 6,
+                        "model_part": "feet",
+                        "offset_y": 0.0,
+                        "velocity_y": 0.0,
+                        "velocity_z": -0.4,
+                        "spread": {
+                          "x": 0.15,
+                          "y": 0.15,
+                          "z": 0.1
+                        }
+                      }
+                    ]
+                  },
+                  "else_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/firebender/dragon_fire/flame.png",
+                          "lifetime": 14,
+                          "lifetime_variation": 4,
+                          "size": 0.55,
+                          "size_variation": 0.2,
+                          "end_size": 0.1,
+                          "color": "#FFFFFF",
+                          "end_color": "#FF2EB470",
+                          "friction": 0.93,
+                          "emissive": true,
+                          "blend": "additive",
+                          "frames": 6,
+                          "frame_time": 2,
+                          "physics": false,
+                          "roll": "rUni(0, 360)",
+                          "easing": "ease_in_quad",
+                          "hue_variation": 180
+                        },
+                        "count": 5,
+                        "offset_y": 0.0,
+                        "velocity_y": -0.45,
+                        "spread": {
+                          "x": 0.18,
+                          "y": 0.05,
+                          "z": 0.18
+                        }
+                      },
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": 0.5,
+                        "action": {
+                          "type": "apoli:spawn_particles",
+                          "particle": "minecraft:smoke",
+                          "count": 2,
+                          "offset_y": -0.3,
+                          "spread": {
+                            "x": 0.3,
+                            "y": 0.1,
+                            "z": 0.3
+                          },
+                          "speed": 0.02
+                        }
+                      },
+                      {
+                        "type": "apoli:raycast",
+                        "direction": {
+                          "x": 0,
+                          "y": -1,
+                          "z": 0
+                        },
+                        "space": "world",
+                        "distance": 4,
+                        "block": true,
+                        "entity": true,
+                        "radius": 0.6,
+                        "pierce_entities": true,
+                        "bientity_action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:damage",
+                              "amount": "3 * (1 + 0.25 * (mod(day_time, 24000) < 12000)) * 1.4",
+                              "damage_type": "elemental_bendings:firebending"
+                            },
+                            {
+                              "type": "apoli:target_action",
+                              "action": {
+                                "type": "apoli:set_on_fire",
+                                "duration": 7
+                              }
+                            }
+                          ]
+                        },
+                        "block_action": {
+                          "type": "apoli:random_chance",
+                          "chance": 0.1,
+                          "action": {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:replacable"
+                              },
+                              "if_action": {
+                                "type": "apoli:set_block",
+                                "block": "minecraft:fire"
+                              }
+                            },
+                            "y": 1
+                          }
+                        }
+                      },
+                      {
+                        "type": "apoli:if_else",
+                        "condition": {
+                          "type": "apoli:key_pressed",
+                          "key": "key.jump"
+                        },
+                        "if_action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:add_velocity",
+                              "x": 0,
+                              "y": 0.3,
+                              "z": 0,
+                              "space": "world"
+                            },
+                            {
+                              "type": "apoli:modify_resource",
+                              "resource": "elemental_bendings:firebender/fire_jet/climbing",
+                              "modifier": {
+                                "operation": "set_total",
+                                "value": 4
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "apoli:if_else",
+                        "condition": {
+                          "type": "apoli:key_pressed",
+                          "key": "key.sneak"
+                        },
+                        "if_action": {
+                          "type": "apoli:add_velocity",
+                          "x": 0,
+                          "y": -0.2,
+                          "z": 0,
+                          "space": "world"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "apoli:random_chance",
+                  "chance": 0.3,
+                  "action": {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:item.firecharge.use",
+                    "volume": 0.25,
+                    "pitch": 1.0
+                  }
+                }
+              ]
+            },
+            "else_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:firebender/fire_jet/fuel",
+                  "modifier": {
+                    "operation": "add_value",
+                    "value": -2
+                  }
+                },
+                {
+                  "type": "apoli:if_else",
+                  "condition": {
+                    "type": "apoli:fall_flying"
+                  },
+                  "if_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:add_velocity",
+                        "x": 0,
+                        "y": 0,
+                        "z": 0.06,
+                        "space": "local"
+                      },
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/firebender/flame.png",
+                          "lifetime": 14,
+                          "lifetime_variation": 4,
+                          "size": 0.55,
+                          "size_variation": 0.2,
+                          "end_size": 0.1,
+                          "color": "#FFFFFF",
+                          "end_color": "#FF3A0A70",
+                          "friction": 0.93,
+                          "emissive": true,
+                          "blend": "additive",
+                          "frames": 6,
+                          "frame_time": 2,
+                          "physics": false,
+                          "roll": "rUni(0, 360)",
+                          "easing": "ease_in_quad"
+                        },
+                        "count": 6,
+                        "model_part": "feet",
+                        "offset_y": 0.0,
+                        "velocity_y": 0.0,
+                        "velocity_z": -0.4,
+                        "spread": {
+                          "x": 0.15,
+                          "y": 0.15,
+                          "z": 0.1
+                        }
+                      }
+                    ]
+                  },
+                  "else_action": {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/firebender/flame.png",
+                          "lifetime": 14,
+                          "lifetime_variation": 4,
+                          "size": 0.55,
+                          "size_variation": 0.2,
+                          "end_size": 0.1,
+                          "color": "#FFFFFF",
+                          "end_color": "#FF3A0A70",
+                          "friction": 0.93,
+                          "emissive": true,
+                          "blend": "additive",
+                          "frames": 6,
+                          "frame_time": 2,
+                          "physics": false,
+                          "roll": "rUni(0, 360)",
+                          "easing": "ease_in_quad"
+                        },
+                        "count": 5,
+                        "offset_y": 0.0,
+                        "velocity_y": -0.45,
+                        "spread": {
+                          "x": 0.18,
+                          "y": 0.05,
+                          "z": 0.18
+                        }
+                      },
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": 0.5,
+                        "action": {
+                          "type": "apoli:spawn_particles",
+                          "particle": "minecraft:smoke",
+                          "count": 2,
+                          "offset_y": -0.3,
+                          "spread": {
+                            "x": 0.3,
+                            "y": 0.1,
+                            "z": 0.3
+                          },
+                          "speed": 0.02
+                        }
+                      },
+                      {
+                        "type": "apoli:raycast",
+                        "direction": {
+                          "x": 0,
+                          "y": -1,
+                          "z": 0
+                        },
+                        "space": "world",
+                        "distance": 4,
+                        "block": true,
+                        "entity": true,
+                        "radius": 0.6,
+                        "pierce_entities": true,
+                        "bientity_action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:damage",
+                              "amount": "3 * (1 + 0.25 * (mod(day_time, 24000) < 12000))",
+                              "damage_type": "elemental_bendings:firebending"
+                            },
+                            {
+                              "type": "apoli:target_action",
+                              "action": {
+                                "type": "apoli:set_on_fire",
+                                "duration": 4
+                              }
+                            }
+                          ]
+                        },
+                        "block_action": {
+                          "type": "apoli:random_chance",
+                          "chance": 0.1,
+                          "action": {
+                            "type": "apoli:offset",
+                            "action": {
+                              "type": "apoli:if_else",
+                              "condition": {
+                                "type": "apoli:replacable"
+                              },
+                              "if_action": {
+                                "type": "apoli:set_block",
+                                "block": "minecraft:fire"
+                              }
+                            },
+                            "y": 1
+                          }
+                        }
+                      },
+                      {
+                        "type": "apoli:if_else",
+                        "condition": {
+                          "type": "apoli:key_pressed",
+                          "key": "key.jump"
+                        },
+                        "if_action": {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:add_velocity",
+                              "x": 0,
+                              "y": 0.3,
+                              "z": 0,
+                              "space": "world"
+                            },
+                            {
+                              "type": "apoli:modify_resource",
+                              "resource": "elemental_bendings:firebender/fire_jet/climbing",
+                              "modifier": {
+                                "operation": "set_total",
+                                "value": 4
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "apoli:if_else",
+                        "condition": {
+                          "type": "apoli:key_pressed",
+                          "key": "key.sneak"
+                        },
+                        "if_action": {
+                          "type": "apoli:add_velocity",
+                          "x": 0,
+                          "y": -0.2,
+                          "z": 0,
+                          "space": "world"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "apoli:random_chance",
+                  "chance": 0.3,
+                  "action": {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:item.firecharge.use",
+                    "volume": 0.25,
+                    "pitch": 1.0
+                  }
+                }
+              ]
             }
-          ]
+          }
         }
       }
     ]

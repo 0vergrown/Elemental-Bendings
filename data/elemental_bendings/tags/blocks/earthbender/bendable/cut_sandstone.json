@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "minecraft:cut_sandstone",
+      "required": false
+    },
+    {
+      "id": "minecraft:chiseled_sandstone",
+      "required": false
+    }
+  ]
+}

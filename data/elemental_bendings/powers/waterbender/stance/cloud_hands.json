@@ -4,50 +4,31 @@
     "type": "apoli:and",
     "conditions": [
       {
-        "type": "apoli:and",
-        "conditions": [
-          {
-            "type": "apoli:resource",
-            "resource": "elemental_bendings:bending/pose",
-            "comparison": "==",
-            "compare_to": 2
-          },
-          {
-            "type": "apoli:resource",
-            "resource": "elemental_bendings:bending/pose_timer",
-            "comparison": ">",
-            "compare_to": 0
-          }
-        ]
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:bending/pose",
+        "comparison": "==",
+        "compare_to": 2
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:bending/pose_timer",
+        "comparison": ">",
+        "compare_to": 0
       },
       {
         "type": "apoli:or",
         "conditions": [
           {
-            "type": "apoli:and",
-            "conditions": [
-              {
-                "type": "apoli:power",
-                "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
-              },
-              {
-                "type": "apoli:or",
-                "conditions": [
-                  {
-                    "type": "apoli:random_chance",
-                    "chance": "(mod(day_time, 24000) >= 13000)"
-                  },
-                  {
-                    "type": "apoli:power",
-                    "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
-                  }
-                ]
-              }
-            ]
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
           },
           {
             "type": "apoli:power",
-            "power": "elemental_bendings:waterbender/plantbending/plantbending"
+            "power": "elemental_bendings:waterbender/plantbending/bramble_field"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/icebending/ice_prison/ice_prison"
           }
         ],
         "inverted": true

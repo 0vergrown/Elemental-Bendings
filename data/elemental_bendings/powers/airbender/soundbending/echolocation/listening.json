@@ -1,0 +1,51 @@
+{
+  "type": "apoli:game_event_listener",
+  "range": 24,
+  "cooldown": 2,
+  "entity": true,
+  "block": false,
+  "show_particle": true,
+  "event_tag": "minecraft:vibrations",
+  "bientity_condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:actor_condition",
+        "condition": {
+          "type": "apoli:living"
+        }
+      },
+      {
+        "type": "apoli:equal",
+        "inverted": true
+      }
+    ]
+  },
+  "bientity_action": {
+    "type": "apoli:actor_action",
+    "action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:grant_power",
+          "power": "elemental_bendings:airbender/soundbending/echoed/marked",
+          "source": "elemental_bendings:echoed"
+        },
+        {
+          "type": "apoli:grant_power",
+          "power": "elemental_bendings:airbender/soundbending/echoed/fade",
+          "source": "elemental_bendings:echoed"
+        },
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:airbender/soundbending/echoed/fade",
+          "modifier": {
+            "operation": "set_total",
+            "value": 160
+          }
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

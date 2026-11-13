@@ -120,5 +120,6 @@
         "inverted": true
       }
     ]
-  }
+  },
+  "hidden": true
 }

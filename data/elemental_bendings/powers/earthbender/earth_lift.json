@@ -21,38 +21,107 @@
     "if_action": {
       "type": "apoli:if_else",
       "condition": {
-        "type": "apoli:raycast",
-        "distance": 6,
-        "block": true,
-        "entity": false,
-        "shape_type": "collider",
-        "fluid_handling": "none",
-        "block_condition": {
-          "type": "apoli:or",
-          "conditions": [
-            {
-              "type": "apoli:in_tag",
-              "tag": "elemental_bendings:earthbender/bendable"
-            },
-            {
-              "type": "apoli:and",
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:raycast",
+            "distance": 6,
+            "block": true,
+            "entity": false,
+            "shape_type": "collider",
+            "fluid_handling": "none",
+            "block_condition": {
+              "type": "apoli:or",
               "conditions": [
                 {
-                  "type": "apoli:block",
-                  "block": "minecraft:snow"
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/bendable"
                 },
                 {
-                  "type": "apoli:offset",
-                  "condition": {
-                    "type": "apoli:in_tag",
-                    "tag": "elemental_bendings:earthbender/bendable"
-                  },
-                  "y": -1
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:block",
+                      "block": "minecraft:snow"
+                    },
+                    {
+                      "type": "apoli:offset",
+                      "condition": {
+                        "type": "apoli:in_tag",
+                        "tag": "elemental_bendings:earthbender/bendable"
+                      },
+                      "y": -1
+                    }
+                  ]
                 }
               ]
             }
-          ]
-        }
+          },
+          {
+            "type": "apoli:and",
+            "conditions": [
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:earthbender/sandbending/sandbending"
+              },
+              {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:or",
+                  "conditions": [
+                    {
+                      "type": "apoli:in_tag",
+                      "tag": "elemental_bendings:earthbender/sandbending/extra"
+                    },
+                    {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block",
+                          "block": "minecraft:snow"
+                        },
+                        {
+                          "type": "apoli:offset",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/sandbending/extra"
+                          },
+                          "y": -1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "type": "apoli:and",
+            "conditions": [
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:earthbender/metalbending/metalbending"
+              },
+              {
+                "type": "apoli:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                  "type": "apoli:in_tag",
+                  "tag": "elemental_bendings:earthbender/metalbending/metal"
+                }
+              }
+            ]
+          }
+        ]
       },
       "if_action": {
         "type": "apoli:raycast",
@@ -672,11 +741,26 @@
                 }
               },
               "action": {
-                "type": "apoli:run_function",
-                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-                "arguments": {
-                  "variant": "sand",
-                  "color": "#DBCFA3"
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "sand",
+                    "color": "#DBCFA3"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "sand",
+                    "color": "#DBCFA3"
+                  }
                 }
               }
             },
@@ -716,11 +800,26 @@
                 }
               },
               "action": {
-                "type": "apoli:run_function",
-                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-                "arguments": {
-                  "variant": "red_sand",
-                  "color": "#BE6621"
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "red_sand",
+                    "color": "#BE6621"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "red_sand",
+                    "color": "#BE6621"
+                  }
                 }
               }
             },
@@ -804,11 +903,26 @@
                 }
               },
               "action": {
-                "type": "apoli:run_function",
-                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-                "arguments": {
-                  "variant": "sandstone",
-                  "color": "#D8CB9B"
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "sandstone",
+                    "color": "#D8CB9B"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "sandstone",
+                    "color": "#D8CB9B"
+                  }
                 }
               }
             },
@@ -848,11 +962,26 @@
                 }
               },
               "action": {
-                "type": "apoli:run_function",
-                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
-                "arguments": {
-                  "variant": "red_sandstone",
-                  "color": "#B5621F"
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "red_sandstone",
+                    "color": "#B5621F"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "red_sandstone",
+                    "color": "#B5621F"
+                  }
                 }
               }
             },
@@ -2087,6 +2216,1949 @@
                   "color": "#6F3533"
                 }
               }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/smooth_sandstone"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/smooth_sandstone"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "smooth_sandstone",
+                    "color": "#D8CB9B"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "smooth_sandstone",
+                    "color": "#D8CB9B"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/cut_sandstone"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/cut_sandstone"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "cut_sandstone",
+                    "color": "#D8CB9B"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "cut_sandstone",
+                    "color": "#D8CB9B"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/smooth_red_sandstone"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/smooth_red_sandstone"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "smooth_red_sandstone",
+                    "color": "#B5621F"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "smooth_red_sandstone",
+                    "color": "#B5621F"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/cut_red_sandstone"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/cut_red_sandstone"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "cut_red_sandstone",
+                    "color": "#B5621F"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "cut_red_sandstone",
+                    "color": "#B5621F"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/white_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/white_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "white_concrete_powder",
+                    "color": "#E3E5E4"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "white_concrete_powder",
+                    "color": "#E3E5E4"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/orange_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/orange_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "orange_concrete_powder",
+                    "color": "#E3843A"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "orange_concrete_powder",
+                    "color": "#E3843A"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/magenta_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/magenta_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "magenta_concrete_powder",
+                    "color": "#C25FBA"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "magenta_concrete_powder",
+                    "color": "#C25FBA"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/light_blue_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/light_blue_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "light_blue_concrete_powder",
+                    "color": "#4AB4D6"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "light_blue_concrete_powder",
+                    "color": "#4AB4D6"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/yellow_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/yellow_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "yellow_concrete_powder",
+                    "color": "#E8C73A"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "yellow_concrete_powder",
+                    "color": "#E8C73A"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/lime_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/lime_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "lime_concrete_powder",
+                    "color": "#7DBD2B"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "lime_concrete_powder",
+                    "color": "#7DBD2B"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/pink_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/pink_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "pink_concrete_powder",
+                    "color": "#E59AB5"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "pink_concrete_powder",
+                    "color": "#E59AB5"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/gray_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/gray_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "gray_concrete_powder",
+                    "color": "#4C5154"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "gray_concrete_powder",
+                    "color": "#4C5154"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/light_gray_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/light_gray_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "light_gray_concrete_powder",
+                    "color": "#9A9A94"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "light_gray_concrete_powder",
+                    "color": "#9A9A94"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/cyan_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/cyan_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "cyan_concrete_powder",
+                    "color": "#24939D"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "cyan_concrete_powder",
+                    "color": "#24939D"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/purple_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/purple_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "purple_concrete_powder",
+                    "color": "#8338B2"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "purple_concrete_powder",
+                    "color": "#8338B2"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/blue_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/blue_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "blue_concrete_powder",
+                    "color": "#4446A7"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "blue_concrete_powder",
+                    "color": "#4446A7"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/brown_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/brown_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "brown_concrete_powder",
+                    "color": "#7D5435"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "brown_concrete_powder",
+                    "color": "#7D5435"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/green_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/green_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "green_concrete_powder",
+                    "color": "#61772D"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "green_concrete_powder",
+                    "color": "#61772D"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/red_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/red_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "red_concrete_powder",
+                    "color": "#A8362F"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "red_concrete_powder",
+                    "color": "#A8362F"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/black_concrete_powder"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/black_concrete_powder"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:power",
+                  "power": "elemental_bendings:earthbender/sandbending/sandbending"
+                },
+                "if_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block_sand",
+                  "arguments": {
+                    "variant": "black_concrete_powder",
+                    "color": "#191A1F"
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:run_function",
+                  "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                  "arguments": {
+                    "variant": "black_concrete_powder",
+                    "color": "#191A1F"
+                  }
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/metalbending/metalbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/iron_block"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/iron_block"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "iron_block",
+                  "color": "#D8D8D8"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/metalbending/metalbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/raw_iron_block"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/raw_iron_block"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "raw_iron_block",
+                  "color": "#A6876A"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/metalbending/metalbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/gold_block"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/gold_block"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "gold_block",
+                  "color": "#F5D547"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/metalbending/metalbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/raw_gold_block"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/raw_gold_block"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "raw_gold_block",
+                  "color": "#DDA53C"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/metalbending/metalbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/copper_block"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/copper_block"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "copper_block",
+                  "color": "#C46B4D"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/metalbending/metalbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/exposed_copper"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/exposed_copper"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "exposed_copper",
+                  "color": "#A8806B"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/metalbending/metalbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/weathered_copper"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/weathered_copper"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "weathered_copper",
+                  "color": "#6C9E83"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/metalbending/metalbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/oxidized_copper"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/oxidized_copper"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "oxidized_copper",
+                  "color": "#4FAB90"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/metalbending/metalbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/raw_copper_block"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/raw_copper_block"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "raw_copper_block",
+                  "color": "#9A6A4B"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/metalbending/metalbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/netherite_block"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/netherite_block"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "netherite_block",
+                  "color": "#4A4447"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:earthbender/metalbending/metalbending"
+                  },
+                  {
+                    "type": "apoli:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "block_condition": {
+                      "type": "apoli:or",
+                      "conditions": [
+                        {
+                          "type": "apoli:in_tag",
+                          "tag": "elemental_bendings:earthbender/bendable/ancient_debris"
+                        },
+                        {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:snow"
+                            },
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:earthbender/bendable/ancient_debris"
+                              },
+                              "y": -1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "apoli:run_function",
+                "function": "elemental_bendings:earthbender/earth_lift/lift_block",
+                "arguments": {
+                  "variant": "ancient_debris",
+                  "color": "#6B4E45"
+                }
+              }
             }
           ]
         }
@@ -2121,23 +4193,59 @@
     }
   },
   "condition": {
-    "type": "apoli:resource",
-    "resource": "elemental_bendings:earthbender/earth_lift/lifting",
-    "comparison": "==",
-    "compare_to": 0
-  },
-  "description": {
-    "translate": "power.elemental_bendings.earthbender/earth_lift.description",
-    "with": [
+    "type": "apoli:and",
+    "conditions": [
       {
-        "keybind": "key.elemental_bendings.stance_1"
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+        "comparison": "==",
+        "compare_to": 0
       },
       {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/lavabending/lava_ball",
+        "inverted": true
       }
     ]
-  }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/isaacfanta/active.png",
+      "text": {
+        "text": "",
+        "extra": [
+          {
+            "translate": "badge.elemental_bendings.combo.3.when",
+            "with": [
+              {
+                "keybind": "key.elemental_bendings.stance_3"
+              },
+              {
+                "keybind": "key.elemental_bendings.stance_2"
+              },
+              {
+                "keybind": "key.elemental_bendings.stance_3"
+              },
+              {
+                "translate": "badge.elemental_bendings.when.earth"
+              }
+            ]
+          },
+          "\n",
+          {
+            "translate": "badge.elemental_bendings.note.lift",
+            "with": [
+              {
+                "keybind": "key.elemental_bendings.stance_1"
+              },
+              {
+                "keybind": "key.elemental_bendings.stance_2"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }

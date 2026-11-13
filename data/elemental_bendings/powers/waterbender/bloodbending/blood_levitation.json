@@ -1,0 +1,205 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_2",
+    {
+      "key": "key.elemental_bendings.stance_3",
+      "hold": 4
+    }
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/rest",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      "if_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/grip",
+            "modifier": {
+              "operation": "set_total",
+              "value": 240
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/last_y",
+            "modifier": {
+              "operation": "set_total",
+              "value": "y"
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/heartbeat",
+            "modifier": {
+              "operation": "set_total",
+              "value": 6
+            }
+          },
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:bending/cooldown",
+            "modifier": {
+              "operation": "set_total",
+              "value": 6
+            }
+          },
+          {
+            "type": "apoli:add_velocity",
+            "x": 0,
+            "y": 0.45,
+            "z": 0,
+            "space": "world"
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.warden.heartbeat",
+            "volume": 0.9,
+            "pitch": 0.8
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.honey_block.slide",
+            "volume": 0.8,
+            "pitch": 0.6
+          },
+          {
+            "type": "apoli:spawn_particles",
+            "particle": {
+              "type": "apoli:custom",
+              "texture": "elemental_bendings:textures/particle/waterbender/bloodbending/blood_drop.png",
+              "lifetime": 14,
+              "lifetime_variation": 3,
+              "size": 0.13,
+              "size_variation": 0.05,
+              "end_size": 0.06,
+              "color": "#FFFFFFEE",
+              "end_color": "#B0303099",
+              "friction": 0.92,
+              "frames": 4,
+              "frame_time": 3,
+              "physics": false,
+              "roll": "rUni(0, 360)"
+            },
+            "count": 14,
+            "offset_y": 0.8,
+            "spread": {
+              "x": 0.5,
+              "y": 0.8,
+              "z": 0.5
+            },
+            "speed": 0.05
+          }
+        ]
+      },
+      "else_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:text",
+            "text": {
+              "translate": "text.elemental_bendings.blood_unsettled"
+            },
+            "bar": "actionbar",
+            "fadein": 2,
+            "duration": 30,
+            "fadeout": 8
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.dispenser.fail",
+            "volume": 0.3,
+            "pitch": 1.8
+          }
+        ]
+      }
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/healing_water/heartbeat",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/water_glide/heartbeat",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/heartbeat",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:waterbender/plantbending/plant_golem/active",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ],
+        "inverted": true
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:random_chance",
+            "chance": "(mod(day_time, 24000) >= 13000)"
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

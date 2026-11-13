@@ -1,0 +1,289 @@
+{
+  "type": "apoli:action_on_key_press",
+  "key": {
+    "key": "key.elemental_bendings.stance_3",
+    "continuous": true
+  },
+  "cooldown": 1,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 6
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:airbender/spiritual_airbending/flight/fuel",
+            "modifier": {
+              "operation": "add_value",
+              "value": -2
+            }
+          },
+          {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:key_pressed",
+                  "key": "key.forward"
+                },
+                "if_action": {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:airbender/spiritual_airbending/flight/forward",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 1
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:airbender/spiritual_airbending/flight/forward",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:key_pressed",
+                  "key": "key.left"
+                },
+                "if_action": {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:airbender/spiritual_airbending/flight/left",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 1
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:airbender/spiritual_airbending/flight/left",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:key_pressed",
+                  "key": "key.right"
+                },
+                "if_action": {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:airbender/spiritual_airbending/flight/right",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 1
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:airbender/spiritual_airbending/flight/right",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:key_pressed",
+                  "key": "key.jump"
+                },
+                "if_action": {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:airbender/spiritual_airbending/flight/up",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 1
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:airbender/spiritual_airbending/flight/up",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:key_pressed",
+                  "key": "key.sneak"
+                },
+                "if_action": {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:airbender/spiritual_airbending/flight/down",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 1
+                  }
+                },
+                "else_action": {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:airbender/spiritual_airbending/flight/down",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 0
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:random_chance",
+              "chance": "mod(elemental_bendings:airbender/spiritual_airbending/flight/fuel, 100) == 0"
+            },
+            "if_action": {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:item.elytra.flying",
+              "volume": 0.25,
+              "pitch": 1.2
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "entity_action_released": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_resource",
+            "resource": "elemental_bendings:airbender/spiritual_airbending/flight/fuel",
+            "modifier": {
+              "operation": "set_total",
+              "value": 0
+            }
+          },
+          {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 0
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:airbender/spiritual_airbending/flight/cushion",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 1
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:bending/cooldown",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 20
+                }
+              },
+              {
+                "type": "apoli:if_else",
+                "condition": {
+                  "type": "apoli:minecraft_version",
+                  "version": "1.21",
+                  "comparison": ">="
+                },
+                "if_action": {
+                  "type": "apoli:play_sound",
+                  "sound": "minecraft:entity.breeze.wind_burst",
+                  "volume": 0.6,
+                  "pitch": 1.5
+                },
+                "else_action": {
+                  "type": "apoli:play_sound",
+                  "sound": "minecraft:entity.phantom.flap",
+                  "volume": 0.6,
+                  "pitch": 1.5
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:airbender/spiritual_airbending/flight/forward",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 0
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:airbender/spiritual_airbending/flight/left",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 0
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:airbender/spiritual_airbending/flight/right",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 0
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:airbender/spiritual_airbending/flight/up",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 0
+                }
+              },
+              {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:airbender/spiritual_airbending/flight/down",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

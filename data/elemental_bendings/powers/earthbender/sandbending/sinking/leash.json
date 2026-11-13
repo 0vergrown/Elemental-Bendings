@@ -1,0 +1,75 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 126,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:teleport",
+        "relative": true,
+        "x": 0,
+        "y": 1.05,
+        "z": 0,
+        "landing_condition": {
+          "type": "apoli:block_collision",
+          "inverted": true
+        },
+        "fail_action": {
+          "type": "apoli:teleport",
+          "relative": true,
+          "x": 0,
+          "y": 2.05,
+          "z": 0
+        }
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+          "lifetime": 22,
+          "lifetime_variation": 8,
+          "size": 0.07,
+          "size_variation": 0.04,
+          "end_size": 0.05,
+          "color": "#F2E2B0",
+          "end_color": "#C9A86A",
+          "gravity": 0.05,
+          "friction": 0.97,
+          "frames": 4,
+          "roll": "rUni(0, 360)",
+          "roll_speed": "rUni(-20, 20)"
+        },
+        "count": 10,
+        "offset_y": 0.3,
+        "spread": 0.4,
+        "speed": 0.12
+      },
+      {
+        "type": "apoli:play_sound",
+        "sound": "minecraft:block.sand.break",
+        "volume": 0.8,
+        "pitch": 1.0
+      },
+      {
+        "type": "apoli:revoke_all_powers",
+        "source": "elemental_bendings:sinking"
+      },
+      {
+        "type": "apoli:grant_power",
+        "power": "elemental_bendings:earthbender/sandbending/sinking/spat",
+        "source": "elemental_bendings:spat_out"
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:earthbender/sandbending/sinking/spat",
+        "modifier": {
+          "operation": "set_total",
+          "value": 160
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

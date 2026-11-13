@@ -1,0 +1,18 @@
+{
+  "parent": "elemental_bendings:firebender/dragon_fire/dragon_fire_wall",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.dragon_fire.dragon_fire_circle.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.dragon_fire.dragon_fire_circle.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/dragon_fire/dragon_fire_circle"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/dragon_fire/dragon_fire_circle.png"
+  },
+  "frame": "task",
+  "cost": 1,
+  "order": 0
+}

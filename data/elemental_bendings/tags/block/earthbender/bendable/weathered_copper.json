@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "minecraft:weathered_copper",
+      "required": false
+    },
+    {
+      "id": "minecraft:waxed_weathered_copper",
+      "required": false
+    },
+    {
+      "id": "minecraft:weathered_cut_copper",
+      "required": false
+    },
+    {
+      "id": "minecraft:waxed_weathered_cut_copper",
+      "required": false
+    },
+    {
+      "id": "minecraft:weathered_chiseled_copper",
+      "required": false
+    },
+    {
+      "id": "minecraft:waxed_weathered_chiseled_copper",
+      "required": false
+    }
+  ]
+}

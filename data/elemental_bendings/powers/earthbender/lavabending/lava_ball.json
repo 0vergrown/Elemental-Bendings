@@ -1,0 +1,827 @@
+{
+  "type": "apoli:action_on_key_sequence",
+  "keys": [
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "key_sequence": [
+    "key.elemental_bendings.stance_3",
+    "key.elemental_bendings.stance_2",
+    "key.elemental_bendings.stance_3"
+  ],
+  "timeout": 12,
+  "success_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:bending/cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:raycast",
+        "distance": 6,
+        "block": true,
+        "entity": false,
+        "shape_type": "collider",
+        "fluid_handling": "any",
+        "block_condition": {
+          "type": "apoli:or",
+          "conditions": [
+            {
+              "type": "apoli:block",
+              "block": "minecraft:magma_block"
+            },
+            {
+              "type": "apoli:fluid",
+              "fluid_condition": {
+                "type": "apoli:in_tag",
+                "tag": "minecraft:lava"
+              }
+            }
+          ]
+        }
+      },
+      "if_action": {
+        "type": "apoli:raycast",
+        "distance": 6,
+        "block": true,
+        "entity": false,
+        "shape_type": "collider",
+        "fluid_handling": "any",
+        "hit_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:fire_projectile",
+              "texture_location": "elemental_bendings:textures/entity/earthbender/lavabending/lava_ball.png",
+              "speed": 0.0,
+              "divergence": 0,
+              "tag": "{NoGravity:1b}",
+              "lifetime": 340,
+              "projectile_action": {
+                "type": "apoli:grant_power",
+                "power": "elemental_bendings:earthbender/lavabending/lava_ball/model",
+                "source": "elemental_bendings:projectile"
+              },
+              "owner_bientity_condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:equal",
+                    "inverted": true
+                  },
+                  {
+                    "type": "apoli:actor_condition",
+                    "condition": {
+                      "type": "apoli:resource",
+                      "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+                      "comparison": "==",
+                      "compare_to": 0
+                    }
+                  }
+                ]
+              },
+              "owner_target_bientity_action_on_hit": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:damage",
+                    "amount": 10,
+                    "damage_type": "elemental_bendings:lavabending"
+                  },
+                  {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:set_on_fire",
+                      "duration": 6
+                    }
+                  },
+                  {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:spawn_particles",
+                      "particle": {
+                        "type": "apoli:custom",
+                        "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                        "lifetime": 18,
+                        "lifetime_variation": 6,
+                        "size": 0.16,
+                        "size_variation": 0.07,
+                        "end_size": 0.08,
+                        "color": "#FFFFFF",
+                        "end_color": "#FF3A0A90",
+                        "gravity": 0.06,
+                        "friction": 0.97,
+                        "emissive": true,
+                        "frames": 5,
+                        "roll": "rUni(0, 360)",
+                        "roll_speed": "rUni(-10, 10)"
+                      },
+                      "count": 5,
+                      "offset_y": 0.9,
+                      "spread": {
+                        "x": 0.3,
+                        "y": 0.4,
+                        "z": 0.3
+                      },
+                      "speed": 0.12
+                    }
+                  }
+                ]
+              },
+              "bientity_action_on_hit": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:add_velocity",
+                    "x": 0,
+                    "y": 0.3,
+                    "z": 0.7,
+                    "space": "velocity_normalized"
+                  },
+                  {
+                    "type": "apoli:actor_action",
+                    "action": {
+                      "type": "apoli:play_sound",
+                      "sound": "minecraft:block.lava.extinguish",
+                      "volume": 0.8,
+                      "pitch": 1.0
+                    }
+                  },
+                  {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": {
+                            "type": "apoli:custom",
+                            "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                            "lifetime": 18,
+                            "lifetime_variation": 6,
+                            "size": 0.16,
+                            "size_variation": 0.07,
+                            "end_size": 0.08,
+                            "color": "#FFFFFF",
+                            "end_color": "#FF3A0A90",
+                            "gravity": 0.06,
+                            "friction": 0.97,
+                            "emissive": true,
+                            "frames": 5,
+                            "roll": "rUni(0, 360)",
+                            "roll_speed": "rUni(-10, 10)"
+                          },
+                          "count": 10,
+                          "offset_y": 0.3,
+                          "spread": {
+                            "x": 0.4,
+                            "y": 0.2,
+                            "z": 0.4
+                          },
+                          "speed": 0.18
+                        },
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": "minecraft:lava",
+                          "count": 3,
+                          "offset_y": 0.3,
+                          "spread": {
+                            "x": 0.3,
+                            "y": 0.1,
+                            "z": 0.3
+                          },
+                          "speed": 0.0
+                        },
+                        {
+                          "type": "apoli:spawn_particles",
+                          "particle": "minecraft:large_smoke",
+                          "count": 2,
+                          "offset_y": 0.6,
+                          "spread": {
+                            "x": 0.4,
+                            "y": 0.3,
+                            "z": 0.4
+                          },
+                          "speed": 0.02
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "block_action_on_hit": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                          "lifetime": 18,
+                          "lifetime_variation": 6,
+                          "size": 0.16,
+                          "size_variation": 0.07,
+                          "end_size": 0.08,
+                          "color": "#FFFFFF",
+                          "end_color": "#FF3A0A90",
+                          "gravity": 0.06,
+                          "friction": 0.97,
+                          "emissive": true,
+                          "frames": 5,
+                          "roll": "rUni(0, 360)",
+                          "roll_speed": "rUni(-10, 10)"
+                        },
+                        "count": 10,
+                        "spread": {
+                          "x": 0.4,
+                          "y": 0.4,
+                          "z": 0.4
+                        },
+                        "speed": 0.15
+                      },
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": "minecraft:lava",
+                        "count": 2,
+                        "spread": {
+                          "x": 0.3,
+                          "y": 0.3,
+                          "z": 0.3
+                        },
+                        "speed": 0.0
+                      }
+                    ]
+                  },
+                  {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:offset",
+                        "action": {
+                          "type": "apoli:if_else",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable"
+                          },
+                          "if_action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:magma_block",
+                            "duration": 120
+                          }
+                        }
+                      },
+                      {
+                        "type": "apoli:offset",
+                        "action": {
+                          "type": "apoli:if_else",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable"
+                          },
+                          "if_action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:magma_block",
+                            "duration": 120
+                          }
+                        },
+                        "x": 1
+                      },
+                      {
+                        "type": "apoli:offset",
+                        "action": {
+                          "type": "apoli:if_else",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable"
+                          },
+                          "if_action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:magma_block",
+                            "duration": 120
+                          }
+                        },
+                        "x": -1
+                      },
+                      {
+                        "type": "apoli:offset",
+                        "action": {
+                          "type": "apoli:if_else",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable"
+                          },
+                          "if_action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:magma_block",
+                            "duration": 120
+                          }
+                        },
+                        "z": 1
+                      },
+                      {
+                        "type": "apoli:offset",
+                        "action": {
+                          "type": "apoli:if_else",
+                          "condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:earthbender/bendable"
+                          },
+                          "if_action": {
+                            "type": "apoli:ghost_block",
+                            "block": "minecraft:magma_block",
+                            "duration": 120
+                          }
+                        },
+                        "z": -1
+                      }
+                    ]
+                  }
+                ]
+              },
+              "bientity_action_on_miss": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:in_entity_set",
+                      "set": "elemental_bendings:earthbender/earth_lift/held"
+                    },
+                    "if_action": {
+                      "type": "apoli:actor_action",
+                      "action": {
+                        "type": "apoli:and",
+                        "actions": [
+                          {
+                            "type": "apoli:modify_resource",
+                            "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+                            "modifier": {
+                              "operation": "set_total",
+                              "value": 0
+                            }
+                          },
+                          {
+                            "type": "apoli:modify_resource",
+                            "resource": "elemental_bendings:earthbender/earth_lift/timer",
+                            "modifier": {
+                              "operation": "set_total",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:and",
+                          "actions": [
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": {
+                                "type": "apoli:custom",
+                                "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                                "lifetime": 18,
+                                "lifetime_variation": 6,
+                                "size": 0.16,
+                                "size_variation": 0.07,
+                                "end_size": 0.08,
+                                "color": "#FFFFFF",
+                                "end_color": "#FF3A0A90",
+                                "gravity": 0.06,
+                                "friction": 0.97,
+                                "emissive": true,
+                                "frames": 5,
+                                "roll": "rUni(0, 360)",
+                                "roll_speed": "rUni(-10, 10)"
+                              },
+                              "count": 8,
+                              "offset_y": 0.3,
+                              "spread": {
+                                "x": 0.4,
+                                "y": 0.2,
+                                "z": 0.4
+                              },
+                              "speed": 0.18
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:lava",
+                              "count": 2,
+                              "offset_y": 0.3,
+                              "spread": {
+                                "x": 0.3,
+                                "y": 0.1,
+                                "z": 0.3
+                              },
+                              "speed": 0.0
+                            },
+                            {
+                              "type": "apoli:spawn_particles",
+                              "particle": "minecraft:large_smoke",
+                              "count": 2,
+                              "offset_y": 0.6,
+                              "spread": {
+                                "x": 0.4,
+                                "y": 0.3,
+                                "z": 0.4
+                              },
+                              "speed": 0.02
+                            }
+                          ]
+                        },
+                        {
+                          "type": "apoli:play_sound",
+                          "sound": "minecraft:block.lava.extinguish",
+                          "volume": 0.8,
+                          "pitch": 0.9
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "bientity_action_on_expire": {
+                "type": "apoli:target_action",
+                "action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:spawn_particles",
+                      "particle": {
+                        "type": "apoli:custom",
+                        "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                        "lifetime": 18,
+                        "lifetime_variation": 6,
+                        "size": 0.16,
+                        "size_variation": 0.07,
+                        "end_size": 0.08,
+                        "color": "#FFFFFF",
+                        "end_color": "#FF3A0A90",
+                        "gravity": 0.06,
+                        "friction": 0.97,
+                        "emissive": true,
+                        "frames": 5,
+                        "roll": "rUni(0, 360)",
+                        "roll_speed": "rUni(-10, 10)"
+                      },
+                      "count": 6,
+                      "offset_y": 0.3,
+                      "spread": {
+                        "x": 0.4,
+                        "y": 0.2,
+                        "z": 0.4
+                      },
+                      "speed": 0.18
+                    },
+                    {
+                      "type": "apoli:spawn_particles",
+                      "particle": "minecraft:lava",
+                      "count": 2,
+                      "offset_y": 0.3,
+                      "spread": {
+                        "x": 0.3,
+                        "y": 0.1,
+                        "z": 0.3
+                      },
+                      "speed": 0.0
+                    },
+                    {
+                      "type": "apoli:spawn_particles",
+                      "particle": "minecraft:large_smoke",
+                      "count": 2,
+                      "offset_y": 0.6,
+                      "spread": {
+                        "x": 0.4,
+                        "y": 0.3,
+                        "z": 0.4
+                      },
+                      "speed": 0.02
+                    }
+                  ]
+                }
+              },
+              "offset_x": "hit_x - x",
+              "offset_y": "hit_y - y - 1.62 + 0.45",
+              "offset_z": "hit_z - z",
+              "space": "world",
+              "homing": {
+                "range": 14,
+                "angle": 30,
+                "turn_rate": 10,
+                "bientity_condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:target_condition",
+                      "condition": {
+                        "type": "apoli:living"
+                      }
+                    },
+                    {
+                      "type": "apoli:actor_condition",
+                      "condition": {
+                        "type": "apoli:resource",
+                        "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+                        "comparison": "==",
+                        "compare_to": 0
+                      }
+                    }
+                  ]
+                }
+              },
+              "bientity_action_after_firing": {
+                "type": "apoli:add_to_entity_set",
+                "set": "elemental_bendings:earthbender/earth_lift/held"
+              },
+              "tick_bientity_action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:if_else",
+                    "condition": {
+                      "type": "apoli:in_entity_set",
+                      "set": "elemental_bendings:earthbender/earth_lift/held"
+                    },
+                    "if_action": {
+                      "type": "apoli:and",
+                      "actions": [
+                        {
+                          "type": "apoli:actor_action",
+                          "action": {
+                            "type": "apoli:modify_resource",
+                            "resource": "elemental_bendings:earthbender/earth_lift/aim_turn",
+                            "modifier": {
+                              "operation": "set_total",
+                              "value": "value + 0.5 * (clamp(mod(yaw - elemental_bendings:earthbender/earth_lift/aim_yaw + 540, 360) - 180, -30, 30) - value)"
+                            }
+                          }
+                        },
+                        {
+                          "type": "apoli:add_velocity",
+                          "space": "world",
+                          "set": true,
+                          "x": "clamp(0.85 * (x - sin(rad(yaw + 1.5 * elemental_bendings:earthbender/earth_lift/aim_turn)) * (2.75 * cos(rad(clamp(pitch, -55, 25))) - 0.5 * sin(rad(clamp(pitch, -55, 25)))) - target_x), -2.5, 2.5)",
+                          "y": "clamp(0.85 * (max(y + 0.75, y + 1.38 - 2.75 * sin(rad(clamp(pitch, -55, 25))) - 0.5 * cos(rad(clamp(pitch, -55, 25)))) - target_y), -2.5, 2.5)",
+                          "z": "clamp(0.85 * (z + cos(rad(yaw + 1.5 * elemental_bendings:earthbender/earth_lift/aim_turn)) * (2.75 * cos(rad(clamp(pitch, -55, 25))) - 0.5 * sin(rad(clamp(pitch, -55, 25)))) - target_z), -2.5, 2.5)"
+                        },
+                        {
+                          "type": "apoli:actor_action",
+                          "action": {
+                            "type": "apoli:modify_resource",
+                            "resource": "elemental_bendings:earthbender/earth_lift/aim_yaw",
+                            "modifier": {
+                              "operation": "set_total",
+                              "value": "yaw"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:random_chance",
+                      "chance": 0.5,
+                      "action": {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                          "lifetime": 9,
+                          "lifetime_variation": 3,
+                          "size": 0.12,
+                          "size_variation": 0.04,
+                          "end_size": 0.07,
+                          "color": "#FFFFFF",
+                          "end_color": "#FF5A1AB0",
+                          "friction": 0.8,
+                          "emissive": true,
+                          "frames": 5,
+                          "physics": false,
+                          "roll": "rUni(0, 360)",
+                          "roll_speed": "rUni(-8, 8)"
+                        },
+                        "count": 1,
+                        "offset_y": 0.0,
+                        "spread": 0.15,
+                        "speed": 0.0
+                      }
+                    }
+                  },
+                  {
+                    "type": "apoli:target_action",
+                    "action": {
+                      "type": "apoli:random_chance",
+                      "chance": 0.1,
+                      "action": {
+                        "type": "apoli:spawn_particles",
+                        "particle": "minecraft:dripping_lava",
+                        "count": 1,
+                        "offset_y": -0.1,
+                        "spread": 0.1,
+                        "speed": 0.0
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/earth_lift/aim_yaw",
+              "modifier": {
+                "operation": "set_total",
+                "value": "yaw"
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/earth_lift/aim_turn",
+              "modifier": {
+                "operation": "set_total",
+                "value": 0
+              }
+            },
+            {
+              "type": "apoli:raycast",
+              "distance": 6,
+              "block": true,
+              "entity": false,
+              "shape_type": "collider",
+              "fluid_handling": "any",
+              "block_condition": {
+                "type": "apoli:or",
+                "conditions": [
+                  {
+                    "type": "apoli:block",
+                    "block": "minecraft:magma_block"
+                  },
+                  {
+                    "type": "apoli:fluid",
+                    "fluid_condition": {
+                      "type": "apoli:in_tag",
+                      "tag": "minecraft:lava"
+                    }
+                  }
+                ]
+              },
+              "block_action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:ghost_block",
+                    "block": "minecraft:air",
+                    "duration": 600
+                  },
+                  {
+                    "type": "apoli:and",
+                    "actions": [
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": {
+                          "type": "apoli:custom",
+                          "texture": "elemental_bendings:textures/particle/earthbender/lavabending/molten.png",
+                          "lifetime": 18,
+                          "lifetime_variation": 6,
+                          "size": 0.16,
+                          "size_variation": 0.07,
+                          "end_size": 0.08,
+                          "color": "#FFFFFF",
+                          "end_color": "#FF3A0A90",
+                          "gravity": 0.06,
+                          "friction": 0.97,
+                          "emissive": true,
+                          "frames": 5,
+                          "roll": "rUni(0, 360)",
+                          "roll_speed": "rUni(-10, 10)"
+                        },
+                        "count": 10,
+                        "spread": {
+                          "x": 0.4,
+                          "y": 0.4,
+                          "z": 0.4
+                        },
+                        "speed": 0.15
+                      },
+                      {
+                        "type": "apoli:spawn_particles",
+                        "particle": "minecraft:lava",
+                        "count": 2,
+                        "spread": {
+                          "x": 0.3,
+                          "y": 0.3,
+                          "z": 0.3
+                        },
+                        "speed": 0.0
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+              "modifier": {
+                "operation": "set_total",
+                "value": 1
+              }
+            },
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:earthbender/earth_lift/timer",
+              "modifier": {
+                "operation": "set_total",
+                "value": 240
+              }
+            },
+            {
+              "type": "apoli:delay",
+              "ticks": 1,
+              "action": {
+                "type": "apoli:and",
+                "actions": [
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:bending/pose",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 68
+                    }
+                  },
+                  {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:bending/pose_timer",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 10
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:block.lava.pop",
+              "volume": 1.0,
+              "pitch": 0.8
+            },
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:item.bucket.fill_lava",
+              "volume": 0.8,
+              "pitch": 1.1
+            }
+          ]
+        }
+      },
+      "else_action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:text",
+            "text": {
+              "translate": "text.elemental_bendings.no_lava"
+            },
+            "bar": "actionbar",
+            "fadein": 2,
+            "duration": 30,
+            "fadeout": 8
+          },
+          {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:block.fire.extinguish",
+            "volume": 0.4,
+            "pitch": 0.6
+          }
+        ]
+      }
+    },
+    "else_action": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:block.dispenser.fail",
+      "volume": 0.3,
+      "pitch": 1.8
+    }
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:earthbender/earth_lift/lifting",
+    "comparison": "==",
+    "compare_to": 0
+  },
+  "hidden": true
+}

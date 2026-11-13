@@ -1,0 +1,13 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:earthbender/lavabending/lava_ball",
+  "texture_location": "elemental_bendings:textures/entity/earthbender/lavabending/lava_ball.png",
+  "render_type": "emissive",
+  "scale": 0.85,
+  "animations": {
+    "animation": "elemental_bendings:earthbender/lavabending/lava_ball",
+    "name": "animation.lava_ball.churn"
+  },
+  "hidden": true
+}

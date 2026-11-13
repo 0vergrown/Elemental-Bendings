@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:earthbender/lavabending",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.lavabending.lava_ball.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.lavabending.lava_ball.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/lavabending/lava_ball/pose",
+    "elemental_bendings:earthbender/lavabending/lava_ball"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/lavabending/lava_ball.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

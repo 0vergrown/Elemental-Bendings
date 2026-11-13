@@ -1,0 +1,598 @@
+{
+  "type": "apoli:function",
+  "entity_action": {
+    "type": "apoli:summon_minion",
+    "summon_id": "elemental_bendings:bramble",
+    "max_life_ticks": 200,
+    "invulnerable": true,
+    "follow_owner": false,
+    "scale": 1.3,
+    "powers": [
+      "elemental_bendings:waterbender/plantbending/bramble_field/spike/life",
+      "elemental_bendings:waterbender/plantbending/bramble_field/spike/thorns",
+      "elemental_bendings:waterbender/plantbending/bramble_field/spike/size",
+      "elemental_bendings:bending/quiet_summon"
+    ],
+    "bientity_action": {
+      "type": "apoli:target_action",
+      "action": {
+        "type": "apoli:and",
+        "actions": [
+          {
+            "type": "apoli:modify_entity_data",
+            "data": "no_ai",
+            "value": true
+          },
+          {
+            "type": "apoli:team",
+            "operation": "join",
+            "team": {
+              "name": "elemental_bendings.brambles",
+              "collision_rule": "never"
+            }
+          },
+          {
+            "type": "apoli:teleport",
+            "relative": false,
+            "x": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_x) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_x) + 0.5",
+            "y": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_y) + 0",
+            "z": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_z) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_z) + 0.5",
+            "yaw": "45 * mod(actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_x) * 5 + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_z) * 3 + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_x) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_z) * 7 + 64, 8)",
+            "pitch": 0,
+            "landing_condition": {
+              "type": "apoli:and",
+              "conditions": [
+                {
+                  "type": "apoli:block_collision",
+                  "inverted": true
+                },
+                {
+                  "type": "apoli:in_block",
+                  "block_condition": {
+                    "type": "apoli:and",
+                    "conditions": [
+                      {
+                        "type": "apoli:or",
+                        "conditions": [
+                          {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:offset",
+                                "condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:waterbender/plantbending/bramble_field/ground"
+                                },
+                                "y": -1
+                              },
+                              {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:replacable"
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:waterbender/plantbending/bramble_field/sprouts"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "apoli:in_tag",
+                            "tag": "elemental_bendings:waterbender/plantbending/bramble_field/sprouts"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "apoli:fluid",
+                        "fluid_condition": {
+                          "type": "apoli:in_tag",
+                          "tag": "minecraft:water"
+                        },
+                        "inverted": true
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "success_action": {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:waterbender/plantbending/bramble_field/spike/life",
+              "modifier": {
+                "operation": "set_total",
+                "value": 202
+              }
+            },
+            "fail_action": {
+              "type": "apoli:teleport",
+              "relative": false,
+              "x": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_x) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_x) + 0.5",
+              "y": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_y) + 1",
+              "z": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_z) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_z) + 0.5",
+              "yaw": "45 * mod(actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_x) * 5 + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_z) * 3 + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_x) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_z) * 7 + 64, 8)",
+              "pitch": 0,
+              "landing_condition": {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:block_collision",
+                    "inverted": true
+                  },
+                  {
+                    "type": "apoli:in_block",
+                    "block_condition": {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:and",
+                              "conditions": [
+                                {
+                                  "type": "apoli:offset",
+                                  "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:waterbender/plantbending/bramble_field/ground"
+                                  },
+                                  "y": -1
+                                },
+                                {
+                                  "type": "apoli:or",
+                                  "conditions": [
+                                    {
+                                      "type": "apoli:replacable"
+                                    },
+                                    {
+                                      "type": "apoli:in_tag",
+                                      "tag": "elemental_bendings:waterbender/plantbending/bramble_field/sprouts"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "apoli:in_tag",
+                              "tag": "elemental_bendings:waterbender/plantbending/bramble_field/sprouts"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "apoli:fluid",
+                          "fluid_condition": {
+                            "type": "apoli:in_tag",
+                            "tag": "minecraft:water"
+                          },
+                          "inverted": true
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "success_action": {
+                "type": "apoli:modify_resource",
+                "resource": "elemental_bendings:waterbender/plantbending/bramble_field/spike/life",
+                "modifier": {
+                  "operation": "set_total",
+                  "value": 202
+                }
+              },
+              "fail_action": {
+                "type": "apoli:teleport",
+                "relative": false,
+                "x": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_x) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_x) + 0.5",
+                "y": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_y) + -1",
+                "z": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_z) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_z) + 0.5",
+                "yaw": "45 * mod(actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_x) * 5 + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_z) * 3 + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_x) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_z) * 7 + 64, 8)",
+                "pitch": 0,
+                "landing_condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:block_collision",
+                      "inverted": true
+                    },
+                    {
+                      "type": "apoli:in_block",
+                      "block_condition": {
+                        "type": "apoli:and",
+                        "conditions": [
+                          {
+                            "type": "apoli:or",
+                            "conditions": [
+                              {
+                                "type": "apoli:and",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:offset",
+                                    "condition": {
+                                      "type": "apoli:in_tag",
+                                      "tag": "elemental_bendings:waterbender/plantbending/bramble_field/ground"
+                                    },
+                                    "y": -1
+                                  },
+                                  {
+                                    "type": "apoli:or",
+                                    "conditions": [
+                                      {
+                                        "type": "apoli:replacable"
+                                      },
+                                      {
+                                        "type": "apoli:in_tag",
+                                        "tag": "elemental_bendings:waterbender/plantbending/bramble_field/sprouts"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "apoli:in_tag",
+                                "tag": "elemental_bendings:waterbender/plantbending/bramble_field/sprouts"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "apoli:fluid",
+                            "fluid_condition": {
+                              "type": "apoli:in_tag",
+                              "tag": "minecraft:water"
+                            },
+                            "inverted": true
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "success_action": {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:waterbender/plantbending/bramble_field/spike/life",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 202
+                  }
+                },
+                "fail_action": {
+                  "type": "apoli:teleport",
+                  "relative": false,
+                  "x": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_x) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_x) + 0.5",
+                  "y": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_y) + 2",
+                  "z": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_z) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_z) + 0.5",
+                  "yaw": "45 * mod(actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_x) * 5 + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_z) * 3 + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_x) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_z) * 7 + 64, 8)",
+                  "pitch": 0,
+                  "landing_condition": {
+                    "type": "apoli:and",
+                    "conditions": [
+                      {
+                        "type": "apoli:block_collision",
+                        "inverted": true
+                      },
+                      {
+                        "type": "apoli:in_block",
+                        "block_condition": {
+                          "type": "apoli:and",
+                          "conditions": [
+                            {
+                              "type": "apoli:or",
+                              "conditions": [
+                                {
+                                  "type": "apoli:and",
+                                  "conditions": [
+                                    {
+                                      "type": "apoli:offset",
+                                      "condition": {
+                                        "type": "apoli:in_tag",
+                                        "tag": "elemental_bendings:waterbender/plantbending/bramble_field/ground"
+                                      },
+                                      "y": -1
+                                    },
+                                    {
+                                      "type": "apoli:or",
+                                      "conditions": [
+                                        {
+                                          "type": "apoli:replacable"
+                                        },
+                                        {
+                                          "type": "apoli:in_tag",
+                                          "tag": "elemental_bendings:waterbender/plantbending/bramble_field/sprouts"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "apoli:in_tag",
+                                  "tag": "elemental_bendings:waterbender/plantbending/bramble_field/sprouts"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "apoli:fluid",
+                              "fluid_condition": {
+                                "type": "apoli:in_tag",
+                                "tag": "minecraft:water"
+                              },
+                              "inverted": true
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "success_action": {
+                    "type": "apoli:modify_resource",
+                    "resource": "elemental_bendings:waterbender/plantbending/bramble_field/spike/life",
+                    "modifier": {
+                      "operation": "set_total",
+                      "value": 202
+                    }
+                  },
+                  "fail_action": {
+                    "type": "apoli:teleport",
+                    "relative": false,
+                    "x": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_x) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_x) + 0.5",
+                    "y": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_y) + -2",
+                    "z": "actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_z) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_z) + 0.5",
+                    "yaw": "45 * mod(actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_x) * 5 + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/cell_z) * 3 + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_x) + actor_resource(elemental_bendings:waterbender/plantbending/bramble_field/center_z) * 7 + 64, 8)",
+                    "pitch": 0,
+                    "landing_condition": {
+                      "type": "apoli:and",
+                      "conditions": [
+                        {
+                          "type": "apoli:block_collision",
+                          "inverted": true
+                        },
+                        {
+                          "type": "apoli:in_block",
+                          "block_condition": {
+                            "type": "apoli:and",
+                            "conditions": [
+                              {
+                                "type": "apoli:or",
+                                "conditions": [
+                                  {
+                                    "type": "apoli:and",
+                                    "conditions": [
+                                      {
+                                        "type": "apoli:offset",
+                                        "condition": {
+                                          "type": "apoli:in_tag",
+                                          "tag": "elemental_bendings:waterbender/plantbending/bramble_field/ground"
+                                        },
+                                        "y": -1
+                                      },
+                                      {
+                                        "type": "apoli:or",
+                                        "conditions": [
+                                          {
+                                            "type": "apoli:replacable"
+                                          },
+                                          {
+                                            "type": "apoli:in_tag",
+                                            "tag": "elemental_bendings:waterbender/plantbending/bramble_field/sprouts"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "apoli:in_tag",
+                                    "tag": "elemental_bendings:waterbender/plantbending/bramble_field/sprouts"
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "apoli:fluid",
+                                "fluid_condition": {
+                                  "type": "apoli:in_tag",
+                                  "tag": "minecraft:water"
+                                },
+                                "inverted": true
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "success_action": {
+                      "type": "apoli:modify_resource",
+                      "resource": "elemental_bendings:waterbender/plantbending/bramble_field/spike/life",
+                      "modifier": {
+                        "operation": "set_total",
+                        "value": 202
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "apoli:if_else",
+            "condition": {
+              "type": "apoli:resource",
+              "resource": "elemental_bendings:waterbender/plantbending/bramble_field/spike/life",
+              "comparison": ">",
+              "compare_to": 0
+            },
+            "if_action": {
+              "type": "apoli:and",
+              "actions": [
+                {
+                  "type": "apoli:modify_resource",
+                  "resource": "elemental_bendings:waterbender/plantbending/bramble_field/spike/thorns",
+                  "modifier": {
+                    "operation": "set_total",
+                    "value": 6
+                  }
+                },
+                {
+                  "type": "apoli:if_else_list",
+                  "actions": [
+                    {
+                      "condition": {
+                        "type": "apoli:in_block",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:block",
+                                "block": "minecraft:crimson_nylium"
+                              },
+                              "y": -1
+                            },
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:crimson_fungus"
+                            },
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:crimson_roots"
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:grant_power",
+                        "power": "elemental_bendings:waterbender/plantbending/bramble_field/spike/bramble_crimson",
+                        "source": "elemental_bendings:projectile"
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:in_block",
+                        "block_condition": {
+                          "type": "apoli:or",
+                          "conditions": [
+                            {
+                              "type": "apoli:offset",
+                              "condition": {
+                                "type": "apoli:block",
+                                "block": "minecraft:warped_nylium"
+                              },
+                              "y": -1
+                            },
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:warped_fungus"
+                            },
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:warped_roots"
+                            },
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:nether_sprouts"
+                            },
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:twisting_vines"
+                            },
+                            {
+                              "type": "apoli:block",
+                              "block": "minecraft:twisting_vines_plant"
+                            }
+                          ]
+                        }
+                      },
+                      "action": {
+                        "type": "apoli:grant_power",
+                        "power": "elemental_bendings:waterbender/plantbending/bramble_field/spike/bramble_warped",
+                        "source": "elemental_bendings:projectile"
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "apoli:constant",
+                        "value": true
+                      },
+                      "action": {
+                        "type": "apoli:grant_power",
+                        "power": "elemental_bendings:waterbender/plantbending/bramble_field/spike/bramble",
+                        "source": "elemental_bendings:projectile"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "apoli:spawn_particles",
+                  "particle": {
+                    "type": "apoli:custom",
+                    "texture": "elemental_bendings:textures/particle/waterbender/plantbending/leaf.png",
+                    "lifetime": 26,
+                    "lifetime_variation": 10,
+                    "size": 0.12,
+                    "size_variation": 0.05,
+                    "end_size": 0.1,
+                    "color": "#FFFFFF",
+                    "end_color": "#FFFFFF60",
+                    "gravity": 0.015,
+                    "friction": 0.93,
+                    "frames": 4,
+                    "frame_time": 3,
+                    "roll": "rUni(0, 360)",
+                    "roll_speed": "rUni(-12, 12)"
+                  },
+                  "count": 4,
+                  "offset_y": 0.2,
+                  "spread": {
+                    "x": 0.3,
+                    "y": 0.15,
+                    "z": 0.3
+                  },
+                  "speed": 0.07
+                },
+                {
+                  "type": "apoli:spawn_particles",
+                  "particle": {
+                    "type": "apoli:custom",
+                    "texture": "elemental_bendings:textures/particle/earthbender/pebble.png",
+                    "lifetime": 24,
+                    "lifetime_variation": 10,
+                    "size": 0.09,
+                    "size_variation": 0.06,
+                    "end_size": 0.07,
+                    "color": "#5E4028",
+                    "gravity": 0.06,
+                    "friction": 0.98,
+                    "roll": "rUni(0, 360)",
+                    "roll_speed": "rUni(-25, 25)"
+                  },
+                  "count": 3,
+                  "offset_y": 0.1,
+                  "spread": {
+                    "x": 0.3,
+                    "y": 0.05,
+                    "z": 0.3
+                  },
+                  "speed": 0.045
+                },
+                {
+                  "type": "apoli:random_chance",
+                  "chance": 0.3,
+                  "action": {
+                    "type": "apoli:play_sound",
+                    "sound": "minecraft:block.sweet_berry_bush.place",
+                    "volume": 0.7,
+                    "pitch": 0.7
+                  }
+                }
+              ]
+            },
+            "else_action": {
+              "type": "apoli:set_summon_max_life",
+              "amount": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "hidden": true
+}

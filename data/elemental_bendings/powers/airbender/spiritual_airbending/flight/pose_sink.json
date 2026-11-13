@@ -1,0 +1,123 @@
+{
+  "type": "apoli:modify_model_parts",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:key_pressed",
+            "key": "key.sneak"
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:airbender/spiritual_airbending/flight/down",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:key_pressed",
+            "key": "key.forward"
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:airbender/spiritual_airbending/flight/forward",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ],
+        "inverted": true
+      }
+    ]
+  },
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "right_arm",
+      "type": "roll",
+      "value": 0.3142,
+      "duration": 5.0,
+      "fade_out_duration": 6.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "pitch",
+      "value": -0.1745,
+      "duration": 5.0,
+      "fade_out_duration": 6.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "roll",
+      "value": -0.3142,
+      "duration": 5.0,
+      "fade_out_duration": 6.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "pitch",
+      "value": -0.1745,
+      "duration": 5.0,
+      "fade_out_duration": 6.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_leg",
+      "type": "pitch",
+      "value": -0.1396,
+      "duration": 5.0,
+      "fade_out_duration": 6.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_leg",
+      "type": "pitch",
+      "value": -0.1396,
+      "duration": 5.0,
+      "fade_out_duration": 6.0,
+      "perspectives": [
+        "third_person"
+      ]
+    }
+  ],
+  "hidden": true
+}

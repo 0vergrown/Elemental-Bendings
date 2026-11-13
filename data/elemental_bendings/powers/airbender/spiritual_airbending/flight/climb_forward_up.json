@@ -1,0 +1,51 @@
+{
+  "type": "apoli:modify_velocity",
+  "axes": [
+    "y"
+  ],
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      },
+      {
+        "type": "apoli:key_pressed",
+        "key": "key.forward"
+      },
+      {
+        "type": "apoli:key_pressed",
+        "key": "key.back",
+        "inverted": true
+      },
+      {
+        "type": "apoli:key_pressed",
+        "key": "key.jump"
+      },
+      {
+        "type": "apoli:key_pressed",
+        "key": "key.sneak",
+        "inverted": true
+      }
+    ]
+  },
+  "modifier": {
+    "operation": "set_base",
+    "value": "if(value > 0, (0.88 * value + if((0.07 * (-sin(rad(pitch))) + 0.03) > 0 && (0.07 * (-sin(rad(pitch))) + 0.03) < 0.015, 0, (0.07 * (-sin(rad(pitch))) + 0.03)) - 0.012) / 0.98 + 0.08, (0.88 * value + if((0.07 * (-sin(rad(pitch))) + 0.03) > 0 && (0.07 * (-sin(rad(pitch))) + 0.03) < 0.015, 0, (0.07 * (-sin(rad(pitch))) + 0.03))) / 0.98)"
+  },
+  "hidden": true
+}

@@ -1,0 +1,31 @@
+{
+  "parent": "elemental_bendings:earthbender",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/metalbending/metalbending",
+    "elemental_bendings:earthbender/metalbending/scrap/head",
+    "elemental_bendings:earthbender/metalbending/scrap/chest",
+    "elemental_bendings:earthbender/metalbending/scrap/legs",
+    "elemental_bendings:earthbender/metalbending/scrap/feet",
+    "elemental_bendings:earthbender/metalbending/scrap/armor",
+    "elemental_bendings:earthbender/metalbending/scrap/hide_head",
+    "elemental_bendings:earthbender/metalbending/scrap/hide_chest",
+    "elemental_bendings:earthbender/metalbending/scrap/hide_legs",
+    "elemental_bendings:earthbender/metalbending/scrap/hide_feet"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/metalbending/metalbending.png"
+  },
+  "frame": "goal",
+  "cost": 2,
+  "order": 0,
+  "excludes": [
+    "elemental_bendings:earthbender/lavabending",
+    "elemental_bendings:earthbender/sandbending"
+  ]
+}

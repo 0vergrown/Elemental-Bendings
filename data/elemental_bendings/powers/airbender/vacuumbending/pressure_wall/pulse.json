@@ -1,0 +1,144 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 2,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:area_of_effect",
+        "radius": {
+          "x": 1.7,
+          "y": 1.6,
+          "z": 1.7
+        },
+        "offset": {
+          "x": 0,
+          "y": 1.5,
+          "z": 0
+        },
+        "shape": "cube",
+        "bientity_condition": {
+          "type": "apoli:target_condition",
+          "condition": {
+            "type": "apoli:in_tag",
+            "tag": "elemental_bendings:airbender/vacuumbending/slowable"
+          }
+        },
+        "bientity_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:add_velocity",
+              "x": 0,
+              "y": 0,
+              "z": 0,
+              "set": true,
+              "blend": 0.35
+            },
+            {
+              "type": "apoli:target_action",
+              "action": {
+                "type": "apoli:spawn_particles",
+                "particle": {
+                  "type": "apoli:custom",
+                  "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+                  "lifetime": 10,
+                  "lifetime_variation": 4,
+                  "size": 0.1,
+                  "size_variation": 0.04,
+                  "end_size": 0.0,
+                  "color": "#F2F6FCE6",
+                  "end_color": "#5C667400",
+                  "friction": 0.86,
+                  "physics": false,
+                  "frames": 4,
+                  "roll": "rUni(0, 360)",
+                  "alpha_bleed": true
+                },
+                "count": 2,
+                "offset_y": 0.0,
+                "spread": 0.15,
+                "speed": 0.02
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "apoli:area_of_effect",
+        "radius": {
+          "x": 1.6,
+          "y": 1.6,
+          "z": 1.6
+        },
+        "offset": {
+          "x": 0,
+          "y": 1.5,
+          "z": 0
+        },
+        "shape": "cube",
+        "bientity_condition": {
+          "type": "apoli:and",
+          "conditions": [
+            {
+              "type": "apoli:target_condition",
+              "condition": {
+                "type": "apoli:living"
+              }
+            },
+            {
+              "type": "apoli:invert",
+              "condition": {
+                "type": "apoli:owner"
+              },
+              "inverted": true
+            },
+            {
+              "type": "apoli:target_condition",
+              "condition": {
+                "type": "apoli:entity_type",
+                "entity_type": "apoli:minion"
+              },
+              "inverted": true
+            }
+          ]
+        },
+        "bientity_action": {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:target_action",
+              "action": {
+                "type": "apoli:apply_effect",
+                "effect": {
+                  "effect": "minecraft:slowness",
+                  "duration": 12,
+                  "amplifier": 3,
+                  "show_particles": false,
+                  "show_icon": false
+                }
+              }
+            },
+            {
+              "type": "apoli:add_velocity",
+              "x": 0,
+              "y": 0,
+              "z": 0.2,
+              "reference": "position"
+            }
+          ]
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:airbender/vacuumbending/pressure_wall/pulse",
+        "modifier": {
+          "operation": "set_total",
+          "value": 2
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

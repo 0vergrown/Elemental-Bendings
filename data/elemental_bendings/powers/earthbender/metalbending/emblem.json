@@ -1,0 +1,19 @@
+{
+  "type": "apoli:overlay",
+  "texture": "elemental_bendings:textures/gui/earthbender/metalbending/emblem.png",
+  "anchor": "bottom_center",
+  "x": 0,
+  "y": -42,
+  "width": 16,
+  "height": 16,
+  "u": "16 * (if(elemental_bendings:earthbender/metalbending/metal_chains/grapple/hooked > 0, 1 + min(3, floor(elemental_bendings:earthbender/metalbending/metal_chains/grapple/strain / 600 * 4)), if(elemental_bendings:earthbender/metalbending/shrapnel_shield/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/metalbending/shrapnel_shield/fuel / 240) * 4)), if(elemental_bendings:earthbender/metalbending/metal_wall/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/metalbending/metal_wall/fuel / 240) * 4)), if(elemental_bendings:earthbender/metalbending/sword_throw/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/metalbending/sword_throw/fuel / 200) * 4)), if(elemental_bendings:earthbender/metalbending/metal_gauntlets/active > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/metalbending/metal_gauntlets/active / 240) * 4)), if(elemental_bendings:earthbender/earth_lift/lifting > 0, 1 + min(3, floor((1 - elemental_bendings:earthbender/earth_lift/timer / 240) * 4)), 0)))))))",
+  "v": 0,
+  "texture_width": 80,
+  "texture_height": 16,
+  "region_width": 16,
+  "region_height": 16,
+  "strength": "if(elemental_bendings:bending/cooldown > 0, 0.55, 1)",
+  "draw_phase": "above_hud",
+  "visible_in_third_person": true,
+  "hidden": true
+}

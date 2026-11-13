@@ -1,0 +1,310 @@
+{
+  "type": "apoli:modify_model_parts",
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "right_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.2443,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 30,
+          "value": 0.3491,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 60,
+          "value": 0.2443,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 5.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "yaw",
+      "override_animation": true,
+      "value": 0.1047,
+      "duration": 4.0,
+      "fade_out_duration": 5.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.2443,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 30,
+          "value": 0.3142,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 60,
+          "value": 0.2443,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 5.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.2443,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 30,
+          "value": 0.3491,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 60,
+          "value": 0.2443,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 5.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "yaw",
+      "override_animation": true,
+      "value": -0.1047,
+      "duration": 4.0,
+      "fade_out_duration": 5.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.2443,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 30,
+          "value": -0.3142,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 60,
+          "value": -0.2443,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 5.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.1745,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 22,
+          "value": 0.2793,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 44,
+          "value": 0.1745,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 5.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_leg",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.0698,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 22,
+          "value": 0.0175,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 44,
+          "value": 0.0698,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 5.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0.2793,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 22,
+          "value": 0.1745,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 44,
+          "value": 0.2793,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 5.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_leg",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.0175,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 22,
+          "value": -0.0698,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 44,
+          "value": -0.0175,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 5.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "upper",
+      "type": "pitch",
+      "value": 0.0698,
+      "duration": 4.0,
+      "fade_out_duration": 5.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "whole",
+      "type": "pivot_y",
+      "keyframes": [
+        {
+          "time": 0,
+          "value": 0,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 30,
+          "value": -1.2,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 60,
+          "value": 0,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 4.0,
+      "fade_out_duration": 5.0,
+      "perspectives": [
+        "third_person"
+      ]
+    }
+  ],
+  "hidden": true
+}

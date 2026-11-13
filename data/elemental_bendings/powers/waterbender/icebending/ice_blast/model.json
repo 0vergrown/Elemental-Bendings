@@ -1,0 +1,13 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:waterbender/icebending/ice_chunk",
+  "texture_location": "elemental_bendings:textures/entity/waterbender/icebending/ice_chunk.png",
+  "render_type": "translucent",
+  "animations": {
+    "animation": "elemental_bendings:waterbender/icebending/ice_chunk",
+    "name": "animation.ice_chunk.tumble"
+  },
+  "scale": 1.0,
+  "hidden": true
+}

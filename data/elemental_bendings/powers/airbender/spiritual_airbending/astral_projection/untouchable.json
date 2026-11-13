@@ -1,0 +1,14 @@
+{
+  "type": "apoli:invulnerability",
+  "damage_condition": {
+    "type": "apoli:out_of_world",
+    "inverted": true
+  },
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "hidden": true
+}

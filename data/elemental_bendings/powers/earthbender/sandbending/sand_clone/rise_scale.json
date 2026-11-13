@@ -1,0 +1,8 @@
+{
+  "type": "apoli:scale",
+  "scale_types": [
+    "apoli:model_height"
+  ],
+  "scale": "1 - 0.9 * elemental_bendings:earthbender/sandbending/sand_clone/rise / 14",
+  "hidden": true
+}

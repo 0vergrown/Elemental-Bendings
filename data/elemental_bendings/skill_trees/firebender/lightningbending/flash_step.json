@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:firebender/lightningbending/lightning_stream",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.flash_step.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.lightningbending.flash_step.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/lightningbending/flash_step/pose",
+    "elemental_bendings:firebender/lightningbending/flash_step"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/lightningbending/flash_step.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

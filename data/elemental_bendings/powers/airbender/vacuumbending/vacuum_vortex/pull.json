@@ -1,0 +1,309 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 2,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:area_of_effect",
+        "radius": 6.5,
+        "shape": "sphere",
+        "bientity_condition": {
+          "type": "apoli:or",
+          "conditions": [
+            {
+              "type": "apoli:and",
+              "conditions": [
+                {
+                  "type": "apoli:target_condition",
+                  "condition": {
+                    "type": "apoli:living"
+                  }
+                },
+                {
+                  "type": "apoli:invert",
+                  "condition": {
+                    "type": "apoli:owner"
+                  },
+                  "inverted": true
+                },
+                {
+                  "type": "apoli:target_condition",
+                  "condition": {
+                    "type": "apoli:entity_type",
+                    "entity_type": "apoli:minion"
+                  },
+                  "inverted": true
+                }
+              ]
+            },
+            {
+              "type": "apoli:target_condition",
+              "condition": {
+                "type": "apoli:entity_type",
+                "entity_type": "minecraft:item"
+              }
+            }
+          ]
+        },
+        "bientity_action": {
+          "type": "apoli:add_velocity",
+          "x": 0,
+          "y": 0.03,
+          "z": -0.2,
+          "reference": "position"
+        }
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+          "lifetime": 10,
+          "lifetime_variation": 4,
+          "size": 0.1,
+          "size_variation": 0.04,
+          "end_size": 0.0,
+          "color": "#F2F6FCE6",
+          "end_color": "#5C667400",
+          "friction": 0.86,
+          "physics": false,
+          "frames": 4,
+          "roll": "rUni(0, 360)",
+          "alpha_bleed": true
+        },
+        "count": 1,
+        "spread": 0.08,
+        "offset_x": 3.4,
+        "offset_y": 0.8,
+        "offset_z": 0.0,
+        "velocity_x": -0.42,
+        "velocity_y": 0.0,
+        "velocity_z": -0.0
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+          "lifetime": 10,
+          "lifetime_variation": 4,
+          "size": 0.1,
+          "size_variation": 0.04,
+          "end_size": 0.0,
+          "color": "#F2F6FCE6",
+          "end_color": "#5C667400",
+          "friction": 0.86,
+          "physics": false,
+          "frames": 4,
+          "roll": "rUni(0, 360)",
+          "alpha_bleed": true
+        },
+        "count": 1,
+        "spread": 0.08,
+        "offset_x": 2.404,
+        "offset_y": 0.8,
+        "offset_z": 2.404,
+        "velocity_x": -0.297,
+        "velocity_y": 0.0,
+        "velocity_z": -0.297
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+          "lifetime": 10,
+          "lifetime_variation": 4,
+          "size": 0.1,
+          "size_variation": 0.04,
+          "end_size": 0.0,
+          "color": "#F2F6FCE6",
+          "end_color": "#5C667400",
+          "friction": 0.86,
+          "physics": false,
+          "frames": 4,
+          "roll": "rUni(0, 360)",
+          "alpha_bleed": true
+        },
+        "count": 1,
+        "spread": 0.08,
+        "offset_x": 0.0,
+        "offset_y": 0.8,
+        "offset_z": 3.4,
+        "velocity_x": -0.0,
+        "velocity_y": 0.0,
+        "velocity_z": -0.42
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+          "lifetime": 10,
+          "lifetime_variation": 4,
+          "size": 0.1,
+          "size_variation": 0.04,
+          "end_size": 0.0,
+          "color": "#F2F6FCE6",
+          "end_color": "#5C667400",
+          "friction": 0.86,
+          "physics": false,
+          "frames": 4,
+          "roll": "rUni(0, 360)",
+          "alpha_bleed": true
+        },
+        "count": 1,
+        "spread": 0.08,
+        "offset_x": -2.404,
+        "offset_y": 0.8,
+        "offset_z": 2.404,
+        "velocity_x": 0.297,
+        "velocity_y": 0.0,
+        "velocity_z": -0.297
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+          "lifetime": 10,
+          "lifetime_variation": 4,
+          "size": 0.1,
+          "size_variation": 0.04,
+          "end_size": 0.0,
+          "color": "#F2F6FCE6",
+          "end_color": "#5C667400",
+          "friction": 0.86,
+          "physics": false,
+          "frames": 4,
+          "roll": "rUni(0, 360)",
+          "alpha_bleed": true
+        },
+        "count": 1,
+        "spread": 0.08,
+        "offset_x": -3.4,
+        "offset_y": 0.8,
+        "offset_z": 0.0,
+        "velocity_x": 0.42,
+        "velocity_y": 0.0,
+        "velocity_z": -0.0
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+          "lifetime": 10,
+          "lifetime_variation": 4,
+          "size": 0.1,
+          "size_variation": 0.04,
+          "end_size": 0.0,
+          "color": "#F2F6FCE6",
+          "end_color": "#5C667400",
+          "friction": 0.86,
+          "physics": false,
+          "frames": 4,
+          "roll": "rUni(0, 360)",
+          "alpha_bleed": true
+        },
+        "count": 1,
+        "spread": 0.08,
+        "offset_x": -2.404,
+        "offset_y": 0.8,
+        "offset_z": -2.404,
+        "velocity_x": 0.297,
+        "velocity_y": 0.0,
+        "velocity_z": 0.297
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+          "lifetime": 10,
+          "lifetime_variation": 4,
+          "size": 0.1,
+          "size_variation": 0.04,
+          "end_size": 0.0,
+          "color": "#F2F6FCE6",
+          "end_color": "#5C667400",
+          "friction": 0.86,
+          "physics": false,
+          "frames": 4,
+          "roll": "rUni(0, 360)",
+          "alpha_bleed": true
+        },
+        "count": 1,
+        "spread": 0.08,
+        "offset_x": -0.0,
+        "offset_y": 0.8,
+        "offset_z": -3.4,
+        "velocity_x": 0.0,
+        "velocity_y": 0.0,
+        "velocity_z": 0.42
+      },
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/airbender/vacuumbending/mote.png",
+          "lifetime": 10,
+          "lifetime_variation": 4,
+          "size": 0.1,
+          "size_variation": 0.04,
+          "end_size": 0.0,
+          "color": "#F2F6FCE6",
+          "end_color": "#5C667400",
+          "friction": 0.86,
+          "physics": false,
+          "frames": 4,
+          "roll": "rUni(0, 360)",
+          "alpha_bleed": true
+        },
+        "count": 1,
+        "spread": 0.08,
+        "offset_x": 2.404,
+        "offset_y": 0.8,
+        "offset_z": -2.404,
+        "velocity_x": -0.297,
+        "velocity_y": 0.0,
+        "velocity_z": 0.297
+      },
+      {
+        "type": "apoli:random_chance",
+        "chance": 0.12,
+        "action": {
+          "type": "apoli:if_else",
+          "condition": {
+            "type": "apoli:minecraft_version",
+            "version": "1.21",
+            "comparison": ">="
+          },
+          "if_action": {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.breeze.whirl",
+            "volume": 0.5,
+            "pitch": 0.9
+          },
+          "else_action": {
+            "type": "apoli:play_sound",
+            "sound": "minecraft:entity.phantom.swoop",
+            "volume": 0.5,
+            "pitch": 0.9
+          }
+        }
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:airbender/vacuumbending/vacuum_vortex/pull",
+        "modifier": {
+          "operation": "set_total",
+          "value": 2
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

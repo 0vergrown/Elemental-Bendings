@@ -1,0 +1,207 @@
+{
+  "type": "apoli:modify_model_parts",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/vacuumbending/suffocation/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "perspectives": [
+    "first_person",
+    "third_person"
+  ],
+  "transformations": [
+    {
+      "model_part": "right_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": "rad(-92 + 0.85 * clamp(pitch, -55, 40))",
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 20,
+          "value": "rad(-96 + 0.85 * clamp(pitch, -55, 40))",
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 40,
+          "value": "rad(-92 + 0.85 * clamp(pitch, -55, 40))",
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 3.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "yaw",
+      "override_animation": true,
+      "value": -0.1047,
+      "duration": 3.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "roll",
+      "override_animation": true,
+      "keyframes": [
+        {
+          "time": 0,
+          "value": -0.0698,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 20,
+          "value": -0.4538,
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 40,
+          "value": -0.0698,
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true,
+      "duration": 3.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "pitch",
+      "override_animation": true,
+      "value": 0.384,
+      "duration": 3.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "yaw",
+      "override_animation": true,
+      "value": 0.1396,
+      "duration": 3.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_arm",
+      "type": "roll",
+      "override_animation": true,
+      "value": -0.2443,
+      "duration": 3.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "upper",
+      "type": "yaw",
+      "value": 0.2793,
+      "duration": 3.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "upper",
+      "type": "pitch",
+      "value": 0.1047,
+      "duration": 3.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "left_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "value": -0.2094,
+      "duration": 3.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_leg",
+      "type": "pitch",
+      "override_animation": true,
+      "value": 0.1396,
+      "duration": 3.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "whole",
+      "type": "pivot_y",
+      "value": 0.6,
+      "duration": 3.0,
+      "fade_out_duration": 4.0,
+      "perspectives": [
+        "third_person"
+      ]
+    },
+    {
+      "model_part": "right_arm",
+      "type": "reach",
+      "perspectives": [
+        "first_person"
+      ],
+      "duration": 3.0,
+      "fade_out_duration": 4.0,
+      "keyframes": [
+        {
+          "time": 0,
+          "target": [
+            -2,
+            -3,
+            -19
+          ],
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 20,
+          "target": [
+            -2,
+            -4,
+            -18
+          ],
+          "easing": "ease_in_out_sine"
+        },
+        {
+          "time": 40,
+          "target": [
+            -2,
+            -3,
+            -19
+          ],
+          "easing": "ease_in_out_sine"
+        }
+      ],
+      "loop": true
+    }
+  ],
+  "hidden": true
+}

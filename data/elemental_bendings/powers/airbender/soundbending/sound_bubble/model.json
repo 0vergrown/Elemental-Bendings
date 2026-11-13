@@ -1,0 +1,12 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:airbender/soundbending/sound_bubble",
+  "texture_location": "elemental_bendings:textures/entity/airbender/soundbending/sound_bubble.png",
+  "render_type": "translucent",
+  "animations": {
+    "animation": "elemental_bendings:airbender/soundbending/sound_bubble",
+    "name": "animation.sound_bubble.spin"
+  },
+  "hidden": true
+}

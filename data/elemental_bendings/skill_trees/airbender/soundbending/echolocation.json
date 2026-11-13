@@ -1,0 +1,24 @@
+{
+  "parent": "elemental_bendings:airbender/soundbending",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.echolocation.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.soundbending.echolocation.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/soundbending/echolocation/window",
+    "elemental_bendings:airbender/soundbending/echolocation/recharge",
+    "elemental_bendings:airbender/soundbending/echolocation/pose",
+    "elemental_bendings:airbender/soundbending/echolocation/glow_hostile",
+    "elemental_bendings:airbender/soundbending/echolocation/glow_player",
+    "elemental_bendings:airbender/soundbending/echolocation/glow_other",
+    "elemental_bendings:airbender/soundbending/echolocation"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/soundbending/echolocation.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 1
+}

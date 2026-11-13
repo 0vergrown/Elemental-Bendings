@@ -5,6 +5,696 @@
   "impact": "medium",
   "order": 1,
   "powers": [
+    {
+      "condition": {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:or",
+            "conditions": [
+              {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+                  },
+                  {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": "(mod(day_time, 24000) >= 13000)"
+                      },
+                      {
+                        "type": "apoli:power",
+                        "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:waterbender/plantbending/plantbending"
+              }
+            ],
+            "inverted": true
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/icebending/ice_prison/ice_prison",
+            "inverted": true
+          }
+        ]
+      },
+      "powers": [
+        "elemental_bendings:waterbender/push_and_pull"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/bloodbending/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/plantbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/icebending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/icebending/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:or",
+            "conditions": [
+              {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+                  },
+                  {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": "(mod(day_time, 24000) >= 13000)"
+                      },
+                      {
+                        "type": "apoli:power",
+                        "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:waterbender/plantbending/plantbending"
+              }
+            ],
+            "inverted": true
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/icebending/icebending",
+            "inverted": true
+          }
+        ]
+      },
+      "powers": [
+        "elemental_bendings:waterbender/pick_up_water"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/bloodbending/draw_blood/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/plantbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/wither/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/icebending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/icebending/draw_ice/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:or",
+            "conditions": [
+              {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+                  },
+                  {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": "(mod(day_time, 24000) >= 13000)"
+                      },
+                      {
+                        "type": "apoli:power",
+                        "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:waterbender/plantbending/plantbending"
+              }
+            ],
+            "inverted": true
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/icebending/ice_blast",
+            "inverted": true
+          }
+        ]
+      },
+      "powers": [
+        "elemental_bendings:waterbender/water_blast"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/bloodbending/blood_blast/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/plantbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/leaf_storm/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/ice_blast"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/icebending/ice_blast/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:or",
+            "conditions": [
+              {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+                  },
+                  {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": "(mod(day_time, 24000) >= 13000)"
+                      },
+                      {
+                        "type": "apoli:power",
+                        "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:waterbender/plantbending/plantbending"
+              }
+            ],
+            "inverted": true
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/icebending/deep_freeze",
+            "inverted": true
+          }
+        ]
+      },
+      "powers": [
+        "elemental_bendings:waterbender/freeze"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/bloodbending/clot/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/plantbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/condense/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/deep_freeze"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/icebending/deep_freeze/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:and",
+            "conditions": [
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+              },
+              {
+                "type": "apoli:or",
+                "conditions": [
+                  {
+                    "type": "apoli:random_chance",
+                    "chance": "(mod(day_time, 24000) >= 13000)"
+                  },
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/plantbending/plantbending"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:waterbender/ice_spear"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/bloodbending/clot_spear/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/plantbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/mud_shot/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:and",
+            "conditions": [
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+              },
+              {
+                "type": "apoli:or",
+                "conditions": [
+                  {
+                    "type": "apoli:random_chance",
+                    "chance": "(mod(day_time, 24000) >= 13000)"
+                  },
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/plantbending/plantbending"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:waterbender/ice_shards"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/bloodbending/clot_shards/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/plantbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/mud_splatter/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:or",
+            "conditions": [
+              {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+                  },
+                  {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": "(mod(day_time, 24000) >= 13000)"
+                      },
+                      {
+                        "type": "apoli:power",
+                        "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:waterbender/plantbending/plantbending"
+              }
+            ],
+            "inverted": true
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/icebending/ice_whip",
+            "inverted": true
+          }
+        ]
+      },
+      "powers": [
+        "elemental_bendings:waterbender/water_whip"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/blood_whip"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/bloodbending/blood_whip/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/vine_whip"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/vine_whip/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/ice_whip"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/icebending/ice_whip/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:or",
+            "conditions": [
+              {
+                "type": "apoli:and",
+                "conditions": [
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:waterbender/bloodbending/bloodbending"
+                  },
+                  {
+                    "type": "apoli:or",
+                    "conditions": [
+                      {
+                        "type": "apoli:random_chance",
+                        "chance": "(mod(day_time, 24000) >= 13000)"
+                      },
+                      {
+                        "type": "apoli:power",
+                        "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:waterbender/plantbending/plantbending"
+              }
+            ],
+            "inverted": true
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/icebending/ice_shield",
+            "inverted": true
+          }
+        ]
+      },
+      "powers": [
+        "elemental_bendings:waterbender/water_shield"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/levitation"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/bloodbending/levitation/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/vine_snare"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/vine_snare/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/ice_shield"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/icebending/ice_shield/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/transfusion"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/bloodbending/transfusion/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:and",
+            "conditions": [
+              {
+                "type": "apoli:power",
+                "power": "elemental_bendings:waterbender/bloodbending/blood_puppetry"
+              },
+              {
+                "type": "apoli:or",
+                "conditions": [
+                  {
+                    "type": "apoli:random_chance",
+                    "chance": "(mod(day_time, 24000) >= 13000)"
+                  },
+                  {
+                    "type": "apoli:power",
+                    "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "apoli:power",
+            "power": "elemental_bendings:waterbender/plantbending/root_glide"
+          }
+        ],
+        "inverted": true
+      },
+      "powers": [
+        "elemental_bendings:waterbender/water_glide"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/blood_puppetry"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/bloodbending/blood_puppetry/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/root_glide"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/root_glide/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/blood_levitation"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/bloodbending/blood_levitation/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/spore_cloud"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/spore_cloud/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/ice_skating"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/icebending/ice_skating/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/snare_trap"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/snare_trap/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/plant_golem"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/plant_golem/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/plantbending/bramble_field"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/plantbending/bramble_field/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/ice_prison/ice_prison"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/icebending/ice_prison/info"
+      ]
+    },
+    {
+      "condition": {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/bloodbending/psychic_bloodbending"
+      },
+      "powers": [
+        "elemental_bendings:waterbender/bloodbending/psychic_bloodbending/info"
+      ]
+    },
     "elemental_bendings:bending/cooldown",
     "elemental_bendings:bending/pose",
     "elemental_bendings:bending/pose_timer",
@@ -15,7 +705,6 @@
     "elemental_bendings:waterbender/stance/brush_knee_and_push",
     "elemental_bendings:waterbender/stance/cloud_hands",
     "elemental_bendings:waterbender/stance/white_crane_spreads_its_wings",
-    "elemental_bendings:waterbender/push_and_pull",
     "elemental_bendings:waterbender/held_water",
     "elemental_bendings:waterbender/held_water/timer",
     "elemental_bendings:waterbender/water_source/bucket_use",
@@ -33,24 +722,22 @@
     "elemental_bendings:waterbender/held_water/pose",
     "elemental_bendings:waterbender/held_water/water",
     "elemental_bendings:waterbender/held_water/ice",
+    "elemental_bendings:waterbender/held_water/packed",
     "elemental_bendings:waterbender/held_water/drip",
     "elemental_bendings:waterbender/held_water/frost",
     "elemental_bendings:waterbender/held_water/weight",
     "elemental_bendings:waterbender/held_water/ice_weight",
-    "elemental_bendings:waterbender/pick_up_water",
+    "elemental_bendings:waterbender/held_water/packed_weight",
     "elemental_bendings:waterbender/healing_water/pose",
     "elemental_bendings:waterbender/healing_water/water",
     "elemental_bendings:waterbender/healing_water/mending",
     "elemental_bendings:waterbender/water_blast/pose",
-    "elemental_bendings:waterbender/water_blast",
     "elemental_bendings:waterbender/freeze/pose",
-    "elemental_bendings:waterbender/freeze",
     "elemental_bendings:waterbender/water_whip/pose",
     "elemental_bendings:waterbender/whip_strike/pose",
     "elemental_bendings:waterbender/water_whip/ring",
     "elemental_bendings:waterbender/water_whip/stance",
     "elemental_bendings:waterbender/water_whip/coiling",
-    "elemental_bendings:waterbender/water_whip",
     "elemental_bendings:waterbender/water_whip/lash",
     "elemental_bendings:waterbender/water_shield/pose",
     "elemental_bendings:waterbender/water_shield/bubble",
@@ -58,15 +745,12 @@
     "elemental_bendings:waterbender/water_shield/rooted",
     "elemental_bendings:waterbender/water_shield/grounded",
     "elemental_bendings:waterbender/water_shield/holding",
-    "elemental_bendings:waterbender/water_shield",
+    "elemental_bendings:waterbender/ice_spear/packed",
     "elemental_bendings:waterbender/ice_spear/pose",
-    "elemental_bendings:waterbender/ice_spear",
     "elemental_bendings:waterbender/ice_shards/pose",
-    "elemental_bendings:waterbender/ice_shards",
     "elemental_bendings:waterbender/water_glide/pose",
     "elemental_bendings:waterbender/water_glide/surface",
     "elemental_bendings:waterbender/water_glide/surfing",
-    "elemental_bendings:waterbender/water_glide",
     "elemental_bendings:waterbender/emblem"
   ]
 }

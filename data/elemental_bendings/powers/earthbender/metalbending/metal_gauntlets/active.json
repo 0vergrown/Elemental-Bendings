@@ -1,0 +1,40 @@
+{
+  "type": "apoli:cooldown",
+  "cooldown": 240,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:spawn_particles",
+        "particle": {
+          "type": "apoli:custom",
+          "texture": "elemental_bendings:textures/particle/earthbender/metalbending/glint.png",
+          "lifetime": 8,
+          "lifetime_variation": 2,
+          "size": 0.12,
+          "end_size": 0.0,
+          "color": "#FFFFFF",
+          "end_color": "#D8E6FF00",
+          "emissive": true,
+          "blend": "additive",
+          "frames": 4,
+          "physics": false,
+          "alpha_bleed": true
+        },
+        "count": 4,
+        "model_part": "head",
+        "offset_y": 0.0,
+        "spread": 0.2,
+        "speed": 0.0
+      },
+      {
+        "type": "apoli:play_sound",
+        "sound": "minecraft:item.armor.equip_iron",
+        "volume": 0.8,
+        "pitch": 1.1
+      }
+    ]
+  },
+  "hidden": true
+}

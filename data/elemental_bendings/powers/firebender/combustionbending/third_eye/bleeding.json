@@ -1,0 +1,39 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+    "lifetime": 26,
+    "lifetime_variation": 10,
+    "size": 0.4,
+    "size_variation": 0.2,
+    "end_size": 0.8,
+    "color": "#3A3430C0",
+    "end_color": "#22201C00",
+    "gravity": -0.004,
+    "friction": 0.9,
+    "frames": 4,
+    "frame_time": 6,
+    "physics": false,
+    "roll": "rUni(0, 360)"
+  },
+  "count": 1,
+  "frequency": 9,
+  "model_part": "head",
+  "space": "local",
+  "offset_y": 0.15,
+  "offset_z": 0.3,
+  "spread": {
+    "x": 0.05,
+    "y": 0.05,
+    "z": 0.05
+  },
+  "speed": 0.01,
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:firebender/combustionbending/third_eye/strain",
+    "comparison": ">",
+    "compare_to": 300
+  },
+  "hidden": true
+}

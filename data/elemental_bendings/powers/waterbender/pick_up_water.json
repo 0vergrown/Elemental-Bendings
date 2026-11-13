@@ -561,45 +561,40 @@
     "type": "apoli:and",
     "conditions": [
       {
-        "type": "apoli:and",
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/held_water",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/healing_water/heartbeat",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/water_glide/heartbeat",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:or",
         "conditions": [
           {
             "type": "apoli:resource",
-            "resource": "elemental_bendings:waterbender/held_water",
-            "comparison": "==",
+            "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/heartbeat",
+            "comparison": ">",
             "compare_to": 0
           },
           {
             "type": "apoli:resource",
-            "resource": "elemental_bendings:waterbender/healing_water/heartbeat",
-            "comparison": "==",
+            "resource": "elemental_bendings:waterbender/plantbending/plant_golem/active",
+            "comparison": ">",
             "compare_to": 0
-          },
-          {
-            "type": "apoli:resource",
-            "resource": "elemental_bendings:waterbender/water_glide/heartbeat",
-            "comparison": "==",
-            "compare_to": 0
-          },
-          {
-            "type": "apoli:or",
-            "conditions": [
-              {
-                "type": "apoli:resource",
-                "resource": "elemental_bendings:waterbender/bloodbending/blood_puppetry/heartbeat",
-                "comparison": ">",
-                "compare_to": 0
-              },
-              {
-                "type": "apoli:resource",
-                "resource": "elemental_bendings:waterbender/plantbending/plant_golem/active",
-                "comparison": ">",
-                "compare_to": 0
-              }
-            ],
-            "inverted": true
           }
-        ]
+        ],
+        "inverted": true
       },
       {
         "type": "apoli:or",
@@ -632,21 +627,46 @@
           }
         ],
         "inverted": true
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/icebending",
+        "inverted": true
       }
     ]
   },
-  "description": {
-    "translate": "power.elemental_bendings.waterbender/pick_up_water.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/isaacfanta/active.png",
+      "text": {
+        "text": "",
+        "extra": [
+          {
+            "translate": "badge.elemental_bendings.combo.3",
+            "with": [
+              {
+                "keybind": "key.elemental_bendings.stance_2"
+              },
+              {
+                "keybind": "key.elemental_bendings.stance_3"
+              },
+              {
+                "keybind": "key.elemental_bendings.stance_1"
+              }
+            ]
+          },
+          "\n",
+          {
+            "translate": "badge.elemental_bendings.note.healing_water",
+            "with": [
+              {
+                "keybind": "key.elemental_bendings.stance_1"
+              }
+            ]
+          }
+        ]
       }
-    ]
-  }
+    }
+  ]
 }

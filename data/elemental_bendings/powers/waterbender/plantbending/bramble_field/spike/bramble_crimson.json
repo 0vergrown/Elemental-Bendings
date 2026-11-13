@@ -1,0 +1,37 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:waterbender/plantbending/bramble",
+  "texture_location": "elemental_bendings:textures/entity/waterbender/plantbending/bramble_crimson.png",
+  "render_type": "cutout",
+  "animations": [
+    {
+      "animation": "elemental_bendings:waterbender/plantbending/bramble",
+      "name": "animation.bramble.sink",
+      "loop": "hold_on_last_frame",
+      "condition": {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/plantbending/bramble_field/spike/life",
+        "comparison": "<=",
+        "compare_to": 12
+      }
+    },
+    {
+      "animation": "elemental_bendings:waterbender/plantbending/bramble",
+      "name": "animation.bramble.sway",
+      "loop": true,
+      "condition": {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:waterbender/plantbending/bramble_field/spike/life",
+        "comparison": "<=",
+        "compare_to": 194
+      }
+    },
+    {
+      "animation": "elemental_bendings:waterbender/plantbending/bramble",
+      "name": "animation.bramble.rise",
+      "loop": "hold_on_last_frame"
+    }
+  ],
+  "hidden": true
+}

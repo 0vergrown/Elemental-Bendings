@@ -1,0 +1,24 @@
+{
+  "parent": "elemental_bendings:earthbender/sandbending",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.sandbending.sand_surfing.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.sandbending.sand_surfing.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/sandbending/sand_surfing/heartbeat",
+    "elemental_bendings:earthbender/sandbending/sand_surfing/fuel",
+    "elemental_bendings:earthbender/sandbending/sand_surfing/pose",
+    "elemental_bendings:earthbender/sandbending/sand_surfing/footing",
+    "elemental_bendings:earthbender/sandbending/sand_surfing/wake",
+    "elemental_bendings:earthbender/sandbending/sand_surfing/riding",
+    "elemental_bendings:earthbender/sandbending/sand_surfing"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/sandbending/sand_surfing.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

@@ -1,0 +1,23 @@
+{
+  "type": "apoli:overlay",
+  "texture": "elemental_bendings:textures/gui/airbender/vacuumbending/emblem.png",
+  "anchor": "bottom_center",
+  "x": 0,
+  "y": -42,
+  "width": 16,
+  "height": 16,
+  "u": "16 * (if(elemental_bendings:airbender/vacuumbending/suffocation/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:airbender/vacuumbending/suffocation/fuel / 100) * 4)), if(elemental_bendings:airbender/vacuumbending/pressure_barrier/heartbeat > 0, 1 + min(3, floor((1 - elemental_bendings:airbender/vacuumbending/pressure_barrier/fuel / 200) * 4)), if(elemental_bendings:airbender/vacuumbending/vacuum_pull/pulls > 0, min(4, elemental_bendings:airbender/vacuumbending/vacuum_pull/pulls), 0))))",
+  "v": 0,
+  "texture_width": 80,
+  "texture_height": 16,
+  "region_width": 16,
+  "region_height": 16,
+  "strength": "if(elemental_bendings:bending/cooldown > 0, 0.55, 1)",
+  "draw_phase": "above_hud",
+  "visible_in_third_person": true,
+  "condition": {
+    "type": "apoli:power",
+    "power": "elemental_bendings:airbender/vacuumbending/suffocation"
+  },
+  "hidden": true
+}

@@ -1,0 +1,34 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:earthbender/metalbending/shrapnel_ring",
+  "texture_location": "elemental_bendings:textures/entity/earthbender/metalbending/plates_netherite.png",
+  "render_type": "cutout",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:earthbender/metalbending/shrapnel_shield/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:equipped_item",
+        "equipment_slot": "chest",
+        "item_condition": {
+          "type": "apoli:ingredient",
+          "ingredient": {
+            "item": "minecraft:netherite_chestplate"
+          }
+        }
+      }
+    ]
+  },
+  "animations": {
+    "animation": "elemental_bendings:earthbender/metalbending/shrapnel_ring",
+    "name": "animation.shrapnel_ring.whirl"
+  },
+  "bind_body_parts": false,
+  "hidden": true
+}

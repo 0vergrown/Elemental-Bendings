@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.shard.roll": {
+      "loop": true,
+      "animation_length": 0.5,
+      "bones": {
+        "shard": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.5": [
+              0,
+              0,
+              360
+            ]
+          }
+        }
+      }
+    }
+  }
+}

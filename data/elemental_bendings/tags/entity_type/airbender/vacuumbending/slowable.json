@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:arrows",
+    "#minecraft:impact_projectiles",
+    "minecraft:trident",
+    "minecraft:shulker_bullet",
+    "minecraft:potion",
+    "minecraft:experience_bottle",
+    "minecraft:ender_pearl",
+    "minecraft:firework_rocket",
+    {
+      "id": "minecraft:wind_charge",
+      "required": false
+    },
+    {
+      "id": "minecraft:breeze_wind_charge",
+      "required": false
+    }
+  ]
+}

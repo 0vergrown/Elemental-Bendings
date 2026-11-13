@@ -1,0 +1,33 @@
+{
+  "type": "apoli:entity_glow",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/soundbending/echolocation/window",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "use_teams": false,
+  "red": 0.45,
+  "green": 1.0,
+  "blue": 0.75,
+  "entity_condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/echoed/marked"
+      },
+      {
+        "type": "apoli:in_tag",
+        "tag": "elemental_bendings:earthbender/sandbending/clone_bait",
+        "inverted": true
+      },
+      {
+        "type": "apoli:entity_type",
+        "entity_type": "minecraft:player",
+        "inverted": true
+      }
+    ]
+  },
+  "hidden": true
+}

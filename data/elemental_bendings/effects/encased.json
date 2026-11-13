@@ -1,0 +1,23 @@
+{
+  "type": "harmful",
+  "r": 0.62,
+  "g": 0.86,
+  "b": 1.0,
+  "name": "Encased",
+  "icon": "elemental_bendings:encased",
+  "powers": [
+    "elemental_bendings:waterbender/icebending/encased/frozen",
+    "elemental_bendings:waterbender/icebending/encased/grounded",
+    "elemental_bendings:waterbender/icebending/encased/numb",
+    "elemental_bendings:waterbender/icebending/encased/still",
+    "elemental_bendings:waterbender/icebending/encased/cracks",
+    "elemental_bendings:waterbender/icebending/encased/timer",
+    "elemental_bendings:waterbender/icebending/encased/ice",
+    "elemental_bendings:waterbender/icebending/encased/cracked_ice",
+    "elemental_bendings:waterbender/icebending/encased/shattering_ice",
+    "elemental_bendings:waterbender/icebending/encased/struggle",
+    "elemental_bendings:waterbender/icebending/encased/thrash",
+    "elemental_bendings:waterbender/icebending/encased/blows",
+    "elemental_bendings:waterbender/icebending/encased/rime"
+  ]
+}

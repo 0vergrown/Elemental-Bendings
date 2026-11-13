@@ -1,0 +1,25 @@
+{
+  "parent": "elemental_bendings:airbender/spiritual_airbending",
+  "name": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.meditation.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.airbender.spiritual_airbending.meditation.description"
+  },
+  "powers": [
+    "elemental_bendings:airbender/spiritual_airbending/meditation/heartbeat",
+    "elemental_bendings:airbender/spiritual_airbending/meditation/fuel",
+    "elemental_bendings:airbender/spiritual_airbending/meditation/pose",
+    "elemental_bendings:airbender/spiritual_airbending/meditation/still",
+    "elemental_bendings:airbender/spiritual_airbending/meditation/seated",
+    "elemental_bendings:airbender/spiritual_airbending/meditation/wisps",
+    "elemental_bendings:airbender/spiritual_airbending/meditation/meditating",
+    "elemental_bendings:airbender/spiritual_airbending/meditation"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/airbender/spiritual_airbending/meditation.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 2
+}

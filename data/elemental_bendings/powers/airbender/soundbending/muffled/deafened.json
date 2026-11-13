@@ -1,0 +1,9 @@
+{
+  "type": "apoli:attribute",
+  "modifier": {
+    "attribute": "minecraft:generic.follow_range",
+    "operation": "multiply_total",
+    "value": -0.9
+  },
+  "hidden": true
+}

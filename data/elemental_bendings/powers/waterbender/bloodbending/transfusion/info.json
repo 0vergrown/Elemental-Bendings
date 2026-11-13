@@ -1,0 +1,37 @@
+{
+  "type": "apoli:simple",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/isaacfanta/active.png",
+      "text": {
+        "text": "",
+        "extra": [
+          {
+            "translate": "badge.elemental_bendings.combo.2.when",
+            "with": [
+              {
+                "keybind": "key.elemental_bendings.stance_1"
+              },
+              {
+                "keybind": "key.elemental_bendings.stance_1"
+              },
+              {
+                "translate": "badge.elemental_bendings.when.blood"
+              }
+            ]
+          },
+          "\n",
+          {
+            "translate": "badge.elemental_bendings.note.drink",
+            "with": [
+              {
+                "keybind": "key.sneak"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

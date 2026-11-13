@@ -1,0 +1,27 @@
+{
+  "type": "apoli:entity_glow",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:airbender/soundbending/echolocation/window",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "use_teams": false,
+  "red": 1.0,
+  "green": 1.0,
+  "blue": 1.0,
+  "entity_condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:airbender/soundbending/echoed/marked"
+      },
+      {
+        "type": "apoli:entity_type",
+        "entity_type": "minecraft:player"
+      }
+    ]
+  },
+  "hidden": true
+}

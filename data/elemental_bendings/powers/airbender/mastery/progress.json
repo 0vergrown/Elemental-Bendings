@@ -1,0 +1,48 @@
+{
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 4,
+  "start_value": 0,
+  "persistent": true,
+  "max_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:add_skill_points",
+        "skill_tree": "elemental_bendings:airbender",
+        "points": 1
+      },
+      {
+        "type": "apoli:modify_resource",
+        "resource": "elemental_bendings:airbender/mastery/progress",
+        "modifier": {
+          "operation": "set_total",
+          "value": 0
+        }
+      },
+      {
+        "type": "apoli:play_sound",
+        "sound": "minecraft:entity.player.levelup",
+        "volume": 0.6,
+        "pitch": 1.5
+      },
+      {
+        "type": "apoli:text",
+        "text": {
+          "translate": "text.elemental_bendings.mastery_point",
+          "with": [
+            {
+              "keybind": "key.apoli.skill_tree"
+            }
+          ],
+          "color": "aqua"
+        },
+        "bar": "actionbar",
+        "fadein": 4,
+        "duration": 60,
+        "fadeout": 12
+      }
+    ]
+  },
+  "hidden": true
+}

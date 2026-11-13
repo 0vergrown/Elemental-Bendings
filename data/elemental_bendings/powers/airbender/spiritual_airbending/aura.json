@@ -1,0 +1,29 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "texture",
+  "texture_location": "elemental_bendings:textures/entity/airbender/spiritual_airbending/aura.png",
+  "render_as_overlay": true,
+  "render_type": "energy_swirl",
+  "scroll_speed": 0.015,
+  "red": 0.3,
+  "green": 0.7,
+  "blue": 0.78,
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:airbender/spiritual_airbending/meditation/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "hidden": true
+}

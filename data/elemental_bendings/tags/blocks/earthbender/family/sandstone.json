@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "#elemental_bendings:earthbender/bendable/sand",
-    "#elemental_bendings:earthbender/bendable/sandstone"
+    "#elemental_bendings:earthbender/bendable/sandstone",
+    "#elemental_bendings:earthbender/bendable/smooth_sandstone",
+    "#elemental_bendings:earthbender/bendable/cut_sandstone"
   ]
 }

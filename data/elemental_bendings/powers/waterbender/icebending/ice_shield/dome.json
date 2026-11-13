@@ -1,0 +1,20 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "geometry",
+  "model_location": "elemental_bendings:waterbender/icebending/ice_dome",
+  "texture_location": "elemental_bendings:textures/entity/waterbender/icebending/ice_dome.png",
+  "render_type": "translucent",
+  "condition": {
+    "type": "apoli:resource",
+    "resource": "elemental_bendings:waterbender/icebending/ice_shield/heartbeat",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "animations": {
+    "animation": "elemental_bendings:waterbender/icebending/ice_dome",
+    "name": "animation.ice_dome.form",
+    "loop": "hold_on_last_frame"
+  },
+  "bind_body_parts": false,
+  "hidden": true
+}

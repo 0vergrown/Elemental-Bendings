@@ -1,0 +1,26 @@
+{
+  "type": "apoli:modify_slipperiness",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:sprinting"
+      },
+      {
+        "type": "apoli:on_block"
+      },
+      {
+        "type": "apoli:fluid_height",
+        "fluid": "minecraft:water",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      }
+    ]
+  },
+  "modifier": {
+    "operation": "set_total",
+    "value": 0.98
+  },
+  "hidden": true
+}

@@ -4,21 +4,7 @@
     "translate": "skill.elemental_bendings.waterbender.plantbending.vine_whip.name"
   },
   "description": {
-    "translate": "skill.elemental_bendings.waterbender.plantbending.vine_whip.description",
-    "with": [
-      {
-        "keybind": "key.elemental_bendings.stance_1"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_2"
-      },
-      {
-        "keybind": "key.elemental_bendings.stance_3"
-      },
-      {
-        "keybind": "key.apoli.skill_tree"
-      }
-    ]
+    "translate": "skill.elemental_bendings.waterbender.plantbending.vine_whip.description"
   },
   "powers": [
     "elemental_bendings:waterbender/plantbending/vine_whip/heartbeat",
@@ -34,7 +20,7 @@
     "elemental_bendings:waterbender/plantbending/vine_whip/lash"
   ],
   "icon": {
-    "item": "minecraft:vine"
+    "texture": "elemental_bendings:textures/gui/waterbender/plantbending/vine_whip.png"
   },
   "frame": "task",
   "cost": 2,

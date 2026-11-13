@@ -1,0 +1,84 @@
+{
+  "type": "apoli:action_on_death",
+  "bientity_action": {
+    "type": "apoli:target_action",
+    "action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/earthbender/dust.png",
+            "lifetime": 26,
+            "lifetime_variation": 8,
+            "size": 0.55,
+            "size_variation": 0.25,
+            "end_size": 1.1,
+            "color": "#E6D2A0CC",
+            "end_color": "#C8A96E00",
+            "gravity": -0.002,
+            "friction": 0.9,
+            "frames": 4,
+            "frame_time": 6,
+            "physics": false,
+            "roll": "rUni(0, 360)"
+          },
+          "count": 14,
+          "offset_y": 1.0,
+          "spread": {
+            "x": 0.45,
+            "y": 0.8,
+            "z": 0.45
+          },
+          "speed": 0.03
+        },
+        {
+          "type": "apoli:spawn_particles",
+          "particle": {
+            "type": "apoli:custom",
+            "texture": "elemental_bendings:textures/particle/earthbender/sandbending/grain.png",
+            "lifetime": 22,
+            "lifetime_variation": 8,
+            "size": 0.07,
+            "size_variation": 0.04,
+            "end_size": 0.05,
+            "color": "#F2E2B0",
+            "end_color": "#C9A86A",
+            "gravity": 0.05,
+            "friction": 0.97,
+            "frames": 4,
+            "roll": "rUni(0, 360)",
+            "roll_speed": "rUni(-20, 20)"
+          },
+          "count": 26,
+          "offset_y": 1.0,
+          "spread": {
+            "x": 0.4,
+            "y": 0.8,
+            "z": 0.4
+          },
+          "speed": 0.18
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.sand.break",
+          "volume": 1.0,
+          "pitch": 0.7
+        },
+        {
+          "type": "apoli:play_sound",
+          "sound": "minecraft:block.sand.fall",
+          "volume": 0.8,
+          "pitch": 0.6
+        },
+        {
+          "type": "apoli:modify_entity_data",
+          "data": "invisible",
+          "value": true
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

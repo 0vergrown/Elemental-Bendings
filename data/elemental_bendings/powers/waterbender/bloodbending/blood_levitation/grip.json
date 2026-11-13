@@ -1,0 +1,76 @@
+{
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 240,
+  "start_value": 0,
+  "persistent": false,
+  "min_action": {
+    "type": "apoli:if_else",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/heartbeat",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "if_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "apoli:modify_resource",
+          "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/heartbeat",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0
+          }
+        },
+        {
+          "type": "apoli:and",
+          "actions": [
+            {
+              "type": "apoli:modify_resource",
+              "resource": "elemental_bendings:waterbender/bloodbending/blood_levitation/rest",
+              "modifier": {
+                "operation": "set_total",
+                "value": 100
+              }
+            },
+            {
+              "type": "apoli:play_sound",
+              "sound": "minecraft:entity.slime.squish_small",
+              "volume": 0.6,
+              "pitch": 0.6
+            },
+            {
+              "type": "apoli:spawn_particles",
+              "particle": {
+                "type": "apoli:custom",
+                "texture": "elemental_bendings:textures/particle/waterbender/bloodbending/blood_drop.png",
+                "lifetime": 14,
+                "lifetime_variation": 6,
+                "size": 0.14,
+                "size_variation": 0.07,
+                "end_size": 0.05,
+                "color": "#FFFFFFEE",
+                "end_color": "#C0505088",
+                "gravity": 0.05,
+                "friction": 0.95,
+                "frames": 4,
+                "frame_time": 3,
+                "roll": "rUni(0, 360)"
+              },
+              "count": 10,
+              "offset_y": 0.6,
+              "spread": {
+                "x": 0.3,
+                "y": 0.5,
+                "z": 0.3
+              },
+              "speed": 0.06
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

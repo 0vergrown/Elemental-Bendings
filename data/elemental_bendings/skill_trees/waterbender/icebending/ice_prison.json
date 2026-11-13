@@ -1,0 +1,49 @@
+{
+  "parent": "elemental_bendings:waterbender/icebending/ice_skating",
+  "name": {
+    "translate": "skill.elemental_bendings.waterbender.icebending.ice_prison.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.waterbender.icebending.ice_prison.description"
+  },
+  "powers": [
+    "elemental_bendings:waterbender/icebending/ice_prison/ice_prison",
+    "elemental_bendings:waterbender/icebending/ice_prison/pose",
+    "elemental_bendings:waterbender/icebending/ice_prison",
+    "elemental_bendings:waterbender/icebending/stance/freezing_cloud_hands",
+    "elemental_bendings:waterbender/icebending/stance/glacier_horse",
+    "elemental_bendings:waterbender/icebending/stance/ice_spear_hand",
+    "elemental_bendings:waterbender/icebending/emblem"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/waterbender/icebending/ice_prison.png"
+  },
+  "frame": "challenge",
+  "cost": 3,
+  "order": 0,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/ice_blast"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/deep_freeze"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/ice_whip"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/ice_shield"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:waterbender/icebending/ice_skating"
+      }
+    ]
+  }
+}

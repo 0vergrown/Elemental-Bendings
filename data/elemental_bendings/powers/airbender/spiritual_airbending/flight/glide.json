@@ -1,0 +1,34 @@
+{
+  "type": "apoli:modify_air_speed",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      },
+      {
+        "type": "apoli:sprinting",
+        "inverted": true
+      }
+    ]
+  },
+  "modifier": {
+    "operation": "set_total",
+    "value": "0.05 * max(0.35, cos(rad(pitch)))"
+  },
+  "hidden": true
+}

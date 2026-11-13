@@ -1,0 +1,45 @@
+{
+  "type": "apoli:climbing",
+  "allow_holding": false,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:airbender/vacuumbending/wall_run/running",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:block_collision",
+            "offset_x": 0.3,
+            "offset_y": 0.1,
+            "offset_z": 0
+          },
+          {
+            "type": "apoli:block_collision",
+            "offset_x": -0.3,
+            "offset_y": 0.1,
+            "offset_z": 0
+          },
+          {
+            "type": "apoli:block_collision",
+            "offset_x": 0,
+            "offset_y": 0.1,
+            "offset_z": 0.3
+          },
+          {
+            "type": "apoli:block_collision",
+            "offset_x": 0,
+            "offset_y": 0.1,
+            "offset_z": -0.3
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

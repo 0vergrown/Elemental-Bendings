@@ -1,0 +1,19 @@
+{
+  "parent": "elemental_bendings:firebender/combustionbending",
+  "name": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.explosive_repulsion.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.firebender.combustionbending.explosive_repulsion.description"
+  },
+  "powers": [
+    "elemental_bendings:firebender/combustionbending/explosive_repulsion/pose",
+    "elemental_bendings:firebender/combustionbending/explosive_repulsion"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/firebender/combustionbending/explosive_repulsion.png"
+  },
+  "frame": "task",
+  "cost": 2,
+  "order": 0
+}

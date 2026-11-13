@@ -1,0 +1,77 @@
+{
+  "parent": "elemental_bendings:earthbender/metalbending/magnetic_pull",
+  "name": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.metal_chains.name"
+  },
+  "description": {
+    "translate": "skill.elemental_bendings.earthbender.metalbending.metal_chains.description"
+  },
+  "powers": [
+    "elemental_bendings:earthbender/metalbending/metal_chains/metal_chains",
+    "elemental_bendings:earthbender/metalbending/metal_chains/pose",
+    "elemental_bendings:earthbender/metalbending/metal_chains/reel",
+    "elemental_bendings:earthbender/metalbending/metal_chains",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/hooked",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/pending",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/boost",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/strain",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/lean",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/hook_x",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/hook_y",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/hook_z",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/last_x",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/last_y",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/last_z",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/carry_x",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/carry_z",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/glide",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/anchor",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/pulse",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple/pose",
+    "elemental_bendings:earthbender/metalbending/metal_chains/grapple",
+    "elemental_bendings:earthbender/metalbending/stance/southern_mantis",
+    "elemental_bendings:earthbender/metalbending/stance/rooted_horse",
+    "elemental_bendings:earthbender/metalbending/stance/phoenix_eye_strike",
+    "elemental_bendings:earthbender/metalbending/stance/cable_launch",
+    "elemental_bendings:earthbender/metalbending/emblem"
+  ],
+  "icon": {
+    "texture": "elemental_bendings:textures/gui/earthbender/metalbending/metal_chains.png"
+  },
+  "frame": "challenge",
+  "cost": 3,
+  "order": 0,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/sword_throw"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/metal_gauntlets"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/helmet_shards"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/shrapnel_shield"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/metal_wall"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/metal_pillar"
+      },
+      {
+        "type": "apoli:power",
+        "power": "elemental_bendings:earthbender/metalbending/magnetic_pull"
+      }
+    ]
+  }
+}

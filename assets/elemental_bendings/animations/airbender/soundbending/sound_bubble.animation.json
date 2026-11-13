@@ -1,0 +1,49 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.sound_bubble.spin": {
+      "loop": true,
+      "animation_length": 1,
+      "bones": {
+        "rings": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.5": [
+              -10,
+              -180,
+              0
+            ],
+            "1.0": [
+              0,
+              -360,
+              0
+            ]
+          }
+        },
+        "bubble": {
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.5": [
+              1.08,
+              0.92,
+              1.08
+            ],
+            "1.0": [
+              1,
+              1,
+              1
+            ]
+          }
+        }
+      }
+    }
+  }
+}

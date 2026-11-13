@@ -1,0 +1,11 @@
+{
+  "type": "apoli:custom_model_render",
+  "mode": "texture",
+  "texture_location": "elemental_bendings:textures/entity/firebender/combustionbending/third_eye.png",
+  "render_as_overlay": true,
+  "render_type": "translucent",
+  "body_parts": [
+    "head"
+  ],
+  "hidden": true
+}

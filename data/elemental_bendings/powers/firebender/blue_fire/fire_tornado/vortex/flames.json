@@ -1,0 +1,32 @@
+{
+  "type": "apoli:particle",
+  "particle": {
+    "type": "apoli:custom",
+    "texture": "elemental_bendings:textures/particle/firebender/blue_fire/flame.png",
+    "lifetime": 11,
+    "lifetime_variation": 5,
+    "size": 0.32,
+    "size_variation": 0.12,
+    "end_size": 0.06,
+    "color": "#FFFFFF",
+    "end_color": "#1C52FF80",
+    "friction": 0.9,
+    "emissive": true,
+    "blend": "additive",
+    "frames": 6,
+    "frame_time": 2,
+    "physics": false,
+    "roll": "rUni(0, 360)",
+    "easing": "ease_in_quad"
+  },
+  "count": 2,
+  "frequency": 1,
+  "offset_y": 1.6,
+  "spread": {
+    "x": 1.0,
+    "y": 1.5,
+    "z": 1.0
+  },
+  "speed": 0.05,
+  "hidden": true
+}

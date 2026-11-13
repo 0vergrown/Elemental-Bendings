@@ -1,0 +1,29 @@
+{
+  "type": "apoli:modify_velocity",
+  "axes": [
+    "x",
+    "z"
+  ],
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:airbender/spiritual_airbending/flight/heartbeat",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "elemental_bendings:airbender/spiritual_airbending/astral_projection/projecting",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  },
+  "modifier": {
+    "operation": "set_base",
+    "value": "value * 0.95"
+  },
+  "hidden": true
+}
