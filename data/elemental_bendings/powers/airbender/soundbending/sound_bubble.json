@@ -277,9 +277,8 @@
                                   ]
                                 },
                                 "bientity_action": {
-                                  "type": "apoli:punch",
-                                  "damage_type": "elemental_bendings:soundbending",
-                                  "swing_hand": false
+                                  "type": "apoli:aggro_at",
+                                  "duration": 200
                                 }
                               },
                               {
@@ -305,9 +304,8 @@
                                 "bientity_action": {
                                   "type": "apoli:invert",
                                   "action": {
-                                    "type": "apoli:punch",
-                                    "damage_type": "elemental_bendings:soundbending",
-                                    "swing_hand": false
+                                    "type": "apoli:aggro_at",
+                                    "duration": 200
                                   }
                                 }
                               }

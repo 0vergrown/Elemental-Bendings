@@ -1,3 +1,19 @@
+## 2026-11-13
+
+### Changed
+
+- Sound Bubble, Calming Hum and Sand Clones set mobs on each other with Apoli's `aggro_at` instead of a fake punch. The lured mobs no longer take a hit from the taunt, and they hold their new target the way they would after being attacked.
+- The README asks for Apoli 1.132.0. It makes Fire Breath and the other cone moves hit a creature you look at from close range, lets `aggro_at` set one mob on another, and keeps capes and elytras on the body while Flight leans and banks it.
+
+### Fixed
+
+- Snare Trap binds its victim for three and a half seconds. The leash that frees ensnared creatures topped out at half a second, so the vines fell away almost at once.
+- Spirit Dash works while you look down. Any downward look used to put every landing spot inside the ground, so the copy stayed put and you went nowhere. The copy now travels along the ground at the same distance, or one block up a step, when the aimed spot is buried.
+- The Spirit Dash copy no longer shoves you when it appears, since it can no longer collide with anyone.
+- Plant Golem's fingers no longer sink into the floor, and crouching no longer tips the golem's body forward through its own robe.
+- Bloodbending's hold on a victim lasts its full 14 ticks between refreshes. It was cut to 10, so a lag spike could free the victim early.
+- Long Air Ball and Spirit Sphere rides keep the other moves locked until the ride ends. The shared cooldown topped out at 20 seconds, which let other combos fire partway through a ride.
+
 ## 2026-11-12
 
 ### Added

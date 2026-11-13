@@ -10,6 +10,9 @@
     "first_person",
     "third_person"
   ],
+  "override_pose": [
+    "crouching"
+  ],
   "transformations": [
     {
       "model_part": "head",

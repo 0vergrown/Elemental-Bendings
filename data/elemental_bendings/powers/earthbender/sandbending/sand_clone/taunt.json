@@ -56,9 +56,14 @@
           "type": "apoli:and",
           "actions": [
             {
-              "type": "apoli:punch",
-              "damage_type": "elemental_bendings:sandbending",
-              "swing_hand": true
+              "type": "apoli:aggro_at",
+              "duration": 200
+            },
+            {
+              "type": "apoli:actor_action",
+              "action": {
+                "type": "apoli:swing_hand"
+              }
             },
             {
               "type": "apoli:target_action",
